@@ -146,8 +146,14 @@
 
         'commercial_section1' => 'Pengalaman Perusahaan',
 
+        'finance_section1' => 'Kemampuan Keuangan',
+        'finance_section2' => 'Dokumen Keuangan',
+
+        
+
         'legal' => 'Informasi Umum',
         'commercial' => 'Pengalaman Perusahaan',
+        'finance' => 'Kemampuan Keuangan',
 
         'name' => 'Nama Perusahaan',
         'npwp' => 'NPWP Tahun Terakhir',
@@ -225,6 +231,26 @@
         'doc_legal_cv_comment' => 'File (*pdf - max 40MB)',
 
 
+        
+        'doc_finance_sppkp' => 'Surat Pengukuhan Pengusaha Kena Pajak (SPPKP)',
+        'doc_finance_spt' => 'SPT Pajak Tahunan',
+        'doc_finance_blp' => 'Bukti Lapor Pajak',
+        'doc_finance_bsp' => 'Bukti Setoran Pajak',
+        'doc_finance_sklp' => 'Surat Keterangan Kelancaran Pembayaran',
+        'doc_finance_other' => 'Lainnya',   
+        'doc_finance_collaborate' => 'Bukti Dokumen Kerjasama',
+
+
+        'doc_finance_sppkp_comment' => 'File (*pdf - max 40MB)',
+        'doc_finance_spt_comment' => 'File (*pdf - max 40MB)',
+        'doc_finance_blp_comment' => 'File (*pdf - max 40MB)',
+        'doc_finance_bsp_comment' => 'File (*pdf - max 40MB)',
+        'doc_finance_sklp_comment' => 'File (*pdf - max 40MB)',
+        'doc_finance_other_comment' => 'File (*pdf - max 40MB)',
+        'doc_finance_collaborate_comment' => 'File (*pdf - max 40MB)',
+
+  
+
 
         'token_activation' => 'Aktivasi Token'
     ],
@@ -257,5 +283,13 @@
         'create' => 'Buat Pengalaman Perusahaan',
         'update' => 'Ubah Pengalaman Perusahaan',
         'delete' => 'Hapus Pengalaman Perusahaan',
+    ],
+    'finance' => [
+        'singular' => 'Keuangan Perusahaan',
+
+        'year' => 'Tahun',
+        'total_income' => 'Total Penghasilan (Rp.)',
+        'doc_finance' => 'Dokumen Keuangan',
+        'doc_finance_comment' => 'File (*pdf - max 40MB)',
     ],
 ];

@@ -1,25 +1,28 @@
 <?php if (!$this->fatalError): ?>
-
 <div class="row">
-    <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card-active">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card">
         <div class="card-header">
-            <div class="circle">1</div>
-            <?= e(trans('ap.tender::lang.card.general')) ?>
-            <p>
-                <?= e(trans('ap.tender::lang.card.first')) ?>
-            </p>
+            <a href="<?= Backend::url('ap/tender/publictenantlegals/update/'.$formModel->id) ?>">
+                <div class="circle">1</div>
+                <?= e(trans('ap.tender::lang.card.general')) ?>
+                <p>
+                    <?= e(trans('ap.tender::lang.card.first')) ?>
+                </p>
+            </a>
         </div>
     </div>
     <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card">
         <div class="card-header">
+            <a href="<?= Backend::url('ap/tender/publictenantcommercials/update/'.$formModel->id) ?>">
             <div class="circle">2</div>
             <?= e(trans('ap.tender::lang.card.general')) ?>
             <p>
                 <?= e(trans('ap.tender::lang.card.second')) ?>
             </p>
+            </a>
         </div>
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card-active">
         <div class="card-header">
             <div class="circle">3</div>
             <?= e(trans('ap.tender::lang.card.general')) ?>
@@ -40,7 +43,6 @@
         </div>
     </div>
 </div>
-
 <?= Form::open(['class' => 'layout']) ?>
 
 <div class="layout-row">
@@ -54,6 +56,11 @@
             class="btn btn-primary pull-right">
             <?= e(trans('ap.tender::lang.button.next')) ?>
         </button>
+
+        <a href="<?= Backend::url('ap/tender/publictenantcommercials/update/'.$formModel->id) ?>"
+            class="btn btn-warning">
+            <?= e(trans('ap.tender::lang.button.back')) ?>
+        </a>
     </div>
 </div>
 <?= Form::close() ?>

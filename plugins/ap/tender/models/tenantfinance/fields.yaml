@@ -1,0 +1,93 @@
+fields:
+    _section1:
+        label: 'ap.tender::lang.tenant.finance_section1'
+        type: section
+    finances:
+        label: 'ap.tender::lang.tenant.finance'
+        span: full
+        path: field_finances
+        context:
+            - update
+        type: partial
+    _section2:
+        label: 'ap.tender::lang.tenant.finance_section2'
+        type: section
+    doc_finance_sppkp:
+        label: 'ap.tender::lang.tenant.doc_finance_sppkp'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 40
+        attachOnUpload: true
+        span: left
+        commentAbove: 'ap.tender::lang.tenant.doc_finance_sppkp_comment'
+    doc_finance_spt:
+        label: 'ap.tender::lang.tenant.doc_finance_spt'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 40
+        attachOnUpload: true
+        span: right
+        commentAbove: 'ap.tender::lang.tenant.doc_finance_spt_comment'
+    doc_finance_blp:
+        label: 'ap.tender::lang.tenant.doc_finance_blp'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 40
+        attachOnUpload: true
+        span: left
+        commentAbove: 'ap.tender::lang.tenant.doc_finance_blp_comment'
+    doc_finance_bsp:
+        label: 'ap.tender::lang.tenant.doc_finance_bsp'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 40
+        attachOnUpload: true
+        span: right
+        commentAbove: 'ap.tender::lang.tenant.doc_finance_bsp_comment'
+    doc_finance_sklp:
+        label: 'ap.tender::lang.tenant.doc_finance_sklp'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 40
+        attachOnUpload: true
+        span: left
+        commentAbove: 'ap.tender::lang.tenant.doc_finance_sklp_comment'
+    doc_finance_other:
+        label: 'ap.tender::lang.tenant.doc_finance_other'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 40
+        attachOnUpload: true
+        span: right
+        commentAbove: 'ap.tender::lang.tenant.doc_finance_other_comment'
+    doc_finance_collaborate:
+        label: 'ap.tender::lang.tenant.doc_finance_collaborate'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 40
+        attachOnUpload: true
+        span: left
+        commentAbove: 'ap.tender::lang.tenant.doc_finance_collaborate_comment'
+        hidden: true
+        required: true
