@@ -23,6 +23,9 @@ permissions:
     ap_tender_access_verifications:
         tab: 'ap.tender::lang.permission.tab.master'
         label: 'ap.tender::lang.permission.access_verifications'
+    ap_tender_access_regions:
+        tab: 'ap.tender::lang.permission.tab.master'
+        label: 'ap.tender::lang.permission.access_regions'
 navigation:
     master-data:
         label: 'ap.tender::lang.permission.tab.master'
@@ -35,12 +38,6 @@ navigation:
                 icon: icon-home
                 permissions:
                     - ap_tender_access_offices
-            positions:
-                label: 'ap.tender::lang.position.plural'
-                url: ap/tender/positions
-                icon: icon-users
-                permissions:
-                    - ap_tender_access_positions
             business-entities:
                 label: 'ap.tender::lang.business_entity.plural'
                 url: ap/tender/businessentities
@@ -65,3 +62,15 @@ navigation:
                 icon: icon-check
                 permissions:
                     - ap_tender_access_verifications
+            positions:
+                label: 'ap.tender::lang.position.plural'
+                url: ap/tender/positions
+                icon: icon-users
+                permissions:
+                    - ap_tender_access_positions
+            regions:
+                label: 'ap.tender::lang.region.plural'
+                url: ap/tender/regions
+                icon: icon-map-marker
+                permissions:
+                    - ap_tender_access_regions

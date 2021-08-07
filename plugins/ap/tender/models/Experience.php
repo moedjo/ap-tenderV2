@@ -15,7 +15,7 @@ class Experience extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'ap_tender_experiences';
+    public $table = 'ap_tender_tenant_experiences';
 
     public $dates = [
 

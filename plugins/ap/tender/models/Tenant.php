@@ -35,89 +35,98 @@ class Tenant extends Model
         'user' => ['Ap\Tender\Models\User', 'key' => 'user_id'],
     ];
 
-    // public $hasMany = [
-    //     'experiences' => [
-    //         'Ap\Tender\Models\Experience',
-    //         'key' => 'company_id'
-    //     ],
-    //     'finances' => [
-    //         'Ap\Tender\Models\Finance',
-    //         'key' => 'company_id'
-    //     ]
-    // ];
+    public $hasMany = [
+        'experiences' => [
+            'Ap\Tender\Models\Experience',
+            'key' => 'tenant_id'
+        ],
+        'finances' => [
+            'Ap\Tender\Models\Finance',
+            'key' => 'tenant_id'
+        ]
+    ];
 
-    // public $belongsToMany = [
-    //     'summaries' => [
-    //         'Ap\Tender\Models\Summary',
-    //         'table' => 'ap_tender_companies_summaries',
-    //         'key'      => 'company_id',
-    //         'otherKey' => 'summary_id'
-    //     ],
-    //     'fields' => [
-    //         'Ap\Tender\Models\Field',
-    //         'table' => 'ap_tender_companies_fields',
-    //         'key'      => 'company_id',
-    //         'otherKey' => 'field_id'
-    //     ],
-    //     'verifications' => [
-    //         'Ap\Tender\Models\Verification',
-    //         'table' => 'ap_tender_companies_verifications',
-    //         'key'      => 'company_id',
-    //         'otherKey' => 'verification_id',
-    //         'timestamps' => true,
-    //         'pivot' => [
-    //             'on_note',
-    //             'on_check',
-    //             'off_note',
-    //             'off_check',
-    //         ]
-    //     ],
-    //     'verification_legals' => [
-    //         'Ap\Tender\Models\Verification',
-    //         'table' => 'ap_tender_companies_verifications',
-    //         'key'      => 'company_id',
-    //         'otherKey' => 'verification_id',
-    //         'conditions' => "type = 'legal'",
-    //         'timestamps' => true,
-    //         'pivot' => [
-    //             'on_note',
-    //             'on_check',
-    //             'off_note',
-    //             'off_check',
-    //         ]
-    //     ],
-    //     'verification_finances' => [
-    //         'Ap\Tender\Models\Verification',
-    //         'table' => 'ap_tender_companies_verifications',
-    //         'key'      => 'company_id',
-    //         'otherKey' => 'verification_id',
-    //         'conditions' => "type = 'finance'",
-    //         'timestamps' => true,
-    //         'pivot' => [
-    //             'on_note',
-    //             'on_check',
-    //             'off_note',
-    //             'off_check',
-    //         ]
-    //     ],
-    //     'verification_commercials' => [
-    //         'Ap\Tender\Models\Verification',
-    //         'table' => 'ap_tender_companies_verifications',
-    //         'key'      => 'company_id',
-    //         'otherKey' => 'verification_id',
-    //         'conditions' => "type = 'commercial'",
-    //         'timestamps' => true,
-    //         'pivot' => [
-    //             'on_note',
-    //             'on_check',
-    //             'off_note',
-    //             'off_check',
-    //         ]
-    //     ],
+    public $belongsToMany = [
+        'summaries' => [
+            'Ap\Tender\Models\Summary',
+            'table' => 'ap_tender_tenants_summaries',
+            'key'      => 'tenant_id',
+            'otherKey' => 'summary_id'
+        ],
+        'business_fields' => [
+            'Ap\Tender\Models\BusinessField',
+            'table' => 'ap_tender_tenants_business_fields',
+            'key'      => 'tenant_id',
+            'otherKey' => 'business_field_id'
+        ],
+        'verifications' => [
+            'Ap\Tender\Models\Verification',
+            'table' => 'ap_tender_tenants_verifications',
+            'key'      => 'tenant_id',
+            'otherKey' => 'verification_id',
+            'timestamps' => true,
+            'pivot' => [
+                'on_note',
+                'on_check',
+                'off_note',
+                'off_check',
+            ]
+        ],
+        'verification_legals' => [
+            'Ap\Tender\Models\Verification',
+            'table' => 'ap_tender_tenants_verifications',
+            'key'      => 'tenant_id',
+            'otherKey' => 'verification_id',
+            'conditions' => "type = 'legal'",
+            'timestamps' => true,
+            'pivot' => [
+                'on_note',
+                'on_check',
+                'off_note',
+                'off_check',
+            ]
+        ],
+        'verification_finances' => [
+            'Ap\Tender\Models\Verification',
+            'table' => 'ap_tender_tenants_verifications',
+            'key'      => 'tenant_id',
+            'otherKey' => 'verification_id',
+            'conditions' => "type = 'finance'",
+            'timestamps' => true,
+            'pivot' => [
+                'on_note',
+                'on_check',
+                'off_note',
+                'off_check',
+            ]
+        ],
+        'verification_commercials' => [
+            'Ap\Tender\Models\Verification',
+            'table' => 'ap_tender_tenants_verifications',
+            'key'      => 'tenant_id',
+            'otherKey' => 'verification_id',
+            'conditions' => "type = 'commercial'",
+            'timestamps' => true,
+            'pivot' => [
+                'on_note',
+                'on_check',
+                'off_note',
+                'off_check',
+            ]
+        ],
         
-    // ];
+    ];
 
     public $attachOne = [
+        'doc_legal_cooperation' => ['System\Models\File', 'public' => false],  
+        'doc_legal_npwp' => ['System\Models\File', 'public' => false],
+        'doc_legal_ktp' => ['System\Models\File', 'public' => false],
+        'doc_legal_sk' => ['System\Models\File', 'public' => false],
+        'doc_legal_other' => ['System\Models\File', 'public' => false],
+        'doc_legal_konsorsium' => ['System\Models\File', 'public' => false],
+        'doc_legal_cv' => ['System\Models\File', 'public' => false],
+
+
         'doc_finance_sppkp' => ['System\Models\File', 'public' => false],
         'doc_finance_spt' => ['System\Models\File', 'public' => false],
         'doc_finance_blp' => ['System\Models\File', 'public' => false],
@@ -126,31 +135,20 @@ class Tenant extends Model
         'doc_finance_other' => ['System\Models\File', 'public' => false],
         'doc_finance_collaborate' => ['System\Models\File', 'public' => false],
 
-        'doc_basic_npwp' => ['System\Models\File', 'public' => false],
-        'doc_basic_ktp' => ['System\Models\File', 'public' => false],
-        'doc_basic_sk' => ['System\Models\File', 'public' => false],
-        'doc_basic_other' => ['System\Models\File', 'public' => false],
-        'doc_basic_konsorsium' => ['System\Models\File', 'public' => false],
-        'doc_cooperation' => ['System\Models\File', 'public' => false],  
+
     ];
 
-    // public $attachMany = [
-    //     'doc_basic_akta' => ['System\Models\File', 'public' => false],
-    //     'doc_basic_siup' => ['System\Models\File', 'public' => false],
-    //     'doc_basic_tdp' => ['System\Models\File', 'public' => false],
-    //     'doc_basic_domisili' => ['System\Models\File', 'public' => false],
-    // ];
+    public $attachMany = [
+        'doc_legal_akta' => ['System\Models\File', 'public' => false],
+        'doc_legal_siup' => ['System\Models\File', 'public' => false],
+        'doc_legal_tdp' => ['System\Models\File', 'public' => false],
+        'doc_legal_domisili' => ['System\Models\File', 'public' => false],
+    ];
 
-    // protected $jsonable = [
-    //     'commissioners',
-    //     'directors',
-    // ]; 
-
-    
-    // public function getDisplayFieldsAttribute()
-    // {
-    //         return 'test';
-
-    // }
+    protected $jsonable = [
+        'commissioners',
+        'directors',
+        'business_kbli'
+    ]; 
 
 }

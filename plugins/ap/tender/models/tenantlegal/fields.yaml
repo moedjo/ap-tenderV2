@@ -1,0 +1,330 @@
+fields:
+    _section1:
+        label: 'ap.tender::lang.tenant.legal_section1'
+        type: section
+    name:
+        label:  'ap.tender::lang.tenant.name'
+        placeholder: 'ap.tender::lang.tenant.name'
+        type: text
+        span: left
+    npwp:
+        label: 'ap.tender::lang.tenant.npwp'
+        placeholder: 'ap.tender::lang.tenant.npwp'
+        type: text
+        span: right
+    konsorsium:
+        label: 'ap.tender::lang.tenant.konsorsium'
+        commentAbove: 'ap.tender::lang.tenant.konsorsium_comment'
+        type: radio
+        default: 0
+        options:
+            0: 'ap.tender::lang.tenant.non_konsorsium'
+            1: 'ap.tender::lang.tenant.konsorsium'
+    _section2:
+        label: 'ap.tender::lang.tenant.legal_section2'
+        type: section
+        trigger:
+            action: show
+            field: konsorsium
+            condition: value[0]
+    _section3:
+        label: 'ap.tender::lang.tenant.legal_section3'
+        type: section
+        trigger:
+            action: show
+            field: konsorsium
+            condition: value[1]
+    address:
+        label: 'ap.tender::lang.tenant.address'
+        placeholder: 'ap.tender::lang.tenant.address'
+        type: textarea
+        size: small
+        span: left
+    region:
+        label: 'ap.tender::lang.region.singular'
+        type: recordfinder
+        list: ~/plugins/ap/tender/models/region/regency_columns.yaml
+        recordsPerPage: 10
+        nameFrom: name
+        span: right
+    phone_number:
+        label: 'ap.tender::lang.tenant.phone_number'
+        placeholder: 'ap.tender::lang.tenant.phone_number'
+        type: text
+        span: left
+    fax_number:
+        label: 'ap.tender::lang.tenant.fax_number'
+        placeholder: 'ap.tender::lang.tenant.fax_number'
+        type: text
+        span: right
+    email:
+        label: 'ap.tender::lang.tenant.email'
+        placeholder: 'ap.tender::lang.tenant.email'
+        type: text
+        span: left
+    website:
+        label: 'ap.tender::lang.tenant.website'
+        placeholder: 'ap.tender::lang.tenant.website'
+        type: text
+        span: right
+    directors:
+        label: 'ap.tender::lang.tenant.directors'
+        span: left
+        type: repeater
+        form:
+            fields:
+                name:
+                    placeholder: 'ap.tender::lang.tenant.director'
+                    label: 'ap.tender::lang.tenant.director'
+                    span: full
+                    type: text
+    commissioners:
+        label: 'ap.tender::lang.tenant.commissioners'
+        span: right
+        type: repeater
+        form:
+            fields:
+                name:
+                    placeholder: 'ap.tender::lang.tenant.commissioner'
+                    label: 'ap.tender::lang.tenant.commissioner'
+                    span: full
+                    type: text
+    konsorsium_role:
+        label: 'ap.tender::lang.tenant.konsorsium_role'
+        placeholder: 'ap.tender::lang.tenant.konsorsium_role'
+        type: text
+        span: left
+        required: true
+        trigger:
+            action: show
+            field: konsorsium
+            condition: value[1]
+    _section4:
+        label: 'ap.tender::lang.tenant.legal_section4'
+        type: section
+        trigger:
+            action: show
+            field: konsorsium
+            condition: value[1]
+    konsorsium_total:
+        label: 'ap.tender::lang.tenant.konsorsium_total'
+        placeholder: 'ap.tender::lang.tenant.konsorsium_total'
+        type: text
+        span: left
+        required: true
+        trigger:
+            action: show
+            field: konsorsium
+            condition: value[1]
+    konsorsium_name:
+        label: 'ap.tender::lang.tenant.konsorsium_name'
+        placeholder: 'ap.tender::lang.tenant.konsorsium_name'
+        type: text
+        span: right
+        required: true
+        trigger:
+            action: show
+            field: konsorsium
+            condition: value[1]
+    konsorsium_function:
+        label: 'ap.tender::lang.tenant.konsorsium_function'
+        placeholder: 'ap.tender::lang.tenant.konsorsium_function'
+        type: text
+        span: left
+        required: true
+        trigger:
+            action: show
+            field: konsorsium
+            condition: value[1]
+    _section5:
+        label: 'ap.tender::lang.tenant.legal_section5'
+        type: section
+    business_fields:
+        label: 'ap.tender::lang.tenant.business_fields'
+        placeholder: 'ap.tender::lang.tenant.business_fields'
+        type: taglist
+        mode: relation
+        nameFrom: name
+        span: full
+    business_activity:
+        label: 'ap.tender::lang.tenant.business_activity'
+        placeholder: 'ap.tender::lang.tenant.business_activity'
+        type: text
+        span: left
+    business_kbli:
+        label: 'ap.tender::lang.tenant.business_kbli'
+        placeholder: 'ap.tender::lang.tenant.business_kbli'
+        type: taglist
+        separator: comma
+        span: full
+    _section6:
+        label: 'ap.tender::lang.tenant.legal_section6'
+        type: section      
+    pic_full_name:
+        label: 'ap.tender::lang.tenant.pic_full_name'
+        placeholder: 'ap.tender::lang.tenant.pic_full_name'
+        type: text
+        span: left
+    pic_position:
+        label: 'ap.tender::lang.tenant.pic_position'
+        placeholder: 'ap.tender::lang.tenant.pic_position'
+        type: relation
+        span: right
+    pic_phone_number:
+        label: 'ap.tender::lang.tenant.pic_phone_number'
+        placeholder: 'ap.tender::lang.tenant.pic_phone_number'
+        type: text
+        span: left
+    pic_ktp:
+        label: 'ap.tender::lang.tenant.pic_ktp'
+        placeholder: 'ap.tender::lang.tenant.pic_ktp'
+        type: text
+        span: right
+    pic_email:
+        label: 'ap.tender::lang.tenant.pic_email'
+        placeholder: 'ap.tender::lang.tenant.pic_email'
+        type: text
+        span: left
+    _section7:
+        label: 'ap.tender::lang.tenant.legal_section7'
+        type: section
+    contact_full_name:
+        label: 'ap.tender::lang.tenant.contact_full_name'
+        placeholder: 'ap.tender::lang.tenant.contact_full_name'
+        type: text
+        span: left
+    contact_position:
+        label: 'ap.tender::lang.tenant.contact_position'
+        placeholder: 'ap.tender::lang.tenant.contact_position'
+        type: relation
+        span: right
+    contact_phone_number:
+        label: 'ap.tender::lang.tenant.contact_phone_number'
+        placeholder: 'ap.tender::lang.tenant.contact_phone_number'
+        type: text
+        span: left
+    contact_email:
+        label: 'ap.tender::lang.tenant.contact_email'
+        placeholder: 'ap.tender::lang.tenant.contact_email'
+        type: text
+        span: right
+    _section8:
+        label: 'ap.tender::lang.tenant.legal_section8'
+        type: section
+    doc_legal_akta:
+        label: 'ap.tender::lang.tenant.doc_legal_akta'
+        commentAbove: 'ap.tender::lang.tenant.doc_legal_akta_comment'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 40
+        attachOnUpload: true
+        span: left
+        maxFiles: 5
+    doc_legal_siup:
+        label: 'ap.tender::lang.tenant.doc_legal_siup'
+        commentAbove: 'ap.tender::lang.tenant.doc_legal_siup_comment'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 40
+        attachOnUpload: true
+        span: right
+    doc_legal_tdp:
+        label: 'ap.tender::lang.tenant.doc_legal_tdp'
+        commentAbove: 'ap.tender::lang.tenant.doc_legal_tdp_comment'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 40
+        attachOnUpload: true
+        span: left
+    doc_legal_domisili:
+        label: 'ap.tender::lang.tenant.doc_legal_domisili'
+        commentAbove: 'ap.tender::lang.tenant.doc_legal_domisili_comment'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 40
+        attachOnUpload: true
+        span: right
+    doc_legal_npwp:
+        label: 'ap.tender::lang.tenant.doc_legal_npwp'
+        commentAbove: 'ap.tender::lang.tenant.doc_legal_npwp_comment'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 40
+        attachOnUpload: true
+        span: left
+    doc_legal_ktp:
+        label: 'ap.tender::lang.tenant.doc_legal_ktp'
+        commentAbove: 'ap.tender::lang.tenant.doc_legal_ktp_comment'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 40
+        attachOnUpload: true
+        span: right
+    doc_legal_sk:
+        label: 'ap.tender::lang.tenant.doc_legal_sk'
+        commentAbove: 'ap.tender::lang.tenant.doc_legal_sk_comment'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 40
+        attachOnUpload: true
+        span: left
+    doc_legal_other:
+        label: 'ap.tender::lang.tenant.doc_legal_other'
+        commentAbove: 'ap.tender::lang.tenant.doc_legal_other_comment'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 40
+        attachOnUpload: true
+        span: right
+    doc_legal_cv:
+        label: 'ap.tender::lang.tenant.doc_legal_cv'
+        commentAbove: 'ap.tender::lang.tenant.doc_legal_cv_comment'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 40
+        attachOnUpload: true
+        span: left
+        hidden: true
+    doc_legal_konsorsium:
+        label: 'ap.tender::lang.tenant.doc_legal_konsorsium'
+        commentAbove: 'ap.tender::lang.tenant.doc_legal_konsorsium_comment'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 40
+        attachOnUpload: true
+        span: left
+        required: true
+        trigger:
+            action: show
+            field: konsorsium
+            condition: value[1]

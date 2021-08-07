@@ -42,7 +42,7 @@ class CreateApTenderTenants extends Migration
             $table->foreign('pic_position_id')->references('id')
                 ->on('ap_tender_positions');
 
-            $table->string('kbli')->nullable();
+            $table->json('business_kbli')->nullable();
             $table->string('business_activity')->nullable();
 
             $table->json('commissioners')->nullable();

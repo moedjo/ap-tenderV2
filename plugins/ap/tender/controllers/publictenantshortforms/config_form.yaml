@@ -2,4 +2,4 @@ name: 'ap.tender::lang.tenant.short_form'
 form: $/ap/tender/models/tenantshortform/fields.yaml
 modelClass: Ap\Tender\Models\TenantShortForm
 create:
-    redirectClose: 'ap/tender/tenantshortform/success'
+    redirectClose: 'ap/tender/publictenantshortforms/success'

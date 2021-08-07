@@ -13,7 +13,7 @@ class Finance extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'ap_tender_finances';
+    public $table = 'ap_tender_tenant_finances';
 
     /**
      * @var array Validation rules

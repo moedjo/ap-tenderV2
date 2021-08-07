@@ -2,7 +2,7 @@
 
 namespace Ap\Tender\Controllers;
 
-use Ap\Tender\Models\Company;
+use Ap\Tender\Models\Tenant;
 use Backend\Classes\Controller;
 use Event;
 use Illuminate\Support\Facades\Redirect;
@@ -33,44 +33,43 @@ class PublicTenantShortForms extends Controller
 
     public function success()
     {
+        $this->pageTitle = 'ap.tender::lang.tenant.short_form';
     }
 
     public function validate()
     {
+        $this->pageTitle = 'ap.tender::lang.tenant.token_activation';
     }
-
 
     public function formBeforeCreate($model)
     {
-        $model->token = Str::random(6);
-        $model->token_url = url('/backend/ap/tender/companyregisters/validate');
-        $model->status = 'signup';
+        $model->token = Str::random(8);
+        $model->token_url = url('/backend/ap/tender/publictenantshortforms/validate');
+        $model->status = 'short_form';
     }
 
     public function onValidate()
     {
         $token = input('token');
-        $company = Company::where('token', $token)
-                ->orderBy('created_at', 'DESC')
+        $tenant = Tenant::where('token', $token)
+                ->orderBy('updated_at', 'DESC')
                 ->first();
                 
-        if (isset($company)) {
-
-            if ($company->status == 'signup') {
-                Session::put('company_id', $company->id);
+        if (isset($tenant)) {
+            if ($tenant->status == 'short_form') {
+                Session::put('tenant_id', $tenant->id);
                 Flash::success(e(trans('ap.tender::lang.global.success_activation')));
-                return Redirect::to("backend/ap/tender/companybasicinfos/update/$company->id");
+                return Redirect::to("backend/ap/tender/publictenantlegals/update/$tenant->id");
             } else {
-                Flash::error('invalid token');
+                Flash::error(e(trans('ap.tender::lang.global.invalid_token')));
             }
         } else {
-            //TODO see lang.php
-            Flash::error('invalid token');
+            Flash::error(e(trans('ap.tender::lang.global.invalid_token')));
         }
     }
 
     public function formAfterCreate($model)
     {
-        Event::fire('company.signup', [$model]);
+        Event::fire('tenant.short_form', [$model]);
     }
 }

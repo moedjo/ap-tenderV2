@@ -6,7 +6,7 @@
 ?>
 <div class="main-menu-container">
     <nav class="navbar control-toolbar navbar-mode-<?= $navbarMode ?> flex" role="navigation">
-        <img src="<?= url('/storage/app/media/assets/images/logo.svg'); ?>" alt="Description Image" class="m-l-md br-p-s10" />
+        <img src="<?= BrandSetting::getLoginCustomImage(); ?>" alt="Description Image" class="m-a" />
         <h3 class="visible-lg m-l-md" style="color: white;"> <?= e(trans($this->pageTitle)).' - '.e(Backend\Models\BrandSetting::get('app_name')) ?></h3>
     </nav>
 </div>
