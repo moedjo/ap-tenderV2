@@ -1,0 +1,12 @@
+fields:
+    name:
+        label: 'ap.tender::lang.business_field.name'
+        span: full
+        placeholder: 'ap.tender::lang.business_field.name'
+        type: text
+    description:
+        label: 'ap.tender::lang.business_field.description'
+        size: small
+        span: full
+        placeholder: 'ap.tender::lang.business_field.description'
+        type: textarea

@@ -48,8 +48,13 @@ class Seeder extends UpdatesSeeder{
         ]);
 
         BusinessField::create([
-            'name' => 'Pertanian',
-            'description' => 'Nyangkul pake pacul versi manual',
+            'name' => 'Bisnis Pertanian',
+            'description' => 'Bisnis Pertanian',
+        ]);
+
+        BusinessField::create([
+            'name' => 'Bisnis Konstruksi',
+            'description' => 'Bisnis Konstruksi',
         ]);
 
         // Summary

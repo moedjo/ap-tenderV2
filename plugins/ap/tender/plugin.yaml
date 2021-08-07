@@ -11,6 +11,18 @@ permissions:
     ap_tender_access_positions:
         tab: 'ap.tender::lang.permission.tab.master'
         label: 'ap.tender::lang.permission.access_positions'
+    ap_tender_access_business_entities:
+        tab: 'ap.tender::lang.permission.tab.master'
+        label: 'ap.tender::lang.permission.access_business_entities'
+    ap_tender_access_business_fields:
+        tab: 'ap.tender::lang.permission.tab.master'
+        label: 'ap.tender::lang.permission.access_business_fields'
+    ap_tender_access_summaries:
+        tab: 'ap.tender::lang.permission.tab.master'
+        label: 'ap.tender::lang.permission.access_summaries'
+    ap_tender_access_verifications:
+        tab: 'ap.tender::lang.permission.tab.master'
+        label: 'ap.tender::lang.permission.access_verifications'
 navigation:
     master-data:
         label: 'ap.tender::lang.permission.tab.master'
@@ -29,3 +41,27 @@ navigation:
                 icon: icon-users
                 permissions:
                     - ap_tender_access_positions
+            business-entities:
+                label: 'ap.tender::lang.business_entity.plural'
+                url: ap/tender/businessentities
+                icon: icon-book
+                permissions:
+                    - ap_tender_access_business_entities
+            business-fields:
+                label: 'ap.tender::lang.business_field.plural'
+                url: ap/tender/businessfields
+                icon: icon-table
+                permissions:
+                    - ap_tender_access_business_fields
+            summaries:
+                label: 'ap.tender::lang.summary.plural'
+                url: ap/tender/summaries
+                icon: icon-stack-exchange
+                permissions:
+                    - ap_tender_access_summaries
+            verifications:
+                label: 'ap.tender::lang.verification.plural'
+                url: ap/tender/verifications
+                icon: icon-check
+                permissions:
+                    - ap_tender_access_verifications

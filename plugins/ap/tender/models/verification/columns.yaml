@@ -1,0 +1,27 @@
+columns:
+    type:
+        label: 'ap.tender::lang.verification.type'
+        type: text
+        displayFrom: display_type
+    number:
+        label: 'ap.tender::lang.verification.number'
+        type: text
+        searchable: true
+        sortable: true
+    name:
+        label: 'ap.tender::lang.verification.name'
+        type: text
+    description:
+        label: 'ap.tender::lang.verification.description'
+        type: text
+    fields:
+        label: 'Fields'
+        type: text
+    created_at:
+        label: 'ap.tender::lang.global.created_at'
+        type: datetime
+        invisible: true
+    updated_at:
+        label: 'ap.tender::lang.global.updated_at'
+        type: datetime
+        invisible: true

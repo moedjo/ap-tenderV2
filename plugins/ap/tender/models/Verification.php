@@ -22,8 +22,6 @@ class Verification extends Model
      * @var array Validation rules
      */
     public $rules = [
-        // 'name' => 'required|unique:ap_tender_fields',
-        // 'description' => 'required'
         'type' => 'required',
     ];
 
@@ -43,8 +41,15 @@ class Verification extends Model
         return BackendAuth::getUser();
     }
 
-    public function getDisplayOrderAttribute()
+    public function getDisplayTypeAttribute()
     {
-        return $this->type.' - '.$this->number.' - '.$this->name.' - '.$this->description;
+        return e(trans('ap.tender::lang.global.'.$this->type));
+    }
+
+    public function getChildren(){
+    }
+    
+    
+    public function getChildCount(){
     }
 }

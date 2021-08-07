@@ -1,0 +1,10 @@
+name: 'ap.tender::lang.busines_field.singular'
+form: $/ap/tender/models/businessfield/fields.yaml
+modelClass: Ap\Tender\Models\BusinessField
+defaultRedirect: ap/tender/businessfields
+create:
+    redirect: 'ap/tender/businessfields/update/:id'
+    redirectClose: ap/tender/businessfields
+update:
+    redirect: ap/tender/businessfields
+    redirectClose: ap/tender/businessfields

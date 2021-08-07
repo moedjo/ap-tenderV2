@@ -1,10 +1,9 @@
-<?= Form::open(['id' => 'updateForm']) ?>
+<?= Form::open(['id' => 'createForm']) ?>
 
-<input type="hidden" name="record_id" value="<?= $recordId ?>" />
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="popup">&times;</button>
     <h4 class="modal-title">
-        <?= e(trans('ap.tender::lang.position.update')) ?>
+        <?= e(trans('ap.tender::lang.verification.create')) ?>
     </h4>
 </div>
 
@@ -14,17 +13,13 @@
     <?= $this->formRender() ?>
 </div>
 <div class="modal-footer">
-    <button type="submit" data-request="onUpdate" data-request-data="redirect:0" data-hotkey="ctrl+s, cmd+s"
+    <button type="submit" data-request="onCreate" data-request-data="redirect:0" data-hotkey="ctrl+s, cmd+s"
         data-popup-load-indicator class="btn btn-primary">
-        <u>S</u>ave
+        <?= e(trans('backend::lang.form.create')) ?>
     </button>
 
     <button type="button" class="btn btn-default" data-dismiss="popup">
         <?= e(trans('backend::lang.form.cancel')) ?>
-    </button>
-
-    <button type="button" class="oc-icon-trash-o btn-icon danger pull-right" data-request="onDelete"
-        data-popup-load-indicator data-request-confirm="<?= e(trans('backend::lang.form.confirm_delete')) ?>">
     </button>
 </div>
 
@@ -45,7 +40,7 @@
 
 <script>
     setTimeout(
-        function () { $('#updateForm input.form-control:first').focus() },
+        function () { $('#createForm input.form-control:first').focus() },
         310
     )
 </script>

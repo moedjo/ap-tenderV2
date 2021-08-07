@@ -35,9 +35,9 @@ class CreateApTenderTenantExperiences extends Migration
             $table->foreign('tenant_id')->references('id')
                 ->on('ap_tender_tenants');
 
-            $table->integer('tenant_experience_category_id')->unsigned()->nullable();
-            $table->foreign('tenant_experience_category_id','f_tes_teci')->references('id')
-                ->on('ap_tender_tenant_experience_categories');
+            $table->integer('business_field_id')->unsigned();
+            $table->foreign('business_field_id')->references('id')
+            ->on('ap_tender_business_fields');
         });
     }
 

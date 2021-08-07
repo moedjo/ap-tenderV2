@@ -1,0 +1,30 @@
+fields:
+    type:
+        label: 'ap.tender::lang.verification.type'
+        type: balloon-selector
+        default: legal
+        options:
+            legal: 'ap.tender::lang.global.legal'
+            finance: 'ap.tender::lang.global.finance'
+            commercial: 'ap.tender::lang.global.commercial'
+    fields:
+        label: 'ap.tender::lang.verification.fields'
+        type: taglist
+        placeholder: 'ap.tender::lang.verification.fields'
+        separator: comma
+    number:
+        label: 'ap.tender::lang.verification.number'
+        span: full
+        placeholder: 'ap.tender::lang.verification.number'
+        type: text
+    name:
+        label: 'ap.tender::lang.verification.name'
+        span: full
+        placeholder: 'ap.tender::lang.verification.name'
+        type: text
+    description:
+        label: 'ap.tender::lang.verification.description'
+        size: 'small'
+        span: full
+        placeholder: 'ap.tender::lang.verification.description'
+        type: textarea

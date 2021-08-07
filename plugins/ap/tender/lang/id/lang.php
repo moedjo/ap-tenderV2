@@ -9,13 +9,19 @@
         ],
         'access_offices' => 'Akses Kantor',
         'access_positions' => 'Akses Jabatan',
+        'access_business_entities' => 'Akses Bidang Usaha',
+        'access_summaries' => 'Akses Kesimpulan',
+        'access_verifications' => 'Akses Verifikasi'
 
     ],
     'global' => [
         'created_at' => 'Waktu Buat',
         'updated_at' => 'Waktu Ubah',
         'yes' => 'Ya',
-        'no' => 'Tidak'
+        'no' => 'Tidak',
+        'legal' => 'Legal',
+        'finance' => 'Finance',
+        'commercial' => 'Commercial',
     ],
     'button' => [
         'back' => 'Kembali',
@@ -45,6 +51,33 @@
         'update' => 'Ubah Badan Usaha',
         'delete' => 'Hapus Badan Usaha',
     ],
+    'business_field' => [
+        'singular' => 'Bidang Usaha',
+        'plural' => 'Daftar Bidang Usaha',
+
+        'id' => 'Id Bidang Usaha',
+        'name' => 'Nama Bidang Usaha',
+        'description' => 'Keterangan',
+
+        'create' => 'Buat Bidang Usaha',
+        'update' => 'Ubah Bidang Usaha',
+        'delete' => 'Hapus Bidang Usaha',
+    ],
+    'verification' => [
+        'singular' => 'Verifikasi',
+        'plural' => 'Daftar Verifikasi',
+
+        'id' => 'Id Verifikasi',
+        'type' => 'Tipe Verifikasi',
+        'number' => 'No',
+        'name' => 'Kategori',
+        'description' => 'Informasi Umum',
+        'fields' => 'Bidang',
+
+        'create' => 'Buat Verifikasi',
+        'update' => 'Ubah Verifikasi',
+        'delete' => 'Hapus Verifikasi',
+    ],
     'position' => [
         'singular' => 'Jabatan',
         'plural' => 'Daftar Jabatan',
@@ -56,6 +89,18 @@
         'create' => 'Buat Jabatan',
         'update' => 'Ubah Jabatan',
         'delete' => 'Hapus Jabatan',
+    ],
+    'summary' => [
+        'singular' => 'Kesimpulan',
+        'plural' => 'Daftar Kesimpulan',
+
+        'id' => 'Id Kesimpulan',
+        'name' => 'Nama Kesimpulan',
+        'description' => 'Keterangan',
+
+        'create' => 'Buat Kesimpulan',
+        'update' => 'Ubah Kesimpulan',
+        'delete' => 'Hapus Kesimpulan',
     ],
     'tenant' => [
         'short_form' => 'Pendaftaran Tenant',
