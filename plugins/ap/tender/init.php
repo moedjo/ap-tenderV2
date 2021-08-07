@@ -9,10 +9,11 @@ Event::listen('tenant.short_form', function ($tenant) {
 });
 
 
-Event::listen('company.before.register', function ($company) {
+Event::listen('tenant.pre_register', function ($tenant) {
 
-   Mail::queue('ap.tender::mail.company-before-register', $company->toArray(), function ($message) use ($company) {
-      $message->to($company->email, $company->name);
+   Mail::queue('ap.tender::mail.tenant-pre-register', $tenant->toArray(), function ($message) use ($tenant) {
+      $tenant->load('business_entity');
+      $message->to($tenant->email, $tenant->name);
    });
    
 });

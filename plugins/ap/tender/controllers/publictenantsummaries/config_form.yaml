@@ -1,0 +1,6 @@
+name: 'ap.tender::lang.tenant.summary'
+form: $/ap/tender/models/tenantsummary/fields.yaml
+modelClass: Ap\Tender\Models\TenantSummary
+update:
+    redirect: ap/tender/publictenantsummaries/success
+    redirectClose: ap/tender/publictenantsummaries/success

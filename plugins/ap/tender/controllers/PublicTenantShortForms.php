@@ -4,6 +4,7 @@ namespace Ap\Tender\Controllers;
 
 use Ap\Tender\Models\Tenant;
 use Backend\Classes\Controller;
+use Backend\Facades\Backend;
 use Event;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
@@ -44,7 +45,7 @@ class PublicTenantShortForms extends Controller
     public function formBeforeCreate($model)
     {
         $model->token = Str::random(8);
-        $model->token_url = url('/backend/ap/tender/publictenantshortforms/validate');
+        $model->token_url = Backend::url('ap/tender/publictenantshortforms/validate');
         $model->status = 'short_form';
     }
 

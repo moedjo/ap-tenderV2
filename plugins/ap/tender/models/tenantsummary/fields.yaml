@@ -1,0 +1,10 @@
+fields:
+    _section1:
+        label: 'ap.tender::lang.tenant.summary_section1'
+        type: section
+        comment: 'ap.tender::lang.tenant.summary_section1_comment'
+    summaries:
+        context: [update]
+        label: 'ap.tender::lang.tenant.summary'
+        type: checkboxlist
+        required: true

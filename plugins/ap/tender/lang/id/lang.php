@@ -149,6 +149,10 @@
         'finance_section1' => 'Kemampuan Keuangan',
         'finance_section2' => 'Dokumen Keuangan',
 
+        'summary_section1' => 'Kesimpulan',
+        'summary_section1_comment' => 'Silahkan cek statement yang telah tersedia pada tabel di bawah ini, kemudian klik SIMPAN untuk menyimpan
+        dan dilanjutkan mengusulkan jadwal Verifikasi Dokumen.',
+
         
 
         'legal' => 'Informasi Umum',
@@ -205,6 +209,8 @@
         'pic_ktp' => 'Nomor KTP',
         'pic_email' => 'Email',
 
+
+
         'doc_legal_cooperation' => 'Surat Keterangan Bukti Kerja Sama',
         'doc_legal_akta' => 'Akta Perusahaan',
         'doc_legal_nib' =>'NIB / Surat Izin Usaha',
@@ -248,9 +254,6 @@
         'doc_finance_sklp_comment' => 'File (*pdf - max 40MB)',
         'doc_finance_other_comment' => 'File (*pdf - max 40MB)',
         'doc_finance_collaborate_comment' => 'File (*pdf - max 40MB)',
-
-  
-
 
         'token_activation' => 'Aktivasi Token'
     ],

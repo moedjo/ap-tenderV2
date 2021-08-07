@@ -1,17 +1,17 @@
-subject = "Registrasi Perusahaan {{name}}"
-layout = "ap-tender-registration"
-description = "Email Registrasi"
+subject = "Registrasi Perusahaan {{business_entity.name}} {{name}}"
+layout = "ap-tender-default"
+description = "Email Pra Pendaftaran"
 ==
 
 
-Yth. Bapak/Ibu **{{name}}**
+Yth. Bapak/Ibu **{{business_entity.name}} {{name}}**  
 
 Terima kasih telah melakukan pendaftaran sebagai Calon Mitra Usaha dilingkungan PT Angkasa Pura I (Persero). Kami akan melakukan verifikasi atas informasi yang telah Bapak/Ibu berikan melalui Tenant Management System (TMS) E-Selection.
-
-Untuk pembuatan username dan password TMS, silahkan klik tombol dibawah ini:
+  
+Untuk pembuatan username dan password TMS, silahkan klik tombol dibawah ini:  
 
 {% partial 'button' url=token_url body %}
-    Klik disini
+    Klik disini  
 {% endpartial %}
 
 
