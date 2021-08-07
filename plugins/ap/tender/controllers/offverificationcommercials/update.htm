@@ -9,8 +9,8 @@
 <div class="form-buttons">
     <div class="loading-indicator-container">
         <button type="button" data-request="onSave" data-request-data="close:1" data-hotkey="ctrl+enter, cmd+enter"
-            data-load-indicator="<?= e(trans('ap.tender::lang.global.next')) ?>" class="btn btn-primary pull-right">
-            Simpan
+            data-load-indicator="<?= e(trans('ap.tender::lang.button.submit')) ?>" class="btn btn-primary pull-right">
+            <?= e(trans('ap.tender::lang.button.submit')) ?>
         </button>
     </div>
 </div>
@@ -20,7 +20,7 @@
 <p class="flash-message static error">
     <?= e(trans($this->fatalError)) ?>
 </p>
-<p><a href="<?= url('/') ?>" class="btn btn-default">
+<p><a href="<?= Backend::url('ap/tender/offverificationtenants') ?>" class="btn btn-default">
         <?= e(trans('backend::lang.form.return_to_list')) ?>
     </a></p>
 <?php endif ?>

@@ -1,20 +1,20 @@
 fields:
     verification_legals:
-        label: 'Verifikasi Data Legal'
+        label: 'ap.tender::lang.tenant.verification_legals'
         span: full
         path: field_verification_legals
         context:
             - update
         type: partial
     verification_commercials:
-        label: 'Verifikasi Data Komersial'
+        label: 'ap.tender::lang.tenant.verification_commercials'
         span: full
         path: field_verification_commercials
         context:
             - update
         type: partial
     verification_finances:
-        label: 'Verifikasi Data Finance'
+        label: 'ap.tender::lang.tenant.verification_finances'
         span: full
         path: field_verification_finances
         context:

@@ -1,5 +1,5 @@
-name: 'Klarifikasi Komesial'
-form: $/ap/tender/models/companyexperience/off_verification_fields.yaml
-modelClass: Ap\Tender\Models\CompanyExperience
+name: 'ap.tender::lang.tenant.commercial'
+form: $/ap/tender/models/tenantcommercial/off_verification_fields.yaml
+modelClass: Ap\Tender\Models\TenantCommercial
 update:
     redirectClose: ap/tender/offverificationtenants

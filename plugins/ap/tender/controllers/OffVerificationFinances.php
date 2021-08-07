@@ -20,7 +20,7 @@ class OffVerificationFinances extends Controller
     public $formConfig = 'config_form.yaml';
     public $relationConfig = 'config_relation.yaml';
 
-    public $requiredPermissions = ['ap_tender_access_finances'];
+    public $requiredPermissions = ['ap_tender_is_finance'];
 
     public function __construct()
     {

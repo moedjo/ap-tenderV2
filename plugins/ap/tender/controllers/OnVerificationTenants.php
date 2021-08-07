@@ -52,21 +52,26 @@ class OnVerificationTenants extends Controller
     {
 
         $user = $this->user;
-        if ($user->hasPermission('ap_tender_is_legal')) {
-            return 'ap/tender/onverificationlegals/update/' . $record->id;
-        }
 
-        if ($user->hasPermission('ap_tender_is_finance')) {
-            return 'ap/tender/onverificationfinances/update/' . $record->id;
-        }
-
-        if ($user->hasPermission('ap_tender_is_commercial')) {
-
-            if ($record->status == 'pre_evaluated') {
+        if ($record->status == 'pre_evaluated') {
+            if ($user->hasPermission('ap_tender_is_commercial')) {
                 return 'ap/tender/onverificationlasts/update/' . $record->id;
             }
-
-            return 'ap/tender/onverificationcommercials/update/' . $record->id;
         }
+
+        if ($record->status == 'register') {
+            if ($user->hasPermission('ap_tender_is_legal')) {
+                return 'ap/tender/onverificationlegals/update/' . $record->id;
+            }
+            if ($user->hasPermission('ap_tender_is_finance')) {
+                return 'ap/tender/onverificationfinances/update/' . $record->id;
+            }
+            if ($user->hasPermission('ap_tender_is_commercial')) {
+
+                return 'ap/tender/onverificationcommercials/update/' . $record->id;
+            }
+        }
+
+        return ['clickable' => false];
     }
 }

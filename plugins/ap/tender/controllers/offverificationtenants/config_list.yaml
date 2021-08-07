@@ -1,6 +1,6 @@
-list: $/ap/tender/models/company/off_verification_columns.yaml
-modelClass: Ap\Tender\Models\Company
-title: Daftar Tenant
+list: $/ap/tender/models/tenant/off_verification_columns.yaml
+modelClass: Ap\Tender\Models\Tenant
+title: 'ap.tender::lang.tenant.plural'
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
 showCheckboxes: false
@@ -10,3 +10,4 @@ toolbar:
     search:
         prompt: 'backend::lang.list.search_prompt'
 recordUrl: 'ap/tender/onverificationlegals/update/:id'
+filter: config_filter.yaml

@@ -1,13 +1,15 @@
 verification_finances:
-    label: 'Verifikasi'
+    label: 'ap.tender::lang.tenant.verification'
+    showFlash: false
     view:
-        list: $/ap/tender/models/verification/on_verification_columns.yaml
+        list: $/ap/tender/models/verification/off_verification_columns.yaml
         toolbarButtons: false
         showCheckboxes: false
     pivot:
-        form: $/ap/tender/models/verification/on_verification_fields.yaml
+        form: $/ap/tender/models/verification/off_verification_fields.yaml
 finances:
-    label: 'ap.tender::lang.company_finance.singular'
+    label: 'ap.tender::lang.tenant.finance'
+    showFlash: false
     manage:
         form: $/ap/tender/models/finance/fields.yaml
         list: $/ap/tender/models/finance/columns.yaml

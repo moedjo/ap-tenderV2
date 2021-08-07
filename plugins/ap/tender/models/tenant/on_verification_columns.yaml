@@ -1,19 +1,19 @@
 columns:
     name:
-        label: Nama Tenant
+        label: 'ap.tender::lang.tenant.name'
         type: text
     pic_full_name:
-        label: PIC
+        label: 'ap.tender::lang.tenant.pic_full_name'
         type: text
     pic_phone_number:
-        label: Telp PIC
+        label: 'ap.tender::lang.tenant.pic_phone_number'
         type: text
     on_legal_status:
-        label: Legal Status
+        label: 'ap.tender::lang.tenant.legal_status'
     on_finance_status:
-        label: Finance Status
+        label: 'ap.tender::lang.tenant.finance_status'
     on_commercial_status:
-        label: Commercial Status
+        label: 'ap.tender::lang.tenant.commercial_status'
     status:
-        label: Status
+        label: 'ap.tender::lang.tenant.status'
         type: text

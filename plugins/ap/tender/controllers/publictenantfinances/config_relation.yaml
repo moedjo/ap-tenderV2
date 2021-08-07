@@ -1,5 +1,6 @@
 finances:
     label: 'ap.tender::lang.finance.singular'
+    showFlash: false
     manage:
         form: $/ap/tender/models/finance/fields.yaml
         list: $/ap/tender/models/finance/columns.yaml

@@ -20,7 +20,7 @@ class OffVerificationLegals extends Controller
     public $formConfig = 'config_form.yaml';
     public $relationConfig = 'config_relation.yaml';
 
-    public $requiredPermissions = ['ap_tender_access_legals'];
+    public $requiredPermissions = ['ap_tender_is_legal'];
 
     public function __construct()
     {

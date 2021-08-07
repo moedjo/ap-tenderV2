@@ -180,6 +180,7 @@
         'invite' => 'Undangan Tenant',
         'on_verification' => 'Evaluasi',
         'on_last_verification' => 'Evaluasi Tahap Akhir',
+        'off_last_verification' => 'Klarifikasi Tahap Akhir',
         'off_verification' => 'Klarifikasi',
         'verification_legals' => 'Verifikasi Data Legal',
         'verification_finances' => 'Verifikasi Data Finance',
@@ -243,6 +244,13 @@
         'invite_hour_start'=>'Waktu Mulai',
         'invite_hour_end'=>'Waktu Berakhir',
         'invite_description'=>'Deskripsi Pengumuman',
+
+
+        'legal_status' => 'Legal Status',
+        'finance_status' =>  'Finance Status',
+        'commercial_status' => 'Commercial Status',
+
+        'status' => 'Tenant Status',
 
 
 

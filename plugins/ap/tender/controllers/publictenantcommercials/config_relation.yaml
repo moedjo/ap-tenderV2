@@ -1,5 +1,6 @@
 experiences:
     label: 'ap.tender::lang.experience.singular'
+    showFlash: false
     manage:
         form: $/ap/tender/models/experience/fields.yaml
         list: $/ap/tender/models/experience/columns.yaml

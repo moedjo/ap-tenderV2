@@ -52,21 +52,27 @@ class OffVerificationTenants extends Controller
     {
 
         $user = $this->user;
-        if ($user->hasPermission('ap_tender_access_legals')) {
-            return 'ap/tender/offverificationlegals/update/' . $record->id;
-        }
 
-        if ($user->hasPermission('ap_tender_access_finances')) {
-            return 'ap/tender/offverificationfinances/update/' . $record->id;
-        }
-
-        if ($user->hasPermission('ap_tender_access_commercials')) {
-
-            if($record->status =='pre_clarificated'){
+        if($record->status == 'pre_clarificated'){
+            if ($user->hasPermission('ap_tender_is_commercial')) {
                 return 'ap/tender/offverificationlasts/update/' . $record->id;
             }
-
-            return 'ap/tender/offverificationcommercials/update/' . $record->id;
         }
+
+        if($record->status == 'evaluated'){
+            if ($user->hasPermission('ap_tender_is_legal')) {
+                return 'ap/tender/offverificationlegals/update/' . $record->id;
+            }
+    
+            if ($user->hasPermission('ap_tender_is_finance')) {
+                return 'ap/tender/offverificationfinances/update/' . $record->id;
+            }
+    
+            if ($user->hasPermission('ap_tender_is_commercial')) {
+                return 'ap/tender/offverificationcommercials/update/' . $record->id;
+            }
+        }
+
+        return ['clickable' => false];
     }
 }

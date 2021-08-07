@@ -1,16 +1,28 @@
 fields:
     _section1:
-        label: 'ap.tender::lang.company.experience'
+        label: 'ap.tender::lang.tenant.commercial_section1'
         type: section
+    has_experience:
+        label: 'ap.tender::lang.tenant.has_experience'
+        span: full
+        type: radio
+        default: 0
+        options:
+            0: 'ap.tender::lang.global.no'
+            1: 'ap.tender::lang.global.yes'
     experiences:
-        label: 'ap.tender::lang.company.experience'
+        label: 'ap.tender::lang.tenant.experience'
         span: full
         path: field_experiences
         context:
             - update
         type: partial
+        trigger:
+            action: show
+            field: has_experience
+            condition: value[1]
     verification_commercials:
-        label: 'Verifikasi Data Komersial'
+        label: 'ap.tender::lang.tenant.verification_commercials'
         span: full
         path: field_verification_commercials
         context:

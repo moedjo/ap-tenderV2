@@ -1,5 +1,6 @@
 verification_legals:
-    label: 'Verifikasi'
+    label: 'ap.tender::lang.tenant.verification'
+    showFlash: false
     view:
         list: $/ap/tender/models/verification/off_verification_columns.yaml
         toolbarButtons: false

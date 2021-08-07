@@ -1,5 +1,6 @@
 verification_commercials:
-    label: 'Verifikasi'
+    label: 'ap.tender::lang.tenant.verification'
+    showFlash: false
     view:
         list: $/ap/tender/models/verification/off_verification_columns.yaml
         toolbarButtons: false
@@ -7,7 +8,8 @@ verification_commercials:
     pivot:
         form: $/ap/tender/models/verification/off_verification_fields.yaml
 experiences:
-    label: 'ap.tender::lang.company_experience.singular'
+    label: 'ap.tender::lang.tenant.commercial'
+    showFlash: false
     manage:
         form: $/ap/tender/models/experience/fields.yaml
         list: $/ap/tender/models/experience/columns.yaml
