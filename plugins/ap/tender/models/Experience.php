@@ -17,6 +17,9 @@ class Experience extends Model
      */
     public $table = 'ap_tender_tenant_experiences';
 
+    
+    // protected $purgeable = ['is_region_text'];
+
     public $dates = [
 
         'cooperation_period_start',
@@ -31,8 +34,8 @@ class Experience extends Model
      */
     public $rules = [
         'name' => 'required',
-        'experience_category' => 'required',
-        'region' => 'required',
+        'business_field' => 'required',
+        // 'region' => 'required',
         'region_area' => 'required|numeric',
         'total_income' => 'required|numeric',
         'cooperation_period_start' => 'required|date',
@@ -43,13 +46,14 @@ class Experience extends Model
     ];
 
     public $belongsTo = [
-        'company' => [
-            'Ap\Tender\Models\Company',
-            'key' => 'company_id'
+        'tenant' => [
+            'Ap\Tender\Models\Tenant',
+            'key' => 'tenant_id'
         ],
-        'experience_category' => [
-            'Ap\Tender\Models\ExperienceCategory',
-            'key' => 'experience_category_id'
+        'business_field' => [
+            'Ap\Tender\Models\BusinessField',
+            'table' => 'ap_tender_business_fields',
+            'key'      => 'business_field_id',
         ],
         'region' => [
             'Ap\Tender\Models\Region',
@@ -61,6 +65,15 @@ class Experience extends Model
     public $attachOne = [
         'doc_experience' => ['System\Models\File', 'public' => false]
     ];
+
+    public function beforeValidate()
+    {
+        if ($this->is_region_text) {
+            $this->rules['region_text'] = "required";
+        } else {
+            $this->rules['region'] = "required";
+        }
+    }
 
     public function getOperationalHourAttribute()
     {
@@ -78,5 +91,14 @@ class Experience extends Model
             return $this->cooperation_period_start->format('d M Y') . ' - ' . $this->cooperation_period_end->format('d M Y');
         }
         return null;
+    }
+
+    public function getDisplayRegionAttribute()
+    {
+
+        if ($this->is_region_text) {
+            return $this->region_text;
+        }
+        return $this->region->display_name;
     }
 }

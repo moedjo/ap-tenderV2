@@ -31,6 +31,9 @@ class CreateApTenderTenantExperiences extends Migration
 
             $table->integer('region_area')->unsigned()->nullable();
 
+            $table->boolean('is_region_text')->default(false);
+            $table->string('region_text')->nullable();
+
             $table->integer('tenant_id')->unsigned()->nullable();
             $table->foreign('tenant_id')->references('id')
                 ->on('ap_tender_tenants');

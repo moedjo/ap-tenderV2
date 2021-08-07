@@ -140,7 +140,7 @@ class Tenant extends Model
 
     public $attachMany = [
         'doc_legal_akta' => ['System\Models\File', 'public' => false],
-        'doc_legal_siup' => ['System\Models\File', 'public' => false],
+        'doc_legal_nib' => ['System\Models\File', 'public' => false],
         'doc_legal_tdp' => ['System\Models\File', 'public' => false],
         'doc_legal_domisili' => ['System\Models\File', 'public' => false],
     ];
@@ -148,7 +148,8 @@ class Tenant extends Model
     protected $jsonable = [
         'commissioners',
         'directors',
-        'business_kbli'
+        'business_kbli',
+        'konsorsium_companies',
     ]; 
 
 }

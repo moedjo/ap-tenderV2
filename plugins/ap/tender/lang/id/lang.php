@@ -143,7 +143,11 @@
         'legal_section7' => 'Kontak Perusahaan',
         'legal_section8' => 'Dokumen Legal Perusahaan',
 
+
+        'commercial_section1' => 'Pengalaman Perusahaan',
+
         'legal' => 'Informasi Umum',
+        'commercial' => 'Pengalaman Perusahaan',
 
         'name' => 'Nama Perusahaan',
         'npwp' => 'NPWP Tahun Terakhir',
@@ -158,7 +162,9 @@
         'commissioner' => 'Komisaris',
         'konsorsium_total' => 'Jumlah Perusahaan',
         'konsorsium_name' => 'Nama Wakil Hukum',
-        'konsorsium_function' => 'Fungsi Dalam Perusahaan',
+        'konsorsium_function' => 'Jabatan dalam Perwakilan Konsorsium',
+        'konsorsium_companies' => 'Nama Perusahaan dan Komposisi Ekuitas',
+        'konsorsium_company' => 'Nama Perusahaan',
         'business_fields' => 'Kategori Bisnis',
         'business_activity' => 'Kegiatan Usaha Pokok',
         'business_kbli' => 'Bidang Usaha (KBLI)',
@@ -168,6 +174,7 @@
         'business_entity' => 'Badan Usaha',
 
         'experience' => 'Pengalaman Perusahaan',
+        'has_experience' => 'Sudah Memiliki Pengalaman ?',
         'financial_ability' => 'Kemampuan Keuangan',
 
         'summary' => 'Kesimpulan',
@@ -183,7 +190,7 @@
         'fax_number' => 'Nomor Fax',
         'email' => 'Email',
         'website' =>  'Website',
-        'konsorsium_role' => 'Peran Dalam Perusahaan',
+        'konsorsium_role' => 'Kedudukan Dalam Konsorsium',
 
         'pic' => 'Penanggung Jawab Perusahaan',
         'pic_full_name' => 'Nama',
@@ -194,20 +201,20 @@
 
         'doc_legal_cooperation' => 'Surat Keterangan Bukti Kerja Sama',
         'doc_legal_akta' => 'Akta Perusahaan',
-        'doc_legal_siup' =>'Surat Izin Usaha Perdagangan (SIUP)',
+        'doc_legal_nib' =>'NIB / Surat Izin Usaha',
         'doc_legal_tdp' => 'Tanda Daftar Perusahaan (TDP)',
         'doc_legal_domisili' => 'Surat Keterangan Domisili tahun terakhir',
         'doc_legal_npwp' => 'Nomor Pokok Wajib Pajak (NPWP)',
         'doc_legal_ktp' => 'KTP Penanggung Jawab',
-        'doc_legal_sk' => 'Surat Kuasa',
+        'doc_legal_sk' => 'Surat Kuasa (Apabila Dikuasakan)',
         'doc_legal_other' => 'Lainnya',
-        'doc_legal_konsorsium' => 'Surat Perjanjian Konsorsium ',
+        'doc_legal_konsorsium' => 'Perjanjian/Nota Kesepahaman Konsorsium',
         'doc_legal_cv' => 'Form Penyataan Upgrade dari CV ke PT',
 
 
         'doc_legal_cooperation_comment' => 'File (*pdf - max 40MB)',
         'doc_legal_akta_comment' => 'File (*pdf - max 40MB)',
-        'doc_legal_siup_comment' => 'File (*pdf - max 40MB)',
+        'doc_legal_nib_comment' => 'File (*pdf - max 40MB)',
         'doc_legal_tdp_comment' => 'File (*pdf - max 40MB)',
         'doc_legal_domisili_comment' => 'File (*pdf - max 40MB)',
         'doc_legal_npwp_comment' => 'File (*pdf - max 40MB)',
@@ -227,5 +234,28 @@
         'second' => 'Pengalaman',
         'tree' => 'Kemampuan Keuangan',
         'four' => 'Ringkasan',
-    ]
+    ],
+    'experience' => [
+
+        'singular' => 'Pengalaman Perusahaan',
+
+        'business_field' => 'Kategori Pengalaman',
+        'name' => 'Nama Pengalaman',
+        'region_area' => 'Luas Area (m2)',
+        'region' => 'Wilayah',
+        'region_text' => 'Wilayah Luar Negri',
+        'total_income' => 'Total Pendapatan (Rp.)',
+        'cooperation_period' => 'Masa Kerjasama',
+        'operational_hour' => 'Jam Operasional',
+        'cooperation_period_start' => 'Masa Kerjasama (Awal)',
+        'cooperation_period_end' => 'Masa Kerjasama (Akhir)',
+        'operational_hour_start' => 'Jam Operasional (Awal)',
+        'operational_hour_end' => 'Jam Operasional (Akhir)',
+        'doc_experience' => 'Dokumen Perjanjian',
+        'doc_experience_comment' => 'File (*pdf - max 40MB)',
+
+        'create' => 'Buat Pengalaman Perusahaan',
+        'update' => 'Ubah Pengalaman Perusahaan',
+        'delete' => 'Hapus Pengalaman Perusahaan',
+    ],
 ];

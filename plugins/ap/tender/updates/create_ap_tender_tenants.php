@@ -25,6 +25,7 @@ class CreateApTenderTenants extends Migration
             $table->string('website')->nullable();
 
             $table->boolean('collaborate')->default(false);
+            $table->boolean('has_experience')->default(false);
 
             $table->string('contact_full_name')->nullable();
             $table->string('contact_phone_number')->nullable();
@@ -54,6 +55,7 @@ class CreateApTenderTenants extends Migration
             $table->string('konsorsium_total')->nullable();
             $table->string('konsorsium_name')->nullable();
             $table->string('konsorsium_function')->nullable();
+            $table->json('konsorsium_companies')->nullable();
 
 
             $table->string('status')->nullable();

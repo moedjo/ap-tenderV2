@@ -109,7 +109,7 @@ fields:
     konsorsium_total:
         label: 'ap.tender::lang.tenant.konsorsium_total'
         placeholder: 'ap.tender::lang.tenant.konsorsium_total'
-        type: text
+        type: number
         span: left
         required: true
         trigger:
@@ -136,6 +136,21 @@ fields:
             action: show
             field: konsorsium
             condition: value[1]
+    konsorsium_companies:
+        label: 'ap.tender::lang.tenant.konsorsium_companies'
+        span: right
+        type: repeater
+        trigger:
+            action: show
+            field: konsorsium
+            condition: value[1]
+        form:
+            fields:
+                name:
+                    placeholder: 'ap.tender::lang.tenant.konsorsium_company'
+                    label: 'ap.tender::lang.tenant.konsorsium_company'
+                    span: full
+                    type: text
     _section5:
         label: 'ap.tender::lang.tenant.legal_section5'
         type: section
@@ -223,9 +238,9 @@ fields:
         attachOnUpload: true
         span: left
         maxFiles: 5
-    doc_legal_siup:
-        label: 'ap.tender::lang.tenant.doc_legal_siup'
-        commentAbove: 'ap.tender::lang.tenant.doc_legal_siup_comment'
+    doc_legal_nib:
+        label: 'ap.tender::lang.tenant.doc_legal_nib'
+        commentAbove: 'ap.tender::lang.tenant.doc_legal_nib_comment'
         type: fileupload
         mode: file
         useCaption: false
@@ -311,6 +326,7 @@ fields:
         maxFilesize: 40
         attachOnUpload: true
         span: left
+        required: true
         hidden: true
     doc_legal_konsorsium:
         label: 'ap.tender::lang.tenant.doc_legal_konsorsium'

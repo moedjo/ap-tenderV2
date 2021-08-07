@@ -1,0 +1,6 @@
+name: 'ap.tender::lang.tenant.commercial'
+form: $/ap/tender/models/tenantcommercial/fields.yaml
+modelClass: Ap\Tender\Models\TenantCommercial
+update:
+    redirect: ap/tender/publictenantfinances/update/:id
+    redirectClose: ap/tender/publictenantfinances/update/:id

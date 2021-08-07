@@ -28,12 +28,13 @@
     color: white;
 }
 
+
 .card-header p {
   font-size: 17px;
 }
 
 .card-header a {
-  color: #000;
+  color: white;
 }
 
 .card-header a:hover {
