@@ -1,0 +1,35 @@
+<?php
+    use Backend\Models\BrandSetting;
+    $activeItem = BackendMenu::getActiveMainMenuItem();
+    $navbarMode = BrandSetting::get('menu_mode', BrandSetting::MENU_INLINE);
+    $context = BackendMenu::getContext();
+?>
+<div class="main-menu-container">
+    <nav class="navbar control-toolbar navbar-mode-<?= $navbarMode ?> flex" role="navigation">
+        <img src="<?= url('/storage/app/media/assets/images/logo.svg'); ?>" alt="Description Image" class="m-l-md br-p-s10" />
+        <h3 class="visible-lg m-l-md" style="color: white;"> <?= e(trans($this->pageTitle)).' - '.e(Backend\Models\BrandSetting::get('app_name')) ?></h3>
+    </nav>
+</div>
+
+<?php if (!isset($isVerticalMenu)): ?>
+    <?php foreach (BackendMenu::listMainMenuItemsWithSubitems() as $itemIndex => $itemInfo): ?>
+        <?php if ($itemInfo->hasHttpSubItems): ?>
+        <ul class="mainmenu-items mainmenu-submenu-dropdown hover-effects" data-submenu-index="<?= $itemIndex ?>">
+            <?= $this->makeLayoutPartial('submenu_items', [
+                'sideMenuItems' => $itemInfo->subMenuItems,
+                'mainMenuItemActive' => BackendMenu::isMainMenuItemActive($itemInfo->mainMenuItem),
+                'mainMenuItemCode' => $itemInfo->mainMenuItem->code,
+                'hideNonHttpItems' => true,
+                'context' => $context
+            ]) ?>
+        </ul>
+        <?php endif ?>
+    <?php endforeach ?>
+
+    <ul class="mainmenu-items mainmenu-submenu-dropdown hover-effects" data-submenu-index="account">
+        <li class="mainmenu-item section-title">
+        </li>
+
+        <?= $this->makeLayoutPartial('my_settings_menu_items', ['context' => $context]) ?>
+    </ul>
+<?php endif ?>

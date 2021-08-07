@@ -1,0 +1,91 @@
+fields:
+    _section1:
+        label: 'ap.tender::lang.tenant.section1'
+        type: section
+    business_entity:
+        label: 'ap.tender::lang.tenant.business_entity'
+        type: relation
+        span: left
+    name:
+        label: 'ap.tender::lang.tenant.name'
+        type: text
+        placeholder: 'ap.tender::lang.tenant.name'
+        span: left
+    npwp:
+        label: 'ap.tender::lang.tenant.npwp'
+        type: text
+        placeholder: 'ap.tender::lang.tenant.name'
+        span: right
+    collaborate:
+        label: 'ap.tender::lang.tenant.collaborate'
+        type: radio
+        default: 0
+        options:
+            0: 'ap.tender::lang.global.no'
+            1: 'ap.tender::lang.global.yes'
+    doc_cooperation:
+        label: 'ap.tender::lang.tenant.doc_cooperation'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 1
+        attachOnUpload: true
+        span: left
+        maxFiles: 5
+        commentAbove: 'ap.tender::lang.tenant.doc_cooperation_comment'
+        trigger:
+            action: show
+            field: collaborate
+            condition: value[1]
+    _section2:
+        label: 'ap.tender::lang.tenant.section2'
+        type: section
+    verification_office:
+        label: 'ap.tender::lang.tenant.verification_office'
+        type: recordfinder
+        list: ~/plugins/ap/tender/models/office/columns.yaml
+        recordsPerPage: 10
+        nameFrom: name
+        descriptionFrom: description
+        span: left
+    address:
+        label: 'ap.tender::lang.tenant.address'
+        type: textarea
+        size: small
+        span: left
+    region:
+        label: 'ap.tender::lang.tenant.region'
+        type: recordfinder
+        list: ~/plugins/ap/tender/models/region/regency_columns.yaml
+        recordsPerPage: 10
+        nameFrom: displayName
+        span: right
+    email:
+        label: 'ap.tender::lang.tenant.email'
+        type: text
+        span: left
+    phone_number:
+        label: 'ap.tender::lang.tenant.phone_number'
+        type: text
+        span: left
+    fax_number:
+        label: 'ap.tender::lang.tenant.fax_number'
+        type: text
+        span: right
+    _section3:
+        label: 'ap.tender::lang.tenant.section3'
+        type: section
+    contact_full_name:
+        label: 'ap.tender::lang.tenant.contact_full_name'
+        type: text
+        span: left
+    contact_position:
+        label: 'ap.tender::lang.tenant.contact_position'
+        type: relation
+        span: left
+    contact_phone_number:
+        label: 'ap.tender::lang.tenant.contact_phone_number'
+        type: text
+        span: right

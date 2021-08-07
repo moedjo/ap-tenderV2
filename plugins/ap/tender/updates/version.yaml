@@ -1,0 +1,18 @@
+v1.0.1:
+    - 'Initialize plugin.'
+    - create_ap_tender_business_fields.php
+    - create_ap_tender_positions.php
+    - create_ap_tender_business_entities.php
+    - create_ap_tender_regions.php
+    - create_ap_tender_offices.php
+    - create_ap_tender_tenant_summaries.php
+    - create_ap_tender_verifications.php
+    
+    - create_ap_tender_tenants.php
+    - create_ap_tender_tenant_experience_categories.php
+    - create_ap_tender_tenant_experiences.php
+    - create_ap_tender_tenant_finances.php
+    - create_ap_tender_tenants_summaries.php
+    - create_ap_tender_tenants_business_fields.php
+    - create_ap_tender_tenants_verifications.php
+    - seeder.php

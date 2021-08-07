@@ -1,0 +1,10 @@
+columns:
+    id:
+        label: No
+        type: number
+    name:
+        label: Nama Perusahaan
+        type: text
+    status:
+        label: Status
+        type: text

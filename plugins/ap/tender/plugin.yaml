@@ -1,0 +1,22 @@
+plugin:
+    name: 'ap.tender::lang.plugin.name'
+    description: 'ap.tender::lang.plugin.description'
+    author: 'Angkasa Pura'
+    icon: oc-icon-inbox
+    homepage: ''
+permissions:
+    ap_tender_access_offices:
+        tab: 'ap.tender::lang.permission.tab.master'
+        label: 'ap.tender::lang.permission.access_offices'
+navigation:
+    master-data:
+        label: 'ap.tender::lang.permission.tab.master'
+        url: /
+        icon: icon-life-ring
+        sideMenu:
+            offices:
+                label: 'ap.tender::lang.office.plural'
+                url: ap/tender/offices
+                icon: icon-home
+                permissions:
+                    - ap_tender_access_offices

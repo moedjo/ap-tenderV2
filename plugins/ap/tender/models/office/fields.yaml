@@ -1,0 +1,14 @@
+fields:
+    name:
+        label: 'ap.tender::lang.office.name'
+        span: full
+        placeholder: 'ap.tender::lang.office.name'
+        required: 1
+        type: text
+    description:
+        label: 'ap.tender::lang.office.description'
+        size: small
+        span: full
+        placeholder: 'ap.tender::lang.office.description'
+        required: 1
+        type: textarea
