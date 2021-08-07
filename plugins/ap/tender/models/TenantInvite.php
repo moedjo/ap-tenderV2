@@ -14,10 +14,10 @@ class TenantInvite extends Tenant
        'invite_name' => 'required',
        'invite_description' => 'required',
        'invite_location' => 'required',
-       'invite_pic_phone_number' => 'required',
-       'invite_date' => 'required',
-       'invite_hour_start' => 'required',
-       'invite_hour_end' => 'required',
+       'invite_pic_phone_number' => 'required|digits_between:10,13',
+       'invite_date' => 'required|date|after:today',
+       'invite_hour_start' => 'required|date',
+       'invite_hour_end' => 'required|date|after:invite_hour_start',
     ];
 
 
