@@ -1,5 +1,5 @@
-name: 'ap.tender::lang.company.info'
-form: $/ap/tender/models/company/on_verification_last_fields.yaml
-modelClass: Ap\Tender\Models\Company
+name: 'ap.tender::lang.tenant.on_last_verification'
+form: $/ap/tender/models/tenant/on_verification_last_fields.yaml
+modelClass: Ap\Tender\Models\Tenant
 update:
     redirectClose: ap/tender/onverificationinvites/update/:id

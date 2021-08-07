@@ -1,0 +1,48 @@
+fields:
+    _section1:
+        label: 'ap.tender::lang.tenant.invite_section1'
+        type: section
+    invite_name:
+        label:  'ap.tender::lang.tenant.invite_name'
+        placeholder: 'ap.tender::lang.tenant.invite_section1'
+        type: text
+        span: left
+    name:
+        label: 'ap.tender::lang.tenant.name'
+        type: text
+        span: right
+        disabled: true
+    invite_location:
+        label: 'ap.tender::lang.tenant.invite_location'
+        placeholder: 'ap.tender::lang.tenant.invite_location'
+        type: text
+        span: left
+    invite_pic_phone_number:
+        label:  'ap.tender::lang.tenant.invite_pic_phone_number'
+        placeholder: 'ap.tender::lang.tenant.invite_pic_phone_number'
+        type: text
+        span: right
+    invite_date:
+        label: 'ap.tender::lang.tenant.invite_date'
+        placeholder: 'ap.tender::lang.tenant.invite_date'
+        type: datepicker
+        mode: date
+        span: left
+    invite_hour_start:
+        label: 'ap.tender::lang.tenant.invite_hour_start'
+        placeholder: 'ap.tender::lang.tenant.invite_hour_start'
+        type: datepicker
+        mode: time
+        span: left
+    invite_hour_end:
+        label: 'ap.tender::lang.tenant.invite_hour_end'
+        placeholder: 'ap.tender::lang.tenant.invite_hour_end'
+        type: datepicker
+        mode: time
+        span: right
+    invite_description:
+        label: 'ap.tender::lang.tenant.invite_description'
+        placeholder: 'ap.tender::lang.tenant.invite_description'
+        type: richeditor
+        size: huge
+        span: full

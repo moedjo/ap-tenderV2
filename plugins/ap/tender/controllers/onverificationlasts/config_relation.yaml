@@ -1,5 +1,5 @@
 verification_legals:
-    label: 'Verifikasi'
+    label: 'ap.tender::lang.tenant.verification'
     view:
         list: $/ap/tender/models/verification/on_verification_columns.yaml
         toolbarButtons: false
@@ -7,7 +7,7 @@ verification_legals:
     pivot:
         form: $/ap/tender/models/verification/on_verification_fields.yaml
 verification_commercials:
-    label: 'Verifikasi'
+    label: 'ap.tender::lang.tenant.verification'
     view:
         list: $/ap/tender/models/verification/on_verification_columns.yaml
         toolbarButtons: false
@@ -15,7 +15,7 @@ verification_commercials:
     pivot:
         form: $/ap/tender/models/verification/on_verification_fields.yaml
 verification_finances:
-    label: 'Verifikasi'
+    label: 'ap.tender::lang.tenant.verification'
     view:
         list: $/ap/tender/models/verification/on_verification_columns.yaml
         toolbarButtons: false

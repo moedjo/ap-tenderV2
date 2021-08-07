@@ -39,6 +39,7 @@
         'submit' => 'Kirim',
         'back' => 'Kembali',
         'next' => 'Selanjutnya',
+        'send_invitation' => 'Kirim Undangan'
     ],
     'office' => [
         'singular' => 'Kantor',
@@ -168,13 +169,17 @@
         'summary_section1_comment' => 'Silahkan cek statement yang telah tersedia pada tabel di bawah ini, kemudian klik SIMPAN untuk menyimpan
         dan dilanjutkan mengusulkan jadwal Verifikasi Dokumen.',
 
+        'invite_section1' => 'Informasi Undangan',
+
         
 
         'legal' => 'Informasi Umum',
         'commercial' => 'Pengalaman Perusahaan',
         'finance' => 'Kemampuan Keuangan',
         'verification' => 'Verifikasi Tenant',
+        'invite' => 'Undangan Tenant',
         'on_verification' => 'Evaluasi',
+        'on_last_verification' => 'Evaluasi Tahap Akhir',
         'off_verification' => 'Klarifikasi',
         'verification_legals' => 'Verifikasi Data Legal',
         'verification_finances' => 'Verifikasi Data Finance',
@@ -229,6 +234,15 @@
         'pic_phone_number' => 'Nomor Handphone',
         'pic_ktp' => 'Nomor KTP',
         'pic_email' => 'Email',
+
+
+        'invite_name'=>'Agenda',
+        'invite_location'=>'Lokasi Undangan',
+        'invite_pic_phone_number'=>'Kontak PIC',
+        'invite_date'=>'Tanggal Undangan',
+        'invite_hour_start'=>'Waktu Mulai',
+        'invite_hour_end'=>'Waktu Berakhir',
+        'invite_description'=>'Deskripsi Pengumuman',
 
 
 

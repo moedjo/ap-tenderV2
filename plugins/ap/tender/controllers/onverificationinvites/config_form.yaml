@@ -1,4 +1,4 @@
-name: Tenant Invite
+name: 'ap.tender::lang.tenant.invite'
 form: $/ap/tender/models/tenantinvite/fields.yaml
 modelClass: Ap\Tender\Models\TenantInvite
 update:

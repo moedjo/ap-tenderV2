@@ -5,6 +5,7 @@ namespace Ap\Tender\Controllers;
 use Ap\Tender\Models\Verification;
 use Backend\Classes\Controller;
 use Backend\Facades\BackendMenu;
+use Event;
 use Illuminate\Support\Facades\View;
 use Response;
 

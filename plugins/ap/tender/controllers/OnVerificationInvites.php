@@ -19,7 +19,7 @@ class OnVerificationInvites extends Controller
     public $formConfig = 'config_form.yaml';
     public $relationConfig = 'config_relation.yaml';
 
-    public $requiredPermissions = ['ap_tender_access_commercials'];
+    public $requiredPermissions = ['ap_tender_is_commercial'];
 
     public function __construct()
     {
