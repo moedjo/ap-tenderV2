@@ -364,7 +364,6 @@ fields:
         attachOnUpload: true
         span: left
         required: true
-        hidden: true
     doc_legal_konsorsium:
         label: 'ap.tender::lang.tenant.doc_legal_konsorsium'
         disabled: true

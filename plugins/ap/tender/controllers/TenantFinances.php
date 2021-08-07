@@ -80,10 +80,7 @@ class TenantFinances extends Controller
             foreach ($fields as $field) {
                 $field->disabled = $disabled;
             };
-
-            if ($model->collaborate) {
-                $fields['doc_finance_collaborate']->hidden = false;
-            }
+            
         }
     }
 

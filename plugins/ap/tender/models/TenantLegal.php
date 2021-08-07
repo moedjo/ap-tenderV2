@@ -44,6 +44,9 @@ class TenantLegal extends Tenant
         'doc_legal_sk' => '',
     ];
 
+    public function __constuct()
+    {
+    }
 
     public function beforeValidate()
     {
@@ -55,8 +58,22 @@ class TenantLegal extends Tenant
             $this->rules['doc_legal_konsorsium'] = "required";
         }
 
-        if($this->business_entity->name == 'CV') {
+        if ($this->business_entity->name == 'CV') {
             $this->rules['doc_legal_cv'] = "required";
+        }
+    }
+
+
+    public function filterFields($fields)
+    {
+        if ($this->business_entity->name == 'CV') {
+            if (isset($fields->doc_legal_cv)) {
+                $fields->doc_legal_cv->hidden = false;
+            }
+        } else {
+            if (isset($fields->doc_legal_cv)) {
+                $fields->doc_legal_cv->hidden = true;
+            }
         }
     }
 }

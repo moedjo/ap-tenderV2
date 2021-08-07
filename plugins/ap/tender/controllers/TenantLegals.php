@@ -92,9 +92,9 @@ class TenantLegals extends Controller
                 $field->disabled = $disabled;
             };
 
-            if ($model->business_entity->name == 'CV') {
-                $fields['doc_legal_cv']->hidden = false;
-            }
+            // if ($model->business_entity->name == 'CV') {
+            //     $fields['doc_legal_cv']->hidden = false;
+            // }
         }
     }
 

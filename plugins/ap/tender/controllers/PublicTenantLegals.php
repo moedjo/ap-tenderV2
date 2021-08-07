@@ -67,9 +67,9 @@ class PublicTenantLegals extends Controller
         $model = $host->model;
 
         if ($context == 'update') {
-            if ($model->business_entity->name == 'CV') {
-                $fields['doc_legal_cv']->hidden = false;
-            }
+            // if ($model->business_entity->name == 'CV') {
+            //     $fields['doc_legal_cv']->hidden = false;
+            // }
         }
     }
 }

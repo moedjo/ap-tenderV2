@@ -1,4 +1,6 @@
-<?php namespace Ap\Tender\Models;
+<?php
+
+namespace Ap\Tender\Models;
 
 use Model;
 
@@ -7,10 +9,10 @@ use Model;
  */
 class TenantFinance extends Tenant
 {
- 
+
     public $rules = [
         'finances' => 'required|size:3',
-        
+
         'doc_finance_sppkp' => 'required',
         'doc_finance_spt' => 'required',
         'doc_finance_blp' => 'required',
@@ -24,7 +26,7 @@ class TenantFinance extends Tenant
     ];
 
 
-    
+
     public function beforeValidate()
     {
         if ($this->collaborate) {
@@ -32,4 +34,16 @@ class TenantFinance extends Tenant
         }
     }
 
+    public function filterFields($fields)
+    {
+        if ($this->collaborate) {
+            if (isset($fields->doc_finance_collaborate)) {
+                $fields->doc_finance_collaborate->hidden = false;
+            }
+        } else {
+            if (isset($fields->doc_finance_collaborate)) {
+                $fields->doc_finance_collaborate->hidden = true;
+            }
+        }
+    }
 }

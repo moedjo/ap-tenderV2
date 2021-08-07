@@ -69,9 +69,9 @@ class PublicTenantFinances extends Controller
         $model = $host->model;
 
         if ($context == 'update') {
-            if($model->collaborate){
-                $fields['doc_finance_collaborate']->hidden = false;
-            }
+            // if($model->collaborate){
+            //     $fields['doc_finance_collaborate']->hidden = false;
+            // }
         }
     }
 
