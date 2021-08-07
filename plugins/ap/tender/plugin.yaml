@@ -38,6 +38,9 @@ permissions:
     ap_tender_is_finance:
         tab: 'ap.tender::lang.permission.tab.role'
         label: 'ap.tender::lang.permission.is_finance'
+    ap_tender_access_tenants:
+        tab: 'ap.tender::lang.permission.tab.master'
+        label: 'ap.tender::lang.permission.access_tenants'
 navigation:
     master-data:
         label: 'ap.tender::lang.permission.tab.master'
@@ -100,6 +103,7 @@ navigation:
         url: /
         icon: icon-renren
         permissions:
+            - ap_tender_access_tenants
             - ap_tender_is_tenant
         sideMenu:
             my-tenant:
@@ -108,6 +112,12 @@ navigation:
                 icon: icon-building
                 permissions:
                     - ap_tender_is_tenant
+            tenants:
+                label: 'ap.tender::lang.tenant.plural'
+                url: ap/tender/tenants
+                icon: icon-th-list
+                permissions:
+                    - ap_tender_access_tenants
     verification-tenants:
         label: 'ap.tender::lang.tenant.verification'
         url: ap/tender/onverificationtenants

@@ -20,7 +20,8 @@ class TenantLegals extends Controller
 
 
     public $requiredPermissions = [
-        'ap_tender_is_tenant'
+        'ap_tender_is_tenant',
+        'ap_tender_access_tenants'
     ];
 
 
@@ -28,7 +29,17 @@ class TenantLegals extends Controller
     {
         parent::__construct();
 
-        BackendMenu::setContext('Ap.Tender', 'tenant', 'my-tenant');
+
+        $user = $this->user;
+        $sub_menu = 'tenants';
+        if ($user->hasPermission('ap_tender_is_tenant')) {
+            $sub_menu ='my-tenant';
+        }
+
+        BackendMenu::setContext('Ap.Tender', 'tenant', $sub_menu);
+
+
+
         $this->addCss('/plugins/ap/tender/assets/css/custom.css', 'Ap.Tender');
     }
 

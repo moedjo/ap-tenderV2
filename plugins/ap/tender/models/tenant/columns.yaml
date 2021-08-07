@@ -1,10 +1,13 @@
 columns:
-    id:
-        label: No
-        type: number
     name:
-        label: Nama Perusahaan
+        label: 'ap.tender::lang.tenant.name'
+        type: text
+    pic_full_name:
+        label: 'ap.tender::lang.tenant.pic_full_name'
+        type: text
+    pic_phone_number:
+        label: 'ap.tender::lang.tenant.pic_phone_number'
         type: text
     status:
-        label: Status
+        label: 'ap.tender::lang.tenant.status'
         type: text

@@ -15,6 +15,7 @@
         'access_summaries' => 'Akses Kesimpulan',
         'access_verifications' => 'Akses Verifikasi',
         'access_regions' => 'Akses Wilayah',
+        'access_tenants' => 'Akses Tenant',
 
 
         'is_tenant' => 'Sebagai Tenant',
@@ -40,6 +41,10 @@
         'back' => 'Kembali',
         'next' => 'Selanjutnya',
         'send_invitation' => 'Kirim Undangan'
+    ],
+    'status' => [
+        'short_listed' => 'Short Listed',
+        'reject' => 'Reject',
     ],
     'office' => [
         'singular' => 'Kantor',
