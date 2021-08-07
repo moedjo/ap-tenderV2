@@ -27,8 +27,17 @@ permissions:
         tab: 'ap.tender::lang.permission.tab.master'
         label: 'ap.tender::lang.permission.access_regions'
     ap_tender_is_tenant:
-        tab: 'ap.tender::lang.permission.tab.tenant'
+        tab: 'ap.tender::lang.permission.tab.role'
         label: 'ap.tender::lang.permission.is_tenant'
+    ap_tender_is_legal:
+        tab: 'ap.tender::lang.permission.tab.role'
+        label: 'ap.tender::lang.permission.is_legal'
+    ap_tender_is_commercial:
+        tab: 'ap.tender::lang.permission.tab.role'
+        label: 'ap.tender::lang.permission.is_commercial'
+    ap_tender_is_finance:
+        tab: 'ap.tender::lang.permission.tab.role'
+        label: 'ap.tender::lang.permission.is_finance'
 navigation:
     master-data:
         label: 'ap.tender::lang.permission.tab.master'

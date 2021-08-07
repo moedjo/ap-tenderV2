@@ -90,7 +90,7 @@ class TenantFinances extends Controller
     public function update_onSave($recordId)
     {
 
-        return Redirect::to(Backend::url('ap/tender/backend' . $recordId));
+        return Redirect::to(Backend::url('/backend'));
 
         // TODO if
         $this->asExtension('FormController')->create_onSave($recordId);

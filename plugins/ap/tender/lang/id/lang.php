@@ -6,17 +6,21 @@
     'permission' => [
         'tab' => [
             'master' => 'Master Data',
-            'tenant' => 'Tenant'
+            'role' => 'Tugas'
         ],
         'access_offices' => 'Akses Kantor',
         'access_positions' => 'Akses Jabatan',
-        'access_business_entities' => 'Akses Bidang Usaha',
+        'access_business_entities' => 'Akses Badan Usaha',
+        'access_business_fields' => 'Akses Bidang Usaha',
         'access_summaries' => 'Akses Kesimpulan',
         'access_verifications' => 'Akses Verifikasi',
         'access_regions' => 'Akses Wilayah',
 
 
         'is_tenant' => 'Sebagai Tenant',
+        'is_legal' => 'Sebagai Legal',
+        'is_commercial' => 'Sebagai Commercial',
+        'is_finance' => 'Sebagai Finance',
 
     ],
     'global' => [
