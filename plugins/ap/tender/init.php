@@ -28,31 +28,31 @@ Event::listen('tenant.register', function ($tenant) {
 });
 
 
-Event::listen('tenant.invite', function ($company) {
+Event::listen('tenant.invite', function ($tenant) {
 
-   $company->load('business_entity');
-   Mail::queue('ap.tender::mail.tenant-invite', $company->toArray(), function ($message) use ($company) {
-      $message->to($company->email, $company->name);
+   $tenant->load('business_entity');
+   Mail::queue('ap.tender::mail.tenant-invite', $tenant->toArray(), function ($message) use ($tenant) {
+      $message->to($tenant->email, $tenant->name);
    });
    
 });
 
-Event::listen('tenant.short.listed', function ($company) {
+Event::listen('tenant.short_listed', function ($tenant) {
 
-   $company->load('business_entity');
-   Mail::queue('ap.tender::mail.tenant-short-listed', $company->toArray(), function ($message) use ($company) {
-      $message->to($company->email, $company->name);
+   $tenant->load('business_entity');
+   Mail::queue('ap.tender::mail.tenant-short-listed', $tenant->toArray(), function ($message) use ($tenant) {
+      $message->to($tenant->email, $tenant->name);
    });
    
 });
 
 
-Event::listen('tenant.reject', function ($company) {
+Event::listen('tenant.reject', function ($tenant) {
 
-   $company->load('verifications');
-   $company->load('business_entity');
-   Mail::queue('ap.tender::mail.tenant-reject', $company->toArray(), function ($message) use ($company) {
-      $message->to($company->email, $company->name);
+   $tenant->load('verifications');
+   $tenant->load('business_entity');
+   Mail::queue('ap.tender::mail.tenant-reject', $tenant->toArray(), function ($message) use ($tenant) {
+      $message->to($tenant->email, $tenant->name);
    });
    
 });

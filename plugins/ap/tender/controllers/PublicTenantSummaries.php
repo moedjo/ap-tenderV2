@@ -70,16 +70,19 @@ class PublicTenantSummaries extends Controller
         $model->token = Str::random(6);
         $model->token_url = Backend::url('ap/tender/publicusers/create?token='.$model->token);
         $model->status = 'pre_register';
+
+        Event::fire('tenant.pre_register', [$model]);
     }
 
 
     public function formAfterSave($model)
     {
-        Event::fire('tenant.pre_register', [$model]);
+        Session::forget('tenant_id');
     }
 
     public function success(){
-        Session::forget('tenant_id');
+
+        $this->pageTitle = 'ap.tender::lang.tenant.summary';
     }
 
 }

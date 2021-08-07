@@ -61,11 +61,7 @@ class OffVerificationLasts extends Controller
     public function formBeforeSave($model)
     {
         $model->status = 'short_listed';
+        Event::fire('tenant.short_listed', [$model]);
     }
 
-    public function formAfterSave($model)
-    {
-        $model->load('business_entity');
-        Event::fire('tenant.short.listed', [$model]);
-    }
 }

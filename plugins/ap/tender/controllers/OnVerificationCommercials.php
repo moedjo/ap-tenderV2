@@ -81,10 +81,7 @@ class OnVerificationCommercials extends Controller
 
             $model->status = 'pre_evaluated';
         }
-    }
 
-    public function formAfterSave($model)
-    {
         if (
             $model->on_legal_status == 'reject' &&
             $model->on_commercial_status == 'reject' &&
@@ -93,4 +90,5 @@ class OnVerificationCommercials extends Controller
             Event::fire('tenant.reject', [$model]);
         }
     }
+
 }
