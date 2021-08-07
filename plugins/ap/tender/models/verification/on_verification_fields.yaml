@@ -1,0 +1,13 @@
+fields:
+    name:
+        label: 'ap.tender::lang.verification.name'
+        disabled: true
+    description:
+        label: 'ap.tender::lang.verification.description'
+        disabled: true
+    pivot[on_check]:
+        label: 'ap.tender::lang.verification.yes_or_no'
+        type: checkbox
+        default: false
+    pivot[on_note]:
+        label: 'ap.tender::lang.verification.note'

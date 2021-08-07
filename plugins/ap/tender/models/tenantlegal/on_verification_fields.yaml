@@ -1,359 +1,390 @@
 fields:
     _section1:
-        label: 'ap.tender::lang.company.info'
+        label: 'ap.tender::lang.tenant.legal_section1'
         type: section
     name:
-        label:  'ap.tender::lang.company.name'
-        placeholder: 'ap.tender::lang.company.name'
+        label:  'ap.tender::lang.tenant.name'
+        disabled: true
+        placeholder: 'ap.tender::lang.tenant.name'
         type: text
         span: left
-        disabled: true
     npwp:
-        label: 'ap.tender::lang.company.npwp'
+        label: 'ap.tender::lang.tenant.npwp'
+        disabled: true
+        placeholder: 'ap.tender::lang.tenant.npwp'
         type: text
         span: right
-        disabled: true
     konsorsium:
+        label: 'ap.tender::lang.tenant.konsorsium'
         disabled: true
-        label: 'ap.tender::lang.company_basic_info.konsorsium_comment'
+        commentAbove: 'ap.tender::lang.tenant.konsorsium_comment'
         type: radio
         default: 0
         options:
-            0: 'ap.tender::lang.company_basic_info.non_konsorsium'
-            1: 'ap.tender::lang.company_basic_info.konsorsium'
+            0: 'ap.tender::lang.tenant.non_konsorsium'
+            1: 'ap.tender::lang.tenant.konsorsium'
     _section2:
-        label: 'ap.tender::lang.company_basic_info.single'
+        label: 'ap.tender::lang.tenant.legal_section2'
         type: section
         trigger:
             action: show
             field: konsorsium
             condition: value[0]
-    _section2b:
-        label: 'ap.tender::lang.company_basic_info.for_konsorium'
+    _section3:
+        label: 'ap.tender::lang.tenant.legal_section3'
         type: section
         trigger:
             action: show
             field: konsorsium
             condition: value[1]
     address:
-        label: 'ap.tender::lang.company.address'
+        label: 'ap.tender::lang.tenant.address'
+        disabled: true
+        placeholder: 'ap.tender::lang.tenant.address'
         type: textarea
         size: small
         span: left
-        placeholder: 'ap.tender::lang.company.address'
-        disabled: true
     region:
-        disabled: true
         label: 'ap.tender::lang.region.singular'
+        disabled: true
         type: recordfinder
-        list: ~/plugins/ap/tender/models/region/columns.yaml
+        list: ~/plugins/ap/tender/models/region/regency_columns.yaml
         recordsPerPage: 10
         nameFrom: name
         span: right
-        disabled: true
     phone_number:
+        label: 'ap.tender::lang.tenant.phone_number'
         disabled: true
-        label: 'ap.tender::lang.company.phone_number'
+        placeholder: 'ap.tender::lang.tenant.phone_number'
         type: text
         span: left
-        placeholder: 'ap.tender::lang.company.phone_number'
     fax_number:
+        label: 'ap.tender::lang.tenant.fax_number'
         disabled: true
-        label: 'ap.tender::lang.company.fax_number'
+        placeholder: 'ap.tender::lang.tenant.fax_number'
         type: text
         span: right
-        placeholder: 'ap.tender::lang.company.fax_number'
     email:
+        label: 'ap.tender::lang.tenant.email'
         disabled: true
-        label: 'ap.tender::lang.company.email'
+        placeholder: 'ap.tender::lang.tenant.email'
         type: text
         span: left
-        placeholder: 'ap.tender::lang.company.email'
     website:
+        label: 'ap.tender::lang.tenant.website'
         disabled: true
-        label: 'ap.tender::lang.company.website'
+        placeholder: 'ap.tender::lang.tenant.website'
         type: text
         span: right
-        placeholder: 'ap.tender::lang.company.website'
     directors:
+        label: 'ap.tender::lang.tenant.directors'
         disabled: true
-        label: Direktur
-        prompt: Add new direktur
         span: left
         type: repeater
         form:
             fields:
                 name:
-                    label: Direktur
+                    placeholder: 'ap.tender::lang.tenant.director'
+                    label: 'ap.tender::lang.tenant.director'
                     span: full
                     type: text
-                    placeholder: Direktur
     commissioners:
+        label: 'ap.tender::lang.tenant.commissioners'
         disabled: true
-        label: Komisaris
-        prompt: Add new komisaris
         span: right
         type: repeater
         form:
             fields:
                 name:
-                    label: Komisaris
+                    placeholder: 'ap.tender::lang.tenant.commissioner'
+                    label: 'ap.tender::lang.tenant.commissioner'
                     span: full
                     type: text
-                    placeholder: Komisaris
     konsorsium_role:
+        label: 'ap.tender::lang.tenant.konsorsium_role'
         disabled: true
-        label: 'ap.tender::lang.company.konsorsium_role'
+        placeholder: 'ap.tender::lang.tenant.konsorsium_role'
         type: text
         span: left
-        placeholder: 'ap.tender::lang.company.konsorsium_role'
         required: true
         trigger:
             action: show
             field: konsorsium
             condition: value[1]
-    _section5:
-        label: 'Perwakilan Hukum Konsorsium'
+    _section4:
+        label: 'ap.tender::lang.tenant.legal_section4'
         type: section
         trigger:
             action: show
             field: konsorsium
             condition: value[1]
     konsorsium_total:
+        label: 'ap.tender::lang.tenant.konsorsium_total'
         disabled: true
-        label: 'Jumlah Perusahaan'
-        type: text
+        placeholder: 'ap.tender::lang.tenant.konsorsium_total'
+        type: number
         span: left
-        placeholder: 'Jumlah Perusahaan'
         required: true
         trigger:
             action: show
             field: konsorsium
             condition: value[1]
     konsorsium_name:
+        label: 'ap.tender::lang.tenant.konsorsium_name'
         disabled: true
-        label: 'Nama Wakil Hukum'
+        placeholder: 'ap.tender::lang.tenant.konsorsium_name'
         type: text
         span: right
-        placeholder: 'Nama Wakil Hukum'
         required: true
         trigger:
             action: show
             field: konsorsium
             condition: value[1]
     konsorsium_function:
+        label: 'ap.tender::lang.tenant.konsorsium_function'
         disabled: true
-        label: 'Fungsi Dalam Perusahaan'
+        placeholder: 'ap.tender::lang.tenant.konsorsium_function'
         type: text
         span: left
-        placeholder: 'Fungsi Dalam Perusahaan'
         required: true
         trigger:
             action: show
             field: konsorsium
             condition: value[1]
-    _section6:
-        label: 'Kualifikasi Perusahaan'
+    konsorsium_companies:
+        label: 'ap.tender::lang.tenant.konsorsium_companies'
+        disabled: true
+        span: right
+        type: repeater
+        trigger:
+            action: show
+            field: konsorsium
+            condition: value[1]
+        form:
+            fields:
+                name:
+                    placeholder: 'ap.tender::lang.tenant.konsorsium_company'
+                    label: 'ap.tender::lang.tenant.konsorsium_company'
+                    span: full
+                    type: text
+    _section5:
+        label: 'ap.tender::lang.tenant.legal_section5'
         type: section
-    fields:
-        label: Kategori Bisnis
+    business_fields:
+        label: 'ap.tender::lang.tenant.business_fields'
+        disabled: true
+        placeholder: 'ap.tender::lang.tenant.business_fields'
         type: taglist
         mode: relation
         nameFrom: name
         span: full
-        placeholder: 'Kategori Bisnis'
-        disabled: true
     business_activity:
-        label: 'Kegiatan Usaha Pokok'
+        label: 'ap.tender::lang.tenant.business_activity'
+        disabled: true
+        placeholder: 'ap.tender::lang.tenant.business_activity'
         type: text
         span: left
-        placeholder: 'Kegiatan Usaha Pokok'
+    business_kbli:
+        label: 'ap.tender::lang.tenant.business_kbli'
         disabled: true
-    kbli:
-        label: 'Bidang Usaha (KBLI)'
-        type: text
-        span: left
-        placeholder: 'Bidang Usaha (KBLI)'
-        disabled: true
-    _section7:
-        label: 'ap.tender::lang.company.pic'
+        placeholder: 'ap.tender::lang.tenant.business_kbli'
+        type: taglist
+        separator: comma
+        span: full
+    _section6:
+        label: 'ap.tender::lang.tenant.legal_section6'
         type: section      
     pic_full_name:
-        label: 'ap.tender::lang.company.pic_full_name'
+        label: 'ap.tender::lang.tenant.pic_full_name'
+        disabled: true
+        placeholder: 'ap.tender::lang.tenant.pic_full_name'
         type: text
         span: left
-        placeholder: 'ap.tender::lang.company.pic_full_name'
-        disabled: true
     pic_position:
-        label: 'ap.tender::lang.company.pic_position'
+        label: 'ap.tender::lang.tenant.pic_position'
+        disabled: true
+        placeholder: 'ap.tender::lang.tenant.pic_position'
         type: relation
         span: right
-        placeholder: 'ap.tender::lang.company.pic_position'
-        disabled: true
     pic_phone_number:
-        label: 'ap.tender::lang.company.pic_phone_number'
+        label: 'ap.tender::lang.tenant.pic_phone_number'
+        disabled: true
+        placeholder: 'ap.tender::lang.tenant.pic_phone_number'
         type: text
         span: left
-        placeholder: 'ap.tender::lang.company.pic_phone_number'
-        disabled: true
     pic_ktp:
-        label: 'ap.tender::lang.company.pic_ktp'
+        label: 'ap.tender::lang.tenant.pic_ktp'
+        disabled: true
+        placeholder: 'ap.tender::lang.tenant.pic_ktp'
         type: text
         span: right
-        placeholder: 'ap.tender::lang.company.pic_ktp'
-        disabled: true
     pic_email:
-        label: 'ap.tender::lang.company.pic_email'
+        label: 'ap.tender::lang.tenant.pic_email'
+        disabled: true
+        placeholder: 'ap.tender::lang.tenant.pic_email'
         type: text
         span: left
-        placeholder: 'ap.tender::lang.company.pic_email'
-        disabled: true
-    _section3:
-        label: 'ap.tender::lang.company.contact'
+    _section7:
+        label: 'ap.tender::lang.tenant.legal_section7'
         type: section
     contact_full_name:
-        label: 'ap.tender::lang.company.contact_full_name'
+        label: 'ap.tender::lang.tenant.contact_full_name'
+        disabled: true
+        placeholder: 'ap.tender::lang.tenant.contact_full_name'
         type: text
         span: left
-        placeholder: 'ap.tender::lang.company.contact_full_name'
-        disabled: true
     contact_position:
-        label: 'ap.tender::lang.company.contact_position'
+        label: 'ap.tender::lang.tenant.contact_position'
+        disabled: true
+        placeholder: 'ap.tender::lang.tenant.contact_position'
         type: relation
         span: right
-        placeholder: 'ap.tender::lang.company.contact_position'
-        disabled: true
     contact_phone_number:
-        label: 'ap.tender::lang.company.contact_phone_number'
+        label: 'ap.tender::lang.tenant.contact_phone_number'
+        disabled: true
+        placeholder: 'ap.tender::lang.tenant.contact_phone_number'
         type: text
         span: left
-        placeholder: 'ap.tender::lang.company.contact_phone_number'
-        disabled: true
     contact_email:
-        label: 'Alamat Email'
+        label: 'ap.tender::lang.tenant.contact_email'
+        disabled: true
+        placeholder: 'ap.tender::lang.tenant.contact_email'
         type: text
         span: right
-        placeholder: 'Alamat Email'
-        disabled: true
-    _section4:
-        label: 'ap.tender::lang.company_basic_info.doc_legal'
+    _section8:
+        label: 'ap.tender::lang.tenant.legal_section8'
         type: section
-    doc_basic_akta:
-        label: 'ap.tender::lang.company_basic_info.doc_basic_akta'
+    doc_legal_akta:
+        label: 'ap.tender::lang.tenant.doc_legal_akta'
+        disabled: true
+        commentAbove: 'ap.tender::lang.tenant.doc_legal_akta_comment'
         type: fileupload
         mode: file
         useCaption: false
         fileTypes: pdf
         mimeTypes: pdf
-        maxFilesize: 1
+        maxFilesize: 40
         attachOnUpload: true
         span: left
-        commentAbove: 'ap.tender::lang.global.doc_comment'
         maxFiles: 5
+    doc_legal_nib:
+        label: 'ap.tender::lang.tenant.doc_legal_nib'
         disabled: true
-    doc_basic_siup:
-        label: 'ap.tender::lang.company_basic_info.doc_basic_siup'
+        commentAbove: 'ap.tender::lang.tenant.doc_legal_nib_comment'
         type: fileupload
         mode: file
         useCaption: false
         fileTypes: pdf
         mimeTypes: pdf
-        maxFilesize: 1
+        maxFilesize: 40
         attachOnUpload: true
         span: right
-        commentAbove: 'ap.tender::lang.global.doc_comment'
+    doc_legal_tdp:
+        label: 'ap.tender::lang.tenant.doc_legal_tdp'
         disabled: true
-    doc_basic_tdp:
-        label: 'ap.tender::lang.company_basic_info.doc_basic_tdp'
+        commentAbove: 'ap.tender::lang.tenant.doc_legal_tdp_comment'
         type: fileupload
         mode: file
         useCaption: false
         fileTypes: pdf
         mimeTypes: pdf
-        maxFilesize: 1
+        maxFilesize: 40
         attachOnUpload: true
         span: left
-        commentAbove: 'ap.tender::lang.global.doc_comment'
+    doc_legal_domisili:
+        label: 'ap.tender::lang.tenant.doc_legal_domisili'
         disabled: true
-    doc_basic_domisili:
-        label: 'ap.tender::lang.company_basic_info.doc_basic_domisili'
+        commentAbove: 'ap.tender::lang.tenant.doc_legal_domisili_comment'
         type: fileupload
         mode: file
         useCaption: false
         fileTypes: pdf
         mimeTypes: pdf
-        maxFilesize: 1
+        maxFilesize: 40
         attachOnUpload: true
         span: right
-        commentAbove: 'ap.tender::lang.global.doc_comment'
+    doc_legal_npwp:
+        label: 'ap.tender::lang.tenant.doc_legal_npwp'
         disabled: true
-    doc_basic_npwp:
-        label: 'ap.tender::lang.company_basic_info.doc_basic_npwp'
+        commentAbove: 'ap.tender::lang.tenant.doc_legal_npwp_comment'
         type: fileupload
         mode: file
         useCaption: false
         fileTypes: pdf
         mimeTypes: pdf
-        maxFilesize: 1
+        maxFilesize: 40
         attachOnUpload: true
         span: left
-        commentAbove: 'ap.tender::lang.global.doc_comment'
+    doc_legal_ktp:
+        label: 'ap.tender::lang.tenant.doc_legal_ktp'
         disabled: true
-    doc_basic_ktp:
-        label: 'ap.tender::lang.company_basic_info.doc_basic_ktp'
+        commentAbove: 'ap.tender::lang.tenant.doc_legal_ktp_comment'
         type: fileupload
         mode: file
         useCaption: false
         fileTypes: pdf
         mimeTypes: pdf
-        maxFilesize: 1
+        maxFilesize: 40
         attachOnUpload: true
         span: right
-        commentAbove: 'ap.tender::lang.global.doc_comment'
+    doc_legal_sk:
+        label: 'ap.tender::lang.tenant.doc_legal_sk'
         disabled: true
-    doc_basic_sk:
-        label: 'ap.tender::lang.company_basic_info.doc_basic_sk'
+        commentAbove: 'ap.tender::lang.tenant.doc_legal_sk_comment'
         type: fileupload
         mode: file
         useCaption: false
         fileTypes: pdf
         mimeTypes: pdf
-        maxFilesize: 1
+        maxFilesize: 40
         attachOnUpload: true
         span: left
-        commentAbove: 'ap.tender::lang.global.doc_comment'
+    doc_legal_other:
+        label: 'ap.tender::lang.tenant.doc_legal_other'
         disabled: true
-    doc_basic_other:
-        label: 'ap.tender::lang.company_basic_info.doc_basic_other'
+        commentAbove: 'ap.tender::lang.tenant.doc_legal_other_comment'
         type: fileupload
         mode: file
         useCaption: false
         fileTypes: pdf
         mimeTypes: pdf
-        maxFilesize: 1
+        maxFilesize: 40
         attachOnUpload: true
         span: right
-        commentAbove: 'ap.tender::lang.global.doc_comment'
+    doc_legal_cv:
+        label: 'ap.tender::lang.tenant.doc_legal_cv'
         disabled: true
-    doc_basic_konsorsium:
-        disabled: true
-        label: 'Surat Perjanjian Konsorsium'
+        commentAbove: 'ap.tender::lang.tenant.doc_legal_cv_comment'
         type: fileupload
         mode: file
         useCaption: false
         fileTypes: pdf
         mimeTypes: pdf
-        maxFilesize: 1
+        maxFilesize: 40
         attachOnUpload: true
         span: left
-        commentAbove: 'ap.tender::lang.global.doc_comment'
+        required: true
+        hidden: true
+    doc_legal_konsorsium:
+        label: 'ap.tender::lang.tenant.doc_legal_konsorsium'
+        disabled: true
+        commentAbove: 'ap.tender::lang.tenant.doc_legal_konsorsium_comment'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 40
+        attachOnUpload: true
+        span: left
         required: true
         trigger:
             action: show
             field: konsorsium
             condition: value[1]
+            
     verification_legals:
-        label: 'Verifikasi Data Legal'
+        label: 'ap.tender::lang.tenant.verification_legals'
         span: full
         path: field_verification_legals
         context:

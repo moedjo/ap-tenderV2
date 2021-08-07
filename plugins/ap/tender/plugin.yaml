@@ -99,6 +99,8 @@ navigation:
         label: 'ap.tender::lang.tenant.singular'
         url: /
         icon: icon-renren
+        permissions:
+            - ap_tender_is_tenant
         sideMenu:
             my-tenant:
                 label: 'ap.tender::lang.tenant.my_tenant'
@@ -106,3 +108,28 @@ navigation:
                 icon: icon-building
                 permissions:
                     - ap_tender_is_tenant
+    verification-tenants:
+        label: 'ap.tender::lang.tenant.verification'
+        url: ap/tender/onverificationtenants
+        icon: icon-check-square
+        permissions:
+            - ap_tender_is_legal
+            - ap_tender_is_commercial
+            - ap_tender_is_finance
+        sideMenu:
+            on-verification-tenants:
+                label: 'ap.tender::lang.tenant.on_verification'
+                url: ap/tender/onverificationtenants
+                icon: icon-check-square-o
+                permissions:
+                    - ap_tender_is_legal
+                    - ap_tender_is_commercial
+                    - ap_tender_is_finance
+            off-verification-tenants:
+                label: 'ap.tender::lang.tenant.off_verification'
+                url: ap/tender/offverificationtenants
+                icon: icon-columns
+                permissions:
+                    - ap_tender_is_legal
+                    - ap_tender_is_commercial
+                    - ap_tender_is_finance

@@ -1,0 +1,5 @@
+name: 'ap.tender::lang.tenant.finance'
+form: $/ap/tender/models/tenantfinance/on_verification_fields.yaml
+modelClass: Ap\Tender\Models\TenantFinance
+update:
+    redirectClose: ap/tender/onverificationtenants

@@ -86,6 +86,9 @@
         'name' => 'Kategori',
         'description' => 'Informasi Umum',
         'fields' => 'Bidang',
+        'yes_or_no' => 'Ya/Tidak',
+        
+        'note' => 'Catatan',
 
         'create' => 'Buat Verifikasi',
         'update' => 'Ubah Verifikasi',
@@ -170,6 +173,12 @@
         'legal' => 'Informasi Umum',
         'commercial' => 'Pengalaman Perusahaan',
         'finance' => 'Kemampuan Keuangan',
+        'verification' => 'Verifikasi Tenant',
+        'on_verification' => 'Evaluasi',
+        'off_verification' => 'Klarifikasi',
+        'verification_legals' => 'Verifikasi Data Legal',
+        'verification_finances' => 'Verifikasi Data Finance',
+        'verification_commercials' => 'Verifikasi Data Commercial',
 
         'name' => 'Nama Perusahaan',
         'npwp' => 'NPWP Tahun Terakhir',

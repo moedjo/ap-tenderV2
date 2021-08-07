@@ -1,0 +1,18 @@
+columns:
+    number:
+        label: 'ap.tender::lang.verification.number'
+        sortable: false
+    name:
+        label: 'ap.tender::lang.verification.name'
+        sortable: false
+    description:
+        label: 'ap.tender::lang.verification.description'
+        sortable: false
+    pivot[off_check]:
+        label: 'ap.tender::lang.verification.yes_or_no'
+        sortable: false
+        type: partial
+        path: ~/plugins/ap/tender/models/verification/_check_column.htm
+    pivot[off_note]:
+        label: 'ap.tender::lang.verification.note'
+        sortable: false
