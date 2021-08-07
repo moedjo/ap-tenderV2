@@ -1,0 +1,6 @@
+name: 'ap.tender::lang.tenant.user_registration'
+form: $/ap/tender/models/user/fields.yaml
+modelClass: Ap\Tender\Models\User
+create:
+    redirect: 'ap/tender/publicusers/success'
+    redirectClose: 'ap/tender/publicusers/success'

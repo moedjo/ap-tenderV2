@@ -1,0 +1,15 @@
+<?php
+    use Backend\Models\BrandSetting;
+?>
+<div class="container success">
+    <div class="callout fade in callout-success">
+        <div class="parent">
+            <img class="image2" src="<?= BrandSetting::getDefaultLogo() ?>" />
+        </div>
+        <div class="child">
+            <h3><b>Sukses</b></h3>
+            <p>Your data has been submitted. Please check your email.</p>
+            <a href="<?= Backend::url('/'); ?>" class="btn btn-primary">Return to login</a>
+        </div>
+    </div>
+</div>

@@ -255,7 +255,9 @@
         'doc_finance_other_comment' => 'File (*pdf - max 40MB)',
         'doc_finance_collaborate_comment' => 'File (*pdf - max 40MB)',
 
-        'token_activation' => 'Aktivasi Token'
+        'token_activation' => 'Aktivasi Token',
+        'token_activation_success' => 'Aktivasi Token Sukses',
+        'user_registration' => 'Registrasi Pengguna',
     ],
     'card' => [
         'general' => 'Registrasi Awal',

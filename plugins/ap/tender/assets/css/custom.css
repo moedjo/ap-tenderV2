@@ -53,29 +53,3 @@
     font: 20px Arial, sans-serif;
     float: right;
 }
-
-.parent {
-  position: relative;
-  top: 0;
-  left: 0;
-}
-
-.child {
-  position: relative;
-  top: 120px;
-}
-
-.image1 {
-  position: relative;
-  width: 206px;
-  height: 206px;
-  top: 100px;
-  left: 0px;
-}
-.image2 {
-  position: absolute;
-  width: 449px;
-  height: 299px;
-  top: 10px;
-  left: 347px;
-}

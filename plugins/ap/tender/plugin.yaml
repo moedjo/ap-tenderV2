@@ -31,6 +31,15 @@ navigation:
         label: 'ap.tender::lang.permission.tab.master'
         url: /
         icon: icon-database
+        permissions:
+            - ap_tender_access_offices
+            - ap_tender_access_business_entities
+            - ap_tender_access_business_fields
+            - ap_tender_access_business_entities
+            - ap_tender_access_summaries
+            - ap_tender_access_verifications
+            - ap_tender_access_positions
+            - ap_tender_access_regions
         sideMenu:
             offices:
                 label: 'ap.tender::lang.office.plural'

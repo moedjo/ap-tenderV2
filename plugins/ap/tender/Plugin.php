@@ -29,6 +29,7 @@ class Plugin extends PluginBase
         return [
             'ap.tender::mail.tenant-short-form',
             'ap.tender::mail.tenant-pre-register',
+            'ap.tender::mail.tenant-register',
             'ap.tender::mail.tenant-invite',
             'ap.tender::mail.tenant-short-listed',
             'ap.tender::mail.tenant-reject',
