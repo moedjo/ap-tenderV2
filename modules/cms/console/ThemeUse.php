@@ -1,4 +1,4 @@
-<?php namespace System\Console;
+<?php namespace Cms\Console;
 
 use Cms\Classes\Theme;
 use Illuminate\Console\Command;
@@ -6,9 +6,7 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
 /**
- * Console command to switch themes.
- *
- * This switches the active theme to another one, saved to the database.
+ * ThemeUse switches the active theme to another one, saved to the database.
  *
  * @package october\system
  * @author Alexey Bobkov, Samuel Georges
@@ -47,9 +45,7 @@ class ThemeUse extends Command
             return $this->error(sprintf('%s is already the active theme.', $newTheme->getId()));
         }
 
-        $activeTheme = Theme::getActiveTheme();
-        $from = $activeTheme ? $activeTheme->getId() : 'nothing';
-
+        $from = Theme::getActiveThemeCode() ?: 'nothing';
         $this->info(sprintf('Switching theme from %s to %s', $from, $newTheme->getId()));
 
         Theme::setActiveTheme($newThemeName);

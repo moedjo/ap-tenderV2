@@ -179,7 +179,7 @@ class ListStructure extends Lists
     {
         $modelTraits = class_uses($this->model);
 
-        if (isset($modelTraits[\October\Rain\Database\Traits\SimpleTree::class])) {
+        if (isset($modelTraits[\October\Rain\Database\Traits\Sortable::class])) {
             return true;
         }
 

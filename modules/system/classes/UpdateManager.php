@@ -360,7 +360,7 @@ class UpdateManager
         };
 
         $plugins = $themes = [];
-        $packages = (new ComposerProcess)->listPackages();
+        $packages = (new ComposerProcess)->listAllPackages();
         $project = $this->requestProjectDetails();
 
         foreach (($project['plugins'] ?? []) as $plugin) {
@@ -716,7 +716,7 @@ class UpdateManager
      */
     public function requestChangelog()
     {
-        $result = Http::get('https://octobercms.com/changelog?json=2.0');
+        $result = Http::get('https://octobercms.com/changelog?json='.SystemHelper::VERSION);
 
         if ($result->code === 404) {
             throw new ApplicationException(Lang::get('system::lang.server.response_empty'));

@@ -1,7 +1,6 @@
-<?php namespace System\Console;
+<?php namespace Cms\Console;
 
 use Cms\Classes\ThemeManager;
-use Symfony\Component\Console\Input\InputOption;
 use Illuminate\Console\Command;
 
 /**
@@ -41,8 +40,11 @@ class ThemeCheck extends Command
         $lockable = $manager->findLockableThemes();
 
         foreach ($lockable as $dirName) {
-            $result = $manager->performLockOnTheme($dirName);
-            if ($result) {
+            if ($manager->createChildTheme($dirName)) {
+                $this->output->success("Created '{$dirName}' child theme");
+            }
+
+            if ($manager->performLockOnTheme($dirName)) {
                 $this->output->success("Theme '{$dirName}' locked");
             }
         }

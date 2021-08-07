@@ -39,11 +39,11 @@
     }
 
     ListStructureWidget.prototype.initTree = function() {
-        this.$el.on('click', $.proxy(this.onToggleTreeNode, this));
+        this.$el.on('click', '.tree-expand-collapse', $.proxy(this.onToggleTreeNode, this));
     }
 
     ListStructureWidget.prototype.destroyTree = function() {
-        this.$el.off('click', $.proxy(this.onToggleTreeNode, this));
+        this.$el.off('click', '.tree-expand-collapse', $.proxy(this.onToggleTreeNode, this));
     }
 
     ListStructureWidget.prototype.onToggleTreeNode = function(evt) {

@@ -1,4 +1,4 @@
-<?php namespace System\Console;
+<?php namespace Cms\Console;
 
 use System;
 use Illuminate\Console\Command;
@@ -128,7 +128,9 @@ class ThemeInstall extends Command
         }
 
         // Lock and create child theme
-        ThemeManager::instance()->performLockOnTheme((string) $themeFolder);
+        $manager = ThemeManager::instance();
+        $manager->createChildTheme((string) $themeFolder);
+        $manager->performLockOnTheme((string) $themeFolder);
     }
 
     /**

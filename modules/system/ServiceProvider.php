@@ -250,13 +250,6 @@ class ServiceProvider extends ModuleServiceProvider
         $this->registerConsoleCommand('plugin.refresh', \System\Console\PluginRefresh::class);
         $this->registerConsoleCommand('plugin.list', \System\Console\PluginList::class);
         $this->registerConsoleCommand('plugin.check', \System\Console\PluginCheck::class);
-
-        $this->registerConsoleCommand('theme.install', \System\Console\ThemeInstall::class);
-        $this->registerConsoleCommand('theme.remove', \System\Console\ThemeRemove::class);
-        $this->registerConsoleCommand('theme.list', \System\Console\ThemeList::class);
-        $this->registerConsoleCommand('theme.use', \System\Console\ThemeUse::class);
-        $this->registerConsoleCommand('theme.sync', \System\Console\ThemeSync::class);
-        $this->registerConsoleCommand('theme.check', \System\Console\ThemeCheck::class);
     }
 
     /*

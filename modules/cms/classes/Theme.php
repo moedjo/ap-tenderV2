@@ -136,9 +136,11 @@ class Theme
      */
     public function isActiveTheme(): bool
     {
-        $activeTheme = self::getActiveTheme();
+        if ($activeThemeCode = self::getActiveThemeCode()) {
+            return $activeThemeCode === $this->getDirName();
+        }
 
-        return $activeTheme && $activeTheme->getDirName() == $this->getDirName();
+        return false;
     }
 
     /**

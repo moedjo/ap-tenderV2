@@ -1,10 +1,8 @@
-<?php namespace System\Console;
+<?php namespace Cms\Console;
 
 use Illuminate\Console\Command;
-use Symfony\Component\Console\Input\InputOption;
-use Cms\Classes\Theme;
 use Cms\Classes\ThemeManager;
-use System\Classes\UpdateManager;
+use Cms\Classes\Theme;
 
 /**
  * ThemeList lists themes.
