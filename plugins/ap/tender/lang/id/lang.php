@@ -6,6 +6,7 @@
     'permission' => [
         'tab' => [
             'master' => 'Master Data',
+            'tenant' => 'Tenant'
         ],
         'access_offices' => 'Akses Kantor',
         'access_positions' => 'Akses Jabatan',
@@ -13,6 +14,9 @@
         'access_summaries' => 'Akses Kesimpulan',
         'access_verifications' => 'Akses Verifikasi',
         'access_regions' => 'Akses Wilayah',
+
+
+        'is_tenant' => 'Sebagai Tenant',
 
     ],
     'global' => [
@@ -128,6 +132,10 @@
         'district' => 'Kecamatan'
     ],
     'tenant' => [
+        'singular' => 'Tenant',
+        'plural' => 'Daftar Tenant',
+        'my_tenant' => 'Tenant Saya',
+
         'short_form' => 'Pendaftaran Tenant',
 
         'short_form_section1' => 'Informasi Perusahaan',

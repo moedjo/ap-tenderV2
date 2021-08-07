@@ -26,6 +26,9 @@ permissions:
     ap_tender_access_regions:
         tab: 'ap.tender::lang.permission.tab.master'
         label: 'ap.tender::lang.permission.access_regions'
+    ap_tender_is_tenant:
+        tab: 'ap.tender::lang.permission.tab.tenant'
+        label: 'ap.tender::lang.permission.is_tenant'
 navigation:
     master-data:
         label: 'ap.tender::lang.permission.tab.master'
@@ -83,3 +86,14 @@ navigation:
                 icon: icon-map-marker
                 permissions:
                     - ap_tender_access_regions
+    tenant:
+        label: 'ap.tender::lang.tenant.singular'
+        url: /
+        icon: icon-renren
+        sideMenu:
+            my-tenant:
+                label: 'ap.tender::lang.tenant.my_tenant'
+                url: ap/tender/tenantlegals/view
+                icon: icon-building
+                permissions:
+                    - ap_tender_is_tenant

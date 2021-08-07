@@ -1,6 +1,7 @@
 <?php if (!$this->fatalError): ?>
 
 
+
 <?= Form::open(['class' => 'layout']) ?>
 
 <div class="layout-row">
@@ -8,7 +9,7 @@
     <div class="layout-row">
         <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card">
             <div class="card-header">
-                <a href="<?= Backend::url('ap/tender/publictenantlegals/update/'.$formModel->id) ?>">
+                <a href="<?= Backend::url('ap/tender/tenantlegals/update/'.$formModel->id) ?>">
                     <div class="circle">1</div>
                     <?= e(trans('ap.tender::lang.card.general')) ?>
                     <p>
@@ -36,16 +37,6 @@
 
             </div>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card">
-            <div class="card-header">
-                <div class="circle">4</div>
-                <?= e(trans('ap.tender::lang.card.general')) ?>
-                <p>
-                    <?= e(trans('ap.tender::lang.card.four')) ?>
-                </p>
-
-            </div>
-        </div>
     </div>
     <?= $this->formRender() ?>
 </div>
@@ -57,7 +48,7 @@
             <?= e(trans('ap.tender::lang.button.next')) ?>
         </button>
 
-        <a href="<?= Backend::url('ap/tender/publictenantlegals/update/'.$formModel->id) ?>" class="btn btn-warning">
+        <a href="<?= Backend::url('ap/tender/tenantlegals/update/'.$formModel->id) ?>" class="btn btn-warning">
             <?= e(trans('ap.tender::lang.button.back')) ?>
         </a>
     </div>
