@@ -1,4 +1,0 @@
-title: 'ap.tender::lang.office.order'
-modelClass: Ap\Tender\Models\Office
-toolbar:
-    buttons: reorder_toolbar

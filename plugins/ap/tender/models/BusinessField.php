@@ -6,7 +6,7 @@ use Model;
 /**
  * Model
  */
-class Field extends Model
+class BusinessField extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     use \October\Rain\Database\Traits\Sortable;
@@ -16,13 +16,13 @@ class Field extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'ap_tender_fields';
+    public $table = 'ap_tender_business_fields';
 
     /**
      * @var array Validation rules
      */
     public $rules = [
-        'name' => 'required|unique:ap_tender_fields',
+        'name' => 'required|unique:ap_tender_business_fields',
         'description' => 'required'
     ];
 

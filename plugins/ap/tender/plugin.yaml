@@ -8,11 +8,14 @@ permissions:
     ap_tender_access_offices:
         tab: 'ap.tender::lang.permission.tab.master'
         label: 'ap.tender::lang.permission.access_offices'
+    ap_tender_access_positions:
+        tab: 'ap.tender::lang.permission.tab.master'
+        label: 'ap.tender::lang.permission.access_positions'
 navigation:
     master-data:
         label: 'ap.tender::lang.permission.tab.master'
         url: /
-        icon: icon-life-ring
+        icon: icon-database
         sideMenu:
             offices:
                 label: 'ap.tender::lang.office.plural'
@@ -20,3 +23,9 @@ navigation:
                 icon: icon-home
                 permissions:
                     - ap_tender_access_offices
+            positions:
+                label: 'ap.tender::lang.position.plural'
+                url: ap/tender/positions
+                icon: icon-users
+                permissions:
+                    - ap_tender_access_positions

@@ -8,6 +8,7 @@
             'master' => 'Master Data',
         ],
         'access_offices' => 'Akses Kantor',
+        'access_positions' => 'Akses Jabatan',
 
     ],
     'global' => [
@@ -31,7 +32,6 @@
         'create' => 'Buat Kantor',
         'update' => 'Ubah Kantor',
         'delete' => 'Hapus Kantor',
-        'order' => 'Urutan Kantor'
     ],
     'business_entity' => [
         'singular' => 'Badan Usaha',
@@ -44,7 +44,18 @@
         'create' => 'Buat Badan Usaha',
         'update' => 'Ubah Badan Usaha',
         'delete' => 'Hapus Badan Usaha',
-        'order' => 'Urutan Badan Usaha'
+    ],
+    'position' => [
+        'singular' => 'Jabatan',
+        'plural' => 'Daftar Jabatan',
+
+        'id' => 'Id Jabatan',
+        'name' => 'Nama Jabatan',
+        'description' => 'Keterangan',
+
+        'create' => 'Buat Jabatan',
+        'update' => 'Ubah Jabatan',
+        'delete' => 'Hapus Jabatan',
     ],
     'tenant' => [
         'short_form' => 'Pendaftaran Tenant',

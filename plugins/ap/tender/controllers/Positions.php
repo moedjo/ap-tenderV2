@@ -5,7 +5,7 @@ namespace Ap\Tender\Controllers;
 use Backend\Classes\Controller;
 use BackendMenu;
 
-class Offices extends Controller
+class Positions extends Controller
 {
     public $implement = [
         'Backend\Behaviors\ListController',
@@ -16,13 +16,13 @@ class Offices extends Controller
     public $formConfig = 'config_form.yaml';
 
     public $requiredPermissions = [
-        'ap_tender_access_offices'
+        'ap_tender_access_positions'
     ];
 
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Ap.Tender', 'master-data', 'offices');
+        BackendMenu::setContext('Ap.Tender', 'master-data', 'positions');
     }
 
 

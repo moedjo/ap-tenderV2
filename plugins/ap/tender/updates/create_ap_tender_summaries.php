@@ -7,7 +7,7 @@ class CreateApTenderTenantSummaries extends Migration
 {
     public function up()
     {
-        Schema::create('ap_tender_tenant_summaries', function($table)
+        Schema::create('ap_tender_summaries', function($table)
         {
             $table->engine = 'InnoDB';
             $table->increments('id')->unsigned();
@@ -24,6 +24,6 @@ class CreateApTenderTenantSummaries extends Migration
     
     public function down()
     {
-        Schema::dropIfExists('ap_tender_tenant_summaries');
+        Schema::dropIfExists('ap_tender_summaries');
     }
 }

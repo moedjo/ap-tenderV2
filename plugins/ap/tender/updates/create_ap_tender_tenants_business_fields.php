@@ -11,7 +11,15 @@ class CreateApTenderTenantsBusinessFields extends Migration
         {
             $table->engine = 'InnoDB';
             $table->integer('tenant_id')->unsigned();
+            $table->foreign('tenant_id')->references('id')
+            ->on('ap_tender_tenants');
+
+
             $table->integer('business_field_id')->unsigned();
+            $table->foreign('business_field_id')->references('id')
+            ->on('ap_tender_business_fields');
+
+
             $table->primary(['tenant_id', 'business_field_id'], 'tenant_business_field');
         });
     }

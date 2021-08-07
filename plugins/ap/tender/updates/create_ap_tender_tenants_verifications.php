@@ -12,8 +12,12 @@ class CreateApTenderTenantsVerifications extends Migration
             $table->engine = 'InnoDB';
             
             $table->integer('tenant_id')->unsigned();
+            $table->foreign('tenant_id')->references('id')
+            ->on('ap_tender_tenants');
 
             $table->integer('verification_id')->unsigned();
+            $table->foreign('verification_id')->references('id')
+            ->on('ap_tender_verifications');
 
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();

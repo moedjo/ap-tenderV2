@@ -38,16 +38,16 @@ return [
     'brand' => [
         'enabled' => true,
         'app_name' => 'PT Angkasa Pura I (Persero)',
-        'tagline' => 'Getting Back to Basics',
-        'menu_mode' => 'icons',
-        'favicon_path' => '~/app/assets/images/logo.png',
-        'logo_path' => '~/app/assets/images/logo.png',
+        'tagline' => 'PT Angkasa Pura I (Persero)',
+        'menu_mode' => 'inline',
+        'favicon_path' => '~/plugins/ap/tender/assets/images/logo.png',
+        'logo_path' => '~/plugins/ap/tender/assets/images/logo.png',
         'stylesheet_path' => '~/app/assets/less/styles.less',
         'login_background_type' => 'color',
         'login_background_color' => '#fef6eb',
         'login_background_wallpaper_size' => 'auto',
-        'login_image_type' => 'autumn_images',
-        'login_custom_image' => '~/app/assets/images/loginimage.png',
+        'login_image_type' => 'custom',
+        'login_custom_image' => '~/plugins/ap/tender/assets/images/logo2.png',
     ],
 
     /*
