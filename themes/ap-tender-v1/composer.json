@@ -1,0 +1,8 @@
+{
+    "name": "moedjo/ap-tender-v1-theme",
+    "type": "october-theme",
+    "description": "Angkasa Pura Theme",
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}
