@@ -1,85 +1,59 @@
-title = "Invoice"
+title = "Tenant Reject"
 layout = "ap.tender::pdf.layouts.default"
-description = "Invoice template"
+description = "Tenant reject template"
 size = "a4"
 orientation = "portrait"
 ==
 <table width="100%">
-    <tr>
-        <td valign="top">{{logo}}</td>
-        <td align="right">
-            <h3>Shinra Electric power company</h3>
-            <pre>
-                Company representative name
-                Company address
-                Tax ID
-                phone
-                fax
+  <tr>
+    <td valign="top"></td>
+    <td align="right">
+      <h3>PT Angkasa Pura I (Persero)</h3>
+      <pre>
+              Kota Baru Bandar Kemayoran Blok B12 Kav.2
+              Jakarta Pusat, DKI Jakarta - Indonesia
+              Telp.+62-21 6541961
+              Faks. +62-21 6541514
             </pre>
-        </td>
-    </tr>
+    </td>
+  </tr>
 
-  </table>
+</table>
 
-  <table width="100%">
+<table width="100%">
+  <tr>
+    <td><strong>Dari:</strong> PT Angkasa Pura I (Persero)</td>
+    <td><strong>Kepada:</strong> {{business_entity.name}} {{name}}</td>
+  </tr>
+
+</table>
+
+<br />
+
+<table width="100%">
+  <thead style="background-color: lightgray;">
     <tr>
-        <td><strong>From:</strong> Linblum - Barrio teatral</td>
-        <td><strong>To:</strong> Linblum - Barrio Comercial</td>
+      <th>No</th>
+      <th>Kategori</th>
+      <th>Informasi Umum</th>
+      <th>Ya/Tidak</th>
+      <th>Catatan</th>
     </tr>
+  </thead>
+  <tbody>
 
-  </table>
+    {% for verification in verifications %}
 
-  <br/>
 
-  <table width="100%">
-    <thead style="background-color: lightgray;">
-      <tr>
-        <th>#</th>
-        <th>Description</th>
-        <th>Quantity</th>
-        <th>Unit Price $</th>
-        <th>Total $</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Playstation IV - Black</td>
-        <td align="right">1</td>
-        <td align="right">1400.00</td>
-        <td align="right">1400.00</td>
-      </tr>
-      <tr>
-          <th scope="row">1</th>
-          <td>Metal Gear Solid - Phantom</td>
-          <td align="right">1</td>
-          <td align="right">105.00</td>
-          <td align="right">105.00</td>
-      </tr>
-      <tr>
-          <th scope="row">1</th>
-          <td>Final Fantasy XV - Game</td>
-          <td align="right">1</td>
-          <td align="right">130.00</td>
-          <td align="right">130.00</td>
-      </tr>
-    </tbody>
+    {{ verification.name }} -> Keterangan : {{ verification.pivot.on_note }}
+    <tr>
+      <th scope="row">{{verification.number}}</th>
+      <td>{{verification.name}}</td>
+      <td>{{verification.description}}</td>
+      <td>{{verification.pivot.on_check ? 'Ya' : 'Tidak'}}</td>
+      <td>{{verification.pivot.on_note}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
 
-    <tfoot>
-        <tr>
-            <td colspan="3"></td>
-            <td align="right">Subtotal $</td>
-            <td align="right">1635.00</td>
-        </tr>
-        <tr>
-            <td colspan="3"></td>
-            <td align="right">Tax $</td>
-            <td align="right">294.3</td>
-        </tr>
-        <tr>
-            <td colspan="3"></td>
-            <td align="right">Total $</td>
-            <td align="right" class="gray">$ 1929.3</td>
-        </tr>
-    </tfoot>
-  </table>
+</table>

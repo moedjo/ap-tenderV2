@@ -47,7 +47,7 @@ return [
         'login_background_color' => '#fef6eb',
         'login_background_wallpaper_size' => 'auto',
         'login_image_type' => 'custom',
-        'login_custom_image' => '~/plugins/ap/tender/assets/images/logo2.png',
+        'login_custom_image' => '~/plugins/ap/tender/assets/images/logo.png',
     ],
 
     /*
