@@ -110,11 +110,11 @@ class PublicUsers extends Controller
         $tenant->save();
 
         Event::fire('tenant.register', [$tenant]);
+        Session::forget('tenant_id');
     }
 
     public function success()
     {
-        Session::forget('tenant_id');
         $this->pageTitle = 'ap.tender::lang.tenant.user_registration';
     }
 }
