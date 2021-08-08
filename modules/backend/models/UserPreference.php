@@ -1,4 +1,6 @@
-<?php namespace Backend\Models;
+<?php
+
+namespace Backend\Models;
 
 use BackendAuth;
 use SystemException;
@@ -37,12 +39,11 @@ class UserPreference extends PreferencesBase
     public function resolveUser($user)
     {
         $user = BackendAuth::getUser();
-        if (!$user) {
-            $user = BackendAuth::findUserByLogin('guest');
-            if(!$user) {
-                throw new SystemException(trans('backend::lang.user.preferences.not_authenticated'));
-            }
-        }
+
+        // if (!$user) {
+        //     throw new SystemException(trans('backend::lang.user.preferences.not_authenticated'));
+        // }
+
 
         return $user;
     }

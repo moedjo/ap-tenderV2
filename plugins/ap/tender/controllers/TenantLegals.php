@@ -33,7 +33,11 @@ class TenantLegals extends Controller
         $user = $this->user;
         $sub_menu = 'tenants';
         if ($user->hasPermission('ap_tender_is_tenant')) {
-            $sub_menu ='my-tenant';
+            $sub_menu = 'my-tenant';
+        }
+
+        if ($user->is_superuser) {
+            $sub_menu = 'tenants';
         }
 
         BackendMenu::setContext('Ap.Tender', 'tenant', $sub_menu);
@@ -85,8 +89,17 @@ class TenantLegals extends Controller
     public function view()
     {
         $user = $this->user;
-        $tenant = Tenant::where('user_id', $user->id)->first();
-        return Redirect::to(Backend::url('ap/tender/tenantlegals/update/' . $tenant->id));
+
+        if ($user->is_superuser) {
+            return Redirect::to(Backend::url('ap/tender/tenants'));
+        }
+
+        if ($user->hasPermission('ap_tender_is_tenant')) {
+            $tenant = Tenant::where('user_id', $user->id)->first();
+            return Redirect::to(Backend::url('ap/tender/tenantlegals/update/' . $tenant->id));
+        }
+
+        return Redirect::to(Backend::url('ap/tender/tenants'));
     }
 
 

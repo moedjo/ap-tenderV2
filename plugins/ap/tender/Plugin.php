@@ -39,11 +39,34 @@ class Plugin extends PluginBase
     public function registerMailLayouts()
     {
         return [
-            'ap-tender-registration' => 'ap.tender::layouts.default',
+            'ap.tender::mail.layouts.default' => 'ap.tender::mail.layouts.default',
         ];
     }
 
     public function registerMailPartials()
     {
     }
+
+
+    public function registerPDFTemplates()
+    {
+        return [
+            'ap.tender::pdf.tenant-reject',
+        ];
+    }
+
+
+    public function registerPDFLayouts()
+    {
+        return [
+            'ap.tender::pdf.layouts.default',
+        ];
+    }
+
+
+    public function boot(){
+
+    
+    }
 }
+

@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="<?= App::getLocale() ?>" class="no-js <?= $this->makeLayoutPartial('browser_detector') ?> <?= $this->makeLayoutPartial('touch_detector') ?>">
     <head>
-        <?= $this->makeLayoutPartial('head') ?>
+        <?= $this->makeLayoutPartial('public/head') ?>
         <?= $this->fireViewEvent('backend.layout.extendHead', ['default.htm']) ?>
     </head>
     <body class="<?= $this->bodyClass ?> <?php if ($navbarMode === BrandSetting::MENU_LEFT): ?>main-menu-left<?php endif ?>">

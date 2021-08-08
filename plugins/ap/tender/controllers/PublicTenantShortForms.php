@@ -47,8 +47,6 @@ class PublicTenantShortForms extends Controller
         $model->token = Str::random(8);
         $model->token_url = Backend::url('ap/tender/publictenantshortforms/validate');
         $model->status = 'short_form';
-
-        Event::fire('tenant.short_form', [$model]);
     }
 
     public function onValidate()
@@ -73,6 +71,6 @@ class PublicTenantShortForms extends Controller
 
     public function formAfterCreate($model)
     {
-        
+        Event::fire('tenant.short_form', [$model]);
     }
 }
