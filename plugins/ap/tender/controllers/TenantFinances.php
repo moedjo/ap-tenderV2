@@ -82,10 +82,27 @@ class TenantFinances extends Controller
 
         if ($context == 'update') {
 
-            $disabled = true;
-            $this->vars['disabled'] = $disabled;
+            $reject_fields = [];
+            if($model->status == 'register' && $model->on_finance_status == 'reject') {
+                $verifications = $model->verification_finances;
+                foreach ($verifications as $verification) {
+                    if (!$verification->pivot->on_check) {
+                        $v_fields = explode(",",$verification->fields);
+                        foreach ($v_fields as $v_field) {
+                            $reject_fields[] =  $v_field;
+                        }
+                    }
+                }
+            }
+
+            $reject_fields = array_unique($reject_fields);
             foreach ($fields as $field) {
-                $field->disabled = $disabled;
+                $this->vars['disabled_' . $field->fieldName] = false;
+                if (!in_array($field->fieldName, $reject_fields)) {
+                    $field->disabled = true;
+                    $field->config['disabled'] = true;
+                    $this->vars['disabled_'.$field->fieldName] = true;
+                }
             };
             
         }
@@ -93,10 +110,7 @@ class TenantFinances extends Controller
 
     public function update_onSave($recordId)
     {
-
-        return Redirect::to(Backend::url('/backend'));
-
-        // TODO if
-        $this->asExtension('FormController')->create_onSave($recordId);
+        return $this->asExtension('FormController')->update_onSave($recordId);
     }
+
 }

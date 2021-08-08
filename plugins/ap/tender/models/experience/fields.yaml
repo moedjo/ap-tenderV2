@@ -73,7 +73,7 @@ fields:
         useCaption: false
         fileTypes: pdf
         mimeTypes: pdf
-        maxFilesize: 1
+        maxFilesize: 40
         attachOnUpload: true
         span: left
         commentAbove: 'ap.tender::lang.experience.doc_experience_comment'

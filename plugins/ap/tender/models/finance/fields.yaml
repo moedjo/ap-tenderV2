@@ -14,7 +14,7 @@ fields:
         useCaption: false
         fileTypes: pdf
         mimeTypes: pdf
-        maxFilesize: 1
+        maxFilesize: 40
         attachOnUpload: true
         span: full
         commentAbove: 'ap.tender::lang.finance.doc_finance_comment'

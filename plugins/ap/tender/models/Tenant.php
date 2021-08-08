@@ -23,16 +23,31 @@ class Tenant extends Model
     public $rules = [];
 
     public $belongsTo = [
-        'business_entity' => 'Ap\Tender\Models\BusinessEntity',
-        'contact_position' => 'Ap\Tender\Models\Position',
-        'pic_position' => 'Ap\Tender\Models\Position',
+        'business_entity' =>  [
+            'Ap\Tender\Models\BusinessEntity',
+            'key' => 'business_entity_id',
+        ],
+        'contact_position' => [
+            'Ap\Tender\Models\Position',
+            'key' => 'contact_position_id'
+        ],
+        'pic_position' => [
+            'Ap\Tender\Models\Position',
+            'key' => 'pic_position_id'
+        ],
         'region' => [
             'Ap\Tender\Models\Region',
             'key' => 'region_id',
             'conditions' => "type = 'regency'"
         ],
-        'verification_office' => 'Ap\Tender\Models\Office',
-        'user' => ['Ap\Tender\Models\User', 'key' => 'user_id'],
+        'verification_office' => [
+            'Ap\Tender\Models\Office',
+            'key' => 'verification_office_id'
+        ],
+        'user' => [
+            'Ap\Tender\Models\User',
+            'key' => 'user_id'
+        ],
     ];
 
     public $hasMany = [
@@ -114,11 +129,11 @@ class Tenant extends Model
                 'off_check',
             ]
         ],
-        
+
     ];
 
     public $attachOne = [
-        'doc_legal_cooperation' => ['System\Models\File', 'public' => false],  
+        'doc_legal_cooperation' => ['System\Models\File', 'public' => false],
         'doc_legal_npwp' => ['System\Models\File', 'public' => false],
         'doc_legal_ktp' => ['System\Models\File', 'public' => false],
         'doc_legal_sk' => ['System\Models\File', 'public' => false],
@@ -150,6 +165,5 @@ class Tenant extends Model
         'directors',
         'business_kbli',
         'konsorsium_companies',
-    ]; 
-
+    ];
 }

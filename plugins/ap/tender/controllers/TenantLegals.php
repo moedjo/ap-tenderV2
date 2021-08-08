@@ -110,24 +110,35 @@ class TenantLegals extends Controller
 
         if ($context == 'update') {
 
-            $disabled = true;
-            $this->vars['disabled'] = $disabled;
-            foreach ($fields as $field) {
-                $field->disabled = $disabled;
-            };
 
-            // if ($model->business_entity->name == 'CV') {
-            //     $fields['doc_legal_cv']->hidden = false;
-            // }
+            $reject_fields = [];
+
+            if ($model->status == 'register' && $model->on_legal_status == 'reject') {
+                $verifications = $model->verification_legals;
+                foreach ($verifications as $verification) {
+                    if (!$verification->pivot->on_check) {
+                        $v_fields = explode(",", $verification->fields);
+                        foreach ($v_fields as $v_field) {
+                            $reject_fields[] =  $v_field;
+                        }
+                    }
+                }
+            }
+
+            $reject_fields = array_unique($reject_fields);
+            foreach ($fields as $field) {
+                $this->vars['disabled_' . $field->fieldName] = false;
+                if (!in_array($field->fieldName, $reject_fields)) {
+                    $field->disabled = true;
+                    $field->config['disabled'] = true;
+                    $this->vars['disabled_' . $field->fieldName] = true;
+                }
+            };
         }
     }
 
     public function update_onSave($recordId)
     {
-
-        return Redirect::to(Backend::url('ap/tender/tenantcommercials/update/' . $recordId));
-
-        // TODO if
-        $this->asExtension('FormController')->create_onSave($recordId);
+        return $this->asExtension('FormController')->update_onSave($recordId);
     }
 }
