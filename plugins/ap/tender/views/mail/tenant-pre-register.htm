@@ -2,8 +2,8 @@ subject = "Registrasi Perusahaan {{business_entity.name}} {{name}}"
 layout = "ap.tender::mail.layouts.default"
 description = "Email Pra Pendaftaran"
 ==
-
-
+{{ content|raw }}
+==
 Yth. Bapak/Ibu **{{business_entity.name}} {{name}}**  
 
 Terima kasih telah melakukan pendaftaran sebagai Calon Mitra Usaha dilingkungan PT Angkasa Pura I (Persero). Kami akan melakukan verifikasi atas informasi yang telah Bapak/Ibu berikan melalui Tenant Management System (TMS) E-Selection.

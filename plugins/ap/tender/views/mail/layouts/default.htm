@@ -13,12 +13,32 @@ name = "AP Tender default layout"
         {{ brandCss|raw }}
         {{ css|raw }}
     </style>
-
+    
     <table class="wrapper layout-default" width="100%" cellpadding="0" cellspacing="0">
+    
+        <tr>
+            <td align="center">
+                <table class="content" width="100%" cellpadding="0" cellspacing="0">
+                    <!-- Email Body -->
+                    <tr>
+                        <td class="body" width="100%" cellpadding="0" cellspacing="0">
+                            <table class="inner-body" align="center" width="570" cellpadding="0" cellspacing="0">
+                                <!-- Body content -->
+                                <tr>
+                                     <td align="center" class="content-cell">
+                                        <img src="{{url('plugins/ap/tender/assets/images/logo.png')}}" height="150" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
 
         <!-- Header -->
         {% partial 'header' body %}
-            {{ subject|raw }}  - PT ANGKASA PURA I (PERSERO)
+            {{ subject|raw }} - {{ appName }}
         {% endpartial %}
 
         <tr>
@@ -41,11 +61,11 @@ name = "AP Tender default layout"
             </td>
         </tr>
 
-        <!-- Footer -->
          <!-- Footer -->
         {% partial 'footer' body %}
-            &copy; 2021 PT Angkasa Pura (Persero), Kota Baru Bandar Kemayoran Blok B12 Kav. 2, Jakarta Pusat, DKI Jakarta - Indonesia<br>
-            Telp. 021-6541961 ext. 2235  Faks. 021-6541514<br>
+            &copy; {{ "now"|date("Y") }} {{ appName }}  
+            Kota Baru Bandar Kemayoran Blok B12 Kav. 2, Jakarta Pusat, DKI Jakarta - Indonesia  
+            Telp. 021-6541961 ext. 2235  Faks. 021-6541514  
         {% endpartial %}
 
     </table>

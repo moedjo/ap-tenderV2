@@ -1,19 +1,17 @@
-subject = "Reject Tenant"
+subject = "Verifikasi Angkasa Pura 1"
 layout = "ap.tender::mail.layouts.default"
 description = "Reject Tenant"
 ==
+{{ content|raw }}
+==
+Yth. Bapak/Ibu **{{business_entity.name}} {{name}}**  
 
+Terima kasih telah melakukan pendaftaran sebagai Calon Mitra Usaha  {{ appName }}.  
+Mohon dapat melakukan perbaikan dan atau melengkapi data pada Tenant Management System sebagaimana catatan terlampir.  
 
-Yth. Bapak/Ibu  {{business_entity.name}} {{name}}
-
-{% for verification in verifications %}
-
-
-{% if verification.pivot.on_check == false %}
-    {{ verification.name }} -> Keterangan : {{ verification.pivot.on_note }}  
-{% endif %}
-
-
-{% endfor %}
+Petunjuk penggunaan dapat dilihat pada Website E-Selection - {{ appName }}.  
+Apabila anda memiliki pertanyaan dapat disampaikan melalui surel tms@ap1.co.id  
+atau menghubungi Helpdesk Non Aeronautical Business kami di nomor
+Telp.021 6541961 ext. 2235
 
 -----
