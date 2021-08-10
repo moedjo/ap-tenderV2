@@ -11132,7 +11132,8 @@ body {
   height: auto;
   min-height: 35rem;
   padding: 15rem 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../img/bg-masthead.jpg");
+  /*background: linear-gradient(to bottom, rgba(0, 255, 255, 0.1) 0%, rgba(0, 255, 255, 0.3) 90%, #00ced1 100%), url("../img/bcap.png");*/
+  background: url("../img/bcap.png");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -11176,7 +11177,7 @@ body {
 
 .about-section {
   padding-top: 10rem;
-  background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%);
+  background: linear-gradient(to bottom, #87cefa 0%, rgba(0, 255, 255, 0.3) 75%, rgba(0, 255, 255, 0.1) 100%);
 }
 .about-section p {
   margin-bottom: 5rem;
