@@ -46,10 +46,4 @@ class Verification extends Model
         return e(trans('ap.tender::lang.global.'.$this->type));
     }
 
-    public function getChildren(){
-    }
-    
-    
-    public function getChildCount(){
-    }
 }

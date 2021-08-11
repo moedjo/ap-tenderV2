@@ -40,10 +40,4 @@ class Office extends Model
         return BackendAuth::getUser();
     }
 
-    public function getChildren(){
-    }
-    
-    
-    public function getChildCount(){
-    }
 }
