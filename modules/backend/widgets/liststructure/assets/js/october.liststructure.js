@@ -24,7 +24,7 @@
         useReorder: true,
         useTree: true,
         includeSortOrders: false,
-        identSize: 24,
+        indentSize: 24,
         maxDepth: null
     }
 
@@ -199,8 +199,14 @@
         // Find next row
         var $nextRow = $item.next();
         while ($nextRow.length) {
-            if ($nextRow.data('tree-level') === proposedLevel) {
+            var nextRowLevel = $nextRow.data('tree-level');
+
+            if (nextRowLevel === proposedLevel) {
                 data.next_id = $nextRow.data('tree-id');
+                break;
+            }
+
+            if (nextRowLevel < proposedLevel) {
                 break;
             }
 
@@ -340,7 +346,7 @@
             }
         }
 
-        var maxDepth = this.options.maxDepth;
+        var maxDepth = this.getMaxDepth();
         if (maxDepth !== null) {
             if (minLevel !== 0 && minLevel + this.lastChildDiff > maxDepth) {
                 if (isMaxCheck) {
@@ -367,12 +373,21 @@
         }
     }
 
+    ListStructureWidget.prototype.getMaxDepth = function() {
+        if (!this.options.maxDepth) {
+            return null;
+        }
+
+        // Reflected as maximum allowed levels
+        return this.options.maxDepth - 1;
+    }
+
     ListStructureWidget.prototype.setIndent = function() {
         var currentLevel = $(this.activeItem).data('tree-level');
 
         var distanceFromStart = this.draggingX - this.dragStartX;
 
-        var indentDistance = Math.round(distanceFromStart / this.options.identSize);
+        var indentDistance = Math.round(distanceFromStart / this.options.indentSize);
 
         var proposedLevel = currentLevel + indentDistance;
 
@@ -398,7 +413,7 @@
     }
 
     ListStructureWidget.prototype.getIndentSize = function(indentLevel) {
-        return (indentLevel * this.options.identSize) + 68;
+        return ((indentLevel+2) * this.options.indentSize) + (this.options.useReorder ? 20 : 15);
     }
 
     // LISTREE WIDGET PLUGIN DEFINITION

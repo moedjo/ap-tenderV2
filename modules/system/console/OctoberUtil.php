@@ -112,7 +112,7 @@ class OctoberUtil extends Command
         return [
             ['force', null, InputOption::VALUE_NONE, 'Force the operation to run when in production.'],
             ['debug', null, InputOption::VALUE_NONE, 'Run the operation in debug / development mode.'],
-            ['projectId', null, InputOption::VALUE_REQUIRED, 'Specify a projectId for set project'],
+            ['value', null, InputOption::VALUE_REQUIRED, 'Specify a generic value for the command'],
         ];
     }
 }

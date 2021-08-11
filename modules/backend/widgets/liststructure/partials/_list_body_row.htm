@@ -1,8 +1,7 @@
 <?php
-    $expanded = $useStructure ? $this->isTreeNodeExpanded($record) : null;
-    $childRecords = $useStructure ? $record->getChildren() : null;
-    $treeLevelClass = $useStructure ? 'list-tree-level-'.$treeLevel : '';
-    $indentLevel = $showReorder && $showTree ? 24 : 12;
+    $expanded = $showTree ? $this->isTreeNodeExpanded($record) : null;
+    $childRecords = $showTree ? $record->getChildren() : null;
+    $treeLevelClass = $showTree ? 'list-tree-level-'.$treeLevel : '';
     $childCount = $showTree ? $record->getChildCount() : 0;
 ?>
 <tr
@@ -34,7 +33,7 @@
             $isTreeCell = $index === 1 && $useStructure;
             if ($isTreeCell) {
                 $classes[] = 'list-cell-tree';
-                $styles = 'padding-left:'.((($treeLevel+2) * $indentLevel) + ($showReorder ? 20 : 15)).'px';
+                $styles = 'padding-left:'.((($treeLevel+2) * $indentSize) + ($showReorder ? 20 : 15)).'px';
             }
         ?>
         <td class="<?= implode(' ', $classes) ?>" style="<?= $styles ?>">

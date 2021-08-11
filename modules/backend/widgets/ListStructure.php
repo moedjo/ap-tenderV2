@@ -68,11 +68,12 @@ class ListStructure extends Lists
         $this->showSorting = false;
         $this->showPagination = false;
 
-        if (!$this->showTree) {
-            $this->maxDepth = 0;
+        if ($this->showTree) {
+            $this->validateTree();
         }
-
-        $this->validateTree();
+        else {
+            $this->maxDepth = 1;
+        }
     }
 
     /**
@@ -97,6 +98,7 @@ class ListStructure extends Lists
         $this->vars['maxDepth'] = $this->maxDepth;
         $this->vars['includeSortOrders'] = $this->useSortOrdering();
         $this->vars['treeLevel'] = 0;
+        $this->vars['indentSize'] = $this->showReorder && $this->showTree ? 24 : 12;
     }
 
     /**

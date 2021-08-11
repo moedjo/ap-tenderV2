@@ -33,7 +33,13 @@ trait OctoberUtilCommands
         }
 
         try {
-            $build = UpdateManager::instance()->setBuildNumberManually();
+            if ($build = $this->option('value')) {
+                UpdateManager::instance()->setBuild((int) $build);
+            }
+            else {
+                $build = UpdateManager::instance()->setBuildNumberManually();
+            }
+
             $this->comment('* You are using October CMS version: v' . System::VERSION . '.' . $build);
         }
         catch (Exception $ex) {
