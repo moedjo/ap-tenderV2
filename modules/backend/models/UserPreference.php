@@ -37,9 +37,11 @@ class UserPreference extends PreferencesBase
     public function resolveUser($user)
     {
         $user = BackendAuth::getUser();
-        if (!$user) {
-            throw new SystemException(trans('backend::lang.user.preferences.not_authenticated'));
-        }
+
+        // Remove from custom Ap.Tender
+        // if (!$user) {
+        //     throw new SystemException(trans('backend::lang.user.preferences.not_authenticated'));
+        // }
 
         return $user;
     }
