@@ -16,6 +16,7 @@ use Backend\Classes\WidgetBase;
 use October\Rain\Database\Model;
 use ApplicationException;
 use BackendAuth;
+use Exception;
 
 /**
  * Lists Widget
@@ -1184,6 +1185,35 @@ class Lists extends WidgetBase
         }
 
         return $value;
+    }
+
+    /**
+     * getCheckedRows
+     */
+    protected function getCheckedRows(): array
+    {
+        return array_unique((array) post('allChecked'));
+    }
+
+    /**
+     * getCheckedRowsEncoded
+     */
+    protected function getCheckedRowsEncoded(): string
+    {
+        try {
+            return json_encode(array_values($this->getCheckedRows()));
+        }
+        catch (Exception $ex) {
+            return '';
+        }
+    }
+
+    /**
+     * isRowChecked
+     */
+    protected function isRowChecked($record): bool
+    {
+        return in_array($record->getKey(), $this->getCheckedRows());
     }
 
     /**

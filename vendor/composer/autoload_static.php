@@ -23,10 +23,10 @@ class ComposerStaticInit5a096aa3891a825a673a2b8d8bab1564
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
-        '9e4824c5afbdc1482b6025ce3d4dfde8' => __DIR__ . '/..' . '/league/csv/src/functions_include.php',
-        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+        '9e4824c5afbdc1482b6025ce3d4dfde8' => __DIR__ . '/..' . '/league/csv/src/functions_include.php',
+        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '9ab6c0b43d4b818d98f088285310c9d9' => __DIR__ . '/..' . '/october/rain/src/Support/helpers.php',
         '52d8d88278ae3691209807d759d9bca3' => __DIR__ . '/..' . '/october/rain/src/Support/polyfills.php',
         '97af4f586841c1bd9dd1f8710561ecaa' => __DIR__ . '/..' . '/october/rain/src/Html/helpers.php',
@@ -80,6 +80,7 @@ class ComposerStaticInit5a096aa3891a825a673a2b8d8bab1564
             'Symfony\\Component\\Debug\\' => 24,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
+            'Svg\\' => 4,
             'Seld\\PharUtils\\' => 15,
             'Seld\\JsonLint\\' => 14,
             'ScssPhp\\ScssPhp\\' => 16,
@@ -126,6 +127,10 @@ class ComposerStaticInit5a096aa3891a825a673a2b8d8bab1564
         array (
             'Illuminate\\' => 11,
         ),
+        'F' => 
+        array (
+            'FontLib\\' => 8,
+        ),
         'E' => 
         array (
             'Egulias\\EmailValidator\\' => 23,
@@ -133,6 +138,7 @@ class ComposerStaticInit5a096aa3891a825a673a2b8d8bab1564
         'D' => 
         array (
             'Dotenv\\' => 7,
+            'Dompdf\\' => 7,
             'Doctrine\\Instantiator\\' => 22,
             'Doctrine\\Inflector\\' => 19,
             'Doctrine\\Deprecations\\' => 22,
@@ -153,6 +159,10 @@ class ComposerStaticInit5a096aa3891a825a673a2b8d8bab1564
             'Composer\\CaBundle\\' => 18,
             'Composer\\' => 9,
             'Carbon\\' => 7,
+        ),
+        'B' => 
+        array (
+            'Barryvdh\\DomPDF\\' => 16,
         ),
         'A' => 
         array (
@@ -296,6 +306,10 @@ class ComposerStaticInit5a096aa3891a825a673a2b8d8bab1564
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
+        'Svg\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phenx/php-svg-lib/src/Svg',
+        ),
         'Seld\\PharUtils\\' => 
         array (
             0 => __DIR__ . '/..' . '/seld/phar-utils/src',
@@ -392,6 +406,10 @@ class ComposerStaticInit5a096aa3891a825a673a2b8d8bab1564
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
         ),
+        'FontLib\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phenx/php-font-lib/src/FontLib',
+        ),
         'Egulias\\EmailValidator\\' => 
         array (
             0 => __DIR__ . '/..' . '/egulias/email-validator/src',
@@ -399,6 +417,10 @@ class ComposerStaticInit5a096aa3891a825a673a2b8d8bab1564
         'Dotenv\\' => 
         array (
             0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
+        ),
+        'Dompdf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dompdf/dompdf/src',
         ),
         'Doctrine\\Instantiator\\' => 
         array (
@@ -468,6 +490,10 @@ class ComposerStaticInit5a096aa3891a825a673a2b8d8bab1564
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
         ),
+        'Barryvdh\\DomPDF\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/barryvdh/laravel-dompdf/src',
+        ),
         'Assetic\\' => 
         array (
             0 => __DIR__ . '/..' . '/october/rain/src/Assetic/Assetic',
@@ -484,6 +510,13 @@ class ComposerStaticInit5a096aa3891a825a673a2b8d8bab1564
             'Twig_' => 
             array (
                 0 => __DIR__ . '/..' . '/twig/twig/lib',
+            ),
+        ),
+        'S' => 
+        array (
+            'Sabberworm\\CSS' => 
+            array (
+                0 => __DIR__ . '/..' . '/sabberworm/php-css-parser/lib',
             ),
         ),
         'P' => 
@@ -527,10 +560,16 @@ class ComposerStaticInit5a096aa3891a825a673a2b8d8bab1564
         'Date' => __DIR__ . '/..' . '/october/rain/helpers/Date.php',
         'Db' => __DIR__ . '/..' . '/october/rain/helpers/Db.php',
         'DbDongle' => __DIR__ . '/..' . '/october/rain/helpers/DbDongle.php',
+        'Dompdf\\Cpdf' => __DIR__ . '/..' . '/dompdf/dompdf/lib/Cpdf.php',
         'Event' => __DIR__ . '/..' . '/october/rain/helpers/Event.php',
         'File' => __DIR__ . '/..' . '/october/rain/helpers/File.php',
         'Flash' => __DIR__ . '/..' . '/october/rain/helpers/Flash.php',
         'Form' => __DIR__ . '/..' . '/october/rain/helpers/Form.php',
+        'HTML5_Data' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/Data.php',
+        'HTML5_InputStream' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/InputStream.php',
+        'HTML5_Parser' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/Parser.php',
+        'HTML5_Tokenizer' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/Tokenizer.php',
+        'HTML5_TreeBuilder' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/TreeBuilder.php',
         'Hash' => __DIR__ . '/..' . '/october/rain/helpers/Hash.php',
         'Html' => __DIR__ . '/..' . '/october/rain/helpers/Html.php',
         'Http' => __DIR__ . '/..' . '/october/rain/helpers/Http.php',

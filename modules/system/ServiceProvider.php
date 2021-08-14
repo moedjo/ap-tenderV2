@@ -29,6 +29,9 @@ use Illuminate\Support\Facades\Schema;
 use Twig\Environment as TwigEnvironment;
 use Twig\Extension\SandboxExtension;
 
+/**
+ * ServiceProvider for System module
+ */
 class ServiceProvider extends ModuleServiceProvider
 {
     /**
@@ -150,51 +153,51 @@ class ServiceProvider extends ModuleServiceProvider
         MarkupManager::instance()->registerCallback(function ($manager) {
             $manager->registerFunctions([
                 // Escaped Functions
-                'input'          => ['input', true],
-                'post'           => ['post', true],
-                'get'            => ['get', true],
-                'form_value'     => [\Form::class, 'value', true],
+                'input' => ['input', true],
+                'post' => ['post', true],
+                'get' => ['get', true],
+                'form_value' => [\Form::class, 'value', true],
 
                 // Raw Functions
-                'link_to'        => 'link_to',
-                'link_to_asset'  => 'link_to_asset',
-                'link_to_route'  => 'link_to_route',
+                'link_to' => 'link_to',
+                'link_to_asset' => 'link_to_asset',
+                'link_to_route' => 'link_to_route',
                 'link_to_action' => 'link_to_action',
-                'asset'          => 'asset',
-                'action'         => 'action',
-                'url'            => 'url',
-                'route'          => 'route',
-                'secure_url'     => 'secure_url',
-                'secure_asset'   => 'secure_asset',
-                'html_email'     => [\Html::class, 'email'],
+                'asset' => 'asset',
+                'action' => 'action',
+                'url' => 'url',
+                'route' => 'route',
+                'secure_url' => 'secure_url',
+                'secure_asset' => 'secure_asset',
+                'html_email' => [\Html::class, 'email'],
 
                 // Escaped Classes
-                'str_*'          => [\Str::class, '*', true],
-                'html_*'         => [\Html::class, '*', true],
+                'str_*' => [\Str::class, '*', true],
+                'html_*' => [\Html::class, '*', true],
 
                 // Raw Classes
-                'url_*'          => [\Url::class, '*'],
-                'form_*'         => [\Form::class, '*'],
-                'form_macro'     => [\Form::class, '__call']
+                'url_*' => [\Url::class, '*'],
+                'form_*' => [\Form::class, '*'],
+                'form_macro' => [\Form::class, '__call']
             ]);
 
             $manager->registerFilters([
                 // Escaped Classes
-                'trans'          => [\Lang::class, 'get', true],
-                'transchoice'    => [\Lang::class, 'choice', true],
+                'trans' => [\Lang::class, 'get', true],
+                'transchoice' => [\Lang::class, 'choice', true],
 
                 // Raw Classes
-                'slug'           => [\Str::class, 'slug'],
-                'plural'         => [\Str::class, 'plural'],
-                'singular'       => [\Str::class, 'singular'],
-                'finish'         => [\Str::class, 'finish'],
-                'snake'          => [\Str::class, 'snake'],
-                'camel'          => [\Str::class, 'camel'],
-                'studly'         => [\Str::class, 'studly'],
-                'md'             => [\Markdown::class, 'parse'],
-                'md_safe'        => [\Markdown::class, 'parseSafe'],
-                'time_since'     => [\System\Helpers\DateTime::class, 'timeSince'],
-                'time_tense'     => [\System\Helpers\DateTime::class, 'timeTense'],
+                'slug' => [\Str::class, 'slug'],
+                'plural' => [\Str::class, 'plural'],
+                'singular' => [\Str::class, 'singular'],
+                'finish' => [\Str::class, 'finish'],
+                'snake' => [\Str::class, 'snake'],
+                'camel' => [\Str::class, 'camel'],
+                'studly' => [\Str::class, 'studly'],
+                'md' => [\Markdown::class, 'parse'],
+                'md_safe' => [\Markdown::class, 'parseSafe'],
+                'time_since' => [\System\Helpers\DateTime::class, 'timeSince'],
+                'time_tense' => [\System\Helpers\DateTime::class, 'timeTense'],
             ]);
         });
     }
@@ -359,12 +362,12 @@ class ServiceProvider extends ModuleServiceProvider
         BackendMenu::registerCallback(function ($manager) {
             $manager->registerMenuItems('October.System', [
                 'system' => [
-                    'label'       => 'system::lang.settings.menu_label',
-                    'icon'        => 'icon-cog',
-                    'iconSvg'     => 'modules/system/assets/images/cog-icon.svg',
-                    'url'         => Backend::url('system/settings'),
+                    'label' => 'system::lang.settings.menu_label',
+                    'icon' => 'icon-cog',
+                    'iconSvg' => 'modules/system/assets/images/cog-icon.svg',
+                    'url' => Backend::url('system/settings'),
                     'permissions' => [],
-                    'order'       => 1000
+                    'order' => 1000
                 ]
             ]);
         });
@@ -443,88 +446,79 @@ class ServiceProvider extends ModuleServiceProvider
         SettingsManager::instance()->registerCallback(function ($manager) {
             $manager->registerSettingItems('October.System', [
                 'updates' => [
-                    'label'       => 'system::lang.updates.menu_label',
+                    'label' => 'system::lang.updates.menu_label',
                     'description' => 'system::lang.updates.menu_description',
-                    'category'    => SettingsManager::CATEGORY_SYSTEM,
-                    'icon'        => 'octo-icon-download',
-                    'url'         => Backend::url('system/updates'),
+                    'category' => SettingsManager::CATEGORY_SYSTEM,
+                    'icon' => 'octo-icon-download',
+                    'url' => Backend::url('system/updates'),
                     'permissions' => ['system.manage_updates'],
-                    'order'       => 300
+                    'order' => 300
                 ],
                 'my_updates' => [
-                    'label'       => 'system::lang.updates.menu_label',
+                    'label' => 'system::lang.updates.menu_label',
                     'description' => 'system::lang.updates.menu_description',
-                    'category'    => SettingsManager::CATEGORY_MYSETTINGS,
-                    'icon'        => 'octo-icon-components',
-                    'url'         => Backend::url('system/updates'),
+                    'category' => SettingsManager::CATEGORY_MYSETTINGS,
+                    'icon' => 'octo-icon-components',
+                    'url' => Backend::url('system/updates'),
                     'permissions' => ['system.manage_updates'],
-                    'order'       => 520,
-                    'context'     => 'mysettings'
-                ],
-                'administrators' => [
-                    'label'       => 'backend::lang.user.menu_label',
-                    'description' => 'backend::lang.user.menu_description',
-                    'category'    => SettingsManager::CATEGORY_SYSTEM,
-                    'icon'        => 'octo-icon-users',
-                    'url'         => Backend::url('backend/users'),
-                    'permissions' => ['backend.manage_users'],
-                    'order'       => 400
+                    'order' => 520,
+                    'context' => 'mysettings'
                 ],
                 'mail_templates' => [
-                    'label'       => 'system::lang.mail_templates.menu_label',
+                    'label' => 'system::lang.mail_templates.menu_label',
                     'description' => 'system::lang.mail_templates.menu_description',
-                    'category'    => SettingsManager::CATEGORY_MAIL,
-                    'icon'        => 'octo-icon-mail-messages',
-                    'url'         => Backend::url('system/mailtemplates'),
+                    'category' => SettingsManager::CATEGORY_MAIL,
+                    'icon' => 'octo-icon-mail-messages',
+                    'url' => Backend::url('system/mailtemplates'),
                     'permissions' => ['system.manage_mail_templates'],
-                    'order'       => 610
+                    'order' => 610
                 ],
                 'mail_settings' => [
-                    'label'       => 'system::lang.mail.menu_label',
+                    'label' => 'system::lang.mail.menu_label',
                     'description' => 'system::lang.mail.menu_description',
-                    'category'    => SettingsManager::CATEGORY_MAIL,
-                    'icon'        => 'octo-icon-mail-settings',
-                    'class'       => 'System\Models\MailSetting',
+                    'category' => SettingsManager::CATEGORY_MAIL,
+                    'icon' => 'octo-icon-mail-settings',
+                    'class' => 'System\Models\MailSetting',
                     'permissions' => ['system.manage_mail_settings'],
-                    'order'       => 620
+                    'order' => 620
                 ],
                 'mail_brand_settings' => [
-                    'label'       => 'system::lang.mail_brand.menu_label',
+                    'label' => 'system::lang.mail_brand.menu_label',
                     'description' => 'system::lang.mail_brand.menu_description',
-                    'category'    => SettingsManager::CATEGORY_MAIL,
-                    'icon'        => 'octo-icon-mail-branding',
-                    'url'         => Backend::url('system/mailbrandsettings'),
+                    'category' => SettingsManager::CATEGORY_MAIL,
+                    'icon' => 'octo-icon-mail-branding',
+                    'url' => Backend::url('system/mailbrandsettings'),
                     'permissions' => ['system.manage_mail_templates'],
-                    'order'       => 630
+                    'order' => 630
                 ],
                 'event_logs' => [
-                    'label'       => 'system::lang.event_log.menu_label',
+                    'label' => 'system::lang.event_log.menu_label',
                     'description' => 'system::lang.event_log.menu_description',
-                    'category'    => SettingsManager::CATEGORY_LOGS,
-                    'icon'        => 'octo-icon-text-format-ul',
-                    'url'         => Backend::url('system/eventlogs'),
+                    'category' => SettingsManager::CATEGORY_LOGS,
+                    'icon' => 'octo-icon-text-format-ul',
+                    'url' => Backend::url('system/eventlogs'),
                     'permissions' => ['system.access_logs'],
-                    'order'       => 900,
-                    'keywords'    => 'error exception'
+                    'order' => 900,
+                    'keywords' => 'error exception'
                 ],
                 'request_logs' => [
-                    'label'       => 'system::lang.request_log.menu_label',
+                    'label' => 'system::lang.request_log.menu_label',
                     'description' => 'system::lang.request_log.menu_description',
-                    'category'    => SettingsManager::CATEGORY_LOGS,
-                    'icon'        => 'icon-file-o',
-                    'url'         => Backend::url('system/requestlogs'),
+                    'category' => SettingsManager::CATEGORY_LOGS,
+                    'icon' => 'icon-file-o',
+                    'url' => Backend::url('system/requestlogs'),
                     'permissions' => ['system.access_logs'],
-                    'order'       => 910,
-                    'keywords'    => '404 error'
+                    'order' => 910,
+                    'keywords' => '404 error'
                 ],
                 'log_settings' => [
-                    'label'       => 'system::lang.log.menu_label',
+                    'label' => 'system::lang.log.menu_label',
                     'description' => 'system::lang.log.menu_description',
-                    'category'    => SettingsManager::CATEGORY_LOGS,
-                    'icon'        => 'octo-icon-log-settings',
-                    'class'       => 'System\Models\LogSetting',
+                    'category' => SettingsManager::CATEGORY_LOGS,
+                    'icon' => 'octo-icon-log-settings',
+                    'class' => 'System\Models\LogSetting',
                     'permissions' => ['system.manage_logs'],
-                    'order'       => 990
+                    'order' => 990
                 ],
             ]);
         });

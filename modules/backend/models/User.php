@@ -206,16 +206,16 @@ class User extends UserBase
         // Create admin
         $user = new self;
         $user->forceFill([
-            'last_name'             => array_get($data, 'last_name'),
-            'first_name'            => array_get($data, 'first_name'),
-            'email'                 => array_get($data, 'email'),
-            'login'                 => array_get($data, 'login'),
-            'password'              => array_get($data, 'password'),
+            'last_name' => array_get($data, 'last_name'),
+            'first_name' => array_get($data, 'first_name'),
+            'email' => array_get($data, 'email'),
+            'login' => array_get($data, 'login'),
+            'password' => array_get($data, 'password'),
             'password_confirmation' => array_get($data, 'password_confirmation'),
-            'permissions'           => [],
-            'is_superuser'          => true,
-            'is_activated'          => true,
-            'role_id'               => $roleId
+            'permissions' => [],
+            'is_superuser' => true,
+            'is_activated' => true,
+            'role_id' => $roleId
         ]);
         $user->save();
 

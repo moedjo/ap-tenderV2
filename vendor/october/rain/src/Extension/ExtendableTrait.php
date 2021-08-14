@@ -164,11 +164,9 @@ trait ExtendableTrait
             $extension &&
             ($extensionObj = $this->getClassExtension($extension))
         ) {
-
-
             $method = [$extensionObj, $method];
-        
         }
+
         $this->extensionData['dynamicMethods'][$dynamicName] = $method;
     }
 

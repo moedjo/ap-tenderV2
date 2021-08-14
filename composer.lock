@@ -4,8 +4,74 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aeb2ffe32a0e4784d017a485558d8035",
+    "content-hash": "ac98298993cbaae1b81dbb2a47764e1d",
     "packages": [
+        {
+            "name": "barryvdh/laravel-dompdf",
+            "version": "v0.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barryvdh/laravel-dompdf.git",
+                "reference": "5b99e1f94157d74e450f4c97e8444fcaffa2144b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/barryvdh/laravel-dompdf/zipball/5b99e1f94157d74e450f4c97e8444fcaffa2144b",
+                "reference": "5b99e1f94157d74e450f4c97e8444fcaffa2144b",
+                "shasum": ""
+            },
+            "require": {
+                "dompdf/dompdf": "^1",
+                "illuminate/support": "^5.5|^6|^7|^8",
+                "php": "^7.1 || ^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.9-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Barryvdh\\DomPDF\\ServiceProvider"
+                    ],
+                    "aliases": {
+                        "PDF": "Barryvdh\\DomPDF\\Facade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Barryvdh\\DomPDF\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Barry vd. Heuvel",
+                    "email": "barryvdh@gmail.com"
+                }
+            ],
+            "description": "A DOMPDF Wrapper for Laravel",
+            "keywords": [
+                "dompdf",
+                "laravel",
+                "pdf"
+            ],
+            "support": {
+                "issues": "https://github.com/barryvdh/laravel-dompdf/issues",
+                "source": "https://github.com/barryvdh/laravel-dompdf/tree/v0.9.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/barryvdh",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-12-27T12:05:53+00:00"
+        },
         {
             "name": "composer/ca-bundle",
             "version": "1.2.10",
@@ -1178,6 +1244,78 @@
                 }
             ],
             "time": "2020-05-25T17:44:05+00:00"
+        },
+        {
+            "name": "dompdf/dompdf",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dompdf/dompdf.git",
+                "reference": "8768448244967a46d6e67b891d30878e0e15d25c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dompdf/dompdf/zipball/8768448244967a46d6e67b891d30878e0e15d25c",
+                "reference": "8768448244967a46d6e67b891d30878e0e15d25c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-mbstring": "*",
+                "phenx/php-font-lib": "^0.5.2",
+                "phenx/php-svg-lib": "^0.3.3",
+                "php": "^7.1 || ^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.3",
+                "phpunit/phpunit": "^7.5 || ^8 || ^9",
+                "squizlabs/php_codesniffer": "^3.5"
+            },
+            "suggest": {
+                "ext-gd": "Needed to process images",
+                "ext-gmagick": "Improves image processing performance",
+                "ext-imagick": "Improves image processing performance",
+                "ext-zlib": "Needed for pdf stream compression"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dompdf\\": "src/"
+                },
+                "classmap": [
+                    "lib/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Ménager",
+                    "email": "fabien.menager@gmail.com"
+                },
+                {
+                    "name": "Brian Sweeney",
+                    "email": "eclecticgeek@gmail.com"
+                },
+                {
+                    "name": "Gabriel Bull",
+                    "email": "me@gabrielbull.com"
+                }
+            ],
+            "description": "DOMPDF is a CSS 2.1 compliant HTML to PDF converter",
+            "homepage": "https://github.com/dompdf/dompdf",
+            "support": {
+                "issues": "https://github.com/dompdf/dompdf/issues",
+                "source": "https://github.com/dompdf/dompdf/tree/v1.0.2"
+            },
+            "time": "2021-01-08T14:18:52+00:00"
         },
         {
             "name": "dragonmantank/cron-expression",
@@ -2490,12 +2628,12 @@
         },
         {
             "name": "october/backend",
-            "version": "v2.1.2",
+            "version": "v2.1.3",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/backend/october-backend-v2.1.2-721060.zip",
-                "reference": "4c7f063be21d5f16731b3cf8774cd55685b71797",
-                "shasum": "870dbd1ab5acc59a39f9f0fafcd2ce91319b5572"
+                "url": "https://gateway.octobercms.com/composer/dist/october/backend/october-backend-v2.1.3-d588de.zip",
+                "reference": "dd34c4fc3bf1c1728213f51d636c2410b61768c3",
+                "shasum": "2b2b18fa43cb28f3d383fec40b3e924f46ba2dea"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -2518,16 +2656,16 @@
                 "october",
                 "october cms"
             ],
-            "time": "2021-08-11T06:33:50+00:00"
+            "time": "2021-08-14T02:52:14+00:00"
         },
         {
             "name": "october/cms",
-            "version": "v2.1.2",
+            "version": "v2.1.3",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/cms/october-cms-v2.1.2-dd0f50.zip",
+                "url": "https://gateway.octobercms.com/composer/dist/october/cms/october-cms-v2.1.3-dd0f50.zip",
                 "reference": "41a585c7f16721b093b06ceafce3ac992f92b546",
-                "shasum": "29ed95f36f0d5cb0fd999bb320876adf44e4af96"
+                "shasum": "323db16a754b3d9f38021844184e13e7b7dfb842"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -2554,12 +2692,12 @@
         },
         {
             "name": "october/editor",
-            "version": "v2.1.2",
+            "version": "v2.1.3",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/editor/october-editor-v2.1.2-732691.zip",
+                "url": "https://gateway.octobercms.com/composer/dist/october/editor/october-editor-v2.1.3-732691.zip",
                 "reference": "4971930b20ab0f155ed6d3993acd7cb7749b7458",
-                "shasum": "ecaa769fd44f927657d1590fbba898301aed4186"
+                "shasum": "47613a8dd19ec5cf49d0d4b234d85d81927db55b"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -2586,12 +2724,12 @@
         },
         {
             "name": "october/media",
-            "version": "v2.1.2",
+            "version": "v2.1.3",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/media/october-media-v2.1.2-be96e8.zip",
+                "url": "https://gateway.octobercms.com/composer/dist/october/media/october-media-v2.1.3-be96e8.zip",
                 "reference": "be24927260dfa5e192dce846b453151823220d91",
-                "shasum": "2f4c2ea2eb70219c82b94b2cd5c0070f2f069231"
+                "shasum": "04d8905ff7c10a984f46de066abf94060c8a0b25"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -2618,16 +2756,16 @@
         },
         {
             "name": "october/rain",
-            "version": "v2.1.1",
+            "version": "v2.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/octobercms/library.git",
-                "reference": "99c6f4ef6001eadcdefedd1461efc3c772014321"
+                "reference": "3726a650b26dc725a58d6455838d03aab5916992"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/octobercms/library/zipball/99c6f4ef6001eadcdefedd1461efc3c772014321",
-                "reference": "99c6f4ef6001eadcdefedd1461efc3c772014321",
+                "url": "https://api.github.com/repos/octobercms/library/zipball/3726a650b26dc725a58d6455838d03aab5916992",
+                "reference": "3726a650b26dc725a58d6455838d03aab5916992",
                 "shasum": ""
             },
             "require": {
@@ -2683,18 +2821,18 @@
                 "rain"
             ],
             "support": {
-                "source": "https://github.com/octobercms/library/tree/v2.1.1"
+                "source": "https://github.com/octobercms/library/tree/v2.1.3"
             },
-            "time": "2021-08-04T00:32:24+00:00"
+            "time": "2021-08-13T05:08:20+00:00"
         },
         {
             "name": "october/system",
-            "version": "v2.1.2",
+            "version": "v2.1.3",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/system/october-system-v2.1.2-096ccb.zip",
-                "reference": "45f5ea34170a2e5386f30c1e4edb0da1aba6a444",
-                "shasum": "1245a81cd3ba57f7d8bc23e7ebd8fa7a576c2f1d"
+                "url": "https://gateway.octobercms.com/composer/dist/october/system/october-system-v2.1.3-807907.zip",
+                "reference": "c34e52432e8c6358670882ee5715aa8a264d89ac",
+                "shasum": "3a22b20da056a2bd6380d2f9760ee677fd2e8b8c"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -2717,7 +2855,7 @@
                 "october cms",
                 "system"
             ],
-            "time": "2021-08-11T05:49:01+00:00"
+            "time": "2021-08-13T08:37:46+00:00"
         },
         {
             "name": "opis/closure",
@@ -2833,6 +2971,91 @@
                 "source": "https://github.com/paragonie/random_compat"
             },
             "time": "2020-10-15T08:29:30+00:00"
+        },
+        {
+            "name": "phenx/php-font-lib",
+            "version": "0.5.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PhenX/php-font-lib.git",
+                "reference": "ca6ad461f032145fff5971b5985e5af9e7fa88d8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PhenX/php-font-lib/zipball/ca6ad461f032145fff5971b5985e5af9e7fa88d8",
+                "reference": "ca6ad461f032145fff5971b5985e5af9e7fa88d8",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8.35 || ^5 || ^6 || ^7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "FontLib\\": "src/FontLib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Ménager",
+                    "email": "fabien.menager@gmail.com"
+                }
+            ],
+            "description": "A library to read, parse, export and make subsets of different types of font files.",
+            "homepage": "https://github.com/PhenX/php-font-lib",
+            "support": {
+                "issues": "https://github.com/PhenX/php-font-lib/issues",
+                "source": "https://github.com/PhenX/php-font-lib/tree/0.5.2"
+            },
+            "time": "2020-03-08T15:31:32+00:00"
+        },
+        {
+            "name": "phenx/php-svg-lib",
+            "version": "v0.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PhenX/php-svg-lib.git",
+                "reference": "5fa61b65e612ce1ae15f69b3d223cb14ecc60e32"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PhenX/php-svg-lib/zipball/5fa61b65e612ce1ae15f69b3d223cb14ecc60e32",
+                "reference": "5fa61b65e612ce1ae15f69b3d223cb14ecc60e32",
+                "shasum": ""
+            },
+            "require": {
+                "sabberworm/php-css-parser": "^8.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.5|^6.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Svg\\": "src/Svg"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Ménager",
+                    "email": "fabien.menager@gmail.com"
+                }
+            ],
+            "description": "A library to read, parse and export to PDF SVG files.",
+            "homepage": "https://github.com/PhenX/php-svg-lib",
+            "support": {
+                "issues": "https://github.com/PhenX/php-svg-lib/issues",
+                "source": "https://github.com/PhenX/php-svg-lib/tree/master"
+            },
+            "time": "2019-09-11T20:02:13+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -3326,15 +3549,96 @@
         },
         {
             "name": "renatio/dynamicpdf-plugin",
-            "version": "v4.0.8",
+            "version": "v5.0.1",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/renatio/dynamicpdf-plugin/renatio-dynamicpdf-plugin.zip"
+                "url": "https://gateway.octobercms.com/composer/dist/renatio/dynamicpdf-plugin/renatio-dynamicpdf-plugin-c28d53f3693d4df19c2a2915efb9365d9d906506-zip-6d88a1.zip",
+                "reference": "c28d53f3693d4df19c2a2915efb9365d9d906506",
+                "shasum": "7232ee202982939a7fa0ba7d1b13d3f1a58ef7ce"
             },
             "require": {
-                "composer/installers": "~1.0"
+                "barryvdh/laravel-dompdf": "^0.9.0",
+                "composer/installers": "~1.0",
+                "illuminate/support": "^6"
             },
-            "type": "october-plugin"
+            "require-dev": {
+                "fakerphp/faker": "^1.15",
+                "mockery/mockery": "^1.4"
+            },
+            "type": "october-plugin",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michal Plodowski",
+                    "email": "michal.plodowski@gmail.com"
+                }
+            ],
+            "description": "October HTML to PDF converter using dompdf library.",
+            "homepage": "https://octobercms.com/plugin/renatio-dynamicpdf",
+            "keywords": [
+                "dompdf",
+                "laravel",
+                "octobercms",
+                "octobercms-plugin",
+                "pdf",
+                "php"
+            ],
+            "support": {
+                "source": "https://github.com/mplodowski/dynamicpdf-plugin/tree/v5.0.1",
+                "issues": "https://github.com/mplodowski/dynamicpdf-plugin/issues"
+            },
+            "time": "2021-08-12T20:30:38+00:00"
+        },
+        {
+            "name": "sabberworm/php-css-parser",
+            "version": "8.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sabberworm/PHP-CSS-Parser.git",
+                "reference": "d217848e1396ef962fb1997cf3e2421acba7f796"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sabberworm/PHP-CSS-Parser/zipball/d217848e1396ef962fb1997cf3e2421acba7f796",
+                "reference": "d217848e1396ef962fb1997cf3e2421acba7f796",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "codacy/coverage": "^1.4",
+                "phpunit/phpunit": "~4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Sabberworm\\CSS": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Raphael Schweikert"
+                }
+            ],
+            "description": "Parser for CSS Files written in PHP",
+            "homepage": "http://www.sabberworm.com/blog/2010/6/10/php-css-parser",
+            "keywords": [
+                "css",
+                "parser",
+                "stylesheet"
+            ],
+            "support": {
+                "issues": "https://github.com/sabberworm/PHP-CSS-Parser/issues",
+                "source": "https://github.com/sabberworm/PHP-CSS-Parser/tree/8.3.1"
+            },
+            "time": "2020-06-01T09:10:00+00:00"
         },
         {
             "name": "scssphp/scssphp",
