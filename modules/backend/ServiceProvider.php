@@ -204,19 +204,19 @@ class ServiceProvider extends ModuleServiceProvider
                     'label' => 'backend::lang.user.role.menu_label',
                     'description' => 'backend::lang.user.role.menu_description',
                     'category' => SettingsManager::CATEGORY_TEAM,
-                    'icon' => 'oc-icon-address-card',
+                    'icon' => 'octo-icon-id-card-1',
                     'url' => Backend::url('backend/userroles'),
                     'permissions' => ['backend.manage_users'],
-                    'order' => 400
+                    'order' => 410
                 ],
                 'admingroups' => [
                     'label' => 'backend::lang.user.group.menu_label',
                     'description' => 'backend::lang.user.group.menu_description',
                     'category' => SettingsManager::CATEGORY_TEAM,
-                    'icon' => 'oc-icon-group',
+                    'icon' => 'octo-icon-user-group',
                     'url' => Backend::url('backend/usergroups'),
                     'permissions' => ['backend.manage_users'],
-                    'order' => 400
+                    'order' => 420
                 ],
                 'branding' => [
                     'label' => 'backend::lang.branding.menu_label',

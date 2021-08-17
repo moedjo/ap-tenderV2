@@ -623,7 +623,7 @@ class RelationController extends ControllerBehavior
 
         $filterConfig = $this->makeConfig($this->getConfig($type . '[filter]'));
         $filterConfig->alias = $this->alias . ucfirst($type) . 'Filter';
-        $filterWidget = $this->makeWidget('Backend\Widgets\Filter', $filterConfig);
+        $filterWidget = $this->makeWidget(\Backend\Widgets\Filter::class, $filterConfig);
 
         return $filterWidget;
     }
@@ -668,7 +668,7 @@ class RelationController extends ControllerBehavior
             return;
         }
 
-        $toolbarWidget = $this->makeWidget('Backend\Widgets\Toolbar', $toolbarConfig);
+        $toolbarWidget = $this->makeWidget(\Backend\Widgets\Toolbar::class, $toolbarConfig);
         $toolbarWidget->cssClasses[] = 'list-header';
 
         return $toolbarWidget;
@@ -684,7 +684,7 @@ class RelationController extends ControllerBehavior
         $config->alias = $this->alias . 'ManageSearch';
         $config->growable = false;
         $config->prompt = 'backend::lang.list.search_prompt';
-        $widget = $this->makeWidget('Backend\Widgets\Search', $config);
+        $widget = $this->makeWidget(\Backend\Widgets\Search::class, $config);
         $widget->cssClasses[] = 'recordfinder-search';
 
         /*
@@ -738,7 +738,7 @@ class RelationController extends ControllerBehavior
                 $config->noRecordsMessage = $emptyMessage;
             }
 
-            $widget = $this->makeWidget('Backend\Widgets\Lists', $config);
+            $widget = $this->makeWidget(\Backend\Widgets\Lists::class, $config);
 
             /*
              * Apply defined constraints
@@ -833,7 +833,7 @@ class RelationController extends ControllerBehavior
             $config->context = 'relation';
             $config->alias = $this->alias . 'ViewForm';
 
-            $widget = $this->makeWidget('Backend\Widgets\Form', $config);
+            $widget = $this->makeWidget(\Backend\Widgets\Form::class, $config);
             $widget->previewMode = true;
         }
 
@@ -880,7 +880,7 @@ class RelationController extends ControllerBehavior
                 );
             }
 
-            $widget = $this->makeWidget('Backend\Widgets\Lists', $config);
+            $widget = $this->makeWidget(\Backend\Widgets\Lists::class, $config);
 
             /*
              * Apply defined constraints
@@ -962,7 +962,7 @@ class RelationController extends ControllerBehavior
                 }
             }
 
-            $widget = $this->makeWidget('Backend\Widgets\Form', $config);
+            $widget = $this->makeWidget(\Backend\Widgets\Form::class, $config);
         }
 
         if (!$widget) {
@@ -1032,7 +1032,7 @@ class RelationController extends ControllerBehavior
             $config->model->setRelation('pivot', $pivotModel);
         }
 
-        return $this->makeWidget('Backend\Widgets\Form', $config);
+        return $this->makeWidget(\Backend\Widgets\Form::class, $config);
     }
 
     //
@@ -1141,7 +1141,7 @@ class RelationController extends ControllerBehavior
              * to pass any constraints imposed by the database. This emulates
              * the "create" method on the relation object.
              */
-            $isSavable = $parentModel->exists && in_array($this->relationType, ['hasOne', 'hasMany']);
+            $isSavable = $parentModel->exists && in_array($this->relationType, ['hasOne', 'hasMany', 'morphOne', 'morphMany']);
             if ($isSavable) {
                 $newModel->setAttribute(
                     $this->relationObject->getForeignKeyName(),
@@ -1166,7 +1166,7 @@ class RelationController extends ControllerBehavior
             /*
              * Has one relations will save as part of the add() call.
              */
-            if ($this->deferredBinding || $this->relationType != 'hasOne') {
+            if ($this->deferredBinding || in_array($this->relationType, ['hasOne', 'morphOne'])) {
                 $newModel->save(null, $this->manageWidget->getSessionKey());
             }
 
