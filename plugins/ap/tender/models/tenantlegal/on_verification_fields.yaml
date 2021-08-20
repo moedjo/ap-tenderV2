@@ -290,7 +290,7 @@ fields:
         mimeTypes: pdf
         maxFilesize: 40
         attachOnUpload: true
-        span: right
+        span: left
     doc_legal_npwp:
         label: 'ap.tender::lang.tenant.doc_legal_npwp'
         disabled: true
@@ -302,7 +302,7 @@ fields:
         mimeTypes: pdf
         maxFilesize: 40
         attachOnUpload: true
-        span: left
+        span: right
     doc_legal_ktp:
         label: 'ap.tender::lang.tenant.doc_legal_ktp'
         disabled: true
@@ -314,7 +314,7 @@ fields:
         mimeTypes: pdf
         maxFilesize: 40
         attachOnUpload: true
-        span: right
+        span: left
     doc_legal_sk:
         label: 'ap.tender::lang.tenant.doc_legal_sk'
         disabled: true
@@ -326,7 +326,7 @@ fields:
         mimeTypes: pdf
         maxFilesize: 40
         attachOnUpload: true
-        span: left
+        span: right
     doc_legal_other:
         label: 'ap.tender::lang.tenant.doc_legal_other'
         disabled: true
@@ -338,7 +338,7 @@ fields:
         mimeTypes: pdf
         maxFilesize: 40
         attachOnUpload: true
-        span: right
+        span: left
     doc_legal_cv:
         label: 'ap.tender::lang.tenant.doc_legal_cv'
         disabled: true
@@ -350,7 +350,7 @@ fields:
         mimeTypes: pdf
         maxFilesize: 40
         attachOnUpload: true
-        span: left
+        span: right
         required: true
     doc_legal_konsorsium:
         label: 'ap.tender::lang.tenant.doc_legal_konsorsium'
