@@ -92,7 +92,7 @@
         'name' => 'Kategori',
         'description' => 'Informasi Umum',
         'fields' => 'Bidang',
-        'yes_or_no' => 'Ya/Tidak',
+        'yes_or_no' => ' Ya (Centang Jika Sesuai)',
         
         'note' => 'Catatan',
 
@@ -207,6 +207,7 @@
         'konsorsium_function' => 'Jabatan dalam Perwakilan Konsorsium',
         'konsorsium_companies' => 'Nama Perusahaan dan Komposisi Ekuitas',
         'konsorsium_company' => 'Nama Perusahaan',
+        'konsorsium_equity' => 'Komposisi Ekuitas',
         'business_fields' => 'Kategori Bisnis',
         'business_activity' => 'Kegiatan Usaha Pokok',
         'business_kbli' => 'Bidang Usaha (KBLI)',
@@ -262,7 +263,6 @@
         'doc_legal_cooperation' => 'Surat Keterangan Bukti Kerja Sama',
         'doc_legal_akta' => 'Akta Perusahaan',
         'doc_legal_nib' =>'NIB / Surat Izin Usaha',
-        'doc_legal_tdp' => 'Tanda Daftar Perusahaan (TDP)',
         'doc_legal_domisili' => 'Surat Keterangan Domisili tahun terakhir',
         'doc_legal_npwp' => 'Nomor Pokok Wajib Pajak (NPWP)',
         'doc_legal_ktp' => 'KTP Penanggung Jawab',
@@ -275,7 +275,6 @@
         'doc_legal_cooperation_comment' => 'File (*pdf - max 40MB)',
         'doc_legal_akta_comment' => 'File (*pdf - max 40MB)',
         'doc_legal_nib_comment' => 'File (*pdf - max 40MB)',
-        'doc_legal_tdp_comment' => 'File (*pdf - max 40MB)',
         'doc_legal_domisili_comment' => 'File (*pdf - max 40MB)',
         'doc_legal_npwp_comment' => 'File (*pdf - max 40MB)',
         'doc_legal_ktp_comment' => 'File (*pdf - max 40MB)',

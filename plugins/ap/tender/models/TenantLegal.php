@@ -12,7 +12,7 @@ class TenantLegal extends Tenant
 
     public $rules = [
         'name' => 'required',
-        'npwp' => 'required',
+        'npwp' => 'required|digits_between:1,15',
         'konsorsium' => 'required',
         'address' => 'required',
         'region' => 'required',
@@ -37,7 +37,7 @@ class TenantLegal extends Tenant
 
         'doc_legal_akta' => 'required',
         'doc_legal_nib' => 'required',
-        'doc_legal_tdp' => 'required',
+        // 'doc_legal_tdp' => 'required',
         'doc_legal_domisili' => 'required',
         'doc_legal_npwp' => 'required',
         'doc_legal_ktp' => 'required',

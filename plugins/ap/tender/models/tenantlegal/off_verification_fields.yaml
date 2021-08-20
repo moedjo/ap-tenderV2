@@ -249,17 +249,6 @@ fields:
         maxFilesize: 40
         attachOnUpload: true
         span: right
-    doc_legal_tdp:
-        label: 'ap.tender::lang.tenant.doc_legal_tdp'
-        commentAbove: 'ap.tender::lang.tenant.doc_legal_tdp_comment'
-        type: fileupload
-        mode: file
-        useCaption: false
-        fileTypes: pdf
-        mimeTypes: pdf
-        maxFilesize: 40
-        attachOnUpload: true
-        span: left
     doc_legal_domisili:
         label: 'ap.tender::lang.tenant.doc_legal_domisili'
         commentAbove: 'ap.tender::lang.tenant.doc_legal_domisili_comment'

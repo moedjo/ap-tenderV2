@@ -59,7 +59,7 @@ class PublicTenantShortForms extends Controller
         if (isset($tenant)) {
             if ($tenant->status == 'short_form') {
                 Session::put('tenant_id', $tenant->id);
-                Flash::success(e(trans('ap.tender::lang.global.success_activation')));
+                Flash::success(e(trans('ap.tender::lang.tenant.token_activation_success')));
                 return Redirect::to("backend/ap/tender/publictenantlegals/update/$tenant->id");
             } else {
                 Flash::error(e(trans('ap.tender::lang.global.invalid_token')));

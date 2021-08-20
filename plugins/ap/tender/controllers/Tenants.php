@@ -6,6 +6,7 @@ use Ap\Tender\Models\Tenant;
 
 use Backend\Classes\Controller;
 use BackendMenu;
+use Event;
 use Mail;
 use Renatio\DynamicPDF\Classes\PDF;
 
@@ -31,10 +32,15 @@ class Tenants extends Controller
     {
 
         $tenant = Tenant::findOrFail(1);
-        $tenant->load('verifications');
-        $tenant->load('business_entity');
-        $data = $tenant->toArray();
-        return PDF::loadTemplate('ap.tender::pdf.tenant-reject', $data)
-            ->stream();
+        // $tenant->load('verifications');
+        // $tenant->load('business_entity');
+        // $data = $tenant->toArray();
+        // return PDF::loadTemplate('ap.tender::pdf.tenant-reject', $data)
+        //     ->stream();
+
+
+
+        Event::fire('tenant.reject', [$tenant]);
+
     }
 }
