@@ -12,6 +12,8 @@ fields:
         type: taglist
         placeholder: 'ap.tender::lang.verification.fields'
         separator: comma
+        options: true
+        dependsOn: type
     number:
         label: 'ap.tender::lang.verification.number'
         span: full

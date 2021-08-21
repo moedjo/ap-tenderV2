@@ -3,7 +3,7 @@ fields:
         label: 'ap.tender::lang.tenant.finance_section1'
         type: section
     finances:
-        label: 'ap.tender::lang.tenant.finance'
+        label: 'ap.tender::lang.tenant.finances'
         disabled: true
         span: full
         path: field_finances

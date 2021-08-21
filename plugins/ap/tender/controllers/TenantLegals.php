@@ -72,34 +72,16 @@ class TenantLegals extends Controller
     {
 
         $user = $this->user;
-        if ($user->hasPermission('ap_tender_access_tenants')) {
-            return $query;
-        }
-
         if ($user->hasPermission('ap_tender_is_tenant')) {
             return $query->where('user_id', $user->id);
         }
+
+        return $query;
     }
 
     public function formExtendQuery($query)
     {
         return $this->extendQuery($query);
-    }
-
-    public function view()
-    {
-        $user = $this->user;
-
-        if ($user->is_superuser) {
-            return Redirect::to(Backend::url('ap/tender/tenants'));
-        }
-
-        if ($user->hasPermission('ap_tender_is_tenant')) {
-            $tenant = Tenant::where('user_id', $user->id)->first();
-            return Redirect::to(Backend::url('ap/tender/tenantlegals/update/' . $tenant->id));
-        }
-
-        return Redirect::to(Backend::url('ap/tender/tenants'));
     }
 
 
@@ -137,8 +119,27 @@ class TenantLegals extends Controller
         }
     }
 
-    public function update_onSave($recordId)
+
+    public function update($recordId = null)
     {
-        return $this->asExtension('FormController')->update_onSave($recordId);
+
+        $user = $this->user;
+
+        if(isset($recordId)){
+            return $this->asExtension('FormController')->update($recordId);
+        }
+
+        if ($user->hasPermission('ap_tender_is_tenant')) {
+            $tenant = Tenant::where('user_id', $user->id)->first();
+
+            if(empty($tenant)){
+                return Redirect::to(Backend::url('ap/tender/tenants'));
+            }
+
+
+            return Redirect::to(Backend::url('ap/tender/tenantlegals/update/'.$tenant->id));
+        } 
+
+        return Redirect::to(Backend::url('ap/tender/tenantlegals/update/'.$recordId));
     }
 }

@@ -12,7 +12,7 @@ fields:
             0: 'ap.tender::lang.global.no'
             1: 'ap.tender::lang.global.yes'
     experiences:
-        label: 'ap.tender::lang.tenant.experience'
+        label: 'ap.tender::lang.tenant.experiences'
         disabled: true
         span: full
         path: field_experiences

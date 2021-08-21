@@ -31,7 +31,7 @@ class TenantFinances extends Controller
         $user = $this->user;
         $sub_menu = 'tenants';
         if ($user->hasPermission('ap_tender_is_tenant')) {
-            $sub_menu ='my-tenant';
+            $sub_menu = 'my-tenant';
         }
 
         BackendMenu::setContext('Ap.Tender', 'tenant', $sub_menu);
@@ -61,13 +61,12 @@ class TenantFinances extends Controller
     {
 
         $user = $this->user;
-        if ($user->hasPermission('ap_tender_access_tenants')) {
-            return $query;
-        }
 
         if ($user->hasPermission('ap_tender_is_tenant')) {
             return $query->where('user_id', $user->id);
-        }
+        } else
+
+        return $query;
     }
 
     public function formExtendQuery($query)
@@ -83,11 +82,11 @@ class TenantFinances extends Controller
         if ($context == 'update') {
 
             $reject_fields = [];
-            if($model->status == 'register' && $model->on_finance_status == 'reject') {
+            if ($model->status == 'register' && $model->on_finance_status == 'reject') {
                 $verifications = $model->verification_finances;
                 foreach ($verifications as $verification) {
                     if (!$verification->pivot->on_check) {
-                        $v_fields = explode(",",$verification->fields);
+                        $v_fields = explode(",", $verification->fields);
                         foreach ($v_fields as $v_field) {
                             $reject_fields[] =  $v_field;
                         }
@@ -101,16 +100,9 @@ class TenantFinances extends Controller
                 if (!in_array($field->fieldName, $reject_fields)) {
                     $field->disabled = true;
                     $field->config['disabled'] = true;
-                    $this->vars['disabled_'.$field->fieldName] = true;
+                    $this->vars['disabled_' . $field->fieldName] = true;
                 }
             };
-            
         }
     }
-
-    public function update_onSave($recordId)
-    {
-        return $this->asExtension('FormController')->update_onSave($recordId);
-    }
-
 }

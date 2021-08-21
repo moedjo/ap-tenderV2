@@ -1,4 +1,4 @@
-v1.0.1:
+1.0.1:
     - 'Initialize plugin.'
     - create_ap_tender_business_fields.php
     - create_ap_tender_positions.php
@@ -7,7 +7,6 @@ v1.0.1:
     - create_ap_tender_offices.php
     - create_ap_tender_summaries.php
     - create_ap_tender_verifications.php
-    
     - create_ap_tender_tenants.php
     - create_ap_tender_tenant_experiences.php
     - create_ap_tender_tenant_finances.php
@@ -15,3 +14,9 @@ v1.0.1:
     - create_ap_tender_tenants_business_fields.php
     - create_ap_tender_tenants_verifications.php
     - seeder.php
+1.0.2:
+    - 'Update to v1.0.2'
+    - create_ap_tender_updates.php
+    - create_ap_tender_tenants_updates.php
+    - create_ap_tender_tenders.php
+    - create_ap_tender_tenders_tenants.php

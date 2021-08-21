@@ -8,7 +8,7 @@ verification_finances:
     pivot:
         form: $/ap/tender/models/verification/off_verification_fields.yaml
 finances:
-    label: 'ap.tender::lang.tenant.finance'
+    label: 'ap.tender::lang.tenant.finances'
     showFlash: false
     manage:
         form: $/ap/tender/models/finance/fields.yaml

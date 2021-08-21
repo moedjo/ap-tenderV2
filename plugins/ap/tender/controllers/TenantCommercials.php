@@ -62,13 +62,11 @@ class TenantCommercials extends Controller
     public function extendQuery($query)
     {
         $user = $this->user;
-        if ($user->hasPermission('ap_tender_access_tenants')) {
-            return $query;
-        }
-
         if ($user->hasPermission('ap_tender_is_tenant')) {
             return $query->where('user_id', $user->id);
         }
+
+        return $query;
     }
 
     public function formExtendQuery($query)
@@ -122,10 +120,5 @@ class TenantCommercials extends Controller
             $model->on_commercial_status = NULL;
             $model->on_finance_status = NULL;
         }
-    }
-
-    public function update_onSave($recordId)
-    {
-        return $this->asExtension('FormController')->update_onSave($recordId);
     }
 }

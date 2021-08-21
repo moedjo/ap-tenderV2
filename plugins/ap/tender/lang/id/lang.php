@@ -181,6 +181,7 @@
         'legal' => 'Informasi Umum',
         'commercial' => 'Pengalaman Perusahaan',
         'finance' => 'Kemampuan Keuangan',
+        'finances' => 'Kemampuan Keuangan',
         'verification' => 'Verifikasi Tenant',
         'invite' => 'Undangan Tenant',
         'on_verification' => 'Evaluasi',
@@ -217,6 +218,7 @@
         'business_entity' => 'Badan Usaha',
 
         'experience' => 'Pengalaman Perusahaan',
+        'experiences' => 'Pengalaman Perusahaan',
         'has_experience' => 'Sudah Memiliki Pengalaman ?',
         'financial_ability' => 'Kemampuan Keuangan',
 
@@ -305,6 +307,9 @@
         'token_activation' => 'Aktivasi Token',
         'token_activation_success' => 'Aktivasi Token Sukses',
         'user_registration' => 'Registrasi Pengguna',
+
+
+        'request_update' => 'Minta Pembaharuan', 
     ],
     'card' => [
         'general' => 'Registrasi Awal',

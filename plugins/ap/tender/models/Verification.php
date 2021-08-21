@@ -46,4 +46,12 @@ class Verification extends Model
         return e(trans('ap.tender::lang.global.'.$this->type));
     }
 
+
+    public function getFieldsOptions()
+    {
+        $update = Update::all();
+        return $update->pluck('field')
+            ->toArray();
+    }
+
 }
