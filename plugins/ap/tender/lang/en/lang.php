@@ -48,8 +48,16 @@
         'reject' => 'Tidak Setuju'
     ],
     'status' => [
-        'short_listed' => 'Short Listed',
         'reject' => 'Reject',
+        'short_listed'=> 'Short Listed', 
+        'pre_clarificated'=> 'Pre Clarificated', 
+        'pre_evaluated'=> 'Pre Evaluated', 
+        'evaluated'=> 'Evaluated', 
+        'register'=> 'Register', 
+        'short_form'=> 'Short Form', 
+        'pre_register'=> 'Pre Register', 
+        'request_update' => 'Request Update',
+        'request_update_approved' => 'Request Update Approved'
     ],
     'office' => [
         'singular' => 'Kantor',
@@ -153,6 +161,8 @@
         'singular' => 'Tenant',
         'plural' => 'Daftar Tenant',
         'my_tenant' => 'Tenant Saya',
+
+
 
         'short_form' => 'Pendaftaran Tenant',
 

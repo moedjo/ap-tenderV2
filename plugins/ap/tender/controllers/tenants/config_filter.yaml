@@ -4,4 +4,13 @@ scopes:
         type: group
         conditions: status in (:filtered)
         options: 
-          short_listed: Short Listed
+          short_listed: 'ap.tender::lang.status.short_listed'
+          pre_clarificated: 'ap.tender::lang.status.pre_clarificated'
+          pre_evaluated: 'ap.tender::lang.status.pre_evaluated'
+          evaluated: 'ap.tender::lang.status.evaluated'
+          register: 'ap.tender::lang.status.register'
+          short_form: 'ap.tender::lang.status.short_form'
+          pre_register: 'ap.tender::lang.status.pre_register'
+          reject: 'ap.tender::lang.status.reject'
+          request_update: 'ap.tender::lang.status.request_update'
+          request_update_approved: 'ap.tender::lang.status.request_update_approved'

@@ -128,8 +128,6 @@ class TenantCommercials extends Controller
             $model->on_finance_status = NULL;
         }
 
-
-        
         if (
             $model->status == 'request_update_approved' 
         ) {
