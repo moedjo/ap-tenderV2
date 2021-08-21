@@ -9,6 +9,7 @@ use System\Classes\MailManager;
 use System\Classes\CombineAssets;
 use System\Classes\SettingsManager;
 use Backend\Classes\WidgetManager;
+use October\Rain\Auth\AuthException;
 use October\Rain\Support\ModuleServiceProvider;
 
 /**
@@ -48,6 +49,16 @@ class ServiceProvider extends ModuleServiceProvider
     public function boot()
     {
         parent::boot('backend');
+
+        $this->bootAuth();
+    }
+
+    /**
+     * bootAuth boots authentication based logic.
+     */
+    protected function bootAuth(): void
+    {
+        AuthException::setDefaultErrorMessage(__('backend::lang.auth.invalid_login'));
     }
 
     /**
