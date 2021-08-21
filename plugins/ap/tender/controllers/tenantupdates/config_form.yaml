@@ -1,6 +1,6 @@
 name: 'ap.tender::lang.tenant.request_update'
 form: $/ap/tender/models/tenantupdate/fields.yaml
 modelClass: Ap\Tender\Models\TenantUpdate
-# update:
-#     redirect: ap/tender/tenantupdates/update/:id
-#     redirectClose: ap/tender/tenantupdates/update/:id
+update:
+    redirect: ap/tender/tenantupdates/update/:id
+    redirectClose: ap/tender/tenantupdates/update/:id

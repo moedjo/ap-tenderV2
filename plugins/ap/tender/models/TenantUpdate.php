@@ -9,39 +9,18 @@ use Model;
  */
 class TenantUpdate extends Tenant
 {
-
-    public $rules = [];
-
-
-    public function buildUpdates($type){
+    public function getUpdatesOptions()
+    {
         $result = [];
-        
-        $updates = Update::where('type',$type)
-            ->get();
-
+        $updates = Update::all();
         foreach ($updates as $update) {
             $result[$update->id] = [
-                e(trans('ap.tender::lang.tenant.'.$update->field)), 
-                $update->description
+
+                // e(trans('ap.tender::lang.tenant.' . $update->type)),
+                e(trans('ap.tender::lang.tenant.' . $update->field)),
             ];
         }
 
         return $result;
-    }
-
-    public function getUpdateLegalsOptions()
-    {
-        return $this->buildUpdates('legal');
-    }
-
-    public function getUpdateFinancesOptions()
-    {
-
-        return $this->buildUpdates('finance');
-    }
-
-    public function getUpdateCommercialsOptions()
-    {
-        return $this->buildUpdates('commercial');
     }
 }

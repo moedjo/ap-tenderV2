@@ -1,13 +1,19 @@
 fields:
-    update_legals:
+    updates:
         context: [update]
-        label: 'ap.tender::lang.tenant.legal'
+        label: 'ap.tender::lang.tenant.request_update'
         type: checkboxlist
-    update_finances:
-        context: [update]
-        label: 'ap.tender::lang.tenant.finance'
-        type: checkboxlist
-    update_commercials:
-        context: [update]
-        label: 'ap.tender::lang.tenant.commercial'
-        type: checkboxlist
+        quickselect: true
+        
+    # update_legals:
+    #     context: [update]
+    #     label: 'ap.tender::lang.tenant.legal'
+    #     type: checkboxlist
+    # update_finances:
+    #     context: [update]
+    #     label: 'ap.tender::lang.tenant.finance'
+    #     type: checkboxlist
+    # update_commercials:
+    #     context: [update]
+    #     label: 'ap.tender::lang.tenant.commercial'
+    #     type: checkboxlist

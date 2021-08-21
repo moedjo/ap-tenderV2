@@ -138,29 +138,29 @@ class Tenant extends Model
             'otherKey' => 'update_id'
         ],
 
-        'update_legals' => [
-            'Ap\Tender\Models\Update',
-            'table' => 'ap_tender_tenants_updates',
-            'key'      => 'tenant_id',
-            'otherKey' => 'update_id',
-            'conditions' => "type = 'legal'",
-        ],
+        // 'update_legals' => [
+        //     'Ap\Tender\Models\Update',
+        //     'table' => 'ap_tender_tenants_updates',
+        //     'key'      => 'tenant_id',
+        //     'otherKey' => 'update_id',
+        //     'conditions' => "type = 'legal'",
+        // ],
 
-        'update_finances' => [
-            'Ap\Tender\Models\Update',
-            'table' => 'ap_tender_tenants_updates',
-            'key'      => 'tenant_id',
-            'otherKey' => 'update_id',
-            'conditions' => "type = 'finance'",
-        ],
+        // 'update_finances' => [
+        //     'Ap\Tender\Models\Update',
+        //     'table' => 'ap_tender_tenants_updates',
+        //     'key'      => 'tenant_id',
+        //     'otherKey' => 'update_id',
+        //     'conditions' => "type = 'finance'",
+        // ],
 
-        'update_commercials' => [
-            'Ap\Tender\Models\Update',
-            'table' => 'ap_tender_tenants_updates',
-            'key'      => 'tenant_id',
-            'otherKey' => 'update_id',
-            'conditions' => "type = 'commercial'",
-        ],
+        // 'update_commercials' => [
+        //     'Ap\Tender\Models\Update',
+        //     'table' => 'ap_tender_tenants_updates',
+        //     'key'      => 'tenant_id',
+        //     'otherKey' => 'update_id',
+        //     'conditions' => "type = 'commercial'",
+        // ],
 
     ];
 

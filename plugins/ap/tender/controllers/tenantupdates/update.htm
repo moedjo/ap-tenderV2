@@ -7,6 +7,8 @@
     <?= $this->formRender() ?>
 </div>
 
+<?php if($formModel->status == 'short_listed'): ?>
+
 <div class="form-buttons">
     <div class="loading-indicator-container">
         <button type="button btn-default" data-request="onSave" data-request-data="close:1"
@@ -16,6 +18,8 @@
         </button>
     </div>
 </div>
+
+<?php endif ?>
 <?= Form::close() ?>
 
 <?php else: ?>

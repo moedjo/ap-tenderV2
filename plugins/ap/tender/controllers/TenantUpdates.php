@@ -7,6 +7,7 @@ use Ap\Tender\Models\Update;
 use Backend\Classes\Controller;
 use Backend\Facades\Backend;
 use Backend\Facades\BackendMenu;
+use Flash;
 use Illuminate\Support\Facades\View;
 use Redirect;
 use Response;
@@ -40,6 +41,7 @@ class TenantUpdates extends Controller
         }
 
         BackendMenu::setContext('Ap.Tender', 'tenant', $sub_menu);
+        $this->addCss('/plugins/ap/tender/assets/css/custom-field-checkboxlist-scrollable.css', 'Ap.Tender');
     }
 
 
@@ -98,29 +100,49 @@ class TenantUpdates extends Controller
         if ($context == 'update') {
             $reject_fields = [];
 
-            
+            if ($model->status == 'short_listed') {
+            } else {
+                $fields['updates']->disabled = true;
+
+            }
         }
     }
 
     public function update($recordId = null)
     {
-
         $user = $this->user;
-
-        if(isset($recordId)){
+        if (isset($recordId)) {
             return $this->asExtension('FormController')->update($recordId);
         }
 
         if ($user->hasPermission('ap_tender_is_tenant')) {
             $tenant = Tenant::where('user_id', $user->id)->first();
 
-            if(empty($tenant)){
-                return Redirect::to(Backend::url('ap/tender/tenants'));
+            if (empty($tenant)) {
+                return Redirect::to(Backend::url('backend'));
             }
 
-            return Redirect::to(Backend::url('ap/tender/tenantupdates/update/'.$tenant->id));
-        } 
+            // if ($tenant->status != 'short_listed') {
+            //     return Response::make(View::make('backend::access_denied'), 403);
+            // }
 
-        return Redirect::to(Backend::url('ap/tender/tenants'));
+            return Redirect::to(Backend::url('ap/tender/tenantupdates/update/' . $tenant->id));
+        }
+
+        return Redirect::to(Backend::url('backend'));
+    }
+
+
+    public function formBeforeSave($model)
+    {
+
+        if (
+            $model->status == 'short_listed'
+        ) {
+            $count = $model->updates->count();
+            if ($count > 0) {
+                $model->status = 'request_update';
+            }
+        }
     }
 }
