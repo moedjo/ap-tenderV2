@@ -94,6 +94,13 @@ class TenantCommercials extends Controller
                 }
             }
 
+            if ($model->status == 'request_update_approved') {
+                $updates = $model->updates;
+                foreach ($updates as $update) {
+                    $reject_fields[] =  $update->field;
+                }
+            }
+
             $reject_fields = array_unique($reject_fields);
             foreach ($fields as $field) {
                 $this->vars['disabled_' . $field->fieldName] = false;
@@ -119,6 +126,19 @@ class TenantCommercials extends Controller
             $model->on_legal_status = NULL;
             $model->on_commercial_status = NULL;
             $model->on_finance_status = NULL;
+        }
+
+
+        
+        if (
+            $model->status == 'request_update_approved' 
+        ) {
+
+            $model->status = 'evaluated';
+            $model->updates = null;
+            $model->off_legal_status = NULL;
+            $model->off_commercial_status = NULL;
+            $model->off_finance_status = NULL;
         }
     }
 }

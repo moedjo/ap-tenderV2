@@ -94,6 +94,13 @@ class TenantFinances extends Controller
                 }
             }
 
+            if ($model->status == 'request_update_approved') {
+                $updates = $model->updates;
+                foreach ($updates as $update) {
+                    $reject_fields[] =  $update->field;
+                }
+            }
+
             $reject_fields = array_unique($reject_fields);
             foreach ($fields as $field) {
                 $this->vars['disabled_' . $field->fieldName] = false;

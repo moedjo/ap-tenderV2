@@ -2,5 +2,5 @@ name: 'ap.tender::lang.tenant.finance'
 form: $/ap/tender/models/tenantfinance/fields.yaml
 modelClass: Ap\Tender\Models\TenantFinance
 update:
-    redirect: ap/tender/tenantsummaries/update/:id
-    redirectClose: ap/tender/tenantsummaries/update/:id
+    redirect: backend
+    redirectClose: backend

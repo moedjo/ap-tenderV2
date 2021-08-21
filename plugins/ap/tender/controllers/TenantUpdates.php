@@ -160,7 +160,7 @@ class TenantUpdates extends Controller
 
 
             if($approve){
-                $model->updates = null;
+                // $model->updates = null;
                 $model->status = 'request_update_approved';
 
             }else {

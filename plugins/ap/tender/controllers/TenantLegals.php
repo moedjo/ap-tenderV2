@@ -107,6 +107,16 @@ class TenantLegals extends Controller
                 }
             }
 
+
+            if ($model->status == 'request_update_approved') {
+                $updates = $model->updates;
+                foreach ($updates as $update) {
+                    $reject_fields[] =  $update->field;
+                }
+            }
+
+
+
             $reject_fields = array_unique($reject_fields);
             foreach ($fields as $field) {
                 $this->vars['disabled_' . $field->fieldName] = false;
@@ -125,20 +135,20 @@ class TenantLegals extends Controller
 
         $user = $this->user;
 
-        if(isset($recordId)){
+        if (isset($recordId)) {
             return $this->asExtension('FormController')->update($recordId);
         }
 
         if ($user->hasPermission('ap_tender_is_tenant')) {
             $tenant = Tenant::where('user_id', $user->id)->first();
 
-            if(empty($tenant)){
+            if (empty($tenant)) {
                 return Redirect::to(Backend::url('ap/tender/tenants'));
             }
 
 
-            return Redirect::to(Backend::url('ap/tender/tenantlegals/update/'.$tenant->id));
-        } 
+            return Redirect::to(Backend::url('ap/tender/tenantlegals/update/' . $tenant->id));
+        }
 
         return Redirect::to(Backend::url('backend'));
     }
