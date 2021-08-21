@@ -140,6 +140,6 @@ class TenantLegals extends Controller
             return Redirect::to(Backend::url('ap/tender/tenantlegals/update/'.$tenant->id));
         } 
 
-        return Redirect::to(Backend::url('ap/tender/tenantlegals/update/'.$recordId));
+        return Redirect::to(Backend::url('backend'));
     }
 }

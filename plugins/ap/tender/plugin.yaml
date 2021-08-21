@@ -106,22 +106,24 @@ navigation:
             - ap_tender_access_tenants
             - ap_tender_is_tenant
         sideMenu:
-            my-tenant:
-                label: 'ap.tender::lang.tenant.my_tenant'
-                url: ap/tender/tenantlegals/update
-                icon: icon-building
-                permissions:
-                    - ap_tender_is_tenant
             tenants:
                 label: 'ap.tender::lang.tenant.plural'
                 url: ap/tender/tenants
                 icon: icon-th-list
                 permissions:
                     - ap_tender_access_tenants
+            my-tenant:
+                label: 'ap.tender::lang.tenant.my_tenant'
+                url: ap/tender/tenantlegals/update
+                icon: icon-building
+                permissions:
+                    - ap_tender_is_tenant
             request-update:
                 label: 'ap.tender::lang.tenant.request_update'
                 url: ap/tender/tenantupdates/update
                 icon: icon-edit
+                permissions:
+                    - ap_tender_is_tenant
     verification-tenants:
         label: 'ap.tender::lang.tenant.verification'
         url: ap/tender/onverificationtenants

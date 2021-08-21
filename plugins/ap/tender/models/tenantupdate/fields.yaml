@@ -1,19 +1,29 @@
 fields:
+    _section1:
+        label: 'ap.tender::lang.tenant.legal_section1'
+        type: section
+    name:
+        label:  'ap.tender::lang.tenant.name'
+        placeholder: 'ap.tender::lang.tenant.name'
+        type: text
+        span: left
+        disabled: true
+    npwp:
+        label: 'ap.tender::lang.tenant.npwp'
+        placeholder: 'ap.tender::lang.tenant.npwp'
+        type: text
+        span: right
+        disabled: true
     updates:
         context: [update]
         label: 'ap.tender::lang.tenant.request_update'
         type: checkboxlist
-        quickselect: true
-        
-    # update_legals:
-    #     context: [update]
-    #     label: 'ap.tender::lang.tenant.legal'
-    #     type: checkboxlist
-    # update_finances:
-    #     context: [update]
-    #     label: 'ap.tender::lang.tenant.finance'
-    #     type: checkboxlist
-    # update_commercials:
-    #     context: [update]
-    #     label: 'ap.tender::lang.tenant.commercial'
-    #     type: checkboxlist
+    _ruler1:
+        type: ruler
+        permissions: ap_tender_is_commercial
+    _approve:
+        label: 'ap.tender::lang.global.approve'
+        placeholder: 'ap.tender::lang.global.approve'
+        type: checkbox
+        span: left
+        permissions: ap_tender_is_commercial

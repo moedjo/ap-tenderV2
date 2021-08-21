@@ -41,6 +41,13 @@ class Tenants extends Controller
 
 
         Event::fire('tenant.reject', [$tenant]);
+    }
 
+
+    public function listOverrideRecordUrl($record, $definition = null)
+    {
+        if ($record->status == 'request_update') {
+            return 'ap/tender/tenantupdates/update/' . $record->id;
+        }
     }
 }

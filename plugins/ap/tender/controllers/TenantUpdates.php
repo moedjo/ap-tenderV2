@@ -23,14 +23,13 @@ class TenantUpdates extends Controller
 
     public $requiredPermissions = [
         'ap_tender_is_tenant',
-        'ap_tender_access_tenants'
+        'ap_tender_is_commercial'
     ];
 
 
     public function __construct()
     {
         parent::__construct();
-
 
         $user = $this->user;
         $sub_menu = 'tenants';
@@ -69,13 +68,15 @@ class TenantUpdates extends Controller
     {
 
         $user = $this->user;
-        if ($user->hasPermission('ap_tender_access_tenants')) {
-            return $query;
-        }
-
         if ($user->hasPermission('ap_tender_is_tenant')) {
             return $query->where('user_id', $user->id);
         }
+
+        // if ($user->hasPermission('ap_tender_is_commercial')) {
+        //     return $query->where('status', 'request_update');
+        // }
+
+        return $query;
     }
 
     public function formExtendQuery($query)
@@ -98,12 +99,23 @@ class TenantUpdates extends Controller
         $model = $host->model;
 
         if ($context == 'update') {
-            $reject_fields = [];
 
-            if ($model->status == 'short_listed') {
-            } else {
+            if ($this->user->hasPermission('ap_tender_is_tenant')) {
+
+                if ($model->status != 'short_listed') {
+                    $fields['updates']->disabled = true;
+                }
+            }
+
+
+
+            if ($this->user->hasPermission('ap_tender_is_commercial')) {
+
                 $fields['updates']->disabled = true;
 
+                if ($model->status != 'request_update') {
+                    $fields['_approve']->hidden = true;
+                }
             }
         }
     }
@@ -121,11 +133,6 @@ class TenantUpdates extends Controller
             if (empty($tenant)) {
                 return Redirect::to(Backend::url('backend'));
             }
-
-            // if ($tenant->status != 'short_listed') {
-            //     return Response::make(View::make('backend::access_denied'), 403);
-            // }
-
             return Redirect::to(Backend::url('ap/tender/tenantupdates/update/' . $tenant->id));
         }
 
@@ -137,12 +144,31 @@ class TenantUpdates extends Controller
     {
 
         if (
-            $model->status == 'short_listed'
+            $model->status == 'short_listed' && $this->user->hasPermission('ap_tender_is_tenant')
         ) {
             $count = $model->updates->count();
             if ($count > 0) {
                 $model->status = 'request_update';
             }
+        }
+
+        if (
+            $model->status == 'request_update' && $this->user->hasPermission('ap_tender_is_commercial')
+        ) {
+
+            $approve = post('TenantUpdate[_approve]');
+
+
+            if($approve){
+                $model->updates = null;
+                $model->status = 'request_update_approved';
+
+            }else {
+                $model->updates = null;
+                $model->status = 'short_listed';
+            }
+
+  
         }
     }
 }

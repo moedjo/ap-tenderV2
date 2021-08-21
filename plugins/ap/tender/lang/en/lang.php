@@ -33,6 +33,7 @@
         'finance' => 'Finance',
         'commercial' => 'Commercial',
         'invalid_token' => 'Invalid Token',
+        'approve' => 'Setuju'
     ],
     'button' => [
         'back' => 'Kembali',
@@ -40,7 +41,11 @@
         'submit' => 'Kirim',
         'back' => 'Kembali',
         'next' => 'Selanjutnya',
-        'send_invitation' => 'Kirim Undangan'
+        'send_invitation' => 'Kirim Undangan',
+
+
+        'approve' => 'Setuju',
+        'reject' => 'Tidak Setuju'
     ],
     'status' => [
         'short_listed' => 'Short Listed',
@@ -307,6 +312,7 @@
         'token_activation' => 'Aktivasi Token',
         'token_activation_success' => 'Aktivasi Token Sukses',
         'user_registration' => 'Registrasi Pengguna',
+
 
         'request_update' => 'Minta Pembaharuan', 
     ],
