@@ -26,4 +26,25 @@ class Tenders extends Controller
         parent::__construct();
         BackendMenu::setContext('Ap.Tender', 'tender', 'tenders');
     }
+
+    public function formExtendFields($host, $fields)
+    {
+        $context = $host->getContext();
+        $model = $host->model;
+
+        if ($context == 'update') {
+
+            $reject_fields = [];
+
+            $reject_fields = array_unique($reject_fields);
+            foreach ($fields as $field) {
+                $this->vars['disabled_' . $field->fieldName] = false;
+                if (!in_array($field->fieldName, $reject_fields)) {
+                    $field->disabled = true;
+                    $field->config['disabled'] = true;
+                    $this->vars['disabled_' . $field->fieldName] = true;
+                }
+            };
+        }
+    }
 }

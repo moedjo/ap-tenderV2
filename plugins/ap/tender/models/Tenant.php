@@ -130,7 +130,6 @@ class Tenant extends Model
             ]
         ],
 
-
         'updates' => [
             'Ap\Tender\Models\Update',
             'table' => 'ap_tender_tenants_updates',
@@ -178,11 +177,15 @@ class Tenant extends Model
     public function scopeTenantActive($query, $tender)
     {
         $business_field = $tender->business_field;
-
         return $query
             ->where('status', 'short_listed')
             ->whereHas('business_fields', function ($query) use ($business_field) {
                 $query->where('id', $business_field->id);
             });
+    }
+
+    public function getDisplayBusinessFieldsAttribute()
+    {
+        return array_pluck($this->business_fields->toArray(),'name');
     }
 }

@@ -2,6 +2,10 @@ columns:
     name:
         label: 'ap.tender::lang.tenant.name'
         type: text
+    business_fields:
+        label: 'ap.tender::lang.tenant.business_fields'
+        type: text
+        displayFrom: display_business_fields
     pic_full_name:
         label: 'ap.tender::lang.tenant.pic_full_name'
         type: text

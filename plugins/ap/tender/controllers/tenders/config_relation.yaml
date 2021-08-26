@@ -5,5 +5,5 @@ tenants:
         toolbarButtons: add|remove
     manage:
         list: $/ap/tender/models/tenant/columns.yaml
-        form: $/ap/tender/models/tenant/fields.yaml
+        # form: $/ap/tender/models/tenant/fields.yaml
         scope: tenantActive
