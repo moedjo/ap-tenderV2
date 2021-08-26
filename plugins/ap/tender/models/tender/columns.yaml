@@ -1,0 +1,13 @@
+columns:
+    name:
+        label: 'ap.tender::lang.tender.name'
+        type: text
+    package:
+        label: 'ap.tender::lang.tender.package'
+        type: text
+    pic_full_name:
+        label: 'ap.tender::lang.tender.pic_full_name'
+        type: text
+    pic_phone_number:
+        label: 'ap.tender::lang.tender.pic_email'
+        type: text

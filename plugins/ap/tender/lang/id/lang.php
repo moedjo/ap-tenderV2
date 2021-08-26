@@ -16,12 +16,15 @@
         'access_verifications' => 'Akses Verifikasi',
         'access_regions' => 'Akses Wilayah',
         'access_tenants' => 'Akses Tenant',
+        'access_tenders' => 'Akses Tender',
+        'access_airports' => 'Akses Bandara',
 
 
         'is_tenant' => 'Sebagai Tenant',
         'is_legal' => 'Sebagai Legal',
         'is_commercial' => 'Sebagai Commercial',
         'is_finance' => 'Sebagai Finance',
+        'is_admin_tender' => 'Sebagai Admin Tender',
 
     ],
     'global' => [
@@ -364,4 +367,48 @@
         'doc_finance' => 'Dokumen Keuangan',
         'doc_finance_comment' => 'File (*pdf - max 40MB)',
     ],
+
+    'tender' => [
+        'singular' => 'Tender',
+        'plural' => 'Daftar Tender',
+
+        'create' => 'Buat Tender',
+        'update' => 'Ubah Tender',
+
+        'section1' => 'Informasi Tender',
+
+        'name' => 'Nama Tender',
+        'package' => 'Paket Tender',
+        'business_field' => 'Kategori Bisnis',
+
+        'airport' => 'Bandara',
+
+        'pic_full_name' => 'Nama PIC',
+        'pic_email' => 'Kontak PIC (email)',
+
+        'description' => 'Deskripsi Pengumuman',
+
+
+        'rooms' => 'Ruangan',
+        'pic_full_name' => 'Nama PIC',
+        'pic_email' => 'Kontak PIC (email)',
+
+
+        'section2' => 'Jadwal Pendaftaran', 
+        'date_start' => 'Tanggal Dimulai',
+        'date_end' => 'Tanggal Berakhir',
+    ],
+
+    'airport' => [
+        'singular' => 'Bandara',
+        'plural' => 'Daftar Bandara',
+
+        'id' => 'Id Bandara',
+        'name' => 'Nama Bandara',
+        'description' => 'Keterangan',
+
+        'create' => 'Buat Bandara',
+        'update' => 'Ubah Bandara',
+        'delete' => 'Hapus Bandara',
+    ]
 ];

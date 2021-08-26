@@ -41,6 +41,15 @@ permissions:
     ap_tender_access_tenants:
         tab: 'ap.tender::lang.permission.tab.master'
         label: 'ap.tender::lang.permission.access_tenants'
+    ap_tender_is_admin_tender:
+        tab: 'ap.tender::lang.permission.tab.role'
+        label: 'ap.tender::lang.permission.is_admin_tender'
+    ap_tender_access_tenders:
+        tab: 'ap.tender::lang.permission.tab.master'
+        label: 'ap.tender::lang.permission.access_tenders'
+    ap_tender_access_airports:
+        tab: 'ap.tender::lang.permission.tab.master'
+        label: 'ap.tender::lang.permission.access_airports'
 navigation:
     master-data:
         label: 'ap.tender::lang.permission.tab.master'
@@ -98,6 +107,12 @@ navigation:
                 icon: icon-map-marker
                 permissions:
                     - ap_tender_access_regions
+            airports:
+                label: 'ap.tender::lang.airport.plural'
+                url: ap/tender/airports
+                icon: icon-plane
+                permissions:
+                    - ap_tender_access_airports
     tenant:
         label: 'ap.tender::lang.tenant.singular'
         url: /
@@ -149,3 +164,17 @@ navigation:
                     - ap_tender_is_legal
                     - ap_tender_is_commercial
                     - ap_tender_is_finance
+    tender:
+        label: 'ap.tender::lang.tender.singular'
+        url: ap/tender/tenders
+        icon: icon-building
+        permissions:
+            - ap_tender_is_admin_tender
+        sideMenu:
+            tenders:
+                label: 'ap.tender::lang.tender.plural'
+                url: ap/tender/tenders
+                icon: icon-th-list
+                permissions:
+                    - ap_tender_is_admin_tender
+                    - ap_tender_access_tenders

@@ -18,5 +18,8 @@
     - 'Update to v1.0.2'
     - create_ap_tender_updates.php
     - create_ap_tender_tenants_updates.php
+    - create_ap_tender_airports.php
+1.0.3:
+    - 'Update to v1.0.3'
     - create_ap_tender_tenders.php
     - create_ap_tender_tenders_tenants.php

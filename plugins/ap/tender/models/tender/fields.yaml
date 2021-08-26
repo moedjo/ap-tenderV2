@@ -1,0 +1,70 @@
+fields:
+    _section1:
+        label: 'ap.tender::lang.tender.section1'
+        type: section
+    name:
+        label: 'ap.tender::lang.tender.name'
+        placeholder: 'ap.tender::lang.tender.name'
+        type: text
+        span: left
+    business_field:
+        label: 'ap.tender::lang.tender.business_field'
+        type: relation
+        span: right
+    airport:
+        label: 'ap.tender::lang.tender.airport'
+        type: relation
+        span: left
+    pic_full_name:
+        label: 'ap.tender::lang.tender.pic_full_name'
+        placeholder: 'ap.tender::lang.tender.pic_full_name'
+        type: text
+        span: left
+    pic_email:
+        label: 'ap.tender::lang.tender.pic_email'
+        placeholder: 'ap.tender::lang.tender.pic_email'
+        type: text
+        span: right
+    package:
+        label: 'ap.tender::lang.tender.package'
+        placeholder: 'ap.tender::lang.tender.package'
+        type: text
+        span: left
+    rooms:
+        label: 'ap.tender::lang.tender.rooms'
+        span: right
+        type: repeater
+        form:
+            fields:
+                name:
+                    placeholder: 'ap.tender::lang.tender.rooms'
+                    label: 'ap.tender::lang.tender.rooms'
+                    span: full
+                    type: text
+    description:
+        label: 'ap.tender::lang.tender.description'
+        placeholder: 'ap.tender::lang.tender.description'
+        type: richeditor
+        size: huge
+        span: full
+    _section2:
+        label: 'ap.tender::lang.tender.section2'
+        type: section
+    registration_start:
+        label: 'ap.tender::lang.tender.date_start'
+        type: datepicker
+        mode: date
+        span: left
+    registration_end:
+        label: 'ap.tender::lang.tender.date_end'
+        type: datepicker
+        mode: date
+        span: right
+    tenants:
+        label: 'ap.tender::lang.tenant.plural'
+        span: full
+        path: field_tenants
+        context:
+            - update
+        type: partial
+    

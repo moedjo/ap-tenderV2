@@ -1,0 +1,12 @@
+fields:
+    name:
+        label: 'ap.tender::lang.airport.name'
+        span: full
+        placeholder: 'ap.tender::lang.airport.name'
+        type: text
+    description:
+        label: 'ap.tender::lang.airport.description'
+        size: small
+        span: full
+        placeholder: 'ap.tender::lang.airport.description'
+        type: textarea

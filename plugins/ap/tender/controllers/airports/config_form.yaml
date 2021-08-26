@@ -1,0 +1,13 @@
+name: 'ap.tender::lang.airport.singular'
+form: $/ap/tender/models/airport/fields.yaml
+modelClass: Ap\Tender\Models\Airport
+defaultRedirect: ap/tender/airports
+create:
+    redirect: 'ap/tender/airports/update/:id'
+    redirectClose: ap/tender/airports
+update:
+    redirect: ap/tender/airports
+    redirectClose: ap/tender/airports
+customMessages:
+    buttonCreate: Make Thing
+    buttonDelete: Destroy Thing

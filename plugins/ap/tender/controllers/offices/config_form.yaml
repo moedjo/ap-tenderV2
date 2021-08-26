@@ -6,7 +6,7 @@ create:
     redirect: 'ap/tender/offices/update/:id'
     redirectClose: ap/tender/offices
 update:
-    redirect: ap/tender/positions
+    redirect: ap/tender/offices
     redirectClose: ap/tender/offices
 customMessages:
     buttonCreate: Make Thing

@@ -173,4 +173,16 @@ class Tenant extends Model
         'business_kbli',
         'konsorsium_companies',
     ];
+
+
+    public function scopeTenantActive($query, $tender)
+    {
+        $business_field = $tender->business_field;
+
+        return $query
+            ->where('status', 'short_listed')
+            ->whereHas('business_fields', function ($query) use ($business_field) {
+                $query->where('id', $business_field->id);
+            });
+    }
 }
