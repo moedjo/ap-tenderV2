@@ -20,7 +20,7 @@ class Finance extends Model
      */
     public $rules = [
         'year' => 'required|numeric|between:1970,2022',
-        'total_income' => 'required|numeric',
+        // 'total_income' => 'required|numeric',
         'doc_finance' => 'required',
     ];
 
