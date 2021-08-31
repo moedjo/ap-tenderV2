@@ -305,9 +305,9 @@
 
 
         
-        'doc_finance_sppkp' => 'Surat Pengukuhan Pengusaha Kena Pajak (SPPKP)',
+        'doc_finance_sppkp' => ' Surat Pengukuhan Pengusaha Kena Pajak (SPPKP) / Surat Pernyataan Non Pengusaha Kena Pajak (Non PKP) dan Surat pemberitahuan pajak daerah (SPTPD)',
         'doc_finance_spt' => 'SPT Pajak Tahunan',
-        'doc_finance_blp' => 'Bukti Lapor Pajak',
+        'doc_finance_blp' => 'Bukti Lapor Pajak & Bukti Setor pajak (Jika Kurang Bayar)',
         'doc_finance_bsp' => 'Bukti Setoran Pajak',
         'doc_finance_sklp' => 'Surat Keterangan Kelancaran Pembayaran',
         'doc_finance_other' => 'Lainnya',   
@@ -321,6 +321,12 @@
         'doc_finance_sklp_comment' => 'File (*pdf - max 40MB)',
         'doc_finance_other_comment' => 'File (*pdf - max 40MB)',
         'doc_finance_collaborate_comment' => 'File (*pdf - max 40MB)',
+
+        'doc_finance_fiskal' => 'Surat keterangan Fiskal',
+        'doc_finance_fiskal_comment' => 'File (*pdf - max 40MB)',
+
+        'doc_finance_registered' => 'Surat Keterangan Terdaftar',
+        'doc_finance_registered_comment' => 'File (*pdf - max 40MB)',
 
         'token_activation' => 'Aktivasi Token',
         'token_activation_success' => 'Aktivasi Token Sukses',
@@ -364,7 +370,7 @@
 
         'year' => 'Tahun',
         'total_income' => 'Total Penghasilan (Rp.)',
-        'doc_finance' => 'Dokumen Keuangan',
+        'doc_finance' => 'Dokumen Keuangan Audited Wajar',
         'doc_finance_comment' => 'File (*pdf - max 40MB)',
     ],
 

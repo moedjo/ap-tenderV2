@@ -45,17 +45,6 @@ fields:
         attachOnUpload: true
         span: left
         commentAbove: 'ap.tender::lang.tenant.doc_finance_blp_comment'
-    doc_finance_bsp:
-        label: 'ap.tender::lang.tenant.doc_finance_bsp'
-        type: fileupload
-        mode: file
-        useCaption: false
-        fileTypes: pdf
-        mimeTypes: pdf
-        maxFilesize: 40
-        attachOnUpload: true
-        span: right
-        commentAbove: 'ap.tender::lang.tenant.doc_finance_bsp_comment'
     doc_finance_sklp:
         label: 'ap.tender::lang.tenant.doc_finance_sklp'
         type: fileupload
@@ -65,8 +54,30 @@ fields:
         mimeTypes: pdf
         maxFilesize: 40
         attachOnUpload: true
-        span: left
+        span: right
         commentAbove: 'ap.tender::lang.tenant.doc_finance_sklp_comment'
+    doc_finance_fiskal:
+        label: 'ap.tender::lang.tenant.doc_finance_fiskal'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 40
+        attachOnUpload: true
+        span: left
+        commentAbove: 'ap.tender::lang.tenant.doc_finance_fiskal_comment'
+    doc_finance_registered:
+        label: 'ap.tender::lang.tenant.doc_finance_registered'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 40
+        attachOnUpload: true
+        span: right
+        commentAbove: 'ap.tender::lang.tenant.doc_finance_registered_comment'
     doc_finance_other:
         label: 'ap.tender::lang.tenant.doc_finance_other'
         type: fileupload
@@ -76,7 +87,7 @@ fields:
         mimeTypes: pdf
         maxFilesize: 40
         attachOnUpload: true
-        span: right
+        span: left
         commentAbove: 'ap.tender::lang.tenant.doc_finance_other_comment'
     doc_finance_collaborate:
         label: 'ap.tender::lang.tenant.doc_finance_collaborate'
@@ -87,7 +98,7 @@ fields:
         mimeTypes: pdf
         maxFilesize: 40
         attachOnUpload: true
-        span: left
+        span: right
         commentAbove: 'ap.tender::lang.tenant.doc_finance_collaborate_comment'
         hidden: true
         required: true

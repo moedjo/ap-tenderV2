@@ -3,10 +3,6 @@ fields:
         label: 'ap.tender::lang.finance.year'
         span: left
         type: number
-    total_income:
-        label: 'ap.tender::lang.finance.total_income'
-        span: right
-        type: number
     doc_finance:
         label: 'ap.tender::lang.finance.doc_finance'
         type: fileupload

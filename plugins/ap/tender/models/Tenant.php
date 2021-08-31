@@ -152,12 +152,14 @@ class Tenant extends Model
         'doc_finance_sppkp' => ['System\Models\File', 'public' => false],
         'doc_finance_spt' => ['System\Models\File', 'public' => false],
         'doc_finance_blp' => ['System\Models\File', 'public' => false],
-        'doc_finance_bsp' => ['System\Models\File', 'public' => false],
+        
         'doc_finance_sklp' => ['System\Models\File', 'public' => false],
         'doc_finance_other' => ['System\Models\File', 'public' => false],
         'doc_finance_collaborate' => ['System\Models\File', 'public' => false],
 
-
+        
+        'doc_finance_fiskal' => ['System\Models\File', 'public' => false],
+        'doc_finance_registered' => ['System\Models\File', 'public' => false],
     ];
 
     public $attachMany = [

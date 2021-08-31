@@ -16,9 +16,12 @@ class TenantFinance extends Tenant
         'doc_finance_sppkp' => 'required',
         'doc_finance_spt' => 'required',
         'doc_finance_blp' => 'required',
-        'doc_finance_bsp' => 'required',
+
         'doc_finance_sklp' => 'required',
         'doc_finance_other' => '',
+
+        'doc_finance_fiskal' => '',
+        'doc_finance_registered' => 'required',
     ];
 
     public $customMessages = [
