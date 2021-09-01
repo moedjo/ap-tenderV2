@@ -1,0 +1,41 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+
+    username:
+        label: Username
+        searchable: true
+
+    roles:
+        label: Roles
+        relation: roles
+        select: name
+
+    # @deprecated
+    # roles_count:
+    #     label: Roles
+    #     relation: roles_count
+    #     valueFrom: count
+    #     default: 0
+    #     sortable: false
+
+    roles_count:
+        label: Roles
+        relation: roles
+        relationCount: true
+        type: number
+
+    photo:
+        label: Photo
+        type: image
+        sortable: false
+        width: 150
+        height: 150
+        options:
+            quality: 150
+

@@ -398,11 +398,27 @@
         'rooms' => 'Ruangan',
         'pic_full_name' => 'Nama PIC',
         'pic_email' => 'Kontak PIC (email)',
+        'status' => 'Status',
 
 
-        'section2' => 'Jadwal Pendaftaran', 
         'date_start' => 'Tanggal Dimulai',
         'date_end' => 'Tanggal Berakhir',
+        
+
+        'doc_tender' => 'Dokumen Tender',
+        'doc_tender_comment' => 'File (*pdf - max 40MB)',
+
+        
+        'section2' => 'Jadwal Pendaftaran', 
+        'section3' => 'Jadwal Submission RFQ', 
+        'section4' => 'Jadwal Aanwijzing & Site Visit', 
+        'section5' => 'Jadwal Submission RFP', 
+        'section6' => 'Jadwal Pembukaan & Presentasi Sampul I', 
+        'section7' => 'Jadwal Sampul II', 
+        'section8' => 'Jadwal Klarifikasi & Negosiasi',
+        'section9' => 'Jadwal Pengumuman Pemenang',
+        'section10' => 'Upload Dokumen',
+
     ],
 
     'airport' => [

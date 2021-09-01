@@ -60,11 +60,125 @@ fields:
         type: datepicker
         mode: date
         span: right
-    tenants:
-        label: 'ap.tender::lang.tenant.plural'
-        span: full
-        path: field_tenants
-        context:
-            - update
-        type: partial
+    _section3:
+        label: 'ap.tender::lang.tender.section3'
+        type: section
+    rfq_start:
+        label: 'ap.tender::lang.tender.date_start'
+        type: datepicker
+        mode: date
+        span: left
+    rfq_end:
+        label: 'ap.tender::lang.tender.date_end'
+        type: datepicker
+        mode: date
+        span: right
+    _section4:
+        label: 'ap.tender::lang.tender.section4'
+        type: section
+    aanwijzing_start:
+        label: 'ap.tender::lang.tender.date_start'
+        type: datepicker
+        mode: date
+        span: left
+    aanwijzing_end:
+        label: 'ap.tender::lang.tender.date_end'
+        type: datepicker
+        mode: date
+        span: right
+    _section5:
+        label: 'ap.tender::lang.tender.section5'
+        type: section
+    rfp_start:
+        label: 'ap.tender::lang.tender.date_start'
+        type: datepicker
+        mode: date
+        span: left
+    rfp_end:
+        label: 'ap.tender::lang.tender.date_end'
+        type: datepicker
+        mode: date
+        span: right
+    _section6:
+        label: 'ap.tender::lang.tender.section6'
+        type: section
+    sampul1_start:
+        label: 'ap.tender::lang.tender.date_start'
+        type: datepicker
+        mode: date
+        span: left
+    sampul1_end:
+        label: 'ap.tender::lang.tender.date_end'
+        type: datepicker
+        mode: date
+        span: right
+    _section7:
+        label: 'ap.tender::lang.tender.section7'
+        type: section
+    sampul2_start:
+        label: 'ap.tender::lang.tender.date_start'
+        type: datepicker
+        mode: date
+        span: left
+    sampul2_end:
+        label: 'ap.tender::lang.tender.date_end'
+        type: datepicker
+        mode: date
+        span: right
+    _section8:
+        label: 'ap.tender::lang.tender.section8'
+        type: section
+    negotiation_start:
+        label: 'ap.tender::lang.tender.date_start'
+        type: datepicker
+        mode: date
+        span: left
+    negotiation_end:
+        label: 'ap.tender::lang.tender.date_end'
+        type: datepicker
+        mode: date
+        span: right
+    _section9:
+        label: 'ap.tender::lang.tender.section9'
+        type: section
+    winner_start:
+        label: 'ap.tender::lang.tender.date_start'
+        type: datepicker
+        mode: date
+        span: left
+    winner_end:
+        label: 'ap.tender::lang.tender.date_end'
+        type: datepicker
+        mode: date
+        span: right
+    _section10:
+        label: 'ap.tender::lang.tender.section10'
+        type: section
+    doc_tender:
+        label: 'ap.tender::lang.tender.doc_tender'
+        type: fileupload
+        mode: file
+        useCaption: true
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 40
+        attachOnUpload: true
+        span: left
+        commentAbove: 'ap.tender::lang.tender.doc_tender_comment'
+    pic_flyer:
+        label: 'ap.tender::lang.tender.doc_tender'
+        type: fileupload
+        mode: image
+        useCaption: true
+        maxFilesize: 40
+        attachOnUpload: true
+        span: left
+        commentAbove: 'ap.tender::lang.tender.doc_tender_comment'
+    # tenants:
+    #     label: 'ap.tender::lang.tenant.plural'
+    #     span: full
+    #     path: field_tenants
+    #     context:
+    #         - update
+    #     type: partial
     

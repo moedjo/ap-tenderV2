@@ -47,4 +47,10 @@ class Tenders extends Controller
             };
         }
     }
+
+    public function formBeforeCreate($model)
+    {
+        $model->status = 'registration';
+    }
+
 }
