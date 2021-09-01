@@ -1,0 +1,9 @@
+tenants:
+    label: 'ap.tender::lang.tenant.plural'
+    view:
+        list: $/ap/tender/models/tenant/columns.yaml
+        toolbarButtons: add|remove
+    manage:
+        list: $/ap/tender/models/tenant/columns.yaml
+        # form: $/ap/tender/models/tenant/fields.yaml
+        scope: tenantActive

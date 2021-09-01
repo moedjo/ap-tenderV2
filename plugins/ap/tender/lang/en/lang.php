@@ -377,6 +377,7 @@
     'tender' => [
         'singular' => 'Tender',
         'plural' => 'Daftar Tender',
+        'publish_document' => 'Publish Document',
 
         'create' => 'Buat Tender',
         'update' => 'Ubah Tender',
@@ -407,6 +408,12 @@
 
         'doc_tender' => 'Dokumen Tender',
         'doc_tender_comment' => 'File (*pdf - max 40MB)',
+
+        'doc_rfq' => 'RFQ',
+        'doc_rfq_comment' => 'File (*pdf - max 40MB)',
+
+        'doc_rfp' => 'RFP',
+        'doc_rfp_comment' => 'File (*pdf - max 40MB)',
 
         
         'section2' => 'Jadwal Pendaftaran', 

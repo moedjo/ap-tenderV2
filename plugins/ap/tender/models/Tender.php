@@ -32,6 +32,31 @@ class Tender extends Model
         'registration_start' => 'required|date',
         'registration_end' => 'required|date|after:registration_start',
 
+        'rfq_start' => 'required|date',
+        'rfq_end' => 'required|date|after:rfq_start',
+
+        'aanwijzing_start' => 'required|date',
+        'aanwijzing_end' => 'required|date|after:aanwijzing_start',
+
+        'rfp_start' => 'required|date',
+        'rfp_end' => 'required|date|after:rfp_start',
+
+        'sampul1_start' => 'required|date',
+        'sampul1_end' => 'required|date|after:sampul1_start',
+
+        'sampul2_start' => 'required|date',
+        'sampul2_end' => 'required|date|after:sampul2_start',
+
+        'negotiation_start' => 'required|date',
+        'negotiation_end' => 'required|date|after:negotiation_start',
+
+        'winner_start' => 'required|date',
+        'winner_end' => 'required|date|after:winner_start',
+        
+
+        'doc_tender' => 'required',
+        'pic_flyer' => 'required',
+
     ];
 
     public $belongsTo = [
@@ -62,7 +87,8 @@ class Tender extends Model
     ];
 
     public $attachOne = [
-       
+        'doc_rfq' => ['System\Models\File', 'public' => false],
+        'doc_rfp' => ['System\Models\File', 'public' => false],
 
     ];
 
@@ -74,4 +100,13 @@ class Tender extends Model
     protected $jsonable = [
         'rooms',
     ];
+
+    
+    public function beforeValidate()
+    {
+        if ($this->status == 'publish_document') {
+            $this->rules['doc_rfq'] = "required";
+            $this->rules['doc_rfp'] = "required";
+        } 
+    }
 }

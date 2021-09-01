@@ -1,0 +1,55 @@
+fields:
+    _section1:
+        label: 'ap.tender::lang.tender.section1'
+        type: section
+    name:
+        label: 'ap.tender::lang.tender.name'
+        placeholder: 'ap.tender::lang.tender.name'
+        type: text
+        span: left
+        disabled: true
+    business_field:
+        label: 'ap.tender::lang.tender.business_field'
+        type: relation
+        span: right
+        disabled: true
+    rfq_start:
+        label: 'ap.tender::lang.tender.date_start'
+        type: datepicker
+        mode: date
+        span: left
+        disabled: true
+    rfq_end:
+        label: 'ap.tender::lang.tender.date_end'
+        type: datepicker
+        mode: date
+        span: right
+        disabled: true
+    _section10:
+        label: 'ap.tender::lang.tender.section10'
+        type: section
+    doc_rfq:
+        label: 'ap.tender::lang.tender.doc_rfq'
+        type: fileupload
+        mode: file
+        useCaption: true
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 40
+        attachOnUpload: true
+        span: left
+        required: true
+        commentAbove: 'ap.tender::lang.tender.doc_rfq_comment'
+    doc_rfp:
+        label: 'ap.tender::lang.tender.doc_rfp'
+        type: fileupload
+        mode: file
+        useCaption: true
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 40
+        attachOnUpload: true
+        span: left
+        required: true
+        commentAbove: 'ap.tender::lang.tender.doc_rfp_comment'
+    
