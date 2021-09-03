@@ -1720,16 +1720,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v6.20.32",
+            "version": "v6.20.33",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "04d4fa31d10ed344c9d1cf30a761b0c4e468aaf2"
+                "reference": "49aa211f2dd1d419bfd9dbbd6f590d57a1dfda58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/04d4fa31d10ed344c9d1cf30a761b0c4e468aaf2",
-                "reference": "04d4fa31d10ed344c9d1cf30a761b0c4e468aaf2",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/49aa211f2dd1d419bfd9dbbd6f590d57a1dfda58",
+                "reference": "49aa211f2dd1d419bfd9dbbd6f590d57a1dfda58",
                 "shasum": ""
             },
             "require": {
@@ -1869,7 +1869,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-08-10T14:25:21+00:00"
+            "time": "2021-08-31T13:56:36+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -2628,12 +2628,12 @@
         },
         {
             "name": "october/backend",
-            "version": "v2.1.6",
+            "version": "v2.1.7",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/backend/october-backend-v2.1.6-75a495.zip",
-                "reference": "2964392eb9a658d1c51b52a5695831667f2fff85",
-                "shasum": "8d23d6058b1cf610d99ee1849cf73bfe624de49d"
+                "url": "https://gateway.octobercms.com/composer/dist/october/backend/october-backend-v2.1.7-51b99f.zip",
+                "reference": "c977aa9b4e39bc85288d918934e0e63dcf0c7992",
+                "shasum": "597d230db43778bddf1c6ee36fa91feada0688db"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -2656,16 +2656,16 @@
                 "october",
                 "october cms"
             ],
-            "time": "2021-08-26T04:37:20+00:00"
+            "time": "2021-09-02T04:41:37+00:00"
         },
         {
             "name": "october/cms",
-            "version": "v2.1.6",
+            "version": "v2.1.7",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/cms/october-cms-v2.1.6-458c3a.zip",
-                "reference": "9f80ab34e11a4c7e7a5732b3d7d691e0416ef1aa",
-                "shasum": "d11755c3cba8c5940c0ec83cb17d347cd5468ea4"
+                "url": "https://gateway.octobercms.com/composer/dist/october/cms/october-cms-v2.1.7-db13a3.zip",
+                "reference": "de32b860789d080d6d1eaf1b5f4eab0f12b48386",
+                "shasum": "c47a07aef3bd7a6e81e999c7fe423bff398999e7"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -2688,16 +2688,16 @@
                 "october",
                 "october cms"
             ],
-            "time": "2021-08-18T02:25:19+00:00"
+            "time": "2021-09-02T04:41:37+00:00"
         },
         {
             "name": "october/editor",
-            "version": "v2.1.6",
+            "version": "v2.1.7",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/editor/october-editor-v2.1.6-df24b3.zip",
+                "url": "https://gateway.octobercms.com/composer/dist/october/editor/october-editor-v2.1.7-df24b3.zip",
                 "reference": "645f72a049ae7c845c54234a5f80ec123ac8fdae",
-                "shasum": "d43ed8ea89cede7e330a7ff8244a97fb869e5034"
+                "shasum": "ba82c4c0d3061c277da755441a124c5964ac49b4"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -2724,12 +2724,12 @@
         },
         {
             "name": "october/media",
-            "version": "v2.1.6",
+            "version": "v2.1.7",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/media/october-media-v2.1.6-be96e8.zip",
-                "reference": "be24927260dfa5e192dce846b453151823220d91",
-                "shasum": "67f2706903bc60bfd26f3c265a3c797bc01c1071"
+                "url": "https://gateway.octobercms.com/composer/dist/october/media/october-media-v2.1.7-6a0250.zip",
+                "reference": "81bc83e97f7251228e954d8d5b50be3de4544053",
+                "shasum": "b4e205fb607c8e08e731fb29c6920d90339bcfad"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -2752,20 +2752,20 @@
                 "october",
                 "october cms"
             ],
-            "time": "2021-07-21T00:24:40+00:00"
+            "time": "2021-09-03T01:02:38+00:00"
         },
         {
             "name": "october/rain",
-            "version": "v2.1.6",
+            "version": "v2.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/octobercms/library.git",
-                "reference": "9ad27cbb09a91819c71a9c8c23fda97e851e4b7a"
+                "reference": "5d611f516a2598a1b88d301125f4f4695490de0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/octobercms/library/zipball/9ad27cbb09a91819c71a9c8c23fda97e851e4b7a",
-                "reference": "9ad27cbb09a91819c71a9c8c23fda97e851e4b7a",
+                "url": "https://api.github.com/repos/octobercms/library/zipball/5d611f516a2598a1b88d301125f4f4695490de0a",
+                "reference": "5d611f516a2598a1b88d301125f4f4695490de0a",
                 "shasum": ""
             },
             "require": {
@@ -2821,18 +2821,18 @@
                 "rain"
             ],
             "support": {
-                "source": "https://github.com/octobercms/library/tree/v2.1.6"
+                "source": "https://github.com/octobercms/library/tree/v2.1.7"
             },
-            "time": "2021-08-24T23:28:57+00:00"
+            "time": "2021-08-31T02:27:50+00:00"
         },
         {
             "name": "october/system",
-            "version": "v2.1.6",
+            "version": "v2.1.7",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/system/october-system-v2.1.6-929261.zip",
-                "reference": "9a43ed46bb969d9dd188c3347e12933a65d0bd2b",
-                "shasum": "104886fdf2486d248b10ccf641fce5a911cc36d8"
+                "url": "https://gateway.octobercms.com/composer/dist/october/system/october-system-v2.1.7-aa4520.zip",
+                "reference": "87d997d3d9be11ebc92771bc8d1931dd1d828317",
+                "shasum": "5345498420d34d7be0153789e3120bf396c69915"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -2855,7 +2855,7 @@
                 "october cms",
                 "system"
             ],
-            "time": "2021-08-26T04:37:20+00:00"
+            "time": "2021-09-02T04:41:37+00:00"
         },
         {
             "name": "opis/closure",
@@ -8155,6 +8155,7 @@
                     "type": "github"
                 }
             ],
+            "abandoned": true,
             "time": "2020-09-28T06:45:17+00:00"
         },
         {

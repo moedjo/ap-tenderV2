@@ -467,6 +467,8 @@ return [
             'minimal' => 'Minimális',
             'full' => 'Teljes',
         ],
+        'paragraph_formats' => 'Bekezdés formátumok',
+        'paragraph_formats_comment' => 'Az ehhez tartozó lenyíló listában fognak megjelenni.',
     ],
     'tooltips' => [
         'preview_website' => 'Weboldal megtekintése'
