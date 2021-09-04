@@ -1,0 +1,63 @@
+url = "/detail-tender/:id"
+layout = "default"
+title = "detail-tender"
+==
+
+use Ap\Tender\Models\Tender;
+
+function onStart()
+{
+	$id = $this->param('id');
+  	$this['DetailTend'] = Tender::where('id', $id)->with('business_field')->first();
+}
+==
+
+<section class="about-section text-center">
+	<div class="page-content page-container" id="page-content">
+	    <div class="padding">
+	        <div class="row container d-flex justify-content-center">
+	            <div class="col-xl-6 col-md-12">
+	                <div class="card user-card-full">
+	                    <div class="row m-l-0 m-r-0">
+	                        <div class="col-sm-12">
+	                            <div class="card-block">
+	                                <h3 class="m-b-20 p-b-5 b-b-default f-w-600">Detail Tender</h3>
+	                                <div class="row">
+	                                    <div class="col-sm-6">
+	                                       	<h5>Kategori</h5>
+	                                        <label>{{DetailTend.business_field.name}}</label>          
+	                                    </div>
+	                                    <div class="col-sm-6">
+	                                       	<h5>Name</h5>
+	                                        <label>{{DetailTend.name}}</label>
+	                                    </div>
+	                                </div>
+	                                <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600"></h6>
+	                                <div class="row">
+	                                    <div class="col-sm-6">
+	                                       	<h5>Tanggal Awal</h5>
+	                                        <label>{{DetailTend.registration_start}}</label>
+	                                    </div>
+	                                    <div class="col-sm-6">
+	                                        <h5>Tanggal Akhir</h5>
+	                                        <label>{{DetailTend.registration_end}}</label>
+	                                    </div>
+	                                </div>
+	                                <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600"></h6>
+	                                <div class="row">
+	                                    <div class="col-sm-12">
+	                                    	<center>
+		                                       	<h5>Status</h5>
+		                                        <button class="button buttonStatus btn-primary">{{DetailTend.status}}</button>
+	                                    	</center>
+	                                    </div>
+	                                </div>	                                
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+</section>
