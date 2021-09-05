@@ -40,7 +40,15 @@ class TenderTenantRFPDocuments extends Controller
             $fields['_section3']->hidden = true;
             $fields['tender[doc_rfp]']->hidden = true;
 
-            if ($model->status == 'submit_payment' || $model->status == 'payment_approve') {
+            if ($model->status != 'submit_document') {
+                foreach ($fields as $field) {
+                    $field->disabled = true;
+                    $field->config['disabled'] = true;
+                    $this->vars['disabled_' . $field->fieldName] = true;
+                };
+            }
+
+            if ($model->status != 'payment_reject') {
                 foreach ($fields as $field) {
                     $field->disabled = true;
                     $field->config['disabled'] = true;
@@ -54,8 +62,7 @@ class TenderTenantRFPDocuments extends Controller
             }
 
             if($model->status == 'payment_reject') {
-                // $fields['_section3']->hidden = false;
-                // $fields['tender[doc_rfp]']->hidden = false;
+        
             }
 
 
