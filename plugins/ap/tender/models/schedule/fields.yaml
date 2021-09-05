@@ -3,7 +3,7 @@ fields:
         label: 'ap.tender::lang.schedule.singular'
         span: left
         type: text
-        placeholder: 'ap.tender::lang.schedule.name'
+        placeholder: 'ap.tender::lang.schedule.singular'
     date_start:
         label: 'ap.tender::lang.schedule.date_start'
         placeholder: 'ap.tender::lang.schedule.start_date'
@@ -15,4 +15,4 @@ fields:
         placeholder: 'ap.tender::lang.schedule.date_end'
         type: datepicker
         mode: date
-        span: left
+        span: right

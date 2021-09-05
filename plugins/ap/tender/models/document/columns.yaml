@@ -1,0 +1,4 @@
+columns:
+    name:
+        label: 'ap.tender::lang.office.name'
+        type: text

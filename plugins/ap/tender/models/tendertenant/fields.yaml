@@ -1,4 +1,7 @@
 fields:
+    _section1:
+        label: 'ap.tender::lang.tender.section1'
+        type: section
     name:
         label: 'ap.tender::lang.tender.name'
         placeholder: 'ap.tender::lang.tender.name'
@@ -21,12 +24,6 @@ tabs:
             type: relation
             span: left
             tab: 'ap.tender::lang.tender.section1'
-        package:
-            label: 'ap.tender::lang.tender.package'
-            placeholder: 'ap.tender::lang.tender.package'
-            type: text
-            span: right
-            tab: 'ap.tender::lang.tender.section1'
         pic_full_name:
             label: 'ap.tender::lang.tender.pic_full_name'
             placeholder: 'ap.tender::lang.tender.pic_full_name'
@@ -39,10 +36,15 @@ tabs:
             type: text
             span: right
             tab: 'ap.tender::lang.tender.section1'
-        
+        package:
+            label: 'ap.tender::lang.tender.package'
+            placeholder: 'ap.tender::lang.tender.package'
+            type: text
+            span: left
+            tab: 'ap.tender::lang.tender.section1'
         rooms:
             label: 'ap.tender::lang.tender.rooms'
-            span: full
+            span: right
             type: repeater
             tab: 'ap.tender::lang.tender.section1'
             form:

@@ -22,5 +22,9 @@
 1.0.3:
     - 'Update to v1.0.3'
     - create_ap_tender_tenders.php
+    - create_ap_tender_tenders_tenant_invites.php
     - create_ap_tender_tenders_tenants.php
     - create_ap_tender_tender_schedules.php
+1.0.4:
+    - 'Update to v1.0.4'
+    - create_ap_tender_documents.php

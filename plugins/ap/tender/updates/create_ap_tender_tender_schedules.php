@@ -3,7 +3,7 @@
 use Schema;
 use October\Rain\Database\Updates\Migration;
 
-class CreateApTenderTenantFinances extends Migration
+class CreateApTenderTenderSchedules extends Migration
 {
     public function up()
     {

@@ -56,9 +56,9 @@ class Tender extends Model
     ];
 
     public $belongsToMany = [
-        'tenants' => [
+        'tenant_invites' => [
             'Ap\Tender\Models\Tenant',
-            'table' => 'ap_tender_tenders_tenants',
+            'table' => 'ap_tender_tenders_tenant_invites',
             'key'      => 'tender_id',
             'otherKey' => 'tenant_id',
         ],

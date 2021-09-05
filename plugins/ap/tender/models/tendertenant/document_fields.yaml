@@ -1,0 +1,69 @@
+fields:
+    _section1:
+        label: 'ap.tender::lang.tender.section1'
+        type: section
+    tender[name]:
+        label: 'ap.tender::lang.tender.name'
+        placeholder: 'ap.tender::lang.tender.name'
+        type: text
+        span: left
+        disabled: true
+    tender[business_field]:
+        label: 'ap.tender::lang.tender.business_field'
+        type: relation
+        span: right
+        disabled: true
+    tender[pic_full_name]:
+        label: 'ap.tender::lang.tender.pic_full_name'
+        placeholder: 'ap.tender::lang.tender.pic_full_name'
+        type: text
+        span: left
+        disabled: true
+    tender[pic_email]:
+        label: 'ap.tender::lang.tender.pic_email'
+        placeholder: 'ap.tender::lang.tender.pic_email'
+        type: text
+        span: right
+        disabled: true
+tabs:
+    defaultTab: 'Envelope I'
+    icons:
+        'Envelope I': icon-user
+        'Envelope II': icon-user-circle
+    fields:
+        _section2:
+            label: 'Upload Dokumen Penawaran Bisnis (Envelope I)'
+            type: section
+            tab: 'Envelope I'
+        documents:
+            label: 'Dokumen Pendukung Lainnya'
+            span: full
+            path: field_documents
+            context:
+                - create
+                - update
+            type: partial
+            tab:  'Envelope I'
+        _section3:
+            label: 'Upload Dokumen Penawaran Finansial (Envelope II)'
+            type: section
+            tab: 'Envelope II'
+        total_price:
+            label: 'Total Harga Penawaran (include PPn)'
+            placeholder: 'Total Harga Penawaran (include PPn)'
+            type: number
+            span: left
+            tab: 'Envelope II'
+        doc_offers:
+            label: 'File Penawaran'
+            type: fileupload
+            mode: file
+            useCaption: true
+            fileTypes: pdf
+            mimeTypes: pdf
+            maxFilesize: 40
+            attachOnUpload: true
+            span: left
+            required: true
+            commentAbove: 'File (*pdf - max 40MB)'
+            tab: 'Envelope II'

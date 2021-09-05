@@ -1,0 +1,16 @@
+columns:
+    tender[name]:
+        label: 'ap.tender::lang.tender.name'
+        type: text
+    tender[package]:
+        label: 'ap.tender::lang.tender.package'
+        type: text
+    tender[pic_full_name]:
+        label: 'ap.tender::lang.tender.pic_full_name'
+        type: text
+    tender[pic_email]:
+        label: 'ap.tender::lang.tender.pic_email'
+        type: text
+    status:
+        label: 'ap.tender::lang.tender.status'
+        type: text

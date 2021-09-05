@@ -4,10 +4,12 @@ fields:
         placeholder: 'ap.tender::lang.tender.name'
         type: text
         span: left
+        disabled: true
     business_field:
         label: 'ap.tender::lang.tender.business_field'
         type: relation
         span: right
+        disabled: true
 tabs:
     defaultTab: 'ap.tender::lang.tender.section1'
     icons:
@@ -21,44 +23,38 @@ tabs:
             type: relation
             span: left
             tab: 'ap.tender::lang.tender.section1'
+            disabled: true
         package:
             label: 'ap.tender::lang.tender.package'
             placeholder: 'ap.tender::lang.tender.package'
             type: text
             span: right
             tab: 'ap.tender::lang.tender.section1'
+            disabled: true
         pic_full_name:
             label: 'ap.tender::lang.tender.pic_full_name'
             placeholder: 'ap.tender::lang.tender.pic_full_name'
             type: text
             span: left
             tab: 'ap.tender::lang.tender.section1'
+            disabled: true
         pic_email:
             label: 'ap.tender::lang.tender.pic_email'
             placeholder: 'ap.tender::lang.tender.pic_email'
             type: text
             span: right
             tab: 'ap.tender::lang.tender.section1'
-        
-        rooms:
-            label: 'ap.tender::lang.tender.rooms'
-            span: full
-            type: repeater
-            tab: 'ap.tender::lang.tender.section1'
-            form:
-                fields:
-                    name:
-                        placeholder: 'ap.tender::lang.tender.rooms'
-                        label: 'ap.tender::lang.tender.rooms'
-                        span: full
-                        type: text
+            disabled: true
+       
         description:
             label: 'ap.tender::lang.tender.description'
             placeholder: 'ap.tender::lang.tender.description'
             type: richeditor
+            toolbarButtons: none
             size: huge
             span: full
             tab: 'ap.tender::lang.tender.section1'
+            disabled: true
         schedules:
             label: 'ap.tender::lang.tenant.plural'
             span: full
@@ -68,6 +64,7 @@ tabs:
                 - update
             type: partial
             tab:  'ap.tender::lang.tender.section2'
+            disabled: true
         doc_rfq:
             label: 'ap.tender::lang.tender.doc_rfq'
             type: fileupload
@@ -81,6 +78,7 @@ tabs:
             required: true
             commentAbove: 'ap.tender::lang.tender.doc_rfq_comment'
             tab: 'ap.tender::lang.tender.section3'
+            disabled: true
         doc_rfp:
             label: 'ap.tender::lang.tender.doc_rfp'
             type: fileupload
@@ -94,6 +92,8 @@ tabs:
             required: true
             commentAbove: 'ap.tender::lang.tender.doc_rfp_comment'
             tab: 'ap.tender::lang.tender.section3'
+            hidden: true
+            disabled: true
         doc_support:
             label: 'ap.tender::lang.tender.doc_support'
             type: fileupload
@@ -107,22 +107,4 @@ tabs:
             commentAbove: 'ap.tender::lang.tender.doc_support_comment'
             tab: 'ap.tender::lang.tender.section3'
             commentHtml: true
-        pic_flyer:
-            label: 'ap.tender::lang.tender.pic_flyer'
-            type: fileupload
-            mode: image
-            useCaption: true
-            maxFilesize: 40
-            attachOnUpload: true
-            span: right
-            commentAbove: 'ap.tender::lang.tender.pic_flyer_comment'
-            tab: 'ap.tender::lang.tender.section3'
-            commentHtml: true
-        tenant_invites:
-            label: 'ap.tender::lang.tenant.plural'
-            span: full
-            path: field_tenant_invites
-            context:
-                - update
-            type: partial
-            tab: 'ap.tender::lang.tender.section4'
+            disabled: true

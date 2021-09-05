@@ -419,7 +419,7 @@
 
         'section1' => 'Informasi Tender',
         'section2' => 'Jadwal Tender', 
-        'section3' => 'Upload Dokumen',
+        'section3' => 'Dokumen',
         'section4' => 'Undang Tenant',
 
     ],

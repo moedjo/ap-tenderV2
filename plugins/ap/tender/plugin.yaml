@@ -170,6 +170,7 @@ navigation:
         icon: icon-building
         permissions:
             - ap_tender_is_admin_tender
+            - ap_tender_is_tenant
         sideMenu:
             tenders:
                 label: 'ap.tender::lang.tender.plural'
@@ -178,3 +179,15 @@ navigation:
                 permissions:
                     - ap_tender_is_admin_tender
                     - ap_tender_access_tenders
+            open-tender:
+                label: 'Open Tender'
+                url: ap/tender/tendertenants
+                icon: icon-star
+                permissions:
+                    - ap_tender_is_tenant
+            submit-doc:
+                label: 'Submit Dokumen Penawaran'
+                url: ap/tender/tendertenantdocuments
+                icon: icon-book
+                permissions:
+                    - ap_tender_is_tenant
