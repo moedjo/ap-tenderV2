@@ -35,13 +35,16 @@ class TenderTenantDocuments extends Controller
         $context = $host->getContext();
         $model = $host->model;
 
-        if ($context == 'update' && $model->status == 'submit_document') {
-            foreach ($fields as $field) {
-
-                $field->disabled = true;
-                $field->config['disabled'] = true;
-                $this->vars['disabled_' . $field->fieldName] = true;
-            };
+        if ($context == 'update') {
+            
+            $this->vars['disabled_documents'] = false;
+            if ($model->status != 'registration') {
+                foreach ($fields as $field) {
+                    $field->disabled = true;
+                    $field->config['disabled'] = true;
+                    $this->vars['disabled_' . $field->fieldName] = true;
+                };
+            }
         }
     }
 
