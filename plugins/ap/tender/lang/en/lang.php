@@ -402,8 +402,7 @@
         'status' => 'Status',
 
 
-        'date_start' => 'Tanggal Dimulai',
-        'date_end' => 'Tanggal Berakhir',
+
         
 
         'doc_support' => 'Dokumen Pendukung',
@@ -423,6 +422,14 @@
         'section3' => 'Upload Dokumen',
         'section4' => 'Undang Tenant',
 
+    ],
+
+    'schedule' => [
+        'singular' => 'Jadwal',
+        'plural' => 'Daftar Jadwal',
+
+        'date_start' => 'Tanggal Dimulai',
+        'date_end' => 'Tanggal Berakhir',
     ],
 
     'airport' => [

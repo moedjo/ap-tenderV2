@@ -16,7 +16,6 @@ class TenantUpdate extends Tenant
         foreach ($updates as $update) {
             $result[$update->id] = [
 
-                // e(trans('ap.tender::lang.tenant.' . $update->type)),
                 e(trans('ap.tender::lang.tenant.' . $update->field)),
             ];
         }

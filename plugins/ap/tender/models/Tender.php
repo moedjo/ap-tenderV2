@@ -29,31 +29,6 @@ class Tender extends Model
         'package' => 'required',
         'rooms' => 'required',
         'description' => 'required',
-        // 'registration_start' => 'required|date',
-        // 'registration_end' => 'required|date|after:registration_start',
-
-        // 'rfq_start' => 'required|date',
-        // 'rfq_end' => 'required|date|after:rfq_start',
-
-        // 'aanwijzing_start' => 'required|date',
-        // 'aanwijzing_end' => 'required|date|after:aanwijzing_start',
-
-        // 'rfp_start' => 'required|date',
-        // 'rfp_end' => 'required|date|after:rfp_start',
-
-        // 'sampul1_start' => 'required|date',
-        // 'sampul1_end' => 'required|date|after:sampul1_start',
-
-        // 'sampul2_start' => 'required|date',
-        // 'sampul2_end' => 'required|date|after:sampul2_start',
-
-        // 'negotiation_start' => 'required|date',
-        // 'negotiation_end' => 'required|date|after:negotiation_start',
-
-        // 'winner_start' => 'required|date',
-        // 'winner_end' => 'required|date|after:winner_start',
-        
-
         'doc_support' => 'required',
         'pic_flyer' => 'required',
         'doc_rfq'=> 'required',

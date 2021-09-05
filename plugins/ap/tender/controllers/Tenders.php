@@ -45,7 +45,13 @@ class Tenders extends Controller
                     $this->vars['disabled_' . $field->fieldName] = true;
                 }
             };
-        }
+        } 
+
+        if ($context == 'create') {
+            foreach ($fields as $field) {
+                $this->vars['disabled_' . $field->fieldName] = false;
+            };
+        } 
     }
 
     public function formBeforeCreate($model)

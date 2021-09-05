@@ -1,6 +1,18 @@
 fields:
     name:
-        label: 'ap.tender::lang.experience.name'
+        label: 'ap.tender::lang.schedule.singular'
         span: left
         type: text
-        placeholder: 'ap.tender::lang.experience.name'
+        placeholder: 'ap.tender::lang.schedule.name'
+    date_start:
+        label: 'ap.tender::lang.schedule.date_start'
+        placeholder: 'ap.tender::lang.schedule.start_date'
+        type: datepicker
+        mode: date
+        span: left
+    date_end:
+        label: 'ap.tender::lang.schedule.date_end'
+        placeholder: 'ap.tender::lang.schedule.date_end'
+        type: datepicker
+        mode: date
+        span: left

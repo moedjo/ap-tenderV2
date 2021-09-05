@@ -10,7 +10,7 @@ tenants:
         # form: $/ap/tender/models/tenant/fields.yaml
         scope: tenantActive
 schedules:
-    label: 'ap.tender::lang.finance.singular'
+    label: 'ap.tender::lang.schedule.singular'
     manage:
         form: $/ap/tender/models/schedule/fields.yaml
         list: $/ap/tender/models/schedule/columns.yaml

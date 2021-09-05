@@ -4,5 +4,11 @@ columns:
         type: number
         invisible: true
     name:
-        label: 'ap.tender::lang.experience.name'
+        label: 'ap.tender::lang.schedule.singular'
         type: text
+    date_start:
+        label: 'ap.tender::lang.schedule.date_start'
+        type: date
+    date_end:
+        label: 'ap.tender::lang.schedule.date_end'
+        type: date
