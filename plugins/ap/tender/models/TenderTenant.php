@@ -68,7 +68,7 @@ class TenderTenant extends Model
 
     public function beforeValidate()
     {
-        if ($this->status == 'registration') {
+        if ($this->status == 'submit_document') {
             $this->rules = [
                 'documents' => 'required',
                 'total_price' => 'required',
