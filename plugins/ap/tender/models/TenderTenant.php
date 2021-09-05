@@ -22,6 +22,8 @@ class TenderTenant extends Model
      */
     public $rules = [];
 
+    // protected $purgeable = ['payment_status'];
+
     public $belongsTo = [
 
         'tender' => [
@@ -53,7 +55,9 @@ class TenderTenant extends Model
         
     ]; 
 
-    public $attachOne = [];
+    public $attachOne = [
+        'pic_payment' => ['System\Models\File', 'public' => false],
+    ];
 
     public $attachMany = [
         'doc_offers' => ['System\Models\File', 'public' => false],
@@ -65,12 +69,21 @@ class TenderTenant extends Model
     public function beforeValidate()
     {
         if ($this->status == 'registration') {
-            $this->rules[] = [
+            $this->rules = [
                 'documents' => 'required',
                 'total_price' => 'required',
                 'doc_offers' => 'required',
             ];
         } 
+
+        if ($this->status == 'submit_payment') {
+            $this->rules = [
+                'pic_payment' => 'required',
+            ];
+        } 
+
+
+        
     }
 
 }

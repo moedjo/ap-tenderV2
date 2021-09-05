@@ -1,0 +1,13 @@
+list: $/ap/tender/models/tendertenant/columns.yaml
+modelClass: Ap\Tender\Models\TenderTenant
+title: 'ap.tender::lang.tender.plural'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: false
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'ap/tender/tendertenantrfpdocuments/update/:id'
+filter: config_filter.yaml

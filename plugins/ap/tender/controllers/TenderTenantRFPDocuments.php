@@ -8,7 +8,7 @@ use BackendMenu;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\View;
 
-class TenderTenantDocuments extends Controller
+class TenderTenantRFPDocuments extends Controller
 {
     public $implement = [
         'Backend\Behaviors\ListController',
@@ -27,7 +27,7 @@ class TenderTenantDocuments extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Ap.Tender', 'tender', 'submit-doc');
+        BackendMenu::setContext('Ap.Tender', 'tender', 'rfp-document');
     }
 
     public function formExtendFields($host, $fields)
@@ -35,13 +35,31 @@ class TenderTenantDocuments extends Controller
         $context = $host->getContext();
         $model = $host->model;
 
-        if ($context == 'update' && $model->status == 'submit_document') {
-            foreach ($fields as $field) {
+        if ($context == 'update') {
 
-                $field->disabled = true;
-                $field->config['disabled'] = true;
-                $this->vars['disabled_' . $field->fieldName] = true;
-            };
+            $fields['_section3']->hidden = true;
+            $fields['tender[doc_rfp]']->hidden = true;
+
+            if ($model->status == 'submit_payment' || $model->status == 'payment_approve') {
+                foreach ($fields as $field) {
+                    $field->disabled = true;
+                    $field->config['disabled'] = true;
+                    $this->vars['disabled_' . $field->fieldName] = true;
+                };
+            }
+
+            if($model->status == 'payment_approve') {
+                $fields['_section3']->hidden = false;
+                $fields['tender[doc_rfp]']->hidden = false;
+            }
+
+            if($model->status == 'payment_reject') {
+                // $fields['_section3']->hidden = false;
+                // $fields['tender[doc_rfp]']->hidden = false;
+            }
+
+
+
         }
     }
 
@@ -65,8 +83,12 @@ class TenderTenantDocuments extends Controller
 
     public function formBeforeSave($model)
     {
-        if ($model->status == 'registration') {
-            $model->status = 'submit_document';
+        if ($model->status == 'submit_document') {
+            $model->status = 'submit_payment';
+        }
+
+        if ($model->status == 'payment_reject') {
+            $model->status = 'submit_payment';
         }
     }
 

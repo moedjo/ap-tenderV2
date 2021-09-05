@@ -1,0 +1,7 @@
+name: 'ap.tender::lang.tender.singular'
+form: $/ap/tender/models/tendertenant/document_rfp_fields.yaml
+modelClass: Ap\Tender\Models\TenderTenant
+defaultRedirect: ap/tender/tendertenantrfpdocuments
+update:
+    redirect: ap/tender/tendertenantrfpdocuments
+    redirectClose: ap/tender/tendertenantrfpdocuments

@@ -1,0 +1,58 @@
+fields:
+    tender[name]:
+        label: 'ap.tender::lang.tender.name'
+        placeholder: 'ap.tender::lang.tender.name'
+        type: text
+        span: left
+        disabled: true
+    tender[business_field]:
+        label: 'ap.tender::lang.tender.business_field'
+        type: relation
+        span: right
+        disabled: true
+    tender[pic_full_name]:
+        label: 'ap.tender::lang.tender.pic_full_name'
+        placeholder: 'ap.tender::lang.tender.pic_full_name'
+        type: text
+        span: left
+        disabled: true
+    tender[pic_email]:
+        label: 'ap.tender::lang.tender.pic_email'
+        placeholder: 'ap.tender::lang.tender.pic_email'
+        type: text
+        span: right
+        disabled: true
+    _section1:
+        label: 'Tata Cara Pembayaran'
+        type: section
+    _partial:
+        type: partial
+        path: field_partial1
+    _section2:
+        label: 'Upload Bukti Pembayaran'
+        type: section
+    pic_payment:
+        label: 'Bukti Pembayaran'
+        type: fileupload
+        mode: image
+        useCaption: false
+        maxFilesize: 40
+        attachOnUpload: true
+        span: left
+        commentAbove: 'File (*image - max 40MB)'
+    _section3:
+        label: 'Verifikasi Pembayaran'
+        type: section
+    tender[doc_rfp]:
+        label: 'ap.tender::lang.tender.doc_rfp'
+        type: fileupload
+        mode: file
+        useCaption: true
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 40
+        attachOnUpload: true
+        span: left
+        required: true
+        commentAbove: 'ap.tender::lang.tender.doc_rfp_comment'
+        tab: 'ap.tender::lang.tender.section3'

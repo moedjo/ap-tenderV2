@@ -191,3 +191,15 @@ navigation:
                 icon: icon-book
                 permissions:
                     - ap_tender_is_tenant
+            rfp-document:
+                label: 'RFP Document'
+                url: ap/tender/tendertenantrfpdocuments
+                icon: icon-book
+                permissions:
+                    - ap_tender_is_tenant
+            tenant-details:
+                label: 'Lihat Tenant'
+                url: ap/tender/tendertenantdetails
+                icon: icon-user
+                permissions:
+                    - ap_tender_is_admin_tender

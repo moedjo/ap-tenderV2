@@ -1,0 +1,7 @@
+name: 'ap.tender::lang.tender.singular'
+form: $/ap/tender/models/tendertenant/tender_fields.yaml
+modelClass: Ap\Tender\Models\TenderTenant
+defaultRedirect: ap/tender/tendertenantdetails
+update:
+    redirect: ap/tender/tendertenantdetails
+    redirectClose: ap/tender/tendertenantdetails

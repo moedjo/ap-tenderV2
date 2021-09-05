@@ -8,7 +8,7 @@ use BackendMenu;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\View;
 
-class TenderTenantDocuments extends Controller
+class TenderTenantDetails extends Controller
 {
     public $implement = [
         'Backend\Behaviors\ListController',
@@ -21,13 +21,13 @@ class TenderTenantDocuments extends Controller
     public $relationConfig = 'config_relation.yaml';
 
     public $requiredPermissions = [
-        'ap_tender_is_tenant'
+        'ap_tender_is_admin_tender'
     ];
 
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Ap.Tender', 'tender', 'submit-doc');
+        BackendMenu::setContext('Ap.Tender', 'tender', 'tenant-details');
     }
 
     public function formExtendFields($host, $fields)
@@ -35,22 +35,19 @@ class TenderTenantDocuments extends Controller
         $context = $host->getContext();
         $model = $host->model;
 
-        if ($context == 'update' && $model->status == 'submit_document') {
-            foreach ($fields as $field) {
+        if ($context == 'update') {
 
-                $field->disabled = true;
-                $field->config['disabled'] = true;
-                $this->vars['disabled_' . $field->fieldName] = true;
-            };
+            if ($model->status != 'submit_payment') {
+                $fields['pic_payment']->hidden = true;
+                $fields['_payment_status']->hidden = true;
+            }
         }
     }
 
     public function extendQuery($query)
     {
-        $user = $this->user;
-        $tenant = Tenant::where('user_id', $user->id)->first();
 
-        return $query->where('tenant_id', $tenant->id);
+        return $query;
     }
 
     public function listExtendQuery($query)
@@ -65,8 +62,17 @@ class TenderTenantDocuments extends Controller
 
     public function formBeforeSave($model)
     {
-        if ($model->status == 'registration') {
-            $model->status = 'submit_document';
+        // 0 reject 1 approve
+        $payment_status = post('TenderTenant[_payment_status]');
+        if ($model->status == 'submit_payment') {
+
+            if ($payment_status  == 0) {
+                $model->status = 'payment_reject';
+                $model->pic_payment->delete();
+            } else {
+
+                $model->status = 'payment_approve';
+            }
         }
     }
 
