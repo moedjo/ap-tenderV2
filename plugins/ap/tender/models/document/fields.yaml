@@ -1,6 +1,20 @@
 fields:
     name:
-        label: 'ap.tender::lang.office.name'
+        label: 'Nama / Jenis Dokumen'
         span: full
-        placeholder: 'ap.tender::lang.office.name'
+        placeholder: 'Nama / Jenis Dokumen'
         type: text
+    doc_pdf:
+        label: 'File'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 40
+        attachOnUpload: true
+        span: left
+        required: true
+        commentAbove: 'File (*pdf - max 40MB)'
+        tab: 'Envelope II'
+

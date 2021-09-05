@@ -41,15 +41,16 @@ class TenderTenant extends Model
             'Ap\Tender\Models\Schedule',
             'key' => 'tender_id'
         ],
+        'documents' => [
+            'Ap\Tender\Models\Document',
+            'key' => 'tender_tenant_id'
+        ]
     ];
 
     public $belongsToMany = [];
 
     public $morphMany = [
-        'documents' => [
-            'Ap\Tender\Models\Document',
-            'key' => 'tender_tenant_id'
-        ]
+        
     ]; 
 
     public $attachOne = [];
@@ -59,5 +60,17 @@ class TenderTenant extends Model
     ];
 
     protected $jsonable = [];
+
+
+    public function beforeValidate()
+    {
+        if ($this->status == 'registration') {
+            $this->rules[] = [
+                'documents' => 'required',
+                'total_price' => 'required',
+                'doc_offers' => 'required',
+            ];
+        } 
+    }
 
 }

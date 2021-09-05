@@ -46,4 +46,9 @@ class Document extends Model
     //     return BackendAuth::getUser();
     // }
 
+    public $attachOne = [
+        'doc_pdf' => ['System\Models\File', 'public' => false],
+
+    ];
+
 }

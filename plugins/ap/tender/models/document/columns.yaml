@@ -1,4 +1,8 @@
 columns:
     name:
-        label: 'ap.tender::lang.office.name'
+        label: 'Nama / Jenis Dokumen'
         type: text
+    doc_pdf:
+        label: 'File'
+        relation: doc_pdf
+        select: file_name

@@ -16,9 +16,7 @@ class CreateApTenderDocuments extends Migration
 
             $table->string('name');
 
-            $table->integer('tender_tenant')->unsigned()->nullable();
-            // $table->foreign('tender_tenant')->references('id')
-            //     ->on('ap_tender_tenders');
+            $table->integer('tender_tenant_id')->unsigned()->nullable();
         });
     }
     
