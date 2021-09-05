@@ -178,9 +178,3 @@ navigation:
                 permissions:
                     - ap_tender_is_admin_tender
                     - ap_tender_access_tenders
-            tender-documents:
-                label: 'ap.tender::lang.tender.publish_document'
-                url: ap/tender/tenderdocuments
-                icon: icon-book
-                permissions:
-                    - ap_tender_access_tenders

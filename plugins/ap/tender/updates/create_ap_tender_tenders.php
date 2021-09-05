@@ -34,32 +34,6 @@ class CreateApTenderTenders extends Migration
             $table->string('pic_phone_number')->nullable();
             $table->string('pic_email')->nullable();
 
-            
-
-            $table->timestamp('registration_start')->nullable();
-            $table->timestamp('registration_end')->nullable();
-
-
-            $table->timestamp('rfq_start')->nullable();
-            $table->timestamp('rfq_end')->nullable();
-
-            $table->timestamp('aanwijzing_start')->nullable();
-            $table->timestamp('aanwijzing_end')->nullable();
-
-            $table->timestamp('rfp_start')->nullable();
-            $table->timestamp('rfp_end')->nullable();
-
-            $table->timestamp('sampul1_start')->nullable();
-            $table->timestamp('sampul1_end')->nullable();
-
-            $table->timestamp('sampul2_start')->nullable();
-            $table->timestamp('sampul2_end')->nullable();
-
-            $table->timestamp('negotiation_start')->nullable();
-            $table->timestamp('negotiation_end')->nullable();
-
-            $table->timestamp('winner_start')->nullable();
-            $table->timestamp('winner_end')->nullable();
         });
     }
     

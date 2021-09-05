@@ -11,174 +11,120 @@ fields:
         label: 'ap.tender::lang.tender.business_field'
         type: relation
         span: right
-    airport:
-        label: 'ap.tender::lang.tender.airport'
-        type: relation
-        span: left
-    pic_full_name:
-        label: 'ap.tender::lang.tender.pic_full_name'
-        placeholder: 'ap.tender::lang.tender.pic_full_name'
-        type: text
-        span: left
-    pic_email:
-        label: 'ap.tender::lang.tender.pic_email'
-        placeholder: 'ap.tender::lang.tender.pic_email'
-        type: text
-        span: right
-    package:
-        label: 'ap.tender::lang.tender.package'
-        placeholder: 'ap.tender::lang.tender.package'
-        type: text
-        span: left
-    rooms:
-        label: 'ap.tender::lang.tender.rooms'
-        span: right
-        type: repeater
-        form:
-            fields:
-                name:
-                    placeholder: 'ap.tender::lang.tender.rooms'
-                    label: 'ap.tender::lang.tender.rooms'
-                    span: full
-                    type: text
-    description:
-        label: 'ap.tender::lang.tender.description'
-        placeholder: 'ap.tender::lang.tender.description'
-        type: richeditor
-        size: huge
-        span: full
-    _section2:
-        label: 'ap.tender::lang.tender.section2'
-        type: section
-    registration_start:
-        label: 'ap.tender::lang.tender.date_start'
-        type: datepicker
-        mode: date
-        span: left
-    registration_end:
-        label: 'ap.tender::lang.tender.date_end'
-        type: datepicker
-        mode: date
-        span: right
-    _section3:
-        label: 'ap.tender::lang.tender.section3'
-        type: section
-    rfq_start:
-        label: 'ap.tender::lang.tender.date_start'
-        type: datepicker
-        mode: date
-        span: left
-    rfq_end:
-        label: 'ap.tender::lang.tender.date_end'
-        type: datepicker
-        mode: date
-        span: right
-    _section4:
-        label: 'ap.tender::lang.tender.section4'
-        type: section
-    aanwijzing_start:
-        label: 'ap.tender::lang.tender.date_start'
-        type: datepicker
-        mode: date
-        span: left
-    aanwijzing_end:
-        label: 'ap.tender::lang.tender.date_end'
-        type: datepicker
-        mode: date
-        span: right
-    _section5:
-        label: 'ap.tender::lang.tender.section5'
-        type: section
-    rfp_start:
-        label: 'ap.tender::lang.tender.date_start'
-        type: datepicker
-        mode: date
-        span: left
-    rfp_end:
-        label: 'ap.tender::lang.tender.date_end'
-        type: datepicker
-        mode: date
-        span: right
-    _section6:
-        label: 'ap.tender::lang.tender.section6'
-        type: section
-    sampul1_start:
-        label: 'ap.tender::lang.tender.date_start'
-        type: datepicker
-        mode: date
-        span: left
-    sampul1_end:
-        label: 'ap.tender::lang.tender.date_end'
-        type: datepicker
-        mode: date
-        span: right
-    _section7:
-        label: 'ap.tender::lang.tender.section7'
-        type: section
-    sampul2_start:
-        label: 'ap.tender::lang.tender.date_start'
-        type: datepicker
-        mode: date
-        span: left
-    sampul2_end:
-        label: 'ap.tender::lang.tender.date_end'
-        type: datepicker
-        mode: date
-        span: right
-    _section8:
-        label: 'ap.tender::lang.tender.section8'
-        type: section
-    negotiation_start:
-        label: 'ap.tender::lang.tender.date_start'
-        type: datepicker
-        mode: date
-        span: left
-    negotiation_end:
-        label: 'ap.tender::lang.tender.date_end'
-        type: datepicker
-        mode: date
-        span: right
-    _section9:
-        label: 'ap.tender::lang.tender.section9'
-        type: section
-    winner_start:
-        label: 'ap.tender::lang.tender.date_start'
-        type: datepicker
-        mode: date
-        span: left
-    winner_end:
-        label: 'ap.tender::lang.tender.date_end'
-        type: datepicker
-        mode: date
-        span: right
-    _section10:
-        label: 'ap.tender::lang.tender.section10'
-        type: section
-    doc_tender:
-        label: 'ap.tender::lang.tender.doc_tender'
-        type: fileupload
-        mode: file
-        useCaption: true
-        fileTypes: pdf
-        mimeTypes: pdf
-        maxFilesize: 40
-        attachOnUpload: true
-        span: left
-        commentAbove: 'ap.tender::lang.tender.doc_tender_comment'
-    pic_flyer:
-        label: 'ap.tender::lang.tender.doc_tender'
-        type: fileupload
-        mode: image
-        useCaption: true
-        maxFilesize: 40
-        attachOnUpload: true
-        span: left
-        commentAbove: 'ap.tender::lang.tender.doc_tender_comment'
-    # tenants:
-    #     label: 'ap.tender::lang.tenant.plural'
-    #     span: full
-    #     path: field_tenants
-    #     context:
-    #         - update
-    #     type: partial
-    
+tabs:
+    defaultTab: 'ap.tender::lang.tender.section1'
+    icons:
+        'ap.tender::lang.tender.section1': icon-user
+        'ap.tender::lang.tender.section2': icon-user-circle
+        'ap.tender::lang.tender.section3': icon-user-circle
+        'ap.tender::lang.tender.section4': icon-user-circle
+    fields:
+        airport:
+            label: 'ap.tender::lang.tender.airport'
+            type: relation
+            span: left
+            tab: 'ap.tender::lang.tender.section1'
+        pic_full_name:
+            label: 'ap.tender::lang.tender.pic_full_name'
+            placeholder: 'ap.tender::lang.tender.pic_full_name'
+            type: text
+            span: left
+            tab: 'ap.tender::lang.tender.section1'
+        pic_email:
+            label: 'ap.tender::lang.tender.pic_email'
+            placeholder: 'ap.tender::lang.tender.pic_email'
+            type: text
+            span: right
+            tab: 'ap.tender::lang.tender.section1'
+        package:
+            label: 'ap.tender::lang.tender.package'
+            placeholder: 'ap.tender::lang.tender.package'
+            type: text
+            span: left
+            tab: 'ap.tender::lang.tender.section1'
+        rooms:
+            label: 'ap.tender::lang.tender.rooms'
+            span: right
+            type: repeater
+            tab: 'ap.tender::lang.tender.section1'
+            form:
+                fields:
+                    name:
+                        placeholder: 'ap.tender::lang.tender.rooms'
+                        label: 'ap.tender::lang.tender.rooms'
+                        span: full
+                        type: text
+        description:
+            label: 'ap.tender::lang.tender.description'
+            placeholder: 'ap.tender::lang.tender.description'
+            type: richeditor
+            size: huge
+            span: full
+            tab: 'ap.tender::lang.tender.section1'
+        schedules:
+            label: 'ap.tender::lang.tenant.plural'
+            span: full
+            path: field_schedules
+            context:
+                - create
+                - update
+            type: partial
+            tab:  'ap.tender::lang.tender.section2'
+        doc_rfq:
+            label: 'ap.tender::lang.tender.doc_rfq'
+            type: fileupload
+            mode: file
+            useCaption: true
+            fileTypes: pdf
+            mimeTypes: pdf
+            maxFilesize: 40
+            attachOnUpload: true
+            span: left
+            required: true
+            commentAbove: 'ap.tender::lang.tender.doc_rfq_comment'
+            tab: 'ap.tender::lang.tender.section3'
+        doc_rfp:
+            label: 'ap.tender::lang.tender.doc_rfp'
+            type: fileupload
+            mode: file
+            useCaption: true
+            fileTypes: pdf
+            mimeTypes: pdf
+            maxFilesize: 40
+            attachOnUpload: true
+            span: right
+            required: true
+            commentAbove: 'ap.tender::lang.tender.doc_rfp_comment'
+            tab: 'ap.tender::lang.tender.section3'
+        doc_support:
+            label: 'ap.tender::lang.tender.doc_support'
+            type: fileupload
+            mode: file
+            useCaption: true
+            fileTypes: pdf
+            mimeTypes: pdf
+            maxFilesize: 40
+            attachOnUpload: true
+            span: left
+            commentAbove: 'ap.tender::lang.tender.doc_support_comment'
+            tab: 'ap.tender::lang.tender.section3'
+            commentHtml: true
+        pic_flyer:
+            label: 'ap.tender::lang.tender.pic_flyer'
+            type: fileupload
+            mode: image
+            useCaption: true
+            maxFilesize: 40
+            attachOnUpload: true
+            span: right
+            commentAbove: 'ap.tender::lang.tender.pic_flyer_comment'
+            tab: 'ap.tender::lang.tender.section3'
+            commentHtml: true
+        tenants:
+            label: 'ap.tender::lang.tenant.plural'
+            span: full
+            path: field_tenants
+            context:
+                - update
+            type: partial
+            tab: 'ap.tender::lang.tender.section4'

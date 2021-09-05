@@ -1,7 +1,0 @@
-name: 'ap.tender::lang.tender.publish_document'
-form: $/ap/tender/models/tender/publich_document_fields.yaml
-modelClass: Ap\Tender\Models\Tender
-defaultRedirect: ap/tender/tenders
-update:
-    redirect: ap/tender/tenderdocuments/update/:id
-    redirectClose: ap/tender/tenderdocuments/update/:id

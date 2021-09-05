@@ -382,7 +382,7 @@
         'create' => 'Buat Tender',
         'update' => 'Ubah Tender',
 
-        'section1' => 'Informasi Tender',
+   
 
         'name' => 'Nama Tender',
         'package' => 'Paket Tender',
@@ -406,8 +406,11 @@
         'date_end' => 'Tanggal Berakhir',
         
 
-        'doc_tender' => 'Dokumen Tender',
-        'doc_tender_comment' => 'File (*pdf - max 40MB)',
+        'doc_support' => 'Dokumen Pendukung',
+        'doc_support_comment' => 'File (*pdf - max 40MB) <br>Klik 2x untuk rubah judul',
+
+        'pic_flyer' => 'Flyer',
+        'pic_flyer_comment' => 'File (*png - max 40MB) <br>Klik 2x untuk rubah judul',
 
         'doc_rfq' => 'RFQ',
         'doc_rfq_comment' => 'File (*pdf - max 40MB)',
@@ -415,16 +418,10 @@
         'doc_rfp' => 'RFP',
         'doc_rfp_comment' => 'File (*pdf - max 40MB)',
 
-        
-        'section2' => 'Jadwal Pendaftaran', 
-        'section3' => 'Jadwal Submission RFQ', 
-        'section4' => 'Jadwal Aanwijzing & Site Visit', 
-        'section5' => 'Jadwal Submission RFP', 
-        'section6' => 'Jadwal Pembukaan & Presentasi Sampul I', 
-        'section7' => 'Jadwal Sampul II', 
-        'section8' => 'Jadwal Klarifikasi & Negosiasi',
-        'section9' => 'Jadwal Pengumuman Pemenang',
-        'section10' => 'Upload Dokumen',
+        'section1' => 'Informasi Tender',
+        'section2' => 'Jadwal Tender', 
+        'section3' => 'Upload Dokumen',
+        'section4' => 'Undang Tenant',
 
     ],
 

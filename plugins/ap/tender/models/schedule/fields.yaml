@@ -1,0 +1,6 @@
+fields:
+    name:
+        label: 'ap.tender::lang.experience.name'
+        span: left
+        type: text
+        placeholder: 'ap.tender::lang.experience.name'

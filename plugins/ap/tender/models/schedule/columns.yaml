@@ -1,0 +1,8 @@
+columns:
+    id:
+        label: 'ap.tender::lang.global.id'
+        type: number
+        invisible: true
+    name:
+        label: 'ap.tender::lang.experience.name'
+        type: text

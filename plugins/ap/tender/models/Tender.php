@@ -29,33 +29,35 @@ class Tender extends Model
         'package' => 'required',
         'rooms' => 'required',
         'description' => 'required',
-        'registration_start' => 'required|date',
-        'registration_end' => 'required|date|after:registration_start',
+        // 'registration_start' => 'required|date',
+        // 'registration_end' => 'required|date|after:registration_start',
 
-        'rfq_start' => 'required|date',
-        'rfq_end' => 'required|date|after:rfq_start',
+        // 'rfq_start' => 'required|date',
+        // 'rfq_end' => 'required|date|after:rfq_start',
 
-        'aanwijzing_start' => 'required|date',
-        'aanwijzing_end' => 'required|date|after:aanwijzing_start',
+        // 'aanwijzing_start' => 'required|date',
+        // 'aanwijzing_end' => 'required|date|after:aanwijzing_start',
 
-        'rfp_start' => 'required|date',
-        'rfp_end' => 'required|date|after:rfp_start',
+        // 'rfp_start' => 'required|date',
+        // 'rfp_end' => 'required|date|after:rfp_start',
 
-        'sampul1_start' => 'required|date',
-        'sampul1_end' => 'required|date|after:sampul1_start',
+        // 'sampul1_start' => 'required|date',
+        // 'sampul1_end' => 'required|date|after:sampul1_start',
 
-        'sampul2_start' => 'required|date',
-        'sampul2_end' => 'required|date|after:sampul2_start',
+        // 'sampul2_start' => 'required|date',
+        // 'sampul2_end' => 'required|date|after:sampul2_start',
 
-        'negotiation_start' => 'required|date',
-        'negotiation_end' => 'required|date|after:negotiation_start',
+        // 'negotiation_start' => 'required|date',
+        // 'negotiation_end' => 'required|date|after:negotiation_start',
 
-        'winner_start' => 'required|date',
-        'winner_end' => 'required|date|after:winner_start',
+        // 'winner_start' => 'required|date',
+        // 'winner_end' => 'required|date|after:winner_start',
         
 
-        'doc_tender' => 'required',
+        'doc_support' => 'required',
         'pic_flyer' => 'required',
+        'doc_rfq'=> 'required',
+        'doc_rfp'=> 'required',
 
     ];
 
@@ -72,7 +74,10 @@ class Tender extends Model
     ];
 
     public $hasMany = [
-        
+        'schedules' => [
+            'Ap\Tender\Models\Schedule',
+            'key' => 'tender_id'
+        ],
     ];
 
     public $belongsToMany = [
@@ -81,7 +86,6 @@ class Tender extends Model
             'table' => 'ap_tender_tenders_tenants',
             'key'      => 'tender_id',
             'otherKey' => 'tenant_id',
-            // 'conditions' => "status = 'short_listed'",
         ],
 
     ];
@@ -93,7 +97,7 @@ class Tender extends Model
     ];
 
     public $attachMany = [
-        'doc_tender' => ['System\Models\File', 'public' => false],
+        'doc_support' => ['System\Models\File', 'public' => false],
         'pic_flyer' => ['System\Models\File', 'public' => false],
     ];
 
@@ -104,9 +108,9 @@ class Tender extends Model
     
     public function beforeValidate()
     {
-        if ($this->status == 'publish_document') {
-            $this->rules['doc_rfq'] = "required";
-            $this->rules['doc_rfp'] = "required";
-        } 
+        // if ($this->status == 'publish_document') {
+        //     $this->rules['doc_rfq'] = "required";
+        //     $this->rules['doc_rfp'] = "required";
+        // } 
     }
 }

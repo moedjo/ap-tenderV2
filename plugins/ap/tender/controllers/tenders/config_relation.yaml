@@ -2,8 +2,19 @@ tenants:
     label: 'ap.tender::lang.tenant.plural'
     view:
         list: $/ap/tender/models/tenant/columns.yaml
-        toolbarButtons: add|remove
+        # toolbarButtons: add|remove
+        toolbarButtons: add
+        showCheckboxes: false
     manage:
         list: $/ap/tender/models/tenant/columns.yaml
         # form: $/ap/tender/models/tenant/fields.yaml
         scope: tenantActive
+schedules:
+    label: 'ap.tender::lang.finance.singular'
+    manage:
+        form: $/ap/tender/models/schedule/fields.yaml
+        list: $/ap/tender/models/schedule/columns.yaml
+    view:
+        list: $/ap/tender/models/schedule/columns.yaml
+        toolbarButtons: create|delete
+
