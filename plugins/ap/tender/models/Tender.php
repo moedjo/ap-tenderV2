@@ -73,7 +73,7 @@ class Tender extends Model
 
     public $attachMany = [
         'doc_support' => ['System\Models\File', 'public' => false],
-        'pic_flyer' => ['System\Models\File', 'public' => false],
+        'pic_flyer' => ['System\Models\File', 'public' => true],
     ];
 
     protected $jsonable = [
