@@ -8,13 +8,21 @@
 
 <div class="form-buttons">
     <div class="loading-indicator-container">
-        <button type="button btn-default" data-request="onSave" 
-            data-hotkey="ctrl+enter, cmd+enter" data-load-indicator="<?= e(trans('ap.tender::lang.button.next')) ?>"
-            class="btn btn-primary pull-right">
-            <?= e(trans('ap.tender::lang.button.register')) ?>
-        </button>
 
-        <a href="<?= Backend::url('ap/tender/tenders') ?>" class="btn btn-warning">
+        <?php if($is_registered): ?>
+            <a href="<?= Backend::url('ap/tender/tendertenants') ?>" class="btn btn-warning pull-right">
+                Sudah teregistrasi
+            </a>
+        <?php else: ?>
+            <button type="button btn-default" data-request="onSave" 
+                data-hotkey="ctrl+enter, cmd+enter" data-load-indicator="<?= e(trans('ap.tender::lang.button.next')) ?>"
+                class="btn btn-primary pull-right">
+                <?= e(trans('ap.tender::lang.button.register')) ?>
+            </button>
+        <?php endif ?>
+
+      
+        <a href="<?= Backend::url('ap/tender/tendertenants') ?>" class="btn btn-warning">
             <?= e(trans('ap.tender::lang.button.back')) ?>
         </a>
     </div>
