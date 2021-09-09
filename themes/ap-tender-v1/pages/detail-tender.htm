@@ -4,59 +4,81 @@ title = "detail-tender"
 ==
 
 use Ap\Tender\Models\Tender;
+use Ap\Tender\Models\Schedule;
+use Ap\Tender\Models\Document;
 
 function onStart()
 {
 	$id = $this->param('id');
-  	$this['DetailTend'] = Tender::where('id', $id)->with('business_field')->first();
+  	$this['DetailTend'] = Tender::where('id', $id)->with('business_field','schedules')->first();
+  	$this['DetailSchedule'] = Schedule::where('id', $id)->first();
+  	$this['date'] = date("d-m-Y H:i");
+  	$this['doc'] = Document::where('tender_tenant_id', $id)->first();
+
 }
 ==
 
-<section class="about-section text-center">
+<section class="about-section">
 	<div class="page-content page-container" id="page-content">
 	    <div class="padding">
-	        <div class="row container d-flex justify-content-center">
-	            <div class="col-xl-6 col-md-12">
-	                <div class="card user-card-full">
-	                    <div class="row m-l-0 m-r-0">
-	                        <div class="col-sm-12">
-	                            <div class="card-block">
-	                                <h3 class="m-b-20 p-b-5 b-b-default f-w-600">Detail Tender</h3>
-	                                <div class="row">
-	                                    <div class="col-sm-6">
-	                                       	<h5>Kategori</h5>
-	                                        <label>{{DetailTend.business_field.name}}</label>          
-	                                    </div>
-	                                    <div class="col-sm-6">
-	                                       	<h5>Name</h5>
-	                                        <label>{{DetailTend.name}}</label>
-	                                    </div>
-	                                </div>
-	                                <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600"></h6>
-	                                <div class="row">
-	                                    <div class="col-sm-6">
-	                                       	<h5>Tanggal Awal</h5>
-	                                        <label>{{DetailTend.registration_start}}</label>
-	                                    </div>
-	                                    <div class="col-sm-6">
-	                                        <h5>Tanggal Akhir</h5>
-	                                        <label>{{DetailTend.registration_end}}</label>
-	                                    </div>
-	                                </div>
-	                                <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600"></h6>
-	                                <div class="row">
-	                                    <div class="col-sm-12">
-	                                    	<center>
-		                                       	<h5>Status</h5>
-		                                        <button class="button buttonStatus btn-primary">{{DetailTend.status}}</button>
-	                                    	</center>
-	                                    </div>
-	                                </div>	                                
-	                            </div>
+	        <div class="cardDetail">
+					<center><button type="button" class="btn btn-warning">{{date}}</button></center>
+					<hr>
+	        	<div class="row container">
+		            <!-- <div class="col-xl-6 col-md-12"> -->
+	                    <div class="row">
+	                        <div class="col-md-6">
+                            		<div class="col-sm-12">
+                                        <strong><label>{{DetailTend.name}}</label></strong>
+                                        {{DetailTend.description | raw}}
+                                    </div>
+                                   	<div class="col-sm-12">
+	                                    <h5><u>Jadwal Tender</u></h5>
+                                        <table class="table table-border table-dark">
+                                        	<thead>
+                                        		<th>Jadwal</th>
+                                        		<th>Tanggal Mulai</th>
+                                        		<th>Tanggal Berakhir</th>
+                                        	</thead>
+                                        	<tbody>
+                                        		<td>ada</td>
+                                        		<td>{{DetailSchedule.date_start}}</td>
+                                        		<td>{{DetailSchedule.date_end}}</td>
+                                        	</tbody>
+                                        </table>
+                                    </div>
+                                    <div class="col-sm-12">
+	                                    <h5><u>List Document</u></h5>
+                                        <ul>
+                                        	<li>{{doc.name}}</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-12">
+	                                    <h5><u>Shortlisted Tenant</u></h5>
+										<table class="table table-border table-dark">
+                                        	<thead>
+                                        		<th>Nama Perusahaan</th>
+                                        		<th>Kategori Bisnis</th>
+                                        	</thead>
+                                        	<tbody>
+                                        		<td>{{DetailTend.name}}</td>
+                                        		<td>{{DetailTend.business_field.name}}</td>
+                                        	</tbody>
+                                        </table>
+                                    </div>
+                                    <div class="col-sm-12">
+                                    	<a href="{{'/'|page}}/backend/ap/tender/publictenantshortforms/create" type="button" class="btn btn-info btn-sm" style="margin-bottom: 5px;">Register</a>
+                                	</div>
+	                        </div>
+	                        <div class="col-md-6" style="padding-left: 30px;">
+								  <center><h5>Image</h5></center>
+								   <img class="img-responsive" src="{{pic.Path()}}" alt="Chania" width="150" height="200">
 	                        </div>
 	                    </div>
-	                </div>
-	            </div>
+		            <!-- </div> -->
+
+		                  
+		        </div>
 	        </div>
 	    </div>
 	</div>

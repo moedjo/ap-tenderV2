@@ -39,6 +39,14 @@ class TenderTenants extends Controller
         if ($context == 'update') {
 
             
+            $user = $this->user;
+            $tenant = Tenant::where('user_id', $user->id)->first();
+            $tender_tenant = TenderTenant::where('tender_id',$model->id)
+                ->where('tenant_id', $tenant->id)->first();
+
+
+            $this->vars['is_registered']= $tender_tenant ? true : false;
+
         } 
 
         if ($context == 'create') {
@@ -46,20 +54,38 @@ class TenderTenants extends Controller
         } 
     }
 
-    public function formAfterSave($model)
+    public function extendQuery($query)
     {
-        // $model->status = 'registration';
-
         $user = $this->user;
         $tenant = Tenant::where('user_id', $user->id)->first();
 
+        $business_field_ids = $tenant->business_fields->pluck('id');
 
-        $tender_tenant = new TenderTenant();
-        $tender_tenant->tender = $model;
-        $tender_tenant->tenant = $tenant;
-        $tender_tenant->status = 'registration';
+        return $query->whereIn('business_field_id',  $business_field_ids);
+    }
 
-        $tender_tenant->save();
+    public function listExtendQuery($query)
+    {
+        return $this->extendQuery($query);
+    }
+
+    public function formExtendQuery($query)
+    {
+        return $this->extendQuery($query);
+    }
+
+    public function formAfterSave($model)
+    {
+        $user = $this->user;
+        $tenant = Tenant::where('user_id', $user->id)->first();
+        if($tenant->status == 'short_listed') {
+            $tender_tenant = new TenderTenant();
+            $tender_tenant->tender = $model;
+            $tender_tenant->tenant = $tenant;
+            $tender_tenant->status = 'registration';
+
+            $tender_tenant->save();
+        }
  
     }
 
@@ -81,6 +107,15 @@ class TenderTenants extends Controller
     public function preview($recordId = null, $context = null)
     {
         return Response::make(View::make('backend::access_denied'), 403);
+    }
+
+    public function listOverrideRecordUrl($record, $definition = null)
+    {
+        $user = $this->user;
+        $tenant = Tenant::where('user_id', $user->id)->first();
+        if ($tenant->status != 'short_listed') {
+            return ['clickable' => false];
+        }
     }
 
 }
