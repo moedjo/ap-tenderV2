@@ -1,0 +1,67 @@
+url = "/tender"
+layout = "default"
+title = "Tender"
+activePage = ""
+==
+
+<?php
+use Ap\Tender\Models\BusinessField;
+use Ap\Tender\Models\Tender;
+use System\Models\File;
+
+function onStart()
+{
+    $this['kategori'] = BusinessField::orderBy('created_at', 'desc')->get();
+
+    $tenant = Tender::orderBy('created_at', 'desc')->with('business_field')->take(9)->get();
+    foreach ($tenant as $idx => $row) {
+        foreach ($row->pic_flyer as $_idx => $_row) {
+            if (file_exists($_row->getLocalPath())) {
+                $tenant[$idx]['pic_flyer'][$_idx]['file_exists'] = 1;
+            } else {
+                $tenant[$idx]['pic_flyer'][$_idx]['file_exists'] = 0;
+            }
+        }
+    }
+    $this['ListTenant'] = $tenant;
+
+}
+?>
+==
+
+        {% partial 'preloader' %}
+
+        {% partial 'header' %}
+
+        <section id="blog" class="section">
+            <div class="container">
+                <div class="row">
+                    <!-- section title -->
+                    <div class="title text-center wow fadeInDown">
+                        <h2>Information <span class="color">Tender</span></h2>
+                        <div class="border"></div>
+                    </div>
+                    <div class="clearfix">
+                        {% for tender in ListTenant %}
+                        <article class="col-md-4 col-sm-6 col-xs-12 mb-30 clearfix wow fadeInUp" data-wow-duration="500ms">
+                            <div class="post-block">
+                                <div id="gallery-post" class="media-wrapper">
+                                    {%for img in tender.pic_flyer %}
+                                    <div class="item">
+                                        <img class="rounded mx-auto d-block img-thumbnail" src="{{ img.file_exists ? img.getPath() : asset('/themes/ap-tender-v2/assets/images/default-image.png') }}">
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                <div class="content">
+                                    <h3><a href="">{{ tender.name }}</a></h3>
+                                    <p>{{ tender.description | raw }}</p>
+                                    <a class="btn btn-transparent" href="/tender/{{ tender.id }}">Read more</a>
+                                </div>
+                            </div>
+                        </article>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
