@@ -4,20 +4,20 @@ title = "Tender"
 activePage = ""
 ==
 
-use Ap\Tender\Models\BusinessField;
 use Ap\Tender\Models\Tender;
 use System\Models\File;
 
 function onStart() {
     $id = $this->param('id');
-    $tender = Tender::where('id', $id)->with('business_field')->first();
-    echo '<pre>';
-    foreach ($tender->pic_flyer as $row) {
-        echo $row->getLocalPath() . "<br>";
+    $tenant = Tender::where('id', $id)->with('business_field')->first();
+    foreach ($tenant->pic_flyer as $idx => $row) {
+        if (file_exists($row->getLocalPath())) {
+            $tenant['pic_flyer'][$idx]['file_exists'] = 1;
+        } else {
+            $tenant['pic_flyer'][$idx]['file_exists'] = 0;
+        }
     }
-    print_r($tender->pic_flyer);
-    die;
-    $this['detailTender'] = Tender::where('id', $id)->with('business_field')->with('pic_flyer')->first();
+    $this['detailTender'] = $tenant;
 }
 
 ==
@@ -29,23 +29,67 @@ function onStart() {
         <section class="section">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h1>{{  detailTender.name}}</h1>
-                        <ul class="list-inline mb-50">
-                            <li class="list-inline-item">{{ detailTender.pic_flyer[0].disk_name->getPath() }}</li>
-                            <li class="list-inline-item">August 8, 2017</li>
-                        </ul>
-                        <img class="img-fluid mb-50" src="{{ detailTender.pic_flyer[1].path }}" alt="blog-image">
+                    <div class="col-md-12">
+                        <div class="title">
+                            <h2>{{ detailTender.name }}</h2>
+                            <p>{{ tenant.created_at|date('d M Y') }}</p>
+                            <div class="border detail-page"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- first count item -->
+                    {% for img in detailTender.pic_flyer %}
+                    <div class="col-md-3 col-sm-6 col-xs-12 text-center wow fadeInDown" data-wow-duration="500ms">
+                        <div class="counters-item">
+                            <img class="img-thumbnail rounded" src="{{ img.file_exists ? img.getPath() : asset('/themes/ap-tender-v2/assets/images/default-image.png') }}">
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!-- end first count item -->
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h4>{{ detailTender.description|raw }}</h4>
                     </div>
                     <div class="col-lg-12">
-                        <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</p>
-                        <p class="mb-50">Sed porttitor lectus nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Nulla porttitor accumsan tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
-                        <blockquote class="mb-50">Design is not just what it looks like and feels like. Design is how it works.</blockquote>
-                        <p class="mb-50">Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.</p>
-                        <div class="text-center">
-                            <img class="img-fluid mb-50" src="images/blog/blog-single-post.jpg" alt="image">
-                        </div>
-                        <p>Sed porttitor lectus nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Nulla porttitor accumsan tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
+                        <h3>Jadwal Tender</h3>
+                        <div class="border detail-page"></div>
+                        <table class="table table-border">
+                            <thead>
+                                <tr>
+                                    <th>Jadwal</th>
+                                    <th>Tanggal Mulai</th>
+                                    <th>Tanggal Berakhir</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for schedule in detailTender.schedules %}
+                                <tr>
+                                    <td>{{ schedule.name }}</td>
+                                    <td>{{ schedule.date_start|date('d M Y') }}</td>
+                                    <td>{{ schedule.date_end|date('d M Y') }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h3>Documents</h3>
+                        <div class="border detail-page"></div>
+                    </div>
+                    <div>&nbsp;</div>
+                    <div class="col-lg-12">
+                        <a type="button" class="btn btn-primary" target="_blank" href="{{ detailTender.doc_rfq.getPath() }}">Document RFQ</a>
+                        <a type="button" class="btn btn-primary" target="_blank" href="{{ detailTender.doc_rfp.getPath() }}">Document RFP</a>
+                        {% for doc_support in detailTender.doc_support %}
+                        <a type="button" class="btn btn-primary" target="_blank" href="{{ doc_support.getPath() }}">{{ doc_support.file_name }}</a>
+                        {% endfor %}
                     </div>
                 </div>
             </div>

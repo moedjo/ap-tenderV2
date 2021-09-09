@@ -9,6 +9,7 @@ function onStart()
     $this['kategori'] = BusinessField::orderBy('created_at', 'desc')->get();
 
     $tenant = Tender::orderBy('created_at', 'desc')->with('business_field')->take(3)->get();
+
     foreach ($tenant as $idx => $row) {
         foreach ($row->pic_flyer as $_idx => $_row) {
             if (file_exists($_row->getLocalPath())) {
@@ -45,6 +46,7 @@ function onStart()
                         </div>
                         <div class="content">
                             <h3><a href="">{{ tenant.name }}</a></h3>
+                            <p>{{ tenant.created_at|date('d M Y') }}</p>
                             <p>{{ tenant.description | raw }}</p>
                             <a class="btn btn-transparent" href="/tender/{{ tenant.id }}">Read more</a>
                         </div>

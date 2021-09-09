@@ -54,6 +54,7 @@ function onStart()
                                 </div>
                                 <div class="content">
                                     <h3><a href="">{{ tender.name }}</a></h3>
+                                    <p>{{ tenant.created_at|date('d M Y') }}</p>
                                     <p>{{ tender.description | raw }}</p>
                                     <a class="btn btn-transparent" href="/tender/{{ tender.id }}">Read more</a>
                                 </div>

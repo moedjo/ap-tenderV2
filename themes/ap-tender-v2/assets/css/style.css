@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  background-color: #353b43;
+  background-color: #f4f7fc;
   font-family: "Anaheim", sans-serif;
   color: #737f8a;
   -webkit-font-smoothing: antialiased;
@@ -91,7 +91,7 @@ a:hover {
 }
 
 .btn {
-  background-color: transparent;
+  /* background-color: transparent; */
   color: #fff;
   padding: 10px 30px;
   border-radius: 0;
@@ -145,7 +145,7 @@ a:hover {
 }
 
 .border {
-  border-top: 2px solid rgba(236, 239, 241, 0.07);
+  border-top: 2px solid rgba(40, 41, 41, 0.9);
   height: 1px;
   margin: 15px auto 0;
   position: relative;
@@ -411,7 +411,7 @@ a:hover {
   text-transform: capitalize;
   font-weight: 700;
   font-size: 38px;
-  color: #fff;
+  color: #666;
 }
 
 .title h2 span {
@@ -918,7 +918,8 @@ a:hover {
 .counters-item {
   padding: 25px 0;
   margin-bottom: 10px;
-  background: #292F36;
+  background: #f4f7fc;
+  height: 240px;
 }
 
 .counters-item i {
@@ -2100,4 +2101,8 @@ blockquote {
 
 .media-wrapper img {
   position: relative;
+}
+
+.border.detail-page {
+  margin: 0;
 }
