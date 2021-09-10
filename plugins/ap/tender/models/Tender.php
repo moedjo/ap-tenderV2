@@ -66,13 +66,13 @@ class Tender extends Model
     ];
 
     public $attachOne = [
-        'doc_rfq' => ['System\Models\File', 'public' => false],
+        'doc_rfq' => ['System\Models\File', 'public' => true],
         'doc_rfp' => ['System\Models\File', 'public' => false],
 
     ];
 
     public $attachMany = [
-        'doc_support' => ['System\Models\File', 'public' => false],
+        'doc_support' => ['System\Models\File', 'public' => true],
         'pic_flyer' => ['System\Models\File', 'public' => true],
     ];
 
