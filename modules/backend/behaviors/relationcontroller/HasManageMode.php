@@ -232,20 +232,16 @@ trait HasManageMode
         $parentModel = $this->relationObject->getParent();
 
         if ($this->viewMode === 'multi') {
-            $newModel = $this->relationModel;
+            // In special cases, has one/many will require a foreign key set
+            // to pass any constraints imposed by the database. This emulates
+            // the "create" method on the relation object.
+            $isSavable = $parentModel->exists &&
+                in_array($this->relationType, ['hasOne', 'hasMany', 'morphOne', 'morphMany']);
 
-            /*
-             * In special cases, has one/many will require a foreign key set
-             * to pass any constraints imposed by the database. This emulates
-             * the "create" method on the relation object.
-             */
-            $isSavable = $parentModel->exists && in_array($this->relationType, ['hasOne', 'hasMany', 'morphOne', 'morphMany']);
-            if ($isSavable) {
-                $newModel->setAttribute(
-                    $this->relationObject->getForeignKeyName(),
-                    $this->relationObject->getParentKey()
-                );
-            }
+            // The make() method will assign the necessary foreign attributes
+            $newModel = $isSavable
+                ? $this->relationObject->make()
+                : $this->relationModel;
 
             $modelsToSave = $this->prepareModelsToSave($newModel, $saveData);
             foreach ($modelsToSave as $modelToSave) {

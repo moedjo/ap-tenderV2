@@ -275,6 +275,8 @@ class Theme
 
         Parameter::set(self::ACTIVE_KEY, $code);
 
+        self::resetCache();
+
         /**
          * @event cms.theme.setActiveTheme
          * Fires when the active theme has been changed.
@@ -287,8 +289,6 @@ class Theme
          *
          */
         Event::fire('cms.theme.setActiveTheme', compact('code'));
-
-        self::resetCache();
     }
 
     /**

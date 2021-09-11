@@ -1855,17 +1855,17 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v6.20.33",
-            "version_normalized": "6.20.33.0",
+            "version": "v6.20.34",
+            "version_normalized": "6.20.34.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "49aa211f2dd1d419bfd9dbbd6f590d57a1dfda58"
+                "reference": "72a6da88c90cee793513b3fe49cf0fcb368eefa0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/49aa211f2dd1d419bfd9dbbd6f590d57a1dfda58",
-                "reference": "49aa211f2dd1d419bfd9dbbd6f590d57a1dfda58",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/72a6da88c90cee793513b3fe49cf0fcb368eefa0",
+                "reference": "72a6da88c90cee793513b3fe49cf0fcb368eefa0",
                 "shasum": ""
             },
             "require": {
@@ -1970,7 +1970,7 @@
                 "symfony/psr-http-message-bridge": "Required to use PSR-7 bridging features (^1.2).",
                 "wildbit/swiftmailer-postmark": "Required to use Postmark mail driver (^3.0)."
             },
-            "time": "2021-08-31T13:56:36+00:00",
+            "time": "2021-09-07T13:28:55+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2709,17 +2709,17 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.52.0",
-            "version_normalized": "2.52.0.0",
+            "version": "2.53.1",
+            "version_normalized": "2.53.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "369c0e2737c56a0f39c946dd261855255a6fccbe"
+                "reference": "f4655858a784988f880c1b8c7feabbf02dfdf045"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/369c0e2737c56a0f39c946dd261855255a6fccbe",
-                "reference": "369c0e2737c56a0f39c946dd261855255a6fccbe",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/f4655858a784988f880c1b8c7feabbf02dfdf045",
+                "reference": "f4655858a784988f880c1b8c7feabbf02dfdf045",
                 "shasum": ""
             },
             "require": {
@@ -2731,7 +2731,7 @@
             },
             "require-dev": {
                 "doctrine/orm": "^2.7",
-                "friendsofphp/php-cs-fixer": "^2.14 || ^3.0",
+                "friendsofphp/php-cs-fixer": "^3.0",
                 "kylekatarnls/multi-tester": "^2.0",
                 "phpmd/phpmd": "^2.9",
                 "phpstan/extension-installer": "^1.0",
@@ -2739,7 +2739,7 @@
                 "phpunit/phpunit": "^7.5.20 || ^8.5.14",
                 "squizlabs/php_codesniffer": "^3.4"
             },
-            "time": "2021-08-14T19:10:52+00:00",
+            "time": "2021-09-06T09:29:23+00:00",
             "bin": [
                 "bin/carbon"
             ],
@@ -2914,18 +2914,18 @@
         },
         {
             "name": "october/backend",
-            "version": "v2.1.7",
-            "version_normalized": "2.1.7.0",
+            "version": "v2.1.8",
+            "version_normalized": "2.1.8.0",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/backend/october-backend-v2.1.7-51b99f.zip",
-                "reference": "c977aa9b4e39bc85288d918934e0e63dcf0c7992",
-                "shasum": "597d230db43778bddf1c6ee36fa91feada0688db"
+                "url": "https://gateway.octobercms.com/composer/dist/october/backend/october-backend-v2.1.8-900220.zip",
+                "reference": "440f138d0474a97a2218c1aeb36c4eaf358efb2a",
+                "shasum": "6b5080adfc106df291c2fa92394b0ebbeee56902"
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "time": "2021-09-02T04:41:37+00:00",
+            "time": "2021-09-10T02:30:04+00:00",
             "type": "october-module",
             "installation-source": "dist",
             "authors": [
@@ -2949,18 +2949,18 @@
         },
         {
             "name": "october/cms",
-            "version": "v2.1.7",
-            "version_normalized": "2.1.7.0",
+            "version": "v2.1.8",
+            "version_normalized": "2.1.8.0",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/cms/october-cms-v2.1.7-db13a3.zip",
-                "reference": "de32b860789d080d6d1eaf1b5f4eab0f12b48386",
-                "shasum": "c47a07aef3bd7a6e81e999c7fe423bff398999e7"
+                "url": "https://gateway.octobercms.com/composer/dist/october/cms/october-cms-v2.1.8-480eb3.zip",
+                "reference": "131fd26daf7949d8c262bffeed55b5588803e529",
+                "shasum": "aedbd18e7a0e210fd7337a6d37a700520e5e1f88"
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "time": "2021-09-02T04:41:37+00:00",
+            "time": "2021-09-08T07:32:49+00:00",
             "type": "october-module",
             "installation-source": "dist",
             "authors": [
@@ -2984,13 +2984,13 @@
         },
         {
             "name": "october/editor",
-            "version": "v2.1.7",
-            "version_normalized": "2.1.7.0",
+            "version": "v2.1.8",
+            "version_normalized": "2.1.8.0",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/editor/october-editor-v2.1.7-df24b3.zip",
+                "url": "https://gateway.octobercms.com/composer/dist/october/editor/october-editor-v2.1.8-df24b3.zip",
                 "reference": "645f72a049ae7c845c54234a5f80ec123ac8fdae",
-                "shasum": "ba82c4c0d3061c277da755441a124c5964ac49b4"
+                "shasum": "98d5d1a69dacb8a5a5ebc8cc6574fc345d93ad9a"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -3019,13 +3019,13 @@
         },
         {
             "name": "october/media",
-            "version": "v2.1.7",
-            "version_normalized": "2.1.7.0",
+            "version": "v2.1.8",
+            "version_normalized": "2.1.8.0",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/media/october-media-v2.1.7-6a0250.zip",
+                "url": "https://gateway.octobercms.com/composer/dist/october/media/october-media-v2.1.8-6a0250.zip",
                 "reference": "81bc83e97f7251228e954d8d5b50be3de4544053",
-                "shasum": "b4e205fb607c8e08e731fb29c6920d90339bcfad"
+                "shasum": "65c98a5ddd259a4eace1006116eaa78c4757a064"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -3054,17 +3054,17 @@
         },
         {
             "name": "october/rain",
-            "version": "v2.1.7",
-            "version_normalized": "2.1.7.0",
+            "version": "v2.1.8",
+            "version_normalized": "2.1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/octobercms/library.git",
-                "reference": "5d611f516a2598a1b88d301125f4f4695490de0a"
+                "reference": "eefc1cd96c4f904a630b1e7633858037f4118c23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/octobercms/library/zipball/5d611f516a2598a1b88d301125f4f4695490de0a",
-                "reference": "5d611f516a2598a1b88d301125f4f4695490de0a",
+                "url": "https://api.github.com/repos/octobercms/library/zipball/eefc1cd96c4f904a630b1e7633858037f4118c23",
+                "reference": "eefc1cd96c4f904a630b1e7633858037f4118c23",
                 "shasum": ""
             },
             "require": {
@@ -3086,7 +3086,7 @@
                 "meyfa/phpunit-assert-gd": "^2.0.0|^3.0.0",
                 "phpunit/phpunit": "^8.0|^9.0"
             },
-            "time": "2021-08-31T02:27:50+00:00",
+            "time": "2021-09-09T00:27:05+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -3122,24 +3122,24 @@
                 "rain"
             ],
             "support": {
-                "source": "https://github.com/octobercms/library/tree/v2.1.7"
+                "source": "https://github.com/octobercms/library/tree/v2.1.8"
             },
             "install-path": "../october/rain"
         },
         {
             "name": "october/system",
-            "version": "v2.1.7",
-            "version_normalized": "2.1.7.0",
+            "version": "v2.1.8",
+            "version_normalized": "2.1.8.0",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/system/october-system-v2.1.7-aa4520.zip",
-                "reference": "87d997d3d9be11ebc92771bc8d1931dd1d828317",
-                "shasum": "5345498420d34d7be0153789e3120bf396c69915"
+                "url": "https://gateway.octobercms.com/composer/dist/october/system/october-system-v2.1.8-46bfa8.zip",
+                "reference": "e43a8f6566b3ca5c73ef18863ceeb73cc29d8a02",
+                "shasum": "bfaf429e638046e56148c5220729b0534c862241"
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "time": "2021-09-02T04:41:37+00:00",
+            "time": "2021-09-08T10:29:22+00:00",
             "type": "october-module",
             "installation-source": "dist",
             "authors": [
@@ -3731,35 +3731,35 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "1.13.0",
-            "version_normalized": "1.13.0.0",
+            "version": "1.14.0",
+            "version_normalized": "1.14.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "be1996ed8adc35c3fd795488a653f4b518be70ea"
+                "reference": "d86dfc2e2a3cd366cee475e52c6bb3bbc371aa0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/be1996ed8adc35c3fd795488a653f4b518be70ea",
-                "reference": "be1996ed8adc35c3fd795488a653f4b518be70ea",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/d86dfc2e2a3cd366cee475e52c6bb3bbc371aa0e",
+                "reference": "d86dfc2e2a3cd366cee475e52c6bb3bbc371aa0e",
                 "shasum": ""
             },
             "require": {
                 "doctrine/instantiator": "^1.2",
-                "php": "^7.2 || ~8.0, <8.1",
+                "php": "^7.2 || ~8.0, <8.2",
                 "phpdocumentor/reflection-docblock": "^5.2",
                 "sebastian/comparator": "^3.0 || ^4.0",
                 "sebastian/recursion-context": "^3.0 || ^4.0"
             },
             "require-dev": {
-                "phpspec/phpspec": "^6.0",
+                "phpspec/phpspec": "^6.0 || ^7.0",
                 "phpunit/phpunit": "^8.0 || ^9.0"
             },
-            "time": "2021-03-17T13:42:18+00:00",
+            "time": "2021-09-10T09:02:12+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.11.x-dev"
+                    "dev-master": "1.x-dev"
                 }
             },
             "installation-source": "dist",
@@ -3795,7 +3795,7 @@
             ],
             "support": {
                 "issues": "https://github.com/phpspec/prophecy/issues",
-                "source": "https://github.com/phpspec/prophecy/tree/1.13.0"
+                "source": "https://github.com/phpspec/prophecy/tree/1.14.0"
             },
             "install-path": "../phpspec/prophecy"
         },

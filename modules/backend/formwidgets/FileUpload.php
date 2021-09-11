@@ -105,6 +105,8 @@ class FileUpload extends FormWidgetBase
         $this->maxFilesize = $this->getUploadMaxFilesize();
 
         $this->fillFromConfig([
+            'imageWidth',
+            'imageHeight',
             'fileTypes',
             'maxFilesize',
             'maxFiles',

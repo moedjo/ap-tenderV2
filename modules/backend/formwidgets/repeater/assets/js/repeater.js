@@ -18,9 +18,10 @@
     // ============================
 
     var Repeater = function(element, options) {
-        this.options   = options;
-        this.$el       = $(element);
+        this.options = options;
+        this.$el = $(element);
         this.$sortable = $(options.sortableContainer, this.$el);
+        this.itemCount = 0;
 
         $.oc.foundation.controlUtils.markDisposable(element);
         Base.call(this);
@@ -49,6 +50,7 @@
 
         this.$el.one('dispose-control', this.proxy(this.dispose));
 
+        this.countItems();
         this.togglePrompt();
         this.applyStyle();
     }
@@ -118,38 +120,28 @@
     }
 
     Repeater.prototype.onRemoveItemSuccess = function(ev) {
-        // Allow any widgets inside a deleted item to be disposed
-        $(ev.target).closest('.field-repeater-item').find('[data-disposable]').each(function () {
-            var $elem = $(this),
-                control = $elem.data('control'),
-                widget = $elem.data('oc.' + control);
+        var $item = $(ev.target).closest('.field-repeater-item');
+        this.diposeItem($item);
+        $item.remove();
 
-            if (widget && typeof widget['dispose'] === 'function') {
-                widget.dispose();
-            }
-        });
-
-        $(ev.target).closest('.field-repeater-item').remove();
+        this.countItems();
         this.togglePrompt();
     }
 
     Repeater.prototype.onAddItemSuccess = function(ev) {
+        this.itemCount++;
         this.togglePrompt();
     }
 
     Repeater.prototype.togglePrompt = function () {
         if (this.options.minItems && this.options.minItems > 0) {
-            var repeatedItems = this.$el.find('> .field-repeater-items > .field-repeater-item').length,
-                $removeItemBtn = this.$el.find('> .field-repeater-items > .field-repeater-item > .repeater-item-remove');
-
-            $removeItemBtn.toggleClass('disabled', !(repeatedItems > this.options.minItems));
+            var $btn = this.$el.find('> .field-repeater-items > .field-repeater-item > .repeater-item-remove');
+            $btn.toggleClass('disabled', !(this.itemCount > this.options.minItems));
         }
 
         if (this.options.maxItems && this.options.maxItems > 0) {
-            var repeatedItems = this.$el.find('> .field-repeater-items > .field-repeater-item').length,
-                $addItemBtn = this.$el.find('> .field-repeater-add-item');
-
-            $addItemBtn.toggle(repeatedItems < this.options.maxItems);
+            var $btn = this.$el.find('> .field-repeater-add-item');
+            $btn.toggle(this.itemCount < this.options.maxItems);
         }
     }
 
@@ -269,6 +261,22 @@
                     break;
             }
         });
+    }
+
+    Repeater.prototype.diposeItem = function($item) {
+        $item.find('[data-disposable]').each(function () {
+            var $el = $(this),
+                control = $el.data('control'),
+                widget = $el.data('oc.' + control);
+
+            if (widget && typeof widget['dispose'] === 'function') {
+                widget.dispose();
+            }
+        });
+    }
+
+    Repeater.prototype.countItems = function() {
+        this.itemCount = this.$el.find('> .field-repeater-items > .field-repeater-item').length;
     }
 
     // FIELD REPEATER PLUGIN DEFINITION
