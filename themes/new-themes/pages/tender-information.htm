@@ -1,0 +1,75 @@
+url = "/tender"
+layout = "default"
+title = "Tender Information"
+active = "tender"
+==
+
+<?php
+use Ap\Tender\Models\BusinessField;
+use Ap\Tender\Models\Tender;
+use System\Models\File;
+
+function onStart()
+{
+    $this['kategori'] = BusinessField::orderBy('created_at', 'desc')->get();
+
+    $tenant = Tender::orderBy('created_at', 'desc')->with('business_field')->paginate(9);
+    foreach ($tenant as $idx => $row) {
+        foreach ($row->pic_flyer as $_idx => $_row) {
+            if (file_exists($_row->getLocalPath())) {
+                $tenant[$idx]['pic_flyer'][$_idx]['file_exists'] = 1;
+            } else {
+                $tenant[$idx]['pic_flyer'][$_idx]['file_exists'] = 0;
+            }
+        }
+    }
+    $this['ListTenant'] = $tenant;
+
+}
+?>
+==
+
+<section class="page-title-section overlay overlay-tender"
+    data-background="{{ 'assets/images/backgrounds/page-title.jpg'|theme }}">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <ul class="list-inline custom-breadcrumb mb-2">
+                    <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="/">Home</a></li>
+                    <li class="list-inline-item text-white h3 font-secondary nasted">Tender Information</li>
+                </ul>
+                <p class="text-lighten mb-0">List informasi tender yang sedang berjalan.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /page title -->
+
+<section class="section">
+    <div class="container">
+        <div class="row">
+            {% for i,tender in ListTenant %}
+            <div class="col-lg-4 col-sm-6 mb-5">
+                <div class="card p-0 border-primary rounded-0 hover-shadow">
+                    <img class="card-img-top rounded-0" src="{{ 'assets/images/courses/course-1.jpg'|theme }}"
+                        alt="course thumb">
+                    <div class="card-body">
+                        <ul class="list-inline mb-2">
+                            <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>{{
+                                tender.created_at|date('d M Y') }}</li>
+                            <li class="list-inline-item"><a class="text-color" href="#">Humanities</a></li>
+                        </ul>
+                        <a href="course-single.html">
+                            <h4 class="card-title">{{ tender.name }}</h4>
+                        </a>
+                        <p class="card-text mb-4">{{ tender.description|raw }}</p>
+                        <a href="/tender/{{ tender.id }}" class="btn btn-primary btn-sm">Read more</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        {{ ListTenant.links|raw }}
+    </div>
+</section>

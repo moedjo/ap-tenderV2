@@ -1,0 +1,175 @@
+url = "/tender/:id"
+layout = "default"
+title = "Tender"
+active = "tender"
+==
+
+use Ap\Tender\Models\Tender;
+use System\Models\File;
+use Ap\Tender\Models\TenderTenant;
+
+function onStart() {
+    $id = $this->param('id');
+    $tenant = Tender::where('id', $id)->with('business_field')->first();
+    foreach ($tenant->pic_flyer as $idx => $row) {
+        if (file_exists($row->getLocalPath())) {
+            $tenant['pic_flyer'][$idx]['file_exists'] = 1;
+        } else {
+            $tenant['pic_flyer'][$idx]['file_exists'] = 0;
+        }
+    }
+    $this['detailTender'] = $tenant;
+
+    $this['shortlistedTenant'] = TenderTenant::where('tender_id', $id)->get();
+
+}
+==
+
+<!-- page title -->
+<section class="page-title-section overlay overlay-tender"
+    data-background="{{ 'assets/images/backgrounds/page-title.jpg'|theme }}">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <ul class="list-inline custom-breadcrumb">
+                    <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="/tender">Tender
+                            Information</a></li>
+                    <li class="list-inline-item text-white h3 font-secondary nasted">{{ detailTender.name }}</li>
+                </ul>
+                <p class="text-white">{{ detailTender.description|striptags }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /page title -->
+
+<section class="section-sm">
+    <div class="container">
+        <div class="row img-slider">
+            <div class="col-12 mb-4 p-0">
+                <!-- course thumb -->
+                <div class="hero-slider">
+                    {% for img in detailTender.pic_flyer %}
+                    <!-- slider item -->
+                    <div class="hero-slider-item text-center" style="max-height: 500px;">
+                        <img class="img-fluid mx-auto d-block img-responsive" style="height: 100%;" src="{{ img.file_exists ? img.getPath() : asset('/themes/ap-tender-v2/assets/images/default-image.png') }}">
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center mb-5 justify-content-between">
+            <div class="col-xl-4 order-1 col-sm-6 mb-4 mb-xl-0">
+                <h3>{{ detailTender.name }}</h3>
+            </div>
+            <div class="col-xl-4 order-sm-3 order-xl-2 col-12 order-2">
+                <ul class="list-inline text-xl-left pl-3 float-right">
+                    <li class="list-inline-item mr-4 mb-3 mb-sm-0">
+                        <div class="d-flex align-items-center">
+                            <i class="ti-alarm-clock text-primary icon-md mr-2"></i>
+                            <div class="text-left">
+                                <h6 class="mb-0">Date</h6>
+                                <p class="mb-0">{{ detailTender.created_at|date('d M Y') }}</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- border -->
+            <div class="col-12 mt-4 order-4">
+                <div class="border-bottom border-primary"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 mb-4">
+                <h3>About Tender</h3>
+                <p>
+                    {{ detailTender.description|striptags }}
+                </p>
+            </div>
+            <div class="col-12 mb-4">
+                <h3>Tender Schedule</h3>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>#</th>
+                            <th>Date Start</th>
+                            <th>Date End</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% if detailTender.schedules is empty %}
+
+                        <tr>
+                            <td colspan="3" class="text-center">No Data Available</td>
+                        </tr>
+
+                        {% else %}
+
+                        {% for schedule in detailTender.schedules %}
+                        <tr>
+                            <td>{{ schedule.name }}</td>
+                            <td>{{ schedule.date_start|date('d M Y') }}</td>
+                            <td>{{ schedule.date_end|date('d M Y') }}</td>
+                        </tr>
+                        {% endfor %}
+
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-12 mb-4">
+                <h3>Tender Document</h3>
+                <a type="button" class="btn btn-primary" target="_blank" href="{{ detailTender.doc_rfq.getPath() }}">Document RFQ</a>
+                <a type="button" class="btn btn-primary" target="_blank" href="{{ detailTender.doc_rfp.getPath() }}">Document RFP</a>
+                {% for doc_support in detailTender.doc_support %}
+                <a type="button" class="btn btn-primary" target="_blank" href="{{ doc_support.getPath() }}">{{ doc_support.file_name }}</a>
+                {% endfor %}
+            </div>
+            <div class="col-12 mb-5">
+                <h3>Shortlisted Tenant</h3>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Phone Number</th>
+                            <th>Email</th>
+                            <th>PIC</th>
+                            <th>PIC Phone Number</th>
+                            <th>PIC Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% if shortlistedTenant is empty %}
+
+                        <tr>
+                            <td colspan="6" class="text-center">No Data Available</td>
+                        </tr>
+
+                        {% else %}
+
+                        {% for tenant in shortlistedTenant %}
+                        <tr>
+                            <td>{{ tenant.tenant.name }}</td>
+                            <td>{{ tenant.tenant.phone_number }}</td>
+                            <td>{{ tenant.tenant.email }}</td>
+                            <td>{{ tenant.tenant.pic_full_name }}</td>
+                            <td>{{ tenant.tenant.pic_phone_number }}</td>
+                            <td>{{ tenant.tenant.pic_email }}</td>
+                        </tr>
+                        {% endfor %}
+
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-12 mb-4">
+                <h3>Discussion</h3>
+                <div id="disqus_thread">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

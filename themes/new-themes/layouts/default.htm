@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>PT Angkasa Pura I (persero) | {{ this.page.title }}</title>
+
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- ** Plugins Needed for the Project ** -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{{ 'assets/plugins/bootstrap/bootstrap.min.css'|theme }}">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="{{ 'assets/plugins/slick/slick.css'|theme }}">
+    <!-- themefy-icon -->
+    <link rel="stylesheet" href="{{ 'assets/plugins/themify-icons/themify-icons.css'|theme }}">
+    <!-- animation css -->
+    <link rel="stylesheet" href="{{ 'assets/plugins/animate/animate.css'|theme }}">
+    <!-- aos -->
+    <link rel="stylesheet" href="{{ 'assets/plugins/aos/aos.css'|theme }}">
+    <!-- venobox popup -->
+    <link rel="stylesheet" href="{{ 'assets/plugins/venobox/venobox.css'|theme }}">
+
+    <!-- Main Stylesheet -->
+    <link href="{{ 'assets/css/style.css'|theme }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ 'assets/css/preloader.css'|theme }}">
+    <link href="{{ 'assets/css/custom.css'|theme }}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="preloader">
+        <div class="sk-cube-grid">
+            <div class="sk-cube sk-cube1"></div>
+            <div class="sk-cube sk-cube2"></div>
+            <div class="sk-cube sk-cube3"></div>
+            <div class="sk-cube sk-cube4"></div>
+            <div class="sk-cube sk-cube5"></div>
+            <div class="sk-cube sk-cube6"></div>
+            <div class="sk-cube sk-cube7"></div>
+            <div class="sk-cube sk-cube8"></div>
+            <div class="sk-cube sk-cube9"></div>
+        </div>
+    </div>
+
+    <!-- header -->
+    <header class="fixed-top header">
+
+        <!-- navbar -->
+        <div class="navigation w-100">
+            <div class="container-fluid p-0 pr-1">
+                <nav class="navbar navbar-expand-lg navbar-dark p-0 navbar-header">
+                    <a class="navbar-brand" href="/"><img height="58px"
+                            src="{{ 'assets/images/logo.png'|theme }}" alt="logo"></a>
+                    <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse"
+                        data-target="#navigation" aria-controls="navigation" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navigation">
+                        <ul class="navbar-nav ml-auto text-center pr-2">
+                            <li class="nav-item {{ this.page.active == 'home' ? 'active' : '' }}">
+                                <a class="nav-link" href="/">Home</a>
+                            </li>
+                            <li class="nav-item {{ this.page.active == 'tender' ? 'active' : '' }}">
+                                <a class="nav-link" href="/tender">Tender Information</a>
+                            </li>
+                            <li class="nav-item {{ this.page.active == 'contact' ? 'active' : '' }}">
+                                <a class="nav-link" href="/contact">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- /header -->
+
+    {% page %}
+
+    <footer>
+        
+        <!-- footer content -->
+        <div class="footer bg-footer section border-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-8 mb-5 mb-lg-0">
+                        <!-- logo -->
+                        <a class="logo-footer" href="/"><img style="height: 58px;" class="img-fluid mb-4" src="{{ 'assets/images/logo.png'|theme }}"
+                                alt="logo"></a>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">PT Angkasa Pura I (Persero)</li>
+                            <li class="mb-2">Kota Baru Bandar Kemayoran Blok B12 Kav.2
+                                Jakarta Pusat, DKI Jakarta - Indonesia</li>
+                            <li class="mb-2">+Telp.+62-21 6541961</li>
+                            <li class="mb-2">Faks. +62-21 6541514</li>
+                        </ul>
+                    </div>
+                    <!-- company -->
+                    <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+                        <h4 class="text-white mb-5">Links</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><a class="text-white" href="/tender">Tender Information</a></li>
+                            <li class="mb-3"><a class="text-white" href="/contact">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- copyright -->
+        <div class="copyright py-4 bg-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-7 text-sm-left text-center">
+                        <p class="mb-0 text-white">Copyright
+                            <script>
+                                var CurrentYear = new Date().getFullYear()
+                                document.write(CurrentYear)
+                            </script>
+                            © PT Angkasa Pura I (Persero)
+                        </p>
+                    </div>
+                    <div class="col-sm-5 text-sm-right text-center">
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i
+                                        class="ti-facebook text-primary"></i></a></li>
+                            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i
+                                        class="ti-twitter-alt text-primary"></i></a></li>
+                            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i
+                                        class="ti-linkedin text-primary"></i></a></li>
+                            <li class="list-inline-item"><a class="d-inline-block p-2" href="#"><i
+                                        class="ti-instagram text-primary"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="{{ 'assets/plugins/jQuery/jquery.min.js'|theme }}"></script>
+    <!-- Bootstrap JS -->
+    <script src="{{ 'assets/plugins/bootstrap/bootstrap.min.js'|theme }}"></script>
+    <!-- slick slider -->
+    <script src="{{ 'assets/plugins/slick/slick.min.js'|theme }}"></script>
+    <!-- aos -->
+    <script src="{{ 'assets/plugins/aos/aos.js'|theme }}"></script>
+    <!-- venobox popup -->
+    <script src="{{ 'assets/plugins/venobox/venobox.min.js'|theme }}"></script>
+    <!-- filter -->
+    <script src="{{ 'assets/plugins/filterizr/jquery.filterizr.min.js'|theme }}"></script>
+
+    <!-- Main Script -->
+    <script src="{{ 'assets/js/script.js'|theme }}"></script>
+    <script>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://test-bvgug6r0jp.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <script id="dsq-count-scr" src="//test-bvgug6r0jp.disqus.com/count.js" async></script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+.navbar-header {
+    background: url(https://ap1.co.id/frontend/images/material/bg_logo.png) no-repeat 0 rgba(0,110,187,.7);
+    background-size: 400px;
+}
+
+.navigation {
+    background: linear-gradient(to right, transparent 50%, rgba(0,110,187,.7));
+}
+
+.navbar-brand {
+    padding-left: 5rem;
+}
+
+.navbar-nav {
+    height: 82px;
+    background: none
+}
+
+.overlay::before {
+    opacity: 0;
+}
+
+.text-muted {
+    color: #fff !important;
+}
+
+.hero-slider .prevArrow, .hero-slider .nextArrow {
+    color: #fff;
+}
+
+.hero-slider .prevArrow:hover, .hero-slider .nextArrow:hover {
+    color: rgba(0,110,187,1);
+}
+
+.btn-primary {
+    background: rgba(0,110,187,1);
+    color: #fff;
+}
+
+.btn-primary::before {
+    background: #fff;
+  }
+  
+.btn-primary:active {
+    background: rgba(0,110,187,1) !important;
+    color:rgba(0,110,187,1);
+}
+  
+.btn-primary:active::before {
+    height: 80%;
+}
+  
+.btn-primary:hover {
+    background:rgba(0,110,187,1);
+    color: rgba(0,110,187,1);
+}
+
+.hero-slider .slick-dots li.slick-active button {
+    background: rgba(0,110,187,1);
+}
+
+.btn-primary-outline {
+    border: 1px solid rgba(0,110,187,1);
+    color: rgba(0,110,187,1);
+    background: transparent;
+}
+  
+.btn-primary-outline::before {
+    background: #fff;
+}
+  
+.btn-primary-outline:hover {
+    background: rgba(0,110,187,1);
+    color: rgba(0,110,187,1);
+}
+  
+.btn-primary-outline:active {
+    background: rgba(0,110,187,1);
+    color: #fff;
+}
+
+.footer {
+    padding-top: 90px;
+}
+
+.overlay-tender::before {
+    opacity: 0.7;
+}
+
+.footer {
+    color: #fff;
+}
+
+.text-primary {
+    color: rgba(0,110,187,1) !important;
+}
+
+.pagination .page-item .page-link {
+    color: rgba(0,110,187,1);
+}
+
+.pagination .page-item.active .page-link {
+    background-color: rgba(0,110,187,1);
+    color: #fff;
+}
+
+.pagination .page-item .page-link:hover {
+    background-color: rgba(0,110,187,1);
+    color: #fff;
+}
+
+.pagination {
+    justify-content: flex-end !important;
+}
+
+.pagination li a, .pagination li.active span {
+    background-color: rgba(0,110,187,1);
+    color: #fff;
+}
+
+.pagination li a, .pagination li span {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: rgba(0,110,187,1);
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.pagination li a:hover {
+    background-color: rgba(0,110,187,1);
+    color: #fff;
+}
+
+.row.img-slider {
+    padding-bottom: 100px;
+    background: rgba(0, 110, 187,.5);
+    margin-bottom: 20px;
+}
+
+.media-wrapper {
+    height: 300px;
+    background-color: #ddd;
+}
+  
+.media-wrapper img {
+    position: relative;
+}

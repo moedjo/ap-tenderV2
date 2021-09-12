@@ -1,0 +1,139 @@
+url = "/"
+layout = "default"
+title = "Home"
+active = "home"
+==
+
+<?php
+use Ap\Tender\Models\BusinessField;
+use Ap\Tender\Models\Tender;
+use System\Models\File;
+
+function onStart()
+{
+    $this['kategori'] = BusinessField::orderBy('created_at', 'desc')->get();
+
+    $tenant = Tender::orderBy('created_at', 'desc')->with('business_field')->take(6)->get();
+    foreach ($tenant as $idx => $row) {
+        foreach ($row->pic_flyer as $_idx => $_row) {
+            if (file_exists($_row->getLocalPath())) {
+                $tenant[$idx]['pic_flyer'][$_idx]['file_exists'] = 1;
+            } else {
+                $tenant[$idx]['pic_flyer'][$_idx]['file_exists'] = 0;
+            }
+        }
+    }
+    $this['ListTenant'] = $tenant;
+
+}
+?>
+==
+
+<!-- hero slider -->
+<section class="hero-section overlay bg-cover">
+    <div class="container">
+        <div class="hero-slider">
+            <!-- slider item -->
+            <div class="hero-slider-item"
+                data-hero-background="{{ 'assets/images/banner/ori-banner-home-1.jpeg'|theme }}">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 mt-5">
+                        <h1 class="text-white" data-animation-out="fadeOutRight" data-delay-out="5"
+                            data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".1">Angkasa Pura |
+                            Airports</h1>
+                        <p class="text-muted mb-4" data-animation-out="fadeOutRight" data-delay-out="5"
+                            data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".4">Selamat datang di
+                            website Tenant Management System. </p>
+                        <a href="/tender" class="btn btn-primary" data-animation-out="fadeOutRight" data-delay-out="5"
+                            data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".7">Explore Tender</a>
+                    </div>
+                </div>
+            </div>
+            <!-- slider item -->
+            <div class="hero-slider-item"
+                data-hero-background="{{ 'assets/images/banner/ori-banner-home-16.jpeg'|theme }}">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 mt-5">
+                        <h1 class="text-white" data-animation-out="fadeOutUp" data-delay-out="5" data-duration-in=".3"
+                            data-animation-in="fadeInDown" data-delay-in=".1">Your bright
+                            future is our mission</h1>
+                        <p class="text-muted mb-4" data-animation-out="fadeOutUp" data-delay-out="5"
+                            data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".4">Selamat datang di
+                            website Tenant Management System. </p>
+                        <a href="/tender" class="btn btn-primary" data-animation-out="fadeOutUp" data-delay-out="5"
+                            data-duration-in=".3" data-animation-in="fadeInDown" data-delay-in=".7">Explore Tender</a>
+                    </div>
+                </div>
+            </div>
+            <!-- slider item -->
+            <div class="hero-slider-item"
+                data-hero-background="{{ 'assets/images/banner/ori-banner-home-135.jpeg'|theme }}">
+                <div class="row justify-content-center">
+                    <div class="col-md-8 mt-5">
+                        <h1 class="text-white" data-animation-out="fadeOutDown" data-delay-out="5" data-duration-in=".3"
+                            data-animation-in="fadeInUp" data-delay-in=".1">Your bright future
+                            is our mission</h1>
+                        <p class="text-muted mb-4" data-animation-out="fadeOutDown" data-delay-out="5"
+                            data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".4">Selamat datang di
+                            website Tenant Management System. </p>
+                        <a href="/tender" class="btn btn-primary" data-animation-out="fadeOutDown" data-delay-out="5"
+                            data-duration-in=".3" data-animation-in="zoomIn" data-delay-in=".7">Explore Tender</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /hero slider -->
+
+<section class="section-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex align-items-center section-title justify-content-between">
+                    <h2 class="mb-0 text-nowrap mr-3">Tender Information</h2>
+                    <div class="border-top w-100 border-primary d-none d-sm-block"></div>
+                    <div>
+                        <a href="/tender" class="btn btn-sm btn-primary-outline ml-sm-3 d-none d-sm-block">see
+                            all</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- course list -->
+        <div class="row">
+            {% for i,tender in ListTenant %}
+            <div class="col-lg-4 col-sm-6 mb-5">
+                <div class="card p-0 border-primary rounded-0 hover-shadow">
+                    <div class="media-wrapper">
+                        {%for img in tender.pic_flyer %}
+                        <div class="item">
+                            <img class="rounded mx-auto d-block img-thumbnail" src="{{ img.file_exists ? img.getPath() : asset('/themes/ap-tender-v2/assets/images/default-image.png') }}">
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-inline mb-2">
+                            <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>{{
+                                tender.created_at|date('d M Y') }}</li>
+                            <li class="list-inline-item"><a class="text-color" href="#">Humanities</a></li>
+                        </ul>
+                        <a href="course-single.html">
+                            <h4 class="card-title">{{ tender.name }}</h4>
+                        </a>
+                        <p class="card-text mb-4">{{ tender.description|raw }}</p>
+                        <a href="/tender/{{ tender.id }}" class="btn btn-primary btn-sm">Read more</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- /course list -->
+        <!-- mobile see all button -->
+        <div class="row">
+            <div class="col-12 text-center">
+                <a href="courses.html" class="btn btn-sm btn-primary-outline d-sm-none d-inline-block">sell all</a>
+            </div>
+        </div>
+    </div>
+</section>
