@@ -43,17 +43,20 @@ class TenderTenant extends Model
             'Ap\Tender\Models\Schedule',
             'key' => 'tender_id'
         ],
-        'documents' => [
-            'Ap\Tender\Models\Document',
-            'key' => 'tender_tenant_id'
-        ]
+        // 'documents' => [
+        //     'Ap\Tender\Models\Document',
+        //     'key' => 'tender_tenant_id'
+        // ]
     ];
 
     public $belongsToMany = [];
 
     public $morphMany = [
-        
-    ]; 
+        'documents' => [
+            'Ap\Tender\Models\Document',
+            'name' => 'documentable'
+        ]
+    ];
 
     public $attachOne = [
         'pic_payment' => ['System\Models\File', 'public' => false],
@@ -74,16 +77,12 @@ class TenderTenant extends Model
                 'total_price' => 'required',
                 'doc_offers' => 'required',
             ];
-        } 
+        }
 
         if ($this->status == 'submit_payment') {
             $this->rules = [
                 'pic_payment' => 'required',
             ];
-        } 
-
-
-        
+        }
     }
-
 }

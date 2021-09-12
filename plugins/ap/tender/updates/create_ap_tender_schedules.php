@@ -3,11 +3,11 @@
 use Schema;
 use October\Rain\Database\Updates\Migration;
 
-class CreateApTenderTenderSchedules extends Migration
+class CreateApTenderSchedules extends Migration
 {
     public function up()
     {
-        Schema::create('ap_tender_tender_schedules', function($table)
+        Schema::create('ap_tender_schedules', function($table)
         {
             $table->engine = 'InnoDB';
             $table->increments('id')->unsigned();
@@ -18,14 +18,13 @@ class CreateApTenderTenderSchedules extends Migration
             $table->timestamp('date_start')->nullable();
             $table->timestamp('date_end')->nullable();
 
-            $table->integer('tender_id')->unsigned()->nullable();
-            $table->foreign('tender_id')->references('id')
-                ->on('ap_tender_tenders');
+            $table->integer('schedulable_id')->unsigned()->nullable();
+            $table->string('schedulable_type')->nullable();
         });
     }
     
     public function down()
     {
-        Schema::dropIfExists('ap_tender_tender_schedules');
+        Schema::dropIfExists('ap_tender_schedules');
     }
 }

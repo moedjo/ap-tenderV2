@@ -34,9 +34,9 @@ class Document extends Model
 
 
 
-    // public $morphTo = [
-    //     'documentable' => []
-    // ];
+    public $morphTo = [
+        'documentable' => []
+    ];
 
 
     // protected $revisionable = ['name', 'description'];

@@ -16,7 +16,8 @@ class CreateApTenderDocuments extends Migration
 
             $table->string('name');
 
-            $table->integer('tender_tenant_id')->unsigned()->nullable();
+            $table->integer('documentable_id')->unsigned()->nullable();
+            $table->string('documentable_type')->nullable();
         });
     }
     

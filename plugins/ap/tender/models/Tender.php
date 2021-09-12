@@ -49,10 +49,17 @@ class Tender extends Model
     ];
 
     public $hasMany = [
+        // 'schedules' => [
+        //     'Ap\Tender\Models\Schedule',
+        //     'key' => 'tender_id'
+        // ],
+    ];
+
+    public $morphMany = [
         'schedules' => [
             'Ap\Tender\Models\Schedule',
-            'key' => 'tender_id'
-        ],
+            'name' => 'schedulable'
+        ]
     ];
 
     public $belongsToMany = [

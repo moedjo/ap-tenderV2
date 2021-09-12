@@ -15,7 +15,7 @@ class Schedule extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'ap_tender_tender_schedules';
+    public $table = 'ap_tender_schedules';
 
 
 
@@ -33,10 +33,8 @@ class Schedule extends Model
         'date_end' => 'required|date|after:date_start',
     ];
 
-    public $belongsTo = [
-        'tender' => [
-            'Ap\Tender\Models\Tender',
-            'key' => 'tender_id'
-        ],
+
+    public $morphTo = [
+        'schedulable' => []
     ];
 }
