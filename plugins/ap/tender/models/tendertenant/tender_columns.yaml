@@ -1,4 +1,7 @@
 columns:
+    tenant[id]:
+        label: 'ID Registrasi'
+        type: text
     tenant[name]:
         label: 'Nama Tenant'
         type: text
@@ -15,7 +18,7 @@ columns:
         label: 'ap.tender::lang.tender.pic_email'
         type: text
     status:
-        label: 'ap.tender::lang.tender.status'
+        label: 'Status Tenant'
         type: text
     total_price:
         label: 'Harga Penawaran'

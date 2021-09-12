@@ -28,7 +28,7 @@ class TenderTenants extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Ap.Tender', 'tender', 'open-tender');
+        BackendMenu::setContext('Ap.Tender', 'tender', 'tender-registration');
     }
 
     public function formExtendFields($host, $fields)
@@ -58,10 +58,8 @@ class TenderTenants extends Controller
     {
         $user = $this->user;
         $tenant = Tenant::where('user_id', $user->id)->first();
-
         $business_field_ids = $tenant->business_fields->pluck('id');
-
-        return $query->whereIn('business_field_id',  $business_field_ids);
+        return $query->whereIn('business_field_id',  $business_field_ids)->where('status', 'registration');
     }
 
     public function listExtendQuery($query)
@@ -82,7 +80,7 @@ class TenderTenants extends Controller
             $tender_tenant = new TenderTenant();
             $tender_tenant->tender = $model;
             $tender_tenant->tenant = $tenant;
-            $tender_tenant->status = 'registration';
+            $tender_tenant->status = 'pre_registration';
 
             $tender_tenant->save();
         }

@@ -7,6 +7,21 @@ columns:
         type: text
         searchable: true
         sortable: true
+    account_number:
+        label: 'Nomor Akun'
+        type: text
+        searchable: true
+        sortable: true
+    account_name:
+        label: 'Nama Akun'
+        type: text
+        searchable: true
+        sortable: true
+    bank_name:
+        label: 'Nama Bank'
+        type: text
+        searchable: true
+        sortable: true
     description:
         label: 'ap.tender::lang.airport.description'
         type: text

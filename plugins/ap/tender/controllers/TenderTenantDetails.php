@@ -38,8 +38,8 @@ class TenderTenantDetails extends Controller
         if ($context == 'update') {
 
             if ($model->status != 'submit_payment') {
-                $fields['pic_payment']->hidden = true;
-                $fields['_payment_status']->hidden = true;
+                // $fields['pic_payment']->hidden = true;
+                // $fields['_payment_status']->hidden = true;
             }
         }
     }
@@ -64,14 +64,14 @@ class TenderTenantDetails extends Controller
     {
         // 0 reject 1 approve
         $payment_status = post('TenderTenant[_payment_status]');
-        if ($model->status == 'submit_payment') {
+        if ($model->status == 'payment_rfp') {
 
             if ($payment_status  == 0) {
-                $model->status = 'payment_reject';
                 $model->pic_payment->delete();
+                $model->status = 'payment_rfp_reject';
             } else {
 
-                $model->status = 'payment_approve';
+                $model->status = 'payment_rfp_approve';
             }
         }
     }

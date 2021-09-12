@@ -49,10 +49,7 @@ class Tender extends Model
     ];
 
     public $hasMany = [
-        // 'schedules' => [
-        //     'Ap\Tender\Models\Schedule',
-        //     'key' => 'tender_id'
-        // ],
+  
     ];
 
     public $morphMany = [

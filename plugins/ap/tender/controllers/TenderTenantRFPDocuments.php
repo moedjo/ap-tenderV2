@@ -40,25 +40,13 @@ class TenderTenantRFPDocuments extends Controller
             $fields['_section3']->hidden = true;
             $fields['tender[doc_rfp]']->hidden = true;
 
-            if (!($model->status == 'submit_document' || $model->status == 'payment_reject')) {
-                foreach ($fields as $field) {
-                    $field->disabled = true;
-                    $field->config['disabled'] = true;
-                    $this->vars['disabled_' . $field->fieldName] = true;
-                };
-            }
-
-
-            if($model->status == 'payment_approve') {
+            if ($model->status == 'pre_registration' || $model->status == 'payment_rfp_reject') {
+                $fields['pic_payment_rfp']->disabled = false;
+                $fields['pic_payment_rfp']->config['disabled'] = false;
+            }else if($model->status == 'payment_rfp_approve') {
                 $fields['_section3']->hidden = false;
                 $fields['tender[doc_rfp]']->hidden = false;
             }
-
-            if($model->status == 'payment_reject') {
-        
-            }
-
-
 
         }
     }
@@ -66,8 +54,7 @@ class TenderTenantRFPDocuments extends Controller
     public function extendQuery($query)
     {
         $user = $this->user;
-        $tenant = Tenant::where('user_id', $user->id)->first();
-
+        $tenant = $user->tenant;
         return $query->where('tenant_id', $tenant->id);
     }
 
@@ -83,12 +70,12 @@ class TenderTenantRFPDocuments extends Controller
 
     public function formBeforeSave($model)
     {
-        if ($model->status == 'submit_document') {
-            $model->status = 'submit_payment';
+        if ($model->status == 'pre_registration') {
+            $model->status = 'payment_rfp';
         }
 
         if ($model->status == 'payment_reject') {
-            $model->status = 'submit_payment';
+            $model->status = 'payment_rfp';
         }
     }
 

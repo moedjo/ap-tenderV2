@@ -8,11 +8,14 @@
 
 <div class="form-buttons">
     <div class="loading-indicator-container">
+
+        <?php if($formModel->status == 'pre_registration' || $formModel->status == 'payment_rfp_reject'): ?>
         <button type="button btn-default" data-request="onSave" 
             data-hotkey="ctrl+enter, cmd+enter" data-load-indicator="<?= e(trans('ap.tender::lang.button.next')) ?>"
             class="btn btn-primary pull-right">
             <?= e(trans('ap.tender::lang.button.submit')) ?>
         </button>
+        <?php endif ?>
 
         <a href="<?= Backend::url('ap/tender/tendertenantrfpdocuments') ?>" class="btn btn-warning">
             <?= e(trans('ap.tender::lang.button.back')) ?>
@@ -25,7 +28,7 @@
 <p class="flash-message static error">
     <?= e(trans($this->fatalError)) ?>
 </p>
-<p><a href="<?= Backend::url('ap/tender/tenders') ?>" class="btn btn-default">
+<p><a href="<?= Backend::url('ap/tender/tendertenantrfpdocuments') ?>" class="btn btn-default">
         <?= e(trans('backend::lang.form.return_to_list')) ?>
     </a></p>
 <?php endif ?>

@@ -31,7 +31,7 @@ fields:
     _section2:
         label: 'Upload Bukti Pembayaran'
         type: section
-    pic_payment:
+    pic_payment_rfp:
         label: 'Bukti Pembayaran'
         type: fileupload
         mode: image
@@ -40,6 +40,7 @@ fields:
         attachOnUpload: true
         span: left
         commentAbove: 'File (*image - max 40MB)'
+        disabled: true
     _section3:
         label: 'Verifikasi Pembayaran'
         type: section
@@ -56,3 +57,4 @@ fields:
         required: true
         commentAbove: 'ap.tender::lang.tender.doc_rfp_comment'
         tab: 'ap.tender::lang.tender.section3'
+        disabled: true

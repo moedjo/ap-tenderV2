@@ -1,4 +1,7 @@
 columns:
+    id:
+        label: 'ID Registrasi'
+        type: number
     tender[name]:
         label: 'ap.tender::lang.tender.name'
         type: text
@@ -12,5 +15,5 @@ columns:
         label: 'ap.tender::lang.tender.pic_email'
         type: text
     status:
-        label: 'ap.tender::lang.tender.status'
+        label: 'Status Tenant'
         type: text

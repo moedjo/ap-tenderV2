@@ -18,6 +18,11 @@ class CreateApTenderAirports extends Migration
             $table->string('name');
             $table->string('description');
 
+            $table->string('account_number')->nullable();
+            $table->string('account_name')->nullable();
+
+            $table->string('bank_name')->nullable();
+
             $table->integer('sort_order')->default(0);
         });
     }

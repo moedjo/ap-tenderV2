@@ -1,5 +1,6 @@
 <ol>
-<li>Transfer ke nomor rekening 1234567890 atas nama PT Angkasa Pura I (Persero) di Bank ABCD</li>
+<li>Transfer ke nomor rekening <b><?= $model->tender->airport->account_number; ?></b> atas nama 
+    <b><?= $model->tender->airport->account_name; ?></b> di <b><?= $model->tender->airport->bank_name; ?></b> </li>
 <li>Upload bukti pembayaran</li>
 <li>Pembayaran akan diverifikasi oleh Tim Pengadaan Angkasa Pura I</li>
 <li>Calon Mitra Usaha dapat mengunduh file RFP pada halaman ini</li>

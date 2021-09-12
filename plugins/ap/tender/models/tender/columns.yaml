@@ -1,4 +1,7 @@
 columns:
+    id:
+        label: 'ID Tender'
+        type: number
     name:
         label: 'ap.tender::lang.tender.name'
         type: text

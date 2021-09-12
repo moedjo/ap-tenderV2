@@ -27,7 +27,7 @@ class TenderTenantDocuments extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Ap.Tender', 'tender', 'submit-doc');
+        BackendMenu::setContext('Ap.Tender', 'tender', 'offer-document');
     }
 
     public function formExtendFields($host, $fields)
@@ -36,9 +36,9 @@ class TenderTenantDocuments extends Controller
         $model = $host->model;
 
         if ($context == 'update') {
-            
+
             $this->vars['disabled_documents'] = false;
-            if ($model->status != 'registration') {
+            if ($model->status != 'payment_rfp_approve') {
                 foreach ($fields as $field) {
                     $field->disabled = true;
                     $field->config['disabled'] = true;
@@ -51,9 +51,11 @@ class TenderTenantDocuments extends Controller
     public function extendQuery($query)
     {
         $user = $this->user;
-        $tenant = Tenant::where('user_id', $user->id)->first();
-
-        return $query->where('tenant_id', $tenant->id);
+        $tenant = $user->tenant;
+        return $query->where('tenant_id', $tenant->id)->whereIn(
+            'status',
+            ['payment_rfp_approve', 'submit_document']
+        );
     }
 
     public function listExtendQuery($query)
@@ -68,7 +70,7 @@ class TenderTenantDocuments extends Controller
 
     public function formBeforeSave($model)
     {
-        if ($model->status == 'registration') {
+        if ($model->status == 'payment_rfp_approve') {
             $model->status = 'submit_document';
         }
     }

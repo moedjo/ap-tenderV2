@@ -2,6 +2,7 @@
 
 namespace Ap\Tender;
 
+use Backend\Models\User;
 use System\Classes\PluginBase;
 
 class Plugin extends PluginBase
@@ -65,7 +66,11 @@ class Plugin extends PluginBase
 
 
     public function boot(){
-
+        User::extend(function ($model) {
+            $model->hasOne ['tenant'] =  [
+                'Ap\Tender\Models\Tenant'
+            ];
+        });
     
     }
 }

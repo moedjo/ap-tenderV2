@@ -26,45 +26,45 @@ tabs:
         'Envelope II': icon-user-circle
         'Bukti Pembayaran': icon-user-circle
     fields:
-        _section2:
-            label: 'Upload Dokumen Penawaran Bisnis (Envelope I)'
-            type: section
-            tab: 'Envelope I'
-        documents:
-            label: 'Dokumen Pendukung Lainnya'
-            span: full
-            path: field_documents
-            context:
-                - create
-                - update
-            type: partial
-            tab:  'Envelope I'
-        _section3:
-            label: 'Upload Dokumen Penawaran Finansial (Envelope II)'
-            type: section
-            tab: 'Envelope II'
-        total_price:
-            label: 'Total Harga Penawaran (include PPn)'
-            placeholder: 'Total Harga Penawaran (include PPn)'
-            type: number
-            span: left
-            tab: 'Envelope II'
-            disabled: true
-        doc_offers:
-            label: 'File Penawaran'
-            type: fileupload
-            mode: file
-            useCaption: true
-            fileTypes: pdf
-            mimeTypes: pdf
-            maxFilesize: 40
-            attachOnUpload: true
-            span: left
-            required: true
-            commentAbove: 'File (*pdf - max 40MB)'
-            tab: 'Envelope II'
-            disabled: true
-        pic_payment:
+        # _section2:
+        #     label: 'Upload Dokumen Penawaran Bisnis (Envelope I)'
+        #     type: section
+        #     tab: 'Envelope I'
+        # documents:
+        #     label: 'Dokumen Pendukung Lainnya'
+        #     span: full
+        #     path: field_documents
+        #     context:
+        #         - create
+        #         - update
+        #     type: partial
+        #     tab:  'Envelope I'
+        # _section3:
+        #     label: 'Upload Dokumen Penawaran Finansial (Envelope II)'
+        #     type: section
+        #     tab: 'Envelope II'
+        # total_price:
+        #     label: 'Total Harga Penawaran (include PPn)'
+        #     placeholder: 'Total Harga Penawaran (include PPn)'
+        #     type: number
+        #     span: left
+        #     tab: 'Envelope II'
+        #     disabled: true
+        # doc_offers:
+        #     label: 'File Penawaran'
+        #     type: fileupload
+        #     mode: file
+        #     useCaption: true
+        #     fileTypes: pdf
+        #     mimeTypes: pdf
+        #     maxFilesize: 40
+        #     attachOnUpload: true
+        #     span: left
+        #     required: true
+        #     commentAbove: 'File (*pdf - max 40MB)'
+        #     tab: 'Envelope II'
+        #     disabled: true
+        pic_payment_rfp:
             label: 'Bukti Pembayaran'
             type: fileupload
             mode: image
@@ -81,7 +81,6 @@ tabs:
             default: -1
             tab: 'Bukti Pembayaran'
             options:
-                -1: Nanti
                 0: Tidak Setuju
                 1: Setuju
             

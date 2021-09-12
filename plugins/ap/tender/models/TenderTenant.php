@@ -39,14 +39,7 @@ class TenderTenant extends Model
     ];
 
     public $hasMany = [
-        'schedules' => [
-            'Ap\Tender\Models\Schedule',
-            'key' => 'tender_id'
-        ],
-        // 'documents' => [
-        //     'Ap\Tender\Models\Document',
-        //     'key' => 'tender_tenant_id'
-        // ]
+  
     ];
 
     public $belongsToMany = [];
@@ -59,7 +52,7 @@ class TenderTenant extends Model
     ];
 
     public $attachOne = [
-        'pic_payment' => ['System\Models\File', 'public' => false],
+        'pic_payment_rfp' => ['System\Models\File', 'public' => false],
     ];
 
     public $attachMany = [
