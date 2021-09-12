@@ -51,8 +51,13 @@ function onStart()
             {% for i,tender in ListTenant %}
             <div class="col-lg-4 col-sm-6 mb-5">
                 <div class="card p-0 border-primary rounded-0 hover-shadow">
-                    <img class="card-img-top rounded-0" src="{{ 'assets/images/courses/course-1.jpg'|theme }}"
-                        alt="course thumb">
+                    <div class="media-wrapper">
+                        {%for img in tender.pic_flyer %}
+                        <div class="item">
+                            <img class="rounded mx-auto d-block img-thumbnail" src="{{ img.file_exists ? img.getPath() : asset('/themes/ap-tender-v2/assets/images/default-image.png') }}">
+                        </div>
+                        {% endfor %}
+                    </div>
                     <div class="card-body">
                         <ul class="list-inline mb-2">
                             <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>{{
