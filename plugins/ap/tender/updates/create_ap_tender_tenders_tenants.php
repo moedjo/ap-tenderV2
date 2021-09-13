@@ -27,6 +27,9 @@ class CreateApTenderTendersTenants extends Migration
 
             $table->string('status')->nullable();
 
+            $table->boolean('is_envelope1')->default(false);
+            $table->boolean('is_envelope2')->default(false);
+
             $table->unsignedDecimal('total_price',15,0)->nullable();
 
 

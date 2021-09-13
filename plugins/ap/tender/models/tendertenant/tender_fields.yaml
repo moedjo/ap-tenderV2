@@ -26,44 +26,69 @@ tabs:
         'Envelope II': icon-user-circle
         'Bukti Pembayaran': icon-user-circle
     fields:
-        # _section2:
-        #     label: 'Upload Dokumen Penawaran Bisnis (Envelope I)'
-        #     type: section
-        #     tab: 'Envelope I'
-        # documents:
-        #     label: 'Dokumen Pendukung Lainnya'
-        #     span: full
-        #     path: field_documents
-        #     context:
-        #         - create
-        #         - update
-        #     type: partial
-        #     tab:  'Envelope I'
-        # _section3:
-        #     label: 'Upload Dokumen Penawaran Finansial (Envelope II)'
-        #     type: section
-        #     tab: 'Envelope II'
-        # total_price:
-        #     label: 'Total Harga Penawaran (include PPn)'
-        #     placeholder: 'Total Harga Penawaran (include PPn)'
-        #     type: number
-        #     span: left
-        #     tab: 'Envelope II'
-        #     disabled: true
-        # doc_offers:
-        #     label: 'File Penawaran'
-        #     type: fileupload
-        #     mode: file
-        #     useCaption: true
-        #     fileTypes: pdf
-        #     mimeTypes: pdf
-        #     maxFilesize: 40
-        #     attachOnUpload: true
-        #     span: left
-        #     required: true
-        #     commentAbove: 'File (*pdf - max 40MB)'
-        #     tab: 'Envelope II'
-        #     disabled: true
+        _section2:
+            label: 'Upload Dokumen Penawaran Bisnis (Envelope I)'
+            type: section
+            tab: 'Envelope I'
+            permissions: ap_tender_is_admin_envelope1
+        documents:
+            label: 'Dokumen Pendukung Lainnya'
+            span: full
+            path: field_documents
+            context:
+                - create
+                - update
+            type: partial
+            tab:  'Envelope I'
+            permissions: ap_tender_is_admin_envelope1
+        is_envelope1:
+            label: 'Persetujuan Envelope I'
+            type: radio
+            default: 0
+            options:
+                0: Tidak Setuju
+                1: Setuju
+            tab:  'Envelope I'
+            permissions: ap_tender_is_admin_envelope1
+            disabled: true
+        _section3:
+            label: 'Upload Dokumen Penawaran Finansial (Envelope II)'
+            type: section
+            tab: 'Envelope II'
+            permissions: ap_tender_is_admin_envelope2
+        total_price:
+            label: 'Total Harga Penawaran (include PPn)'
+            placeholder: 'Total Harga Penawaran (include PPn)'
+            type: number
+            span: left
+            tab: 'Envelope II'
+            disabled: true
+            permissions: ap_tender_is_admin_envelope2
+        doc_offers:
+            label: 'File Penawaran'
+            type: fileupload
+            mode: file
+            useCaption: true
+            fileTypes: pdf
+            mimeTypes: pdf
+            maxFilesize: 40
+            attachOnUpload: true
+            span: left
+            required: true
+            commentAbove: 'File (*pdf - max 40MB)'
+            tab: 'Envelope II'
+            disabled: true
+            permissions: ap_tender_is_admin_envelope2
+        is_envelope2:
+            label: 'Persetujuan Envelope II'
+            type: radio
+            default: 0
+            options:
+                0: Tidak Setuju
+                1: Setuju
+            tab:  'Envelope II'
+            permissions: ap_tender_is_admin_envelope2
+            disabled: true
         pic_payment_rfp:
             label: 'Bukti Pembayaran'
             type: fileupload
@@ -75,12 +100,15 @@ tabs:
             commentAbove: 'File (*image - max 40MB)'
             tab: 'Bukti Pembayaran'
             disabled: true
+            permissions: ap_tender_is_finance
         _payment_status:
             label: 'Pembayaran'
             type: radio
-            default: -1
+            default: 0
             tab: 'Bukti Pembayaran'
             options:
                 0: Tidak Setuju
                 1: Setuju
+            permissions: ap_tender_is_finance
+            disabled: true
             

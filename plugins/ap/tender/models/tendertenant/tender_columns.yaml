@@ -24,3 +24,21 @@ columns:
         label: 'Harga Penawaran'
         type: currency_idr
         sortable: true
+    is_envelope1:
+        label: 'Envelope I'
+        type: selectable
+        options:
+            0: Tidak Setuju
+            1: Setuju
+        permissions:
+            - ap_tender_is_admin_envelope1
+            - ap_tender_is_admin_envelope2
+    is_envelope2:
+        label: 'Envelope II'
+        type: selectable
+        options:
+            0: Tidak Setuju
+            1: Setuju
+        permissions:
+            - ap_tender_is_admin_envelope1
+            - ap_tender_is_admin_envelope2

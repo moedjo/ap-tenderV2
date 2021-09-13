@@ -44,6 +44,7 @@ tabs:
                 - update
             type: partial
             tab:  'Envelope I'
+            disabled: true
         _section3:
             label: 'Upload Dokumen Penawaran Finansial (Envelope II)'
             type: section
@@ -54,6 +55,7 @@ tabs:
             type: number
             span: left
             tab: 'Envelope II'
+            disabled: true
         doc_offers:
             label: 'File Penawaran'
             type: fileupload
@@ -67,3 +69,4 @@ tabs:
             required: true
             commentAbove: 'File (*pdf - max 40MB)'
             tab: 'Envelope II'
+            disabled: true

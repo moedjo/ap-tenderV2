@@ -50,6 +50,12 @@ permissions:
     ap_tender_access_airports:
         tab: 'ap.tender::lang.permission.tab.master'
         label: 'ap.tender::lang.permission.access_airports'
+    ap_tender_is_admin_envelope1:
+        tab: 'ap.tender::lang.permission.tab.master'
+        label: 'ap.tender::lang.permission.is_admin_envelope1'
+    ap_tender_is_admin_envelope2:
+        tab: 'ap.tender::lang.permission.tab.master'
+        label: 'ap.tender::lang.permission.is_admin_envelope2'
 navigation:
     master-data:
         label: 'ap.tender::lang.permission.tab.master'
@@ -170,6 +176,8 @@ navigation:
         icon: icon-building
         permissions:
             - ap_tender_is_admin_tender
+            - ap_tender_is_admin_envelope1
+            - ap_tender_is_admin_envelope2
             - ap_tender_is_tenant
         sideMenu:
             tenders:
@@ -185,6 +193,8 @@ navigation:
                 icon: icon-mortar-board
                 permissions:
                     - ap_tender_is_admin_tender
+                    - ap_tender_is_admin_envelope1
+                    - ap_tender_is_admin_envelope2
             tender-registration:
                 label: 'Registrasi Tender'
                 url: ap/tender/tendertenants

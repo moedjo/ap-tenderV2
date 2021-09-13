@@ -21,7 +21,9 @@ class TenderTenantDetails extends Controller
     public $relationConfig = 'config_relation.yaml';
 
     public $requiredPermissions = [
-        'ap_tender_is_admin_tender'
+        'ap_tender_is_finance',
+        'ap_tender_is_admin_envelope1',
+        'ap_tender_is_admin_envelope2',
     ];
 
     public function __construct()
@@ -37,15 +39,39 @@ class TenderTenantDetails extends Controller
 
         if ($context == 'update') {
 
-            if ($model->status != 'submit_payment') {
-                // $fields['pic_payment']->hidden = true;
-                // $fields['_payment_status']->hidden = true;
+            if ($model->status == 'payment_rfp') {
+                if (isset($fields['_payment_status'])) {
+                    $fields['_payment_status']->disabled = false;
+                    $fields['_payment_status']->config['disabled'] = false;
+                }
+            }
+
+            if ($model->status == 'submit_document') {
+
+                if (isset($fields['is_envelope1'])) {
+                    $fields['is_envelope1']->disabled = false;
+                    $fields['is_envelope1']->config['disabled'] = false;
+                }
+
+                if (isset($fields['is_envelope2'])) {
+                    $fields['is_envelope2']->disabled = false;
+                    $fields['is_envelope2']->config['disabled'] = false;
+                }
             }
         }
     }
 
     public function extendQuery($query)
     {
+
+        $user = $this->user;
+        if ($user->hasPermission('ap_tender_is_finance')) {
+            return $query;
+        } else if ($user->hasPermission('ap_tender_is_admin_envelope1')) {
+            return $query->whereIn('status', ['submit_document', 'envelope1_reject', 'envelope_approve']);
+        } else if ($user->hasPermission('ap_tender_is_admin_envelope2')) {
+            return $query->whereIn('status', ['submit_document', 'envelope1_reject', 'envelope_approve']);
+        }
 
         return $query;
     }
@@ -62,16 +88,39 @@ class TenderTenantDetails extends Controller
 
     public function formBeforeSave($model)
     {
-        // 0 reject 1 approve
-        $payment_status = post('TenderTenant[_payment_status]');
-        if ($model->status == 'payment_rfp') {
+        $user = $this->user;
+        if ($user->hasPermission('ap_tender_is_admin_tender')) {
+            // 0 reject 1 approve
+            $payment_status = post('TenderTenant[_payment_status]');
+            if ($model->status == 'payment_rfp') {
+                if ($payment_status  == 0) {
+                    $model->pic_payment->delete();
+                    $model->status = 'payment_rfp_reject';
+                } else {
 
-            if ($payment_status  == 0) {
-                $model->pic_payment->delete();
-                $model->status = 'payment_rfp_reject';
-            } else {
+                    $model->status = 'payment_rfp_approve';
+                }
+            }
+        } else if ($user->hasPermission('ap_tender_is_admin_envelope1')) {
 
-                $model->status = 'payment_rfp_approve';
+            if ($model->status == 'submit_document') {
+                if ($model->is_envelope1 && $model->is_envelope2) {
+                    $model->status = 'envelope_approve';
+                }
+
+                if (!$model->is_envelope1) {
+                    $model->status = 'envelope1_reject';
+                }
+            }
+        } else if ($user->hasPermission('ap_tender_is_admin_envelope2')) {
+            if ($model->status == 'submit_document') {
+                if ($model->is_envelope1 && $model->is_envelope2) {
+                    $model->status = 'envelope_approve';
+                }
+
+                if (!$model->is_envelope1) {
+                    $model->status = 'envelope2_reject';
+                }
             }
         }
     }

@@ -8,11 +8,18 @@
 
 <div class="form-buttons">
     <div class="loading-indicator-container">
+
+        
+        <?php if($formModel->status == 'payment_rfp' || 
+        $formModel->status == 'submit_document' ): 
+        
+        ?>
         <button type="button btn-default" data-request="onSave" 
             data-hotkey="ctrl+enter, cmd+enter" data-load-indicator="<?= e(trans('ap.tender::lang.button.next')) ?>"
             class="btn btn-primary pull-right">
             <?= e(trans('ap.tender::lang.button.submit')) ?>
         </button>
+        <?php endif ?>
 
         <a href="<?= Backend::url('ap/tender/tendertenantdetails') ?>" class="btn btn-warning">
             <?= e(trans('ap.tender::lang.button.back')) ?>

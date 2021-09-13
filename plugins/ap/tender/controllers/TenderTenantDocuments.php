@@ -37,13 +37,24 @@ class TenderTenantDocuments extends Controller
 
         if ($context == 'update') {
 
-            $this->vars['disabled_documents'] = false;
-            if ($model->status != 'payment_rfp_approve') {
-                foreach ($fields as $field) {
-                    $field->disabled = true;
-                    $field->config['disabled'] = true;
-                    $this->vars['disabled_' . $field->fieldName] = true;
-                };
+            if ($model->status == 'payment_rfp_approve') {
+
+                $this->vars['disabled_documents'] = false;
+
+                $fields['total_price']->disabled = false;
+                $fields['total_price']->config['disabled'] = false;
+
+                $fields['doc_offers']->disabled = false;
+                $fields['doc_offers']->config['disabled'] = false;
+            } else if ($model->status == 'envelope1_reject') {
+                $this->vars['disabled_documents'] = false;
+            } else if ($model->status == 'envelope2_reject') {
+                
+                $fields['total_price']->disabled = false;
+                $fields['total_price']->config['disabled'] = false;
+
+                $fields['doc_offers']->disabled = false;
+                $fields['doc_offers']->config['disabled'] = false;
             }
         }
     }
@@ -54,7 +65,7 @@ class TenderTenantDocuments extends Controller
         $tenant = $user->tenant;
         return $query->where('tenant_id', $tenant->id)->whereIn(
             'status',
-            ['payment_rfp_approve', 'submit_document']
+            ['payment_rfp_approve', 'submit_document', 'envelope2_reject', 'envelope1_reject', 'envelope_approve']
         );
     }
 
@@ -70,7 +81,7 @@ class TenderTenantDocuments extends Controller
 
     public function formBeforeSave($model)
     {
-        if ($model->status == 'payment_rfp_approve') {
+        if ($model->status == 'payment_rfp_approve' || $model->status == 'envelope1_reject' || $model->status == 'envelope2_reject') {
             $model->status = 'submit_document';
         }
     }

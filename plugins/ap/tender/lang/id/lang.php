@@ -26,6 +26,9 @@
         'is_finance' => 'Sebagai Finance',
         'is_admin_tender' => 'Sebagai Admin Tender',
 
+        'is_admin_envelope1' => 'Sebagai Admin Envelope I',
+        'is_admin_envelope2' => 'Sebagai Admin Envelope II',
+
     ],
     'global' => [
         'created_at' => 'Waktu Buat',
