@@ -291,7 +291,7 @@ class RelationController extends ControllerBehavior
         $this->model = $model;
         $this->field = $field;
 
-        if ($field === null) {
+        if (!$field) {
             return;
         }
 
