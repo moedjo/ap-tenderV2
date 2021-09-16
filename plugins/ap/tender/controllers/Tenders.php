@@ -4,6 +4,7 @@ namespace Ap\Tender\Controllers;
 
 use Backend\Classes\Controller;
 use BackendMenu;
+use Illuminate\Support\Facades\Mail;
 
 class Tenders extends Controller
 {
@@ -45,13 +46,13 @@ class Tenders extends Controller
                     $this->vars['disabled_' . $field->fieldName] = true;
                 }
             };
-        } 
+        }
 
         if ($context == 'create') {
             foreach ($fields as $field) {
                 $this->vars['disabled_' . $field->fieldName] = false;
             };
-        } 
+        }
     }
 
     public function formBeforeCreate($model)
@@ -59,4 +60,22 @@ class Tenders extends Controller
         $model->status = 'registration';
     }
 
+
+    public function formAfterSave($model)
+    {
+        $tenant_invites = $model->tenant_invites;
+
+ 
+        $params['tender'] = $model->toArray();
+
+        foreach ($tenant_invites as $tenant_invite) {
+        
+            $tenant_invite->load('business_entity');
+
+            $params['tenant'] = $tenant_invite->toArray();            
+            Mail::queue('ap.tender::mail.tenant-invite2', $params, function ($message) use ( $params , $tenant_invite) {
+                $message->to([$tenant_invite->email,$tenant_invite->contact_email], $tenant_invite->name);
+             });
+        }
+    }
 }

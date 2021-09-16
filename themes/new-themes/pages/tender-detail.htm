@@ -20,7 +20,7 @@ function onStart() {
     }
     $this['detailTender'] = $tenant;
 
-    $this['shortlistedTenant'] = TenderTenant::where('tender_id', $id)->get();
+    $this['shortlistedTenant'] = TenderTenant::where('tender_id', $id)->where('status','pre_registration')->get();
 
 }
 ?>
@@ -121,7 +121,7 @@ function onStart() {
             <div class="col-12 mb-4">
                 <h3>Tender Document</h3>
                 <a type="button" class="btn btn-primary" target="_blank" href="{{ detailTender.doc_rfq.getPath() }}">Document RFQ</a>
-                <a type="button" class="btn btn-primary" target="_blank" href="{{ detailTender.doc_rfp.getPath() }}">Document RFP</a>
+    
                 {% for doc_support in detailTender.doc_support %}
                 <a type="button" class="btn btn-primary" target="_blank" href="{{ doc_support.getPath() }}">{{ doc_support.file_name }}</a>
                 {% endfor %}

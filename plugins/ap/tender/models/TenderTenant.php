@@ -2,6 +2,7 @@
 
 namespace Ap\Tender\Models;
 
+use Illuminate\Support\Facades\Mail;
 use Model;
 
 /**
@@ -38,9 +39,7 @@ class TenderTenant extends Model
 
     ];
 
-    public $hasMany = [
-  
-    ];
+    public $hasMany = [];
 
     public $belongsToMany = [];
 
@@ -76,6 +75,23 @@ class TenderTenant extends Model
             $this->rules = [
                 'pic_payment' => 'required',
             ];
+        }
+    }
+
+    public function afterUpdate()
+    {
+
+        if ($this->title !== $this->original['status']) {
+
+            $this->load('tenant');
+            $this->load('tender');
+
+            $tenant = $this->tenant;
+
+            Mail::queue('ap.tender::mail.tender-tenant-status-update', $this->toArray(), function ($message) use ($tenant) {
+                $message->to([$tenant->email, $tenant->contact_email], $tenant->name);
+            });
+
         }
     }
 }

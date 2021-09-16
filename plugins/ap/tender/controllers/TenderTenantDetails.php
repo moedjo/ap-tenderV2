@@ -5,6 +5,7 @@ namespace Ap\Tender\Controllers;
 use Ap\Tender\Models\Tenant;
 use Backend\Classes\Controller;
 use BackendMenu;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\View;
 
@@ -94,10 +95,9 @@ class TenderTenantDetails extends Controller
             $payment_status = post('TenderTenant[_payment_status]');
             if ($model->status == 'payment_rfp') {
                 if ($payment_status  == 0) {
-                    $model->pic_payment->delete();
+                    $model->pic_payment_rfp->delete();
                     $model->status = 'payment_rfp_reject';
                 } else {
-
                     $model->status = 'payment_rfp_approve';
                 }
             }
@@ -124,6 +124,20 @@ class TenderTenantDetails extends Controller
             }
         }
     }
+
+    public function formAfterSave($model)
+    {
+
+        // $model->load('tenant');
+        // $model->load('tender');
+
+        // $tenant = $model->tenant;
+        
+        // Mail::queue('ap.tender::mail.tender-tenant-status-update', $model->toArray(), function ($message) use (  $tenant ) {
+        //     $message->to([$tenant->email,$tenant->contact_email], $tenant->name);
+        //  });
+    }
+    
 
 
     public function index_onDelete()

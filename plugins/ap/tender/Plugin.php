@@ -34,6 +34,9 @@ class Plugin extends PluginBase
             'ap.tender::mail.tenant-invite',
             'ap.tender::mail.tenant-short-listed',
             'ap.tender::mail.tenant-reject',
+
+            'ap.tender::mail.tenant-invite2',
+            'ap.tender::mail.tender-tenant-status-update',
         ];
     }
 

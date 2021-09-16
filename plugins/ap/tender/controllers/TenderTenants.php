@@ -6,8 +6,10 @@ use Ap\Tender\Models\Tenant;
 use Ap\Tender\Models\TenderTenant;
 use Backend\Classes\Controller;
 use BackendMenu;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\View;
+use Mail;
 
 class TenderTenants extends Controller
 {
@@ -29,6 +31,8 @@ class TenderTenants extends Controller
     {
         parent::__construct();
         BackendMenu::setContext('Ap.Tender', 'tender', 'tender-registration');
+
+
     }
 
     public function formExtendFields($host, $fields)
@@ -40,7 +44,7 @@ class TenderTenants extends Controller
 
             
             $user = $this->user;
-            $tenant = Tenant::where('user_id', $user->id)->first();
+            $tenant = $user->tenant;
             $tender_tenant = TenderTenant::where('tender_id',$model->id)
                 ->where('tenant_id', $tenant->id)->first();
 
@@ -59,6 +63,7 @@ class TenderTenants extends Controller
         $user = $this->user;
         $tenant = Tenant::where('user_id', $user->id)->first();
         $business_field_ids = $tenant->business_fields->pluck('id');
+    
         return $query->whereIn('business_field_id',  $business_field_ids)->where('status', 'registration');
     }
 
