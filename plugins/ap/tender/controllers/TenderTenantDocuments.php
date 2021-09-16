@@ -36,7 +36,7 @@ class TenderTenantDocuments extends Controller
         $model = $host->model;
 
         if ($context == 'update') {
-
+            $this->vars['disabled_documents'] = true;
             if ($model->status == 'payment_rfp_approve') {
 
                 $this->vars['disabled_documents'] = false;
