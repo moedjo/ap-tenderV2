@@ -89,7 +89,7 @@ class TenderTenantDetails extends Controller
     public function formBeforeSave($model)
     {
         $user = $this->user;
-        if ($user->hasPermission('ap_tender_is_admin_tender')) {
+        if ($user->hasPermission('ap_tender_is_finance')) {
             // 0 reject 1 approve
             $payment_status = post('TenderTenant[_payment_status]');
             if ($model->status == 'payment_rfp') {

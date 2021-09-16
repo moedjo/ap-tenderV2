@@ -176,6 +176,7 @@ navigation:
         icon: icon-building
         permissions:
             - ap_tender_is_admin_tender
+            - ap_tender_is_finance
             - ap_tender_is_admin_envelope1
             - ap_tender_is_admin_envelope2
             - ap_tender_is_tenant
@@ -193,6 +194,7 @@ navigation:
                 icon: icon-mortar-board
                 permissions:
                     - ap_tender_is_admin_tender
+                    - ap_tender_is_finance
                     - ap_tender_is_admin_envelope1
                     - ap_tender_is_admin_envelope2
             tender-registration:

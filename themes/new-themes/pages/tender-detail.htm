@@ -3,7 +3,7 @@ layout = "default"
 title = "Tender"
 active = "tender"
 ==
-
+<?php
 use Ap\Tender\Models\Tender;
 use System\Models\File;
 use Ap\Tender\Models\TenderTenant;
@@ -23,8 +23,8 @@ function onStart() {
     $this['shortlistedTenant'] = TenderTenant::where('tender_id', $id)->get();
 
 }
+?>
 ==
-
 <!-- page title -->
 <section class="page-title-section overlay overlay-tender"
     data-background="{{ 'assets/images/backgrounds/page-title.jpg'|theme }}">
