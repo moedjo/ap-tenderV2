@@ -75,17 +75,17 @@ class Tenders extends Controller
             $params['tenant'] = $tenant_invite->toArray();            
             Mail::queue('ap.tender::mail.tenant-invite2', $params, function ($message) use ( $params , $tenant_invite) {
 
-                $tos = array();
+                // $tos = array();
 
-                if(isset($tenant_invite->email)){
-                    $tos[] = $tenant_invite->email;
-                }
+                // if(isset($tenant_invite->email)){
+                //     $tos[] = $tenant_invite->email;
+                // }
 
-                if(isset($tenant_invite->contact_email)){
-                    $tos[] = $tenant_invite->contact_email;
-                }
+                // if(isset($tenant_invite->contact_email)){
+                //     $tos[] = $tenant_invite->contact_email;
+                // }
 
-                $message->to($tos, $tenant_invite->name);
+                $message->to($tenant_invite->email, $tenant_invite->name);
              });
         }
     }
