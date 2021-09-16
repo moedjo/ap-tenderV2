@@ -88,8 +88,21 @@ class TenderTenant extends Model
 
             $tenant = $this->tenant;
 
+
+
             Mail::queue('ap.tender::mail.tender-tenant-status-update', $this->toArray(), function ($message) use ($tenant) {
-                $message->to([$tenant->email, $tenant->contact_email], $tenant->name);
+
+                $tos = array();
+
+                if(isset($tenant->email)){
+                    $tos[] = $tenant->email;
+                }
+
+                if(isset($tenant->contact_email)){
+                    $tos[] = $tenant->contact_email;
+                }
+
+                $message->to( $tos, $tenant->name);
             });
 
         }
