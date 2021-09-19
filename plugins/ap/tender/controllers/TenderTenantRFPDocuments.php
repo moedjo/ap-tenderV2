@@ -74,7 +74,7 @@ class TenderTenantRFPDocuments extends Controller
             $model->status = 'payment_rfp';
         }
 
-        if ($model->status == 'payment_reject') {
+        if ($model->status == 'payment_rfp_reject') {
             $model->status = 'payment_rfp';
         }
     }
