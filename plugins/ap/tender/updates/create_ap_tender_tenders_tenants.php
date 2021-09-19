@@ -29,8 +29,21 @@ class CreateApTenderTendersTenants extends Migration
 
             $table->boolean('is_envelope1')->default(false);
             $table->boolean('is_envelope2')->default(false);
+            $table->boolean('is_payment_rfp')->default(false);
 
             $table->unsignedDecimal('total_price',15,0)->nullable();
+
+            $table->string('invite_name')->nullable();
+            $table->string('invite_description')->nullable();
+            $table->string('invite_location')->nullable();
+            $table->string('invite_pic_phone_number')->nullable();
+            $table->timestamp('invite_date')->nullable();
+            $table->timestamp('invite_hour_start')->nullable();
+            $table->timestamp('invite_hour_end')->nullable();
+
+
+            $table->unsignedDecimal('envelope1_score',15,2)->nullable();
+            $table->unsignedDecimal('envelope2_score',15,2)->nullable();
 
 
             $table->unique(['tender_id','tenant_id']);

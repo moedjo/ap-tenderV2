@@ -52,10 +52,16 @@ class TenderTenant extends Model
 
     public $attachOne = [
         'pic_payment_rfp' => ['System\Models\File', 'public' => false],
+
+        'doc_envelope1_score' => ['System\Models\File', 'public' => false],
+        'doc_envelope2_score' => ['System\Models\File', 'public' => false],
     ];
 
     public $attachMany = [
         'doc_offers' => ['System\Models\File', 'public' => false],
+        
+        'doc_envelope1_others' => ['System\Models\File', 'public' => false],
+        'doc_envelope2_others' => ['System\Models\File', 'public' => false],
     ];
 
     protected $jsonable = [];

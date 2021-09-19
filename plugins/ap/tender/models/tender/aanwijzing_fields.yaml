@@ -1,0 +1,73 @@
+fields:
+    name:
+        label: 'ap.tender::lang.tender.name'
+        placeholder: 'ap.tender::lang.tender.name'
+        type: text
+        span: left
+        disabled: true
+    business_field:
+        label: 'ap.tender::lang.tender.business_field'
+        type: relation
+        span: right
+        disabled: true
+tabs:
+    defaultTab: 'ap.tender::lang.tender.section1'
+    icons:
+        'Tenant Terdaftar': icon-user-circle
+        'Aanwijzing': icon-user-circle
+    fields:
+        tender_tenants:
+            label: 'Tender Terdaftar'
+            span: full
+            path: field_tender_tenants
+            context:
+                - update
+            type: partial
+            tab: 'Tenant Terdaftar'
+        invite_name:
+            label:  'ap.tender::lang.tenant.invite_name'
+            placeholder: 'ap.tender::lang.tenant.invite_section1'
+            type: text
+            span: left
+            tab: 'Aanwijzing'
+  
+        invite_location:
+            label: 'ap.tender::lang.tenant.invite_location'
+            placeholder: 'ap.tender::lang.tenant.invite_location'
+            type: text
+            span: left
+            tab: 'Aanwijzing'
+        invite_pic_phone_number:
+            label:  'ap.tender::lang.tenant.invite_pic_phone_number'
+            placeholder: 'ap.tender::lang.tenant.invite_pic_phone_number'
+            type: text
+            span: right
+            tab: 'Aanwijzing'
+        invite_date:
+            label: 'ap.tender::lang.tenant.invite_date'
+            placeholder: 'ap.tender::lang.tenant.invite_date'
+            type: datepicker
+            mode: date
+            span: left
+            tab: 'Aanwijzing'
+        invite_hour_start:
+            label: 'ap.tender::lang.tenant.invite_hour_start'
+            placeholder: 'ap.tender::lang.tenant.invite_hour_start'
+            type: datepicker
+            mode: time
+            span: left
+            tab: 'Aanwijzing'
+        invite_hour_end:
+            label: 'ap.tender::lang.tenant.invite_hour_end'
+            placeholder: 'ap.tender::lang.tenant.invite_hour_end'
+            type: datepicker
+            mode: time
+            span: right
+            tab: 'Aanwijzing'
+        invite_description:
+            label: 'ap.tender::lang.tenant.invite_description'
+            placeholder: 'ap.tender::lang.tenant.invite_description'
+            type: richeditor
+            size: huge
+            span: full
+            tab: 'Aanwijzing'

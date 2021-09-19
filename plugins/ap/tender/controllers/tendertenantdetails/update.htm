@@ -10,10 +10,31 @@
     <div class="loading-indicator-container">
 
         
-        <?php if($formModel->status == 'payment_rfp' || 
-        $formModel->status == 'submit_document' ): 
-        
-        ?>
+        <?php if($formModel->status == 'payment_rfp' && $this->user->hasPermission('ap_tender_is_finance')): ?>
+        <button type="button btn-default" data-request="onSave" 
+            data-hotkey="ctrl+enter, cmd+enter" data-load-indicator="<?= e(trans('ap.tender::lang.button.next')) ?>"
+            class="btn btn-primary pull-right">
+            <?= e(trans('ap.tender::lang.button.submit')) ?>
+        </button>
+        <?php endif ?>
+
+        <?php if($formModel->status == 'submit_document' && $this->user->hasPermission('ap_tender_is_admin_envelope1')): ?>
+        <button type="button btn-default" data-request="onSave" 
+            data-hotkey="ctrl+enter, cmd+enter" data-load-indicator="<?= e(trans('ap.tender::lang.button.next')) ?>"
+            class="btn btn-primary pull-right">
+            <?= e(trans('ap.tender::lang.button.submit')) ?>
+        </button>
+        <?php endif ?>
+
+        <?php if($formModel->status == 'envelope1_approve' && $this->user->hasPermission('ap_tender_is_admin_envelope2')): ?>
+        <button type="button btn-default" data-request="onSave" 
+            data-hotkey="ctrl+enter, cmd+enter" data-load-indicator="<?= e(trans('ap.tender::lang.button.next')) ?>"
+            class="btn btn-primary pull-right">
+            <?= e(trans('ap.tender::lang.button.submit')) ?>
+        </button>
+        <?php endif ?>
+
+        <?php if($formModel->status == 'aanwijzing' && $this->user->hasPermission('ap_tender_is_admin_tender')): ?>
         <button type="button btn-default" data-request="onSave" 
             data-hotkey="ctrl+enter, cmd+enter" data-load-indicator="<?= e(trans('ap.tender::lang.button.next')) ?>"
             class="btn btn-primary pull-right">

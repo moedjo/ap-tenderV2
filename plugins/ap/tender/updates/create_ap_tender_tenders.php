@@ -34,6 +34,14 @@ class CreateApTenderTenders extends Migration
             $table->string('pic_phone_number')->nullable();
             $table->string('pic_email')->nullable();
 
+            $table->string('invite_name')->nullable();
+            $table->string('invite_description')->nullable();
+            $table->string('invite_location')->nullable();
+            $table->string('invite_pic_phone_number')->nullable();
+            $table->timestamp('invite_date')->nullable();
+            $table->timestamp('invite_hour_start')->nullable();
+            $table->timestamp('invite_hour_end')->nullable();
+
         });
     }
     

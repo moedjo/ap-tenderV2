@@ -80,8 +80,9 @@ class TenderTenants extends Controller
     public function formAfterSave($model)
     {
         $user = $this->user;
-        $tenant = Tenant::where('user_id', $user->id)->first();
-        if($tenant->status == 'short_listed') {
+        $tenant =  $user->tenant;
+
+        if($tenant->status == 'short_listed' && $model->status == 'registration') {
             $tender_tenant = new TenderTenant();
             $tender_tenant->tender = $model;
             $tender_tenant->tenant = $tenant;

@@ -49,7 +49,11 @@ class Tender extends Model
     ];
 
     public $hasMany = [
-  
+        'tender_tenants' => [
+            'Ap\Tender\Models\TenderTenant',
+            'table' => 'ap_tender_tenders_tenants',
+            'key'      => 'tender_id',
+        ],
     ];
 
     public $morphMany = [
@@ -87,9 +91,16 @@ class Tender extends Model
     
     public function beforeValidate()
     {
-        // if ($this->status == 'publish_document') {
-        //     $this->rules['doc_rfq'] = "required";
-        //     $this->rules['doc_rfp'] = "required";
-        // } 
+        if ($this->status == 'aanwijzing') {
+            $this->rules = [
+                'invite_name' => 'required',
+                'invite_description' => 'required',
+                'invite_location' => 'required',
+                'invite_pic_phone_number' => 'required|digits_between:10,13',
+                'invite_date' => 'required|date|after:today',
+                'invite_hour_start' => 'required|date',
+                'invite_hour_end' => 'required|date|after:invite_hour_start',
+             ];
+        } 
     }
 }

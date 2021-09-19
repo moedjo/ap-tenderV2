@@ -15,6 +15,7 @@ tabs:
         'ap.tender::lang.tender.section2': icon-user-circle
         'ap.tender::lang.tender.section3': icon-user-circle
         'ap.tender::lang.tender.section4': icon-user-circle
+        'Tenant Terdaftar': icon-user-circle
     fields:
         airport:
             label: 'ap.tender::lang.tender.airport'
@@ -126,3 +127,11 @@ tabs:
                 - update
             type: partial
             tab: 'ap.tender::lang.tender.section4'
+        tender_tenants:
+            label: 'Tender Terdaftar'
+            span: full
+            path: field_tender_tenants
+            context:
+                - update
+            type: partial
+            tab: 'Tenant Terdaftar'

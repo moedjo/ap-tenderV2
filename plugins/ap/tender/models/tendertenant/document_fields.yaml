@@ -30,6 +30,8 @@ tabs:
     icons:
         'Envelope I': icon-user
         'Envelope II': icon-user-circle
+        'Evaluasi Envelope I': icon-user-circle
+        'Evaluasi Envelope II': icon-user-circle
     fields:
         _section2:
             label: 'Upload Dokumen Penawaran Bisnis (Envelope I)'
@@ -70,3 +72,73 @@ tabs:
             commentAbove: 'File (*pdf - max 40MB)'
             tab: 'Envelope II'
             disabled: true
+        envelope1_score:
+            label: 'Total Score (Penilaian)'
+            placeholder: 'Total Score (Penilaian)'
+            type: number
+            span: left
+            tab: 'Evaluasi Envelope I'
+            disabled: true
+        doc_envelope1_score:
+            label: 'Dokumen Penilaian'
+            type: fileupload
+            mode: file
+            useCaption: true
+            fileTypes: pdf
+            mimeTypes: pdf
+            maxFilesize: 40
+            attachOnUpload: true
+            span: left
+            required: true
+            commentAbove: 'File (*pdf - max 40MB)'
+            disabled: true
+            tab: 'Evaluasi Envelope I'
+        doc_envelope1_others:
+            label: 'Dokumen Lainnya'
+            type: fileupload
+            mode: file
+            useCaption: true
+            fileTypes: pdf
+            mimeTypes: pdf
+            maxFilesize: 40
+            attachOnUpload: true
+            span: right
+            required: true
+            commentAbove: 'File (*pdf - max 40MB)'
+            disabled: true
+            tab: 'Evaluasi Envelope I'
+        envelope2_score:
+            label: 'Total Score (Penilaian)'
+            placeholder: 'Total Score (Penilaian)'
+            type: number
+            span: left
+            tab: 'Evaluasi Envelope II'
+            disabled: true
+        doc_envelope2_score:
+            label: 'Dokumen Penilaian'
+            type: fileupload
+            mode: file
+            useCaption: true
+            fileTypes: pdf
+            mimeTypes: pdf
+            maxFilesize: 40
+            attachOnUpload: true
+            span: left
+            required: true
+            commentAbove: 'File (*pdf - max 40MB)'
+            disabled: true
+            tab: 'Evaluasi Envelope II'
+        doc_envelope2_others:
+            label: 'Dokumen Lainnya'
+            type: fileupload
+            mode: file
+            useCaption: true
+            fileTypes: pdf
+            mimeTypes: pdf
+            maxFilesize: 40
+            attachOnUpload: true
+            span: right
+            required: true
+            commentAbove: 'File (*pdf - max 40MB)'
+            disabled: true
+            tab: 'Evaluasi Envelope II'

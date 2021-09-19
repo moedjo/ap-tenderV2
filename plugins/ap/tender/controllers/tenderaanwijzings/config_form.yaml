@@ -1,0 +1,7 @@
+name: 'ap.tender::lang.tender.singular'
+form: $/ap/tender/models/tender/aanwijzing_fields.yaml
+modelClass: Ap\Tender\Models\Tender
+defaultRedirect: ap/tender/tenders
+update:
+    redirect: ap/tender/tenders/update/:id
+    redirectClose: ap/tender/tenders/update/:id

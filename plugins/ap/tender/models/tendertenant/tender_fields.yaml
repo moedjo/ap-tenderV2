@@ -25,6 +25,7 @@ tabs:
         'Envelope I': icon-user
         'Envelope II': icon-user-circle
         'Bukti Pembayaran': icon-user-circle
+        'Undangan Klarifikasi': icon-user-circle
     fields:
         _section2:
             label: 'Upload Dokumen Penawaran Bisnis (Envelope I)'
@@ -42,15 +43,52 @@ tabs:
             tab:  'Envelope I'
             permissions: ap_tender_is_admin_envelope1
         is_envelope1:
-            label: 'Persetujuan Envelope I'
+            label: 'Apakah tenant lolos kualifikasi Envelope I (Bisnis)?'
             type: radio
-            default: 0
             options:
                 0: Tidak Setuju
                 1: Setuju
             tab:  'Envelope I'
             permissions: ap_tender_is_admin_envelope1
             disabled: true
+        envelope1_score:
+            label: 'Total Score (Penilaian)'
+            placeholder: 'Total Score (Penilaian)'
+            type: number
+            span: left
+            tab: 'Envelope I'
+            permissions: ap_tender_is_admin_envelope1
+            disabled: true
+        doc_envelope1_score:
+            label: 'Dokumen Penilaian'
+            type: fileupload
+            mode: file
+            useCaption: true
+            fileTypes: pdf
+            mimeTypes: pdf
+            maxFilesize: 40
+            attachOnUpload: true
+            span: left
+            required: true
+            commentAbove: 'File (*pdf - max 40MB)'
+            disabled: true
+            tab: 'Envelope I'
+            permissions: ap_tender_is_admin_envelope1
+        doc_envelope1_others:
+            label: 'Dokumen Lainnya'
+            type: fileupload
+            mode: file
+            useCaption: true
+            fileTypes: pdf
+            mimeTypes: pdf
+            maxFilesize: 40
+            attachOnUpload: true
+            span: right
+            required: true
+            commentAbove: 'File (*pdf - max 40MB)'
+            disabled: true
+            tab: 'Envelope I'
+            permissions: ap_tender_is_admin_envelope1
         _section3:
             label: 'Upload Dokumen Penawaran Finansial (Envelope II)'
             type: section
@@ -82,13 +120,50 @@ tabs:
         is_envelope2:
             label: 'Persetujuan Envelope II'
             type: radio
-            default: 0
             options:
                 0: Tidak Setuju
                 1: Setuju
             tab:  'Envelope II'
             permissions: ap_tender_is_admin_envelope2
             disabled: true
+        envelope2_score:
+            label: 'Total Score (Penilaian)'
+            placeholder: 'Total Score (Penilaian)'
+            type: number
+            span: left
+            tab:  'Envelope II'
+            permissions: ap_tender_is_admin_envelope2
+            disabled: true
+        doc_envelope2_score:
+            label: 'Dokumen Penilaian'
+            type: fileupload
+            mode: file
+            useCaption: true
+            fileTypes: pdf
+            mimeTypes: pdf
+            maxFilesize: 40
+            attachOnUpload: true
+            span: left
+            required: true
+            commentAbove: 'File (*pdf - max 40MB)'
+            disabled: true
+            tab:  'Envelope II'
+            permissions: ap_tender_is_admin_envelope2
+        doc_envelope2_others:
+            label: 'Dokumen Lainnya'
+            type: fileupload
+            mode: file
+            useCaption: true
+            fileTypes: pdf
+            mimeTypes: pdf
+            maxFilesize: 40
+            attachOnUpload: true
+            span: right
+            required: true
+            commentAbove: 'File (*pdf - max 40MB)'
+            disabled: true
+            tab:  'Envelope II'
+            permissions: ap_tender_is_admin_envelope2
         pic_payment_rfp:
             label: 'Bukti Pembayaran'
             type: fileupload
@@ -101,14 +176,79 @@ tabs:
             tab: 'Bukti Pembayaran'
             disabled: true
             permissions: ap_tender_is_finance
-        _payment_status:
+        is_payment_rfp:
             label: 'Pembayaran'
             type: radio
-            default: 0
             tab: 'Bukti Pembayaran'
             options:
                 0: Tidak Setuju
                 1: Setuju
             permissions: ap_tender_is_finance
+            disabled: true
+
+        _section_invite:
+            label: 'Undangan Klarifikasi'
+            type: section
+            tab: 'Undangan Klarifikasi'
+            permissions: ap_tender_is_admin_tender
+        invite_name:
+            label:  'ap.tender::lang.tenant.invite_name'
+            placeholder: 'ap.tender::lang.tenant.invite_section1'
+            type: text
+            span: left
+            tab: 'Undangan Klarifikasi'
+            permissions: ap_tender_is_admin_tender
+            disabled: true
+        invite_location:
+            label: 'ap.tender::lang.tenant.invite_location'
+            placeholder: 'ap.tender::lang.tenant.invite_location'
+            type: text
+            span: left
+            tab: 'Undangan Klarifikasi'
+            permissions: ap_tender_is_admin_tender
+            disabled: true
+        invite_pic_phone_number:
+            label:  'ap.tender::lang.tenant.invite_pic_phone_number'
+            placeholder: 'ap.tender::lang.tenant.invite_pic_phone_number'
+            type: text
+            span: right
+            tab: 'Undangan Klarifikasi'
+            permissions: ap_tender_is_admin_tender
+            disabled: true
+        invite_date:
+            label: 'ap.tender::lang.tenant.invite_date'
+            placeholder: 'ap.tender::lang.tenant.invite_date'
+            type: datepicker
+            mode: date
+            span: left
+            tab: 'Undangan Klarifikasi'
+            permissions: ap_tender_is_admin_tender
+            disabled: true
+        invite_hour_start:
+            label: 'ap.tender::lang.tenant.invite_hour_start'
+            placeholder: 'ap.tender::lang.tenant.invite_hour_start'
+            type: datepicker
+            mode: time
+            span: left
+            tab: 'Undangan Klarifikasi'
+            permissions: ap_tender_is_admin_tender
+            disabled: true
+        invite_hour_end:
+            label: 'ap.tender::lang.tenant.invite_hour_end'
+            placeholder: 'ap.tender::lang.tenant.invite_hour_end'
+            type: datepicker
+            mode: time
+            span: right
+            tab: 'Undangan Klarifikasi'
+            permissions: ap_tender_is_admin_tender
+            disabled: true
+        invite_description:
+            label: 'ap.tender::lang.tenant.invite_description'
+            placeholder: 'ap.tender::lang.tenant.invite_description'
+            type: richeditor
+            size: huge
+            span: full
+            tab: 'Undangan Klarifikasi'
+            permissions: ap_tender_is_admin_tender
             disabled: true
             

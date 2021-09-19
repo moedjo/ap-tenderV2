@@ -37,7 +37,7 @@ class TenderTenantDocuments extends Controller
 
         if ($context == 'update') {
             $this->vars['disabled_documents'] = true;
-            if ($model->status == 'payment_rfp_approve') {
+            if ($model->status == 'clarification') {
 
                 $this->vars['disabled_documents'] = false;
 
@@ -46,6 +46,13 @@ class TenderTenantDocuments extends Controller
 
                 $fields['doc_offers']->disabled = false;
                 $fields['doc_offers']->config['disabled'] = false;
+
+                $fields['envelope1_score']->hidden = true;
+                $fields['doc_envelope1_score']->hidden = true;
+                $fields['doc_envelope1_others']->hidden = true;
+                $fields['envelope2_score']->hidden = true;
+                $fields['doc_envelope2_score']->hidden = true;
+                $fields['doc_envelope2_others']->hidden = true;
             } else if ($model->status == 'envelope1_reject') {
                 $this->vars['disabled_documents'] = false;
             } else if ($model->status == 'envelope2_reject') {
@@ -63,10 +70,11 @@ class TenderTenantDocuments extends Controller
     {
         $user = $this->user;
         $tenant = $user->tenant;
-        return $query->where('tenant_id', $tenant->id)->whereIn(
-            'status',
-            ['payment_rfp_approve', 'submit_document', 'envelope2_reject', 'envelope1_reject', 'envelope_approve']
-        );
+        return $query->where('tenant_id', $tenant->id);
+        // ->whereIn(
+        //     'status',
+        //     ['payment_rfp_approve', 'submit_document', 'envelope2_reject', 'envelope1_reject', 'envelope_approve']
+        // );
     }
 
     public function listExtendQuery($query)
@@ -81,7 +89,7 @@ class TenderTenantDocuments extends Controller
 
     public function formBeforeSave($model)
     {
-        if ($model->status == 'payment_rfp_approve' || $model->status == 'envelope1_reject' || $model->status == 'envelope2_reject') {
+        if ($model->status == 'clarification' || $model->status == 'envelope1_reject' || $model->status == 'envelope2_reject') {
             $model->status = 'submit_document';
         }
     }
