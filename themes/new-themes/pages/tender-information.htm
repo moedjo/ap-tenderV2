@@ -64,9 +64,12 @@ function onStart()
                                 tender.created_at|date('d M Y') }}</li>
                             <li class="list-inline-item"><a class="text-color" href="#">Humanities</a></li>
                         </ul>
-                        <a href="course-single.html">
+                        <a href="/tender/{{ tender.id }}">
                             <h4 class="card-title">{{ tender.name }}</h4>
                         </a>
+                        <p class="text-center">
+                            <a class="btn btn-success btn-xs" href="/backend/ap/tender/publictenantshortforms/create">Registrasi Tender</a>
+                        </p>
                         <p class="card-text mb-4">{{ tender.description|raw }}</p>
                         <a href="/tender/{{ tender.id }}" class="btn btn-primary btn-sm">Read more</a>
                     </div>
