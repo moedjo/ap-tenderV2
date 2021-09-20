@@ -16,7 +16,7 @@
         <?php else: ?>
             <button type="button btn-default" data-request="onSave" 
                 data-hotkey="ctrl+enter, cmd+enter" data-load-indicator="<?= e(trans('ap.tender::lang.button.next')) ?>"
-                class="btn btn-primary pull-right">
+                class="btn btn-primary pull-right" data-request-confirm="<?= e(trans('ap.tender::lang.button.confirm_register')) ?>">
                 <?= e(trans('ap.tender::lang.button.register')) ?>
             </button>
         <?php endif ?>

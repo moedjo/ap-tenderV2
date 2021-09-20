@@ -51,7 +51,11 @@
 
 
         'approve' => 'Setuju',
-        'reject' => 'Tidak Setuju'
+        'reject' => 'Tidak Setuju',
+
+        'confirm_send' => 'Anda yakin untuk mengirim data?',
+        'confirm_next' => 'Anda yakin untuk melanjutkan proses?',
+        'confirm_register' => 'Anda yakin untuk melakukan pendaftaran?'
     ],
     'status' => [
         'reject' => 'Reject',
