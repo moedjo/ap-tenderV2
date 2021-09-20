@@ -76,6 +76,9 @@
         'create' => 'Buat Kantor',
         'update' => 'Ubah Kantor',
         'delete' => 'Hapus Kantor',
+        'confirm_delete' => 'Apakah anda yakin untuk menghapus data Kantor?',
+        'confirm_update' => 'Apakah anda yakin untuk mengubah data Kantor?',
+        'confirm_create' => 'Apakah anda yakin untuk menambah data Kantor?'
     ],
     'business_entity' => [
         'singular' => 'Badan Usaha',
@@ -88,6 +91,9 @@
         'create' => 'Buat Badan Usaha',
         'update' => 'Ubah Badan Usaha',
         'delete' => 'Hapus Badan Usaha',
+        'confirm_delete' => 'Apakah anda yakin untuk menghapus data Badan Usaha?',
+        'confirm_update' => 'Apakah anda yakin untuk mengubah data Badan Usaha?',
+        'confirm_create' => 'Apakah anda yakin untuk menambah data Badan Usaha?'
     ],
     'business_field' => [
         'singular' => 'Bidang Usaha',
@@ -100,6 +106,9 @@
         'create' => 'Buat Bidang Usaha',
         'update' => 'Ubah Bidang Usaha',
         'delete' => 'Hapus Bidang Usaha',
+        'confirm_delete' => 'Apakah anda yakin untuk menghapus data Bidang Usaha?',
+        'confirm_update' => 'Apakah anda yakin untuk mengubah data Bidang Usaha?',
+        'confirm_create' => 'Apakah anda yakin untuk menambah data Bidang Usaha?'
     ],
     'verification' => [
         'singular' => 'Verifikasi',
@@ -118,6 +127,9 @@
         'create' => 'Buat Verifikasi',
         'update' => 'Ubah Verifikasi',
         'delete' => 'Hapus Verifikasi',
+        'confirm_delete' => 'Apakah anda yakin untuk menghapus data Verifikasi?',
+        'confirm_update' => 'Apakah anda yakin untuk mengubah data Verifikasi?',
+        'confirm_create' => 'Apakah anda yakin untuk menambah data Verifikasi?'
     ],
     'position' => [
         'singular' => 'Jabatan',
@@ -130,6 +142,9 @@
         'create' => 'Buat Jabatan',
         'update' => 'Ubah Jabatan',
         'delete' => 'Hapus Jabatan',
+        'confirm_delete' => 'Apakah anda yakin untuk menghapus data Jabatan?',
+        'confirm_update' => 'Apakah anda yakin untuk mengubah data Jabatan?',
+        'confirm_create' => 'Apakah anda yakin untuk menambah data Jabatan?'
     ],
     'summary' => [
         'singular' => 'Kesimpulan',
@@ -142,6 +157,9 @@
         'create' => 'Buat Kesimpulan',
         'update' => 'Ubah Kesimpulan',
         'delete' => 'Hapus Kesimpulan',
+        'confirm_delete' => 'Apakah anda yakin untuk menghapus data Kesimpulan?',
+        'confirm_update' => 'Apakah anda yakin untuk mengubah data Kesimpulan?',
+        'confirm_create' => 'Apakah anda yakin untuk menambah data Kesimpulan?'
     ],
     'region' => [
         'singular' => 'Wilayah',
@@ -425,6 +443,10 @@
         'section3' => 'Dokumen',
         'section4' => 'Undang Tenant',
 
+        'confirm_create' => 'Apakah anda yakin untuk membuat data Tender?',
+        'confirm_update' => 'Apakah anda yakin untuk mengubah data Tender?',
+        'confirm_delete' => 'Apakah anda yakin untuk menghapus data Tender?'
+
     ],
 
     'schedule' => [
@@ -446,5 +468,9 @@
         'create' => 'Buat Bandara',
         'update' => 'Ubah Bandara',
         'delete' => 'Hapus Bandara',
+    ],
+
+    'tenderaanwijzing' => [
+        'confirm_next' => 'Apakah anda yakin untuk mengirim Aanwijzing?'
     ]
 ];

@@ -21,7 +21,7 @@
         <?php if($formModel->status == 'registration'): ?>
         <button type="button btn-default" data-request="onSave" 
             data-hotkey="ctrl+enter, cmd+enter" data-load-indicator="<?= e(trans('ap.tender::lang.button.next')) ?>"
-            class="btn btn-primary pull-right">
+            class="btn btn-primary pull-right" data-request-confirm="<?= e(trans('ap.tender::lang.tenderaanwijzing.confirm_next')) ?>">
             Kirim
         </button>
         <?php endif ?>
