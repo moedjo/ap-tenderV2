@@ -2811,17 +2811,17 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.12.0",
-            "version_normalized": "4.12.0.0",
+            "version": "v4.13.0",
+            "version_normalized": "4.13.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "6608f01670c3cc5079e18c1dab1104e002579143"
+                "reference": "50953a2691a922aa1769461637869a0a2faa3f53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/6608f01670c3cc5079e18c1dab1104e002579143",
-                "reference": "6608f01670c3cc5079e18c1dab1104e002579143",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/50953a2691a922aa1769461637869a0a2faa3f53",
+                "reference": "50953a2691a922aa1769461637869a0a2faa3f53",
                 "shasum": ""
             },
             "require": {
@@ -2832,7 +2832,7 @@
                 "ircmaxell/php-yacc": "^0.0.7",
                 "phpunit/phpunit": "^6.5 || ^7.0 || ^8.0 || ^9.0"
             },
-            "time": "2021-07-21T10:44:31+00:00",
+            "time": "2021-09-20T12:20:58+00:00",
             "bin": [
                 "bin/php-parse"
             ],
@@ -2864,7 +2864,7 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v4.12.0"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v4.13.0"
             },
             "install-path": "../nikic/php-parser"
         },
@@ -2919,18 +2919,18 @@
         },
         {
             "name": "october/backend",
-            "version": "v2.1.8",
-            "version_normalized": "2.1.8.0",
+            "version": "v2.1.10",
+            "version_normalized": "2.1.10.0",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/backend/october-backend-v2.1.8-900220.zip",
-                "reference": "440f138d0474a97a2218c1aeb36c4eaf358efb2a",
-                "shasum": "6b5080adfc106df291c2fa92394b0ebbeee56902"
+                "url": "https://gateway.octobercms.com/composer/dist/october/backend/october-backend-v2.1.10-8a80a1.zip",
+                "reference": "684c5d08a66ece88e156b4cb336085755d9bcfa1",
+                "shasum": "484d73ee5f84eb65d47fd9751c486ef16c088652"
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "time": "2021-09-10T02:30:04+00:00",
+            "time": "2021-09-20T08:36:50+00:00",
             "type": "october-module",
             "installation-source": "dist",
             "authors": [
@@ -2954,18 +2954,18 @@
         },
         {
             "name": "october/cms",
-            "version": "v2.1.8",
-            "version_normalized": "2.1.8.0",
+            "version": "v2.1.10",
+            "version_normalized": "2.1.10.0",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/cms/october-cms-v2.1.8-480eb3.zip",
-                "reference": "131fd26daf7949d8c262bffeed55b5588803e529",
-                "shasum": "aedbd18e7a0e210fd7337a6d37a700520e5e1f88"
+                "url": "https://gateway.octobercms.com/composer/dist/october/cms/october-cms-v2.1.10-4f1fde.zip",
+                "reference": "1a390dc62e252d45823860ce5ef2aaa8b5840372",
+                "shasum": "601d07f63df9cc4caebeefab100f6da269084316"
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "time": "2021-09-08T07:32:49+00:00",
+            "time": "2021-09-18T03:50:41+00:00",
             "type": "october-module",
             "installation-source": "dist",
             "authors": [
@@ -2989,18 +2989,18 @@
         },
         {
             "name": "october/editor",
-            "version": "v2.1.8",
-            "version_normalized": "2.1.8.0",
+            "version": "v2.1.10",
+            "version_normalized": "2.1.10.0",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/editor/october-editor-v2.1.8-df24b3.zip",
-                "reference": "645f72a049ae7c845c54234a5f80ec123ac8fdae",
-                "shasum": "98d5d1a69dacb8a5a5ebc8cc6574fc345d93ad9a"
+                "url": "https://gateway.octobercms.com/composer/dist/october/editor/october-editor-v2.1.10-79b0a2.zip",
+                "reference": "1422d8a0121e9c9b2dea2570b68e23c6254ac463",
+                "shasum": "3c2dc39b412f1faf0f60c90df583e5217d31b80e"
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "time": "2021-08-18T02:25:19+00:00",
+            "time": "2021-09-18T05:51:14+00:00",
             "type": "october-module",
             "installation-source": "dist",
             "authors": [
@@ -3024,13 +3024,13 @@
         },
         {
             "name": "october/media",
-            "version": "v2.1.8",
-            "version_normalized": "2.1.8.0",
+            "version": "v2.1.10",
+            "version_normalized": "2.1.10.0",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/media/october-media-v2.1.8-6a0250.zip",
+                "url": "https://gateway.octobercms.com/composer/dist/october/media/october-media-v2.1.10-6a0250.zip",
                 "reference": "81bc83e97f7251228e954d8d5b50be3de4544053",
-                "shasum": "65c98a5ddd259a4eace1006116eaa78c4757a064"
+                "shasum": "4302344133b8a2dc328db920fc2182f4a787bbae"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -3133,18 +3133,18 @@
         },
         {
             "name": "october/system",
-            "version": "v2.1.8",
-            "version_normalized": "2.1.8.0",
+            "version": "v2.1.10",
+            "version_normalized": "2.1.10.0",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/system/october-system-v2.1.8-46bfa8.zip",
-                "reference": "e43a8f6566b3ca5c73ef18863ceeb73cc29d8a02",
-                "shasum": "bfaf429e638046e56148c5220729b0534c862241"
+                "url": "https://gateway.octobercms.com/composer/dist/october/system/october-system-v2.1.10-4e2f64.zip",
+                "reference": "b0ee97e34eb1fbf6b4da2ab2a7a3e2acdb666100",
+                "shasum": "6bbeb5ae444da66fe2c1b96a0c2a9673d84ea601"
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "time": "2021-09-08T10:29:22+00:00",
+            "time": "2021-09-18T04:30:01+00:00",
             "type": "october-module",
             "installation-source": "dist",
             "authors": [

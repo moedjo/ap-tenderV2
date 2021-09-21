@@ -97,7 +97,7 @@ class ImportExportController extends ControllerBehavior
     protected $exportOptionsFormWidget;
 
     /**
-     * __construct behavior
+     * __construct the behavior
      * @param Backend\Classes\Controller $controller
      */
     public function __construct($controller)
@@ -115,7 +115,13 @@ class ImportExportController extends ControllerBehavior
         if ($exportFileName = $this->getConfig('export[fileName]')) {
             $this->exportFileName = $exportFileName;
         }
+    }
 
+    /**
+     * beforeDisplay fires before the page is displayed and AJAX is executed.
+     */
+    public function beforeDisplay()
+    {
         /*
          * Import form widgets
          */

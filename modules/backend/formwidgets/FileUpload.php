@@ -354,8 +354,6 @@ class FileUpload extends FormWidgetBase
             $this->vars['file'] = $file;
             $this->vars['displayMode'] = $this->getDisplayMode();
             $this->vars['cssDimensions'] = $this->getCssDimensions();
-            $this->vars['relationManageId'] = post('manage_id');
-            $this->vars['relationField'] = post('_relation_field');
 
             return $this->makePartial('config_form');
         }

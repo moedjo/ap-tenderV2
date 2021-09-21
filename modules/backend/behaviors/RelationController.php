@@ -189,13 +189,19 @@ class RelationController extends ControllerBehavior
     {
         parent::__construct($controller);
 
-        $this->addJs('js/october.relation.js', 'core');
-        $this->addCss('css/relation.css', 'core');
-
         /*
          * Build configuration
          */
         $this->config = $this->originalConfig = $this->makeConfig($controller->relationConfig, $this->requiredConfig);
+    }
+
+    /**
+     * beforeDisplay fires before the page is displayed and AJAX is executed.
+     */
+    public function beforeDisplay()
+    {
+        $this->addJs('js/october.relation.js', 'core');
+        $this->addCss('css/relation.css', 'core');
     }
 
     /**
