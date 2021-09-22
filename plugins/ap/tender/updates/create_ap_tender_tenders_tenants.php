@@ -31,6 +31,10 @@ class CreateApTenderTendersTenants extends Migration
             $table->boolean('is_envelope2')->default(false);
             $table->boolean('is_payment_rfp')->default(false);
 
+
+            $table->boolean('is_candidate_winner')->default(false);
+            $table->boolean('is_winner')->default(false);
+
             $table->unsignedDecimal('total_price',15,0)->nullable();
 
             $table->string('invite_name')->nullable();
