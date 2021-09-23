@@ -4,8 +4,9 @@ namespace Ap\Tender\Controllers;
 
 use Backend\Classes\Controller;
 use BackendMenu;
+use Ap\Tender\Models\TenderWinnerSelection;
 
-class TenderWinnerSelection extends Controller
+class TenderWinnerSelections extends Controller
 {
     public $implement = [
         'Backend\Behaviors\ListController',
@@ -28,8 +29,8 @@ class TenderWinnerSelection extends Controller
         BackendMenu::setContext('Ap.Tender', 'tender', 'tender-winnerselection');
     }
 
-    public function onUpdateForm()
+    public function formBeforeSave($model)
     {
-        die('a');
+        $model->is_candidate_winner = 1;
     }
 }

@@ -9,15 +9,53 @@ use Model;
  */
 class TenderWinnerSelection extends Model
 {
-    public $table = 'ap_tender_tenders_tenants';
-    
-    public $rules = [
-        'invite_name' => 'required',
-        'invite_description' => 'required',
-        'invite_location' => 'required',
-        'invite_pic_phone_number' => 'required|digits_between:10,13',
-        'invite_date' => 'required|date|after:today',
-        'invite_hour_start' => 'required|date',
-        'invite_hour_end' => 'required|date|after:invite_hour_start',
-     ];
+    /**
+     * @var string The database table used by the model.
+     */
+    public $table = 'ap_tender_tenders';
+
+    /**
+     * @var array Validation rules
+     */ 
+    public $rules = [];
+
+    public $belongsTo = [
+        'business_field' => [
+            'Ap\Tender\Models\BusinessField',
+            'key' => 'business_field_id',
+        ],
+
+        'airport' => [
+            'Ap\Tender\Models\Airport',
+            'key' => 'airport_id',
+        ],
+    ];
+
+    public $hasMany = [];
+
+    public $morphMany = [];
+
+    public $belongsToMany = [];
+
+    public $attachOne = [];
+
+    public $attachMany = [];
+
+    protected $jsonable = [
+        'tender_winner_selection'
+    ];
+
+    public function getTenderWinnerSelectionOptions()
+    {
+        $tenantTenders = TenderTenant::all();
+        $result = [];
+        foreach ($tenantTenders as $tenant) {
+            if ($this->id == $tenant->tender_id) {
+                $result[$tenant->id] = [$tenant->invite_name];
+            }
+        }
+
+        return $result;
+    }
+
 }
