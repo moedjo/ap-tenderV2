@@ -50,7 +50,7 @@ class TenderTenantDetails extends Controller
                 }
             }
 
-            if ($model->status == 'submit_document') {
+            if ($model->status == 'clarification') {
 
                 if ($user->hasPermission('ap_tender_is_admin_envelope1')) {
                     $fields['is_envelope1']->disabled = false;
@@ -83,7 +83,7 @@ class TenderTenantDetails extends Controller
                 }
             }
 
-            if($model->status == 'aanwijzing'){
+            if($model->status == 'submit_document'){
                 if ($user->hasPermission('ap_tender_is_admin_tender')) {
                     $fields['invite_name']->disabled = false;
                     $fields['invite_location']->disabled = false;
@@ -102,6 +102,40 @@ class TenderTenantDetails extends Controller
                     $fields['invite_description']->config['disabled'] = false;
                 }
             }
+
+
+            if($model->status == 'envelope2_approve'){
+                if ($user->hasPermission('ap_tender_is_admin_tender')) {
+
+                    
+                    $fields['_section_invite']->hidden = true;
+                    $fields['invite_name']->hidden = true;
+                    $fields['invite_location']->hidden = true;
+                    $fields['invite_pic_phone_number']->hidden = true;
+                    $fields['invite_date']->hidden = true;
+                    $fields['invite_hour_start']->hidden = true;
+                    $fields['invite_hour_end']->hidden = true;
+                    $fields['invite_description']->hidden = true;
+
+                    $fields['invite_negotiation_name']->disabled = false;
+                    $fields['invite_negotiation_location']->disabled = false;
+                    $fields['invite_negotiation_pic_phone_number']->disabled = false;
+                    $fields['invite_negotiation_date']->disabled = false;
+                    $fields['invite_negotiation_hour_start']->disabled = false;
+                    $fields['invite_negotiation_hour_end']->disabled = false;
+                    $fields['invite_negotiation_description']->disabled = false;
+
+                    $fields['invite_negotiation_name']->config['disabled'] = false;
+                    $fields['invite_negotiation_location']->config['disabled'] = false;
+                    $fields['invite_negotiation_pic_phone_number']->config['disabled'] = false;
+                    $fields['invite_negotiation_date']->config['disabled'] = false;
+                    $fields['invite_negotiation_hour_start']->config['disabled'] = false;
+                    $fields['invite_negotiation_hour_end']->config['disabled'] = false;
+                    $fields['invite_negotiation_description']->config['disabled'] = false;
+
+                   
+                }
+            }
         }
     }
 
@@ -112,7 +146,7 @@ class TenderTenantDetails extends Controller
         if ($user->hasPermission('ap_tender_is_finance')) {
             return $query;
         } else if ($user->hasPermission('ap_tender_is_admin_envelope1')) {
-            return $query->whereIn('status', ['submit_document', 'envelope1_reject', 'envelope1_approve']);
+            return $query->whereIn('status', ['clarification', 'envelope1_reject', 'envelope1_approve']);
         } else if ($user->hasPermission('ap_tender_is_admin_envelope2')) {
             return $query->whereIn('status', ['envelope2_reject', 'envelope2_approve', 'envelope1_approve']);
         }
@@ -130,30 +164,34 @@ class TenderTenantDetails extends Controller
         return $this->extendQuery($query);
     }
 
-    public function formBeforeSave($model)
-    {
+    // public function formBeforeSave($model)
+    // {
 
 
        
-    }
+    // }
 
-    public function formAfterSave($model)
+    public function formBeforeSave($model)
     {
+        $save_data = $this->formGetWidget()->getSaveData();
 
         $user = $this->user;
         if ($user->hasPermission('ap_tender_is_finance')) {
             if ($model->status == 'payment_rfp') {
-                if ($model->is_payment_rfp == 1) {
+                if ($save_data['is_payment_rfp'] == 1) {
                     $model->status = 'payment_rfp_approve';
                 } else {
-                    $model->pic_payment_rfp->delete();
+
+                    if(isset($model->pic_payment_rfp)){
+                        $model->pic_payment_rfp->delete();
+                    }
                     $model->status = 'payment_rfp_reject';
                 }
             }
         } else if ($user->hasPermission('ap_tender_is_admin_envelope1')) {
 
-            if ($model->status == 'submit_document') {
-                if ($model->is_envelope1 == 1) {
+            if ($model->status == 'clarification') {
+                if ($save_data['is_envelope1'] == 1) {
                     $model->status = 'envelope1_approve';
                 } else {
                     $model->status = 'envelope1_reject';
@@ -161,19 +199,22 @@ class TenderTenantDetails extends Controller
             }
         } else if ($user->hasPermission('ap_tender_is_admin_envelope2')) {
             if ($model->status == 'envelope1_approve') {
-                if ($model->is_envelope2 == 1) {
+                if ($save_data['is_envelope2'] == 1) {
                     $model->status = 'envelope2_approve';
                 } else {
                     $model->status = 'envelope2_reject';
                 }
             }
         } else if ($user->hasPermission('ap_tender_is_admin_tender')) {
-            if ($model->status == 'aanwijzing') {
+            if ($model->status == 'submit_document') {
                 $model->status = 'clarification';
+            }
+            if ($model->status == 'envelope2_approve') {
+                $model->status = 'negotiation';
             }
         }
 
-        $model->save();
+        // $model->save();
 
         // $model->load('tenant');
         // $model->load('tender');

@@ -209,6 +209,16 @@ navigation:
                 icon: icon-book
                 permissions:
                     - ap_tender_is_tenant
+            aanwijzing-discuss:
+                label: 'Diskusi Aanwijzing'
+                url: ap/tender/tenderdiscussaanwijzings
+                icon: icon-comment-o
+                permissions:
+                    - ap_tender_is_admin_tender
+                    - ap_tender_is_finance
+                    - ap_tender_is_admin_envelope1
+                    - ap_tender_is_admin_envelope2
+                    - ap_tender_is_tenant
             offer-document:
                 label: 'Dokumen Penawaran'
                 url: ap/tender/tendertenantdocuments

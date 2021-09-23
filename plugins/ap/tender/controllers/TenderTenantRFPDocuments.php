@@ -43,11 +43,10 @@ class TenderTenantRFPDocuments extends Controller
             if ($model->status == 'pre_registration' || $model->status == 'payment_rfp_reject') {
                 $fields['pic_payment_rfp']->disabled = false;
                 $fields['pic_payment_rfp']->config['disabled'] = false;
-            }else if($model->status == 'payment_rfp_approve') {
+            } else if ($model->status == 'payment_rfp_approve') {
                 $fields['_section3']->hidden = false;
                 $fields['tender[doc_rfp]']->hidden = false;
             }
-
         }
     }
 
@@ -55,7 +54,9 @@ class TenderTenantRFPDocuments extends Controller
     {
         $user = $this->user;
         $tenant = $user->tenant;
-        return $query->where('tenant_id', $tenant->id);
+        return $query->where('tenant_id', $tenant->id)->whereHas('tender', function ($query) {
+            $query->where('status', 'registration');
+        });
     }
 
     public function listExtendQuery($query)

@@ -18,7 +18,7 @@
         </button>
         <?php endif ?>
 
-        <?php if($formModel->status == 'submit_document' && $this->user->hasPermission('ap_tender_is_admin_envelope1')): ?>
+        <?php if($formModel->status == 'clarification' && $this->user->hasPermission('ap_tender_is_admin_envelope1')): ?>
         <button type="button btn-default" data-request="onSave" 
             data-hotkey="ctrl+enter, cmd+enter" data-load-indicator="<?= e(trans('ap.tender::lang.button.next')) ?>"
             class="btn btn-primary pull-right" data-request-confirm="<?= e(trans('ap.tender::lang.button.confirm_send')) ?>">
@@ -34,7 +34,15 @@
         </button>
         <?php endif ?>
 
-        <?php if($formModel->status == 'aanwijzing' && $this->user->hasPermission('ap_tender_is_admin_tender')): ?>
+        <?php if($formModel->status == 'submit_document' && $this->user->hasPermission('ap_tender_is_admin_tender')): ?>
+        <button type="button btn-default" data-request="onSave" 
+            data-hotkey="ctrl+enter, cmd+enter" data-load-indicator="<?= e(trans('ap.tender::lang.button.next')) ?>"
+            class="btn btn-primary pull-right" data-request-confirm="<?= e(trans('ap.tender::lang.button.confirm_send')) ?>">
+            <?= e(trans('ap.tender::lang.button.submit')) ?>
+        </button>
+        <?php endif ?>
+
+        <?php if($formModel->status == 'envelope2_approve' && $this->user->hasPermission('ap_tender_is_admin_tender')): ?>
         <button type="button btn-default" data-request="onSave" 
             data-hotkey="ctrl+enter, cmd+enter" data-load-indicator="<?= e(trans('ap.tender::lang.button.next')) ?>"
             class="btn btn-primary pull-right" data-request-confirm="<?= e(trans('ap.tender::lang.button.confirm_send')) ?>">

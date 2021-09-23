@@ -1,0 +1,30 @@
+fields:
+    name:
+        label: 'ap.tender::lang.tender.name'
+        placeholder: 'ap.tender::lang.tender.name'
+        type: text
+        span: left
+        disabled: true
+    business_field:
+        label: 'ap.tender::lang.tender.business_field'
+        type: relation
+        span: right
+        disabled: true
+tabs:
+    defaultTab: 'ap.tender::lang.tender.section1'
+    icons:
+        'Tenant Terdaftar': icon-user-circle
+        'Diskusi': icon-user-circle
+    fields:
+        tender_tenants:
+            label: 'Tender Terdaftar'
+            span: full
+            path: field_tender_tenants
+            context:
+                - update
+            type: partial
+            tab: 'Tenant Terdaftar'
+        _discuss:
+            type: partial
+            path: $/ap/tender/models/tender/_discuss_field.htm
+            tab: 'Diskusi'

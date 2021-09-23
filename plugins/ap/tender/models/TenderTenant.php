@@ -59,7 +59,7 @@ class TenderTenant extends Model
 
     public $attachMany = [
         'doc_offers' => ['System\Models\File', 'public' => false],
-        
+
         'doc_envelope1_others' => ['System\Models\File', 'public' => false],
         'doc_envelope2_others' => ['System\Models\File', 'public' => false],
     ];
@@ -69,17 +69,66 @@ class TenderTenant extends Model
 
     public function beforeValidate()
     {
-        if ($this->status == 'submit_document') {
+
+        if ($this->status == 'payment_rfp') {
             $this->rules = [
-                'documents' => 'required',
-                'total_price' => 'required',
-                'doc_offers' => 'required',
+                'pic_payment_rfp' => 'required',
             ];
         }
 
-        if ($this->status == 'submit_payment') {
+        if ($this->status == 'payment_rfp_approve' || $this->status == 'payment_rfp_reject') {
             $this->rules = [
-                'pic_payment' => 'required',
+                'is_payment_rfp' => 'required',
+            ];
+        }
+
+        if ($this->status == 'envelope1_approve' || $this->status == 'envelope1_reject') {
+            $this->rules = [
+                'is_envelope1' => 'required',
+                'envelope1_score' => 'required',
+                'doc_envelope1_score' => 'required',
+                'doc_envelope1_others' => 'required',
+            ];
+        }
+
+
+
+        if ($this->status == 'envelope2_approve' ||  $this->status == 'envelope2_reject') {
+            $this->rules = [
+                'is_envelope2' => 'required',
+                'envelope2_score' => 'required',
+                'doc_envelope2_score' => 'required',
+                'doc_envelope2_others' => 'required',
+            ];
+        }
+
+
+
+        if ($this->status == 'clarification') {
+            $this->rules = [
+                'invite_name' => 'required',
+                'invite_location' => 'required',
+                'invite_pic_phone_number' => 'required|digits_between:10,13',
+                'invite_date' => 'required|date|after:today',
+                'invite_hour_start' => 'required|date',
+                'invite_hour_end' => 'required|date|after:invite_hour_start',
+                'invite_description' => 'required',
+
+            ];
+        }
+
+
+
+        if ($this->status == 'negotiation') {
+            $this->rules = [
+                'invite_negotiation_name' => 'required',
+                'invite_negotiation_location' => 'required',
+                'invite_negotiation_pic_phone_number' => 'required|digits_between:10,13',
+                'invite_negotiation_date' => 'required|date|after:today',
+                'invite_negotiation_hour_start' => 'required|date',
+                'invite_negotiation_hour_end' => 'required|date|after:invite_hour_start',
+                'invite_negotiation_description' => 'required',
+
             ];
         }
     }
@@ -108,9 +157,8 @@ class TenderTenant extends Model
                 //     $tos[] = $tenant->contact_email;
                 // }
 
-                $message->to( $tenant->email, $tenant->name);
+                $message->to($tenant->email, $tenant->name);
             });
-
         }
     }
 }

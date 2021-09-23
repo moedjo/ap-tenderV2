@@ -46,6 +46,15 @@ class CreateApTenderTendersTenants extends Migration
             $table->timestamp('invite_hour_end')->nullable();
 
 
+            $table->string('invite_negotiation_name')->nullable();
+            $table->string('invite_negotiation_description')->nullable();
+            $table->string('invite_negotiation_location')->nullable();
+            $table->string('invite_negotiation_pic_phone_number')->nullable();
+            $table->timestamp('invite_negotiation_date')->nullable();
+            $table->timestamp('invite_negotiation_hour_start')->nullable();
+            $table->timestamp('invite_negotiation_hour_end')->nullable();
+
+
             $table->unsignedDecimal('envelope1_score',15,2)->nullable();
             $table->unsignedDecimal('envelope2_score',15,2)->nullable();
 

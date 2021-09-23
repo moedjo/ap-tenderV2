@@ -37,7 +37,7 @@ class TenderTenantDocuments extends Controller
 
         if ($context == 'update') {
             $this->vars['disabled_documents'] = true;
-            if ($model->status == 'clarification') {
+            if ($model->status == 'aanwijzing') {
 
                 $this->vars['disabled_documents'] = false;
 
@@ -56,7 +56,7 @@ class TenderTenantDocuments extends Controller
             } else if ($model->status == 'envelope1_reject') {
                 $this->vars['disabled_documents'] = false;
             } else if ($model->status == 'envelope2_reject') {
-                
+
                 $fields['total_price']->disabled = false;
                 $fields['total_price']->config['disabled'] = false;
 
@@ -89,7 +89,16 @@ class TenderTenantDocuments extends Controller
 
     public function formBeforeSave($model)
     {
-        if ($model->status == 'clarification' || $model->status == 'envelope1_reject' || $model->status == 'envelope2_reject') {
+        if ($model->status == 'aanwijzing' || $model->status == 'envelope1_reject' || $model->status == 'envelope2_reject') {
+
+            $model->invite_name               = null;
+            $model->invite_location           = null;
+            $model->invite_pic_phone_number   = null;
+            $model->invite_date               = null;
+            $model->invite_hour_start         = null;
+            $model->invite_hour_end           = null;
+            $model->invite_description        = null;
+
             $model->status = 'submit_document';
         }
     }
