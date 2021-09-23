@@ -136,26 +136,13 @@ class TenderTenant extends Model
     public function afterUpdate()
     {
 
-        if ($this->title !== $this->original['status']) {
+        if ($this->status !== $this->original['status']) {
 
             $this->load('tenant');
             $this->load('tender');
 
             $tenant = $this->tenant;
-
-
-
             Mail::queue('ap.tender::mail.tender-tenant-status-update', $this->toArray(), function ($message) use ($tenant) {
-
-                // $tos = array();
-
-                // if(isset($tenant->email)){
-                //     $tos[] = $tenant->email;
-                // }
-
-                // if(isset($tenant->contact_email)){
-                //     $tos[] = $tenant->contact_email;
-                // }
 
                 $message->to($tenant->email, $tenant->name);
             });
