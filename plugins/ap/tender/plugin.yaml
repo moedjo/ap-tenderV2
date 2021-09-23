@@ -225,3 +225,9 @@ navigation:
                 icon: icon-envelope
                 permissions:
                     - ap_tender_is_tenant
+            tender-winnerselection:
+                label: 'ap.tender::lang.tenderwinnerselection.title'
+                url: ap/tender/tenderwinnerselection
+                icon: icon-star-o
+                permission:
+                    - ap_tender_is_tenant

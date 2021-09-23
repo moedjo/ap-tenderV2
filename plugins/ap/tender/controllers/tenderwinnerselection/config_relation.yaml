@@ -1,0 +1,18 @@
+tender_tenants:
+    label: 'Tenant Terdaftar'
+    view:
+        list: $/ap/tender/models/tendertenant/columns.yaml
+        toolbarButtons: false
+        showCheckboxes: false
+    manage:
+        list: $/ap/tender/models/tendertenant/columns.yaml
+tenant_invites:
+    label: 'List Pemenang'
+    view:
+        list: $/ap/tender/models/tendertenant/columns.yaml
+        toolbarButtons: add
+        showCheckboxes: false
+    manage:
+        list: $/ap/tender/models/tenderwinnerselection/columns.yaml
+        # form: $/ap/tender/models/tenant/fields.yaml
+        scope: tenderTenantInvites

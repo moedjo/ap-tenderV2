@@ -478,5 +478,9 @@
 
     'tenderaanwijzing' => [
         'confirm_next' => 'Apakah anda yakin untuk mengirim Aanwijzing?'
+    ],
+
+    'tenderwinnerselection' => [
+        'title'     => 'Pemilihan Pemenang'
     ]
 ];

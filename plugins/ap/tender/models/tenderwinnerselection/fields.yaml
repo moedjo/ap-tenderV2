@@ -1,0 +1,70 @@
+fields:
+    name:
+        label: 'ap.tender::lang.tender.name'
+        placeholder: 'ap.tender::lang.tender.name'
+        type: text
+        span: left
+        disabled: true
+    business_field:
+        label: 'ap.tender::lang.tender.business_field'
+        type: relation
+        span: right
+        disabled: true
+tabs:
+    defaultTab: 'ap.tender::lang.tender.section1'
+    icons:
+        'ap.tender::lang.tender.section1': icon-user
+        'Tenant Terdaftar': icon-user-circle
+        'Pemilihan Pemenang': icon-star-o
+    fields:
+        airport:
+            label: 'ap.tender::lang.tender.airport'
+            type: relation
+            span: left
+            tab: 'ap.tender::lang.tender.section1'
+            disabled: true
+        package:
+            label: 'ap.tender::lang.tender.package'
+            placeholder: 'ap.tender::lang.tender.package'
+            type: text
+            span: right
+            tab: 'ap.tender::lang.tender.section1'
+            disabled: true
+        pic_full_name:
+            label: 'ap.tender::lang.tender.pic_full_name'
+            placeholder: 'ap.tender::lang.tender.pic_full_name'
+            type: text
+            span: left
+            tab: 'ap.tender::lang.tender.section1'
+            disabled: true
+        pic_email:
+            label: 'ap.tender::lang.tender.pic_email'
+            placeholder: 'ap.tender::lang.tender.pic_email'
+            type: text
+            span: right
+            tab: 'ap.tender::lang.tender.section1'
+            disabled: true
+       
+        description:
+            label: 'ap.tender::lang.tender.description'
+            placeholder: 'ap.tender::lang.tender.description'
+            type: richeditor
+            toolbarButtons: none
+            size: huge
+            span: full
+            tab: 'ap.tender::lang.tender.section1'
+            disabled: true
+        tender_tenants:
+            label: 'Tender Terdaftar'
+            span: full
+            path: field_tender_tenants
+            context:
+                - update
+            type: partial
+            tab: 'Tenant Terdaftar'
+        tender_winner_selection:
+            label: 'Pemilihan Pemenang'
+            span: full
+            path: field_winner_selection
+            type: partial
+            tab: 'Pemilihan Pemenang'

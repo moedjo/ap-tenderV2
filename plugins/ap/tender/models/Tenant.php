@@ -58,7 +58,12 @@ class Tenant extends Model
         'finances' => [
             'Ap\Tender\Models\Finance',
             'key' => 'tenant_id'
-        ]
+        ],
+        'tender_tenants' => [
+            'Ap\Tender\Models\TenderTenant',
+            'table' => 'ap_tender_tenders_tenants',
+            'key'      => 'tender_id',
+        ],
     ];
 
     public $belongsToMany = [
@@ -189,5 +194,18 @@ class Tenant extends Model
     public function getDisplayBusinessFieldsAttribute()
     {
         return array_pluck($this->business_fields->toArray(),'name');
+    }
+
+    public function scopeTenderTenantInvites($query, $tender)
+    {
+        $tender_tenants = $tender->tender_tenants;
+        
+        return $query
+            ->where('id', $tender->id)
+            ->whereHas('tender_tenants', function ($query) use ($tender_tenants) {
+                $query
+                        ->where('is_candidate_winner', 0)
+                        ->where('is_winner', 0);
+            });
     }
 }

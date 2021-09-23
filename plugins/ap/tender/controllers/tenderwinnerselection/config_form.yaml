@@ -1,0 +1,7 @@
+name: 'ap.tender::lang.tenderwinnerselection.title'
+form: $/ap/tender/models/tenderwinnerselection/fields.yaml
+modelClass: Ap\Tender\Models\Tender
+defaultRedirect: ap/tender/tenders
+update:
+    redirect: ap/tender/tendertenants
+    redirectClose: ap/tender/tendertenants
