@@ -19,7 +19,7 @@ class TenderWinnerSelections extends Controller
     public $relationConfig = 'config_relation.yaml';
 
     public $requiredPermissions = [
-        'ap_tender_is_tenant'
+        'ap_tender_is_admin_tender'
     ];
 
     public function __construct()
