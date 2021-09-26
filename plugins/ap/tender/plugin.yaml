@@ -229,5 +229,13 @@ navigation:
                 label: 'ap.tender::lang.tenderwinnerselection.title'
                 url: ap/tender/tenderwinnerselections
                 icon: icon-star-o
-                permission:
-                    - ap_tender_is_tenant
+                permissions:
+                    - ap_tender_is_admin_tender
+                    - ap_tender_access_tenders
+            tender-tenantwinner:
+                label: 'ap.tender::lang.tendertenantwinner.title'
+                url: ap/tender/tendertenantwinners
+                icon: icon-star
+                permissions:
+                    - ap_tender_is_admin_tender
+                    - ap_tender_access_tenders

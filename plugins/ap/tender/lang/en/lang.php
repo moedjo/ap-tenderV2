@@ -59,13 +59,13 @@
     ],
     'status' => [
         'reject' => 'Reject',
-        'short_listed'=> 'Short Listed', 
-        'pre_clarificated'=> 'Pre Clarificated', 
-        'pre_evaluated'=> 'Pre Evaluated', 
-        'evaluated'=> 'Evaluated', 
-        'register'=> 'Register', 
-        'short_form'=> 'Short Form', 
-        'pre_register'=> 'Pre Register', 
+        'short_listed'=> 'Short Listed',
+        'pre_clarificated'=> 'Pre Clarificated',
+        'pre_evaluated'=> 'Pre Evaluated',
+        'evaluated'=> 'Evaluated',
+        'register'=> 'Register',
+        'short_form'=> 'Short Form',
+        'pre_register'=> 'Pre Register',
         'request_update' => 'Request Update',
         'request_update_approved' => 'Request Update Approved'
     ],
@@ -125,7 +125,7 @@
         'description' => 'Informasi Umum',
         'fields' => 'Bidang',
         'yes_or_no' => ' Ya (Centang Jika Sesuai)',
-        
+
         'note' => 'Catatan',
 
         'create' => 'Buat Verifikasi',
@@ -222,7 +222,7 @@
 
         'invite_section1' => 'Informasi Undangan',
 
-        
+
 
         'legal' => 'Informasi Umum',
         'commercial' => 'Pengalaman Perusahaan',
@@ -332,13 +332,13 @@
         'doc_legal_cv_comment' => 'File (*pdf - max 40MB)',
 
 
-        
+
         'doc_finance_sppkp' => ' Surat Pengukuhan Pengusaha Kena Pajak (SPPKP) / Surat Pernyataan Non Pengusaha Kena Pajak (Non PKP) dan Surat pemberitahuan pajak daerah (SPTPD)',
         'doc_finance_spt' => 'SPT Pajak Tahunan',
         'doc_finance_blp' => 'Bukti Lapor Pajak & Bukti Setor pajak (Jika Kurang Bayar)',
         'doc_finance_bsp' => 'Bukti Setoran Pajak',
         'doc_finance_sklp' => 'Surat Keterangan Kelancaran Pembayaran',
-        'doc_finance_other' => 'Lainnya',   
+        'doc_finance_other' => 'Lainnya',
         'doc_finance_collaborate' => 'Bukti Dokumen Kerjasama',
 
 
@@ -361,7 +361,7 @@
         'user_registration' => 'Registrasi Pengguna',
 
 
-        'request_update' => 'Minta Pembaharuan', 
+        'request_update' => 'Minta Pembaharuan',
     ],
     'card' => [
         'general' => 'Registrasi Awal',
@@ -410,7 +410,7 @@
         'create' => 'Buat Tender',
         'update' => 'Ubah Tender',
 
-   
+
 
         'name' => 'Nama Tender',
         'package' => 'Paket Tender',
@@ -431,7 +431,7 @@
 
 
 
-        
+
 
         'doc_support' => 'Dokumen Pendukung',
         'doc_support_comment' => 'File (*pdf - max 40MB) <br>Klik 2x untuk rubah judul',
@@ -446,7 +446,7 @@
         'doc_rfp_comment' => 'File (*pdf - max 40MB)',
 
         'section1' => 'Informasi Tender',
-        'section2' => 'Jadwal Tender', 
+        'section2' => 'Jadwal Tender',
         'section3' => 'Dokumen',
         'section4' => 'Undang Tenant',
 
@@ -482,5 +482,9 @@
 
     'tenderwinnerselection' => [
         'title'     => 'Pemilihan Pemenang'
+    ],
+
+    'tendertenantwinner' => [
+        'title'     => 'Penetapan Pemenang'
     ]
 ];

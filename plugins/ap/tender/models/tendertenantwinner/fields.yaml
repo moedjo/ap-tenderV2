@@ -1,0 +1,42 @@
+fields:
+    tender[name]:
+        label: 'ap.tender::lang.tender.name'
+        placeholder: 'ap.tender::lang.tender.name'
+        type: text
+        span: left
+        disabled: true
+    business_field:
+        label: 'ap.tender::lang.tender.business_field'
+        type: relation
+        span: right
+        disabled: true
+    airport:
+        label: 'ap.tender::lang.tender.airport'
+        type: relation
+        span: left
+        disabled: true
+    tender[package]:
+        label: 'ap.tender::lang.tender.package'
+        placeholder: 'ap.tender::lang.tender.package'
+        type: text
+        span: right
+        disabled: true
+    tender[pic_full_name]:
+        label: 'ap.tender::lang.tender.pic_full_name'
+        placeholder: 'ap.tender::lang.tender.pic_full_name'
+        type: text
+        span: left
+        disabled: true
+    tender[pic_email]:
+        label: 'ap.tender::lang.tender.pic_email'
+        placeholder: 'ap.tender::lang.tender.pic_email'
+        type: text
+        span: right
+        disabled: true
+    tender_tenant_winner:
+        label: 'Penetapan Pemenang'
+        span: full
+        path: field_tenant_winner
+        type: checkboxlist
+        context: [update]
+        tab: 'Penetapan Pemenang'
