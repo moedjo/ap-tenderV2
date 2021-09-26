@@ -38,10 +38,11 @@ class TenderWinnerSelection extends Model
 
     public function getTenderWinnerSelectionOptions()
     {
-        $tenantTenders = TenderTenant::all();
+        $tenantTenders = TenderTenant::where('tender_id', $this->id)->get();
+
         $result = [];
         foreach ($tenantTenders as $tenantTender) {
-            if ($this->id == $tenantTender->tender_id && $tenantTender->is_candidate_winner === 0 && $tenantTender->is_winner === 0) {
+            if ($tenantTender->is_candidate_winner === 0 && $tenantTender->is_winner === 0) {
                 $result[$tenantTender->id] = [$tenantTender->tenant->name];
             }
         }

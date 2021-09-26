@@ -28,10 +28,11 @@ class TenderTenantWinners extends Controller
 
     public function formAfterSave($model)
     {
-        $selected_winner = post('TenderWinnerSelection[tender_winner_selection]');
+        $selected_winner = post('TenderTenantWinner[tender_tenant_winner]');
+
         foreach ($selected_winner as $winner) {
             $tenderTenant = TenderTenant::find($winner);
-            $tenderTenant->is_candidate_winner = 1;
+            $tenderTenant->is_winner = 1;
             $tenderTenant->save();
         }
     }

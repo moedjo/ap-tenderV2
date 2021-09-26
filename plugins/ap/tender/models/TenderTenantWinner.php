@@ -34,14 +34,14 @@ class TenderTenantWinner extends Model
         ],
     ];
 
-    protected $purgeable = ['tender_winner_selection'];
+    protected $purgeable = ['tender_tenant_winner'];
 
     public function getTenderTenantWinnerOptions()
     {
-        $tenantTenders = TenderTenant::all();
+        $tenantTenders = TenderTenant::where('tender_id', $this->id)->get();
         $result = [];
         foreach ($tenantTenders as $tenantTender) {
-            if ($this->id == $tenantTender->tender_id && $tenantTender->is_candidate_winner === 1 && $tenantTender->is_winner === 0) {
+            if ($tenantTender->is_candidate_winner === 1 && $tenantTender->is_winner === 0) {
                 $result[$tenantTender->id] = [$tenantTender->tenant->name];
             }
         }
