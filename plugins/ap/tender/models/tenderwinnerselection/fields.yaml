@@ -1,5 +1,5 @@
 fields:
-    name:
+    tender[name]:
         label: 'ap.tender::lang.tender.name'
         placeholder: 'ap.tender::lang.tender.name'
         type: text
@@ -14,28 +14,24 @@ fields:
         label: 'ap.tender::lang.tender.airport'
         type: relation
         span: left
-        tab: 'ap.tender::lang.tender.section1'
         disabled: true
-    package:
+    tender[package]:
         label: 'ap.tender::lang.tender.package'
         placeholder: 'ap.tender::lang.tender.package'
         type: text
         span: right
-        tab: 'ap.tender::lang.tender.section1'
         disabled: true
-    pic_full_name:
+    tender[pic_full_name]:
         label: 'ap.tender::lang.tender.pic_full_name'
         placeholder: 'ap.tender::lang.tender.pic_full_name'
         type: text
         span: left
-        tab: 'ap.tender::lang.tender.section1'
         disabled: true
-    pic_email:
+    tender[pic_email]:
         label: 'ap.tender::lang.tender.pic_email'
         placeholder: 'ap.tender::lang.tender.pic_email'
         type: text
         span: right
-        tab: 'ap.tender::lang.tender.section1'
         disabled: true
     tender_winner_selection:
         label: 'Pemilihan Pemenang'

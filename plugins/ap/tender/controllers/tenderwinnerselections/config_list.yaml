@@ -1,5 +1,5 @@
-list: $/ap/tender/models/tender/columns.yaml
-modelClass: Ap\Tender\Models\Tender
+list: $/ap/tender/models/tenderwinnerselection/columns.yaml
+modelClass: Ap\Tender\Models\TenderWinnerSelection
 title: 'ap.tender::lang.tenderwinnerselection.title'
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true

@@ -1,17 +1,19 @@
 columns:
+    id:
+        label: 'ID Tender'
+        type: number
     name:
-        label: 'ap.tender::lang.tenant.name'
+        label: 'ap.tender::lang.tender.name'
         type: text
-    business_fields:
-        label: 'ap.tender::lang.tenant.business_fields'
+    package:
+        label: 'ap.tender::lang.tender.package'
         type: text
-        displayFrom: display_business_fields
     pic_full_name:
-        label: 'ap.tender::lang.tenant.pic_full_name'
+        label: 'ap.tender::lang.tender.pic_full_name'
         type: text
-    pic_phone_number:
-        label: 'ap.tender::lang.tenant.pic_phone_number'
+    pic_email:
+        label: 'ap.tender::lang.tender.pic_email'
         type: text
     status:
-        label: 'ap.tender::lang.tenant.status'
+        label: 'Status'
         type: text
