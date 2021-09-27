@@ -32,6 +32,7 @@ class TenderTenantWinners extends Controller
 
         foreach ($selected_winner as $winner) {
             $tenderTenant = TenderTenant::find($winner);
+            $tenderTenant->status = 'winner';
             $tenderTenant->is_winner = 1;
             $tenderTenant->save();
         }

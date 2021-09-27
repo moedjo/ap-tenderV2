@@ -31,6 +31,8 @@ class TenderWinnerSelections extends Controller
         $selected_winner = post('TenderWinnerSelection[tender_winner_selection]');
         foreach ($selected_winner as $winner) {
             $tenderTenant = TenderTenant::find($winner);
+
+            $tenderTenant->status = 'winner_candidate';
             $tenderTenant->is_candidate_winner = 1;
             $tenderTenant->save();
         }
