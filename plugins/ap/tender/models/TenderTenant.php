@@ -133,6 +133,19 @@ class TenderTenant extends Model
         }
     }
 
+    public function afterCreate()
+    {
+
+        $this->load('tenant');
+        $this->load('tender');
+        $tenant = $this->tenant;
+        Mail::queue('ap.tender::mail.tender-tenant-registration', $this->toArray(), function ($message) use ($tenant) {
+
+            $message->to($tenant->email, $tenant->name);
+        });
+
+    }
+
     public function afterUpdate()
     {
 
@@ -142,10 +155,13 @@ class TenderTenant extends Model
             $this->load('tender');
 
             $tenant = $this->tenant;
-            Mail::queue('ap.tender::mail.tender-tenant-status-update', $this->toArray(), function ($message) use ($tenant) {
+
+            Mail::queue('ap.tender::mail.tender-tenant-'.$this->status, $this->toArray(), function ($message) use ($tenant) {
 
                 $message->to($tenant->email, $tenant->name);
             });
+
+
         }
     }
 }

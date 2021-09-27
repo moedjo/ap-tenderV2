@@ -2,6 +2,7 @@
 
 namespace Ap\Tender\Controllers;
 
+use Ap\Tender\Classes\MailHelper;
 use Ap\Tender\Models\TenderTenant;
 use Backend\Classes\Controller;
 use BackendMenu;
@@ -27,6 +28,7 @@ class TenderTenantWinners extends Controller
     {
         parent::__construct();
         BackendMenu::setContext('Ap.Tender', 'tender', 'tender-tenantwinner');
+
     }
 
     public function formExtendFields($host, $fields)

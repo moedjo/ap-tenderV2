@@ -2,6 +2,7 @@
 
 namespace Ap\Tender\Controllers;
 
+use Ap\Tender\Models\Tenant;
 use Backend\Classes\Controller;
 use BackendMenu;
 use Illuminate\Support\Facades\Mail;
@@ -27,6 +28,29 @@ class Tenders extends Controller
         parent::__construct();
         BackendMenu::setContext('Ap.Tender', 'tender', 'tenders');
     }
+
+
+
+
+    public function formExtendModel($model)
+    {
+        $model->bindEvent('model.relation.attach', function ($relationName, $id, $insertData)  use ($model) {
+            if ($relationName == 'tenant_invites') {
+                $tenant = Tenant::find($id);
+
+                $model->load('schedules');
+                $params['tender'] = $model->toArray();
+                $tenant->load('business_entity');
+                $params['tenant'] = $tenant->toArray();
+
+                Mail::queue('ap.tender::mail.tenant-invite2', $params, function ($message) use ( $params , $tenant) {
+                    
+                    $message->to($tenant->email, $tenant->name);
+                 });
+            }
+        });
+    }
+
 
     public function formExtendFields($host, $fields)
     {
@@ -61,21 +85,21 @@ class Tenders extends Controller
     }
 
 
-    public function formAfterSave($model)
-    {
-        $tenant_invites = $model->tenant_invites;
+    // public function formAfterSave($model)
+    // {
+    //     $tenant_invites = $model->tenant_invites;
 
  
-        $params['tender'] = $model->toArray();
+    //     $params['tender'] = $model->toArray();
 
-        foreach ($tenant_invites as $tenant_invite) {
+    //     foreach ($tenant_invites as $tenant_invite) {
         
-            $tenant_invite->load('business_entity');
+    //         $tenant_invite->load('business_entity');
 
-            $params['tenant'] = $tenant_invite->toArray();            
-            Mail::queue('ap.tender::mail.tenant-invite2', $params, function ($message) use ( $params , $tenant_invite) {
-                $message->to($tenant_invite->email, $tenant_invite->name);
-             });
-        }
-    }
+    //         $params['tenant'] = $tenant_invite->toArray();            
+    //         Mail::queue('ap.tender::mail.tenant-invite2', $params, function ($message) use ( $params , $tenant_invite) {
+    //             $message->to($tenant_invite->email, $tenant_invite->name);
+    //          });
+    //     }
+    // }
 }

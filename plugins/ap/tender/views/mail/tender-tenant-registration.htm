@@ -1,6 +1,6 @@
 subject = "Undangan Tenant"
 layout = "ap.tender::mail.layouts.default"
-description = "Undangan Tenant"
+description = "Anda Terigistrasi di tender {{tender.name}}"
 ==
 
 
@@ -9,12 +9,4 @@ Yth. Bapak/Ibu  {{tenant.business_entity.name}} {{tenant.name}}
 Anda telah di undang di {{tender.name}}
 
 {{tender.description|raw}} 
-
-Jadwal   
-{% for schedule in tender.schedules %}
-
-{{ schedule.name }}  {{ schedule.date_end }}  {{ schedule.date_start }}
-
-{% endfor %}
-
 -----

@@ -12,6 +12,12 @@ class Tender extends Model
     use \October\Rain\Database\Traits\Validation;
 
 
+    public function __construct()
+    {
+        parent::__construct();
+    
+    }
+
     /**
      * @var string The database table used by the model.
      */
@@ -102,5 +108,12 @@ class Tender extends Model
                 'invite_hour_end' => 'required|date|after:invite_hour_start',
              ];
         } 
+    }
+
+    public function afterCreate(){
+
+    //    $test =  $this->tenant_invites()->withDeferred(post('_session_key'))->get();
+
+    //    trace_log($test);
     }
 }

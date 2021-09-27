@@ -36,7 +36,24 @@ class Plugin extends PluginBase
             'ap.tender::mail.tenant-reject',
 
             'ap.tender::mail.tenant-invite2',
-            'ap.tender::mail.tender-tenant-status-update',
+
+
+
+            'ap.tender::mail.tender-tenant-clarification',
+            
+            'ap.tender::mail.tender-tenant-envelope1_approve',
+            'ap.tender::mail.tender-tenant-envelope1_reject',
+            'ap.tender::mail.tender-tenant-envelope2_approve',
+            'ap.tender::mail.tender-tenant-envelope2_reject',
+            'ap.tender::mail.tender-tenant-negotiation',
+            'ap.tender::mail.tender-tenant-payment_rfp_approve',
+            'ap.tender::mail.tender-tenant-payment_rfp_reject',
+
+            'ap.tender::mail.tender-tenant-payment_rfp',
+            'ap.tender::mail.tender-tenant-registration',
+            'ap.tender::mail.tender-tenant-winner_candidate',
+            'ap.tender::mail.tender-tenant-winner_publish',
+            'ap.tender::mail.tender-tenant-winner',
         ];
     }
 
