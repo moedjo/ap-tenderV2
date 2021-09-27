@@ -1,5 +1,5 @@
 fields:
-    tender[name]:
+    name:
         label: 'ap.tender::lang.tender.name'
         placeholder: 'ap.tender::lang.tender.name'
         type: text
@@ -15,19 +15,19 @@ fields:
         type: relation
         span: left
         disabled: true
-    tender[package]:
+    package:
         label: 'ap.tender::lang.tender.package'
         placeholder: 'ap.tender::lang.tender.package'
         type: text
         span: right
         disabled: true
-    tender[pic_full_name]:
+    pic_full_name:
         label: 'ap.tender::lang.tender.pic_full_name'
         placeholder: 'ap.tender::lang.tender.pic_full_name'
         type: text
         span: left
         disabled: true
-    tender[pic_email]:
+    pic_email:
         label: 'ap.tender::lang.tender.pic_email'
         placeholder: 'ap.tender::lang.tender.pic_email'
         type: text

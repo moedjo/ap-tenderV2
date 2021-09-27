@@ -35,6 +35,7 @@ class TenderTenantWinners extends Controller
         if ($context == 'update') {
             $id = $host->model->id;
             $tenderTenant = TenderTenant::where('tender_id', $id)->where('is_candidate_winner', 1)->where('is_winner', 1)->first();
+            $this->vars['is_winner_selected'] = 0;
             if ($tenderTenant !== null) {
                 $host->addFields([
                     'tender_tenant_winner' => [
@@ -55,9 +56,6 @@ class TenderTenantWinners extends Controller
                     } else {
                         $this->vars['is_winner_selected'] = 1;
                     }
-
-                } else {
-                    $this->vars['is_winner_selected'] = 0;
                 }
             }
         }
@@ -66,21 +64,20 @@ class TenderTenantWinners extends Controller
     public function formAfterSave($model)
     {
         $selected_winner = post('TenderTenantWinner[tender_tenant_winner]');
-<<<<<<< HEAD
-
         foreach ($selected_winner as $winner) {
             $tenderTenant = TenderTenant::find($winner);
-            $tenderTenant->status = 'winner';
-=======
-        if (!empty($selected_winner)) {
-            $tenderTenant = TenderTenant::find($selected_winner);
->>>>>>> d1f2f9be403431ab0115fcc8d5c5f0be32f0d705
-            $tenderTenant->is_winner = 1;
-            $tenderTenant->save();
-        } else {
-            $tenderTenant = TenderTenant::where('tender_id', $model->id)->where('is_candidate_winner', 1)->where('is_winner', 1)->first();
-            $tenderTenant->is_winner_publish = 1;
-            $tenderTenant->save();
+      
+            if (!empty($selected_winner)) {
+                $tenderTenant = TenderTenant::find($selected_winner);
+                $tenderTenant->status = 'winner';
+                $tenderTenant->is_winner = 1;
+                $tenderTenant->save();
+            } else {
+                $tenderTenant = TenderTenant::where('tender_id', $model->id)->where('is_candidate_winner', 1)->where('is_winner', 1)->first();
+                $tenderTenant->status = 'winner_publish';
+                $tenderTenant->is_winner_publish = 1;
+                $tenderTenant->save();
+            }
         }
     }
 }
