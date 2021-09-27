@@ -2221,16 +2221,16 @@
         },
         {
             "name": "league/mime-type-detection",
-            "version": "1.7.0",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/mime-type-detection.git",
-                "reference": "3b9dff8aaf7323590c1d2e443db701eb1f9aa0d3"
+                "reference": "b38b25d7b372e9fddb00335400467b223349fd7e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/mime-type-detection/zipball/3b9dff8aaf7323590c1d2e443db701eb1f9aa0d3",
-                "reference": "3b9dff8aaf7323590c1d2e443db701eb1f9aa0d3",
+                "url": "https://api.github.com/repos/thephpleague/mime-type-detection/zipball/b38b25d7b372e9fddb00335400467b223349fd7e",
+                "reference": "b38b25d7b372e9fddb00335400467b223349fd7e",
                 "shasum": ""
             },
             "require": {
@@ -2261,7 +2261,7 @@
             "description": "Mime-type detection for Flysystem",
             "support": {
                 "issues": "https://github.com/thephpleague/mime-type-detection/issues",
-                "source": "https://github.com/thephpleague/mime-type-detection/tree/1.7.0"
+                "source": "https://github.com/thephpleague/mime-type-detection/tree/1.8.0"
             },
             "funding": [
                 {
@@ -2273,7 +2273,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-18T20:58:21+00:00"
+            "time": "2021-09-25T08:23:19+00:00"
         },
         {
             "name": "linkorb/jsmin-php",
@@ -2633,12 +2633,12 @@
         },
         {
             "name": "october/backend",
-            "version": "v2.1.10",
+            "version": "v2.1.11",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/backend/october-backend-v2.1.10-8a80a1.zip",
-                "reference": "684c5d08a66ece88e156b4cb336085755d9bcfa1",
-                "shasum": "484d73ee5f84eb65d47fd9751c486ef16c088652"
+                "url": "https://gateway.octobercms.com/composer/dist/october/backend/october-backend-v2.1.11-652885.zip",
+                "reference": "7f12a2580c8c35b0ef62f0375675cdc2a6f38143",
+                "shasum": "0eb76b4101f659208d6a62e24a31a1dddc22ed23"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -2661,16 +2661,16 @@
                 "october",
                 "october cms"
             ],
-            "time": "2021-09-20T08:36:50+00:00"
+            "time": "2021-09-27T06:33:14+00:00"
         },
         {
             "name": "october/cms",
-            "version": "v2.1.10",
+            "version": "v2.1.11",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/cms/october-cms-v2.1.10-4f1fde.zip",
+                "url": "https://gateway.octobercms.com/composer/dist/october/cms/october-cms-v2.1.11-4f1fde.zip",
                 "reference": "1a390dc62e252d45823860ce5ef2aaa8b5840372",
-                "shasum": "601d07f63df9cc4caebeefab100f6da269084316"
+                "shasum": "99d0e2056f13235d4a5c476f6a055b26c3b6c521"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -2697,12 +2697,12 @@
         },
         {
             "name": "october/editor",
-            "version": "v2.1.10",
+            "version": "v2.1.11",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/editor/october-editor-v2.1.10-79b0a2.zip",
-                "reference": "1422d8a0121e9c9b2dea2570b68e23c6254ac463",
-                "shasum": "3c2dc39b412f1faf0f60c90df583e5217d31b80e"
+                "url": "https://gateway.octobercms.com/composer/dist/october/editor/october-editor-v2.1.11-24f07c.zip",
+                "reference": "ff7663f87ede8a3679e75c33a4a41eeb1d1cff9e",
+                "shasum": "feec7921b39f520c26109673c8541e802cbcd3a2"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -2725,16 +2725,16 @@
                 "october",
                 "october cms"
             ],
-            "time": "2021-09-18T05:51:14+00:00"
+            "time": "2021-09-24T02:41:28+00:00"
         },
         {
             "name": "october/media",
-            "version": "v2.1.10",
+            "version": "v2.1.11",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/media/october-media-v2.1.10-6a0250.zip",
+                "url": "https://gateway.octobercms.com/composer/dist/october/media/october-media-v2.1.11-6a0250.zip",
                 "reference": "81bc83e97f7251228e954d8d5b50be3de4544053",
-                "shasum": "4302344133b8a2dc328db920fc2182f4a787bbae"
+                "shasum": "41f46399419fbbb1eb6c83fdc76951abc45c6d4b"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -2761,16 +2761,16 @@
         },
         {
             "name": "october/rain",
-            "version": "v2.1.8",
+            "version": "v2.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/octobercms/library.git",
-                "reference": "eefc1cd96c4f904a630b1e7633858037f4118c23"
+                "reference": "725067f1f337a17a31d403460039b88e76d44ac7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/octobercms/library/zipball/eefc1cd96c4f904a630b1e7633858037f4118c23",
-                "reference": "eefc1cd96c4f904a630b1e7633858037f4118c23",
+                "url": "https://api.github.com/repos/octobercms/library/zipball/725067f1f337a17a31d403460039b88e76d44ac7",
+                "reference": "725067f1f337a17a31d403460039b88e76d44ac7",
                 "shasum": ""
             },
             "require": {
@@ -2826,18 +2826,18 @@
                 "rain"
             ],
             "support": {
-                "source": "https://github.com/octobercms/library/tree/v2.1.8"
+                "source": "https://github.com/octobercms/library/tree/v2.1.11"
             },
-            "time": "2021-09-09T00:27:05+00:00"
+            "time": "2021-09-25T05:43:51+00:00"
         },
         {
             "name": "october/system",
-            "version": "v2.1.10",
+            "version": "v2.1.11",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/system/october-system-v2.1.10-4e2f64.zip",
-                "reference": "b0ee97e34eb1fbf6b4da2ab2a7a3e2acdb666100",
-                "shasum": "6bbeb5ae444da66fe2c1b96a0c2a9673d84ea601"
+                "url": "https://gateway.octobercms.com/composer/dist/october/system/october-system-v2.1.11-83c670.zip",
+                "reference": "c85d9eccea68e18c868060871dfd4a5d7852ffba",
+                "shasum": "304a51bc09696901c96cca7370970cb5063ac3c7"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -2860,7 +2860,7 @@
                 "october cms",
                 "system"
             ],
-            "time": "2021-09-18T04:30:01+00:00"
+            "time": "2021-09-25T04:41:49+00:00"
         },
         {
             "name": "opis/closure",
@@ -3405,22 +3405,22 @@
         },
         {
             "name": "ramsey/uuid",
-            "version": "3.9.4",
+            "version": "3.9.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ramsey/uuid.git",
-                "reference": "be2451bef8147b7352a28fb4cddb08adc497ada3"
+                "reference": "ffa80ab953edd85d5b6c004f96181a538aad35a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/uuid/zipball/be2451bef8147b7352a28fb4cddb08adc497ada3",
-                "reference": "be2451bef8147b7352a28fb4cddb08adc497ada3",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/ffa80ab953edd85d5b6c004f96181a538aad35a3",
+                "reference": "ffa80ab953edd85d5b6c004f96181a538aad35a3",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "paragonie/random_compat": "^1 | ^2 | ^9.99.99",
-                "php": "^5.4 | ^7 | ^8",
+                "php": "^5.4 | ^7.0 | ^8.0",
                 "symfony/polyfill-ctype": "^1.8"
             },
             "replace": {
@@ -3429,14 +3429,16 @@
             "require-dev": {
                 "codeception/aspect-mock": "^1 | ^2",
                 "doctrine/annotations": "^1.2",
-                "goaop/framework": "1.0.0-alpha.2 | ^1 | ^2.1",
-                "jakub-onderka/php-parallel-lint": "^1",
+                "goaop/framework": "1.0.0-alpha.2 | ^1 | >=2.1.0 <=2.3.2",
                 "mockery/mockery": "^0.9.11 | ^1",
                 "moontoast/math": "^1.1",
+                "nikic/php-parser": "<=4.5.0",
                 "paragonie/random-lib": "^2",
-                "php-mock/php-mock-phpunit": "^0.3 | ^1.1",
-                "phpunit/phpunit": "^4.8 | ^5.4 | ^6.5",
-                "squizlabs/php_codesniffer": "^3.5"
+                "php-mock/php-mock-phpunit": "^0.3 | ^1.1 | ^2.6",
+                "php-parallel-lint/php-parallel-lint": "^1.3",
+                "phpunit/phpunit": ">=4.8.36 <9.0.0 | >=9.3.0",
+                "squizlabs/php_codesniffer": "^3.5",
+                "yoast/phpunit-polyfills": "^1.0"
             },
             "suggest": {
                 "ext-ctype": "Provides support for PHP Ctype functions",
@@ -3504,7 +3506,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-08-06T20:32:15+00:00"
+            "time": "2021-09-25T23:07:42+00:00"
         },
         {
             "name": "react/promise",
@@ -7212,16 +7214,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.5.9",
+            "version": "9.5.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "ea8c2dfb1065eb35a79b3681eee6e6fb0a6f273b"
+                "reference": "c814a05837f2edb0d1471d6e3f4ab3501ca3899a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/ea8c2dfb1065eb35a79b3681eee6e6fb0a6f273b",
-                "reference": "ea8c2dfb1065eb35a79b3681eee6e6fb0a6f273b",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c814a05837f2edb0d1471d6e3f4ab3501ca3899a",
+                "reference": "c814a05837f2edb0d1471d6e3f4ab3501ca3899a",
                 "shasum": ""
             },
             "require": {
@@ -7237,7 +7239,7 @@
                 "phar-io/version": "^3.0.2",
                 "php": ">=7.3",
                 "phpspec/prophecy": "^1.12.1",
-                "phpunit/php-code-coverage": "^9.2.3",
+                "phpunit/php-code-coverage": "^9.2.7",
                 "phpunit/php-file-iterator": "^3.0.5",
                 "phpunit/php-invoker": "^3.1.1",
                 "phpunit/php-text-template": "^2.0.3",
@@ -7299,7 +7301,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.9"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.10"
             },
             "funding": [
                 {
@@ -7311,7 +7313,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-08-31T06:47:40+00:00"
+            "time": "2021-09-25T07:38:51+00:00"
         },
         {
             "name": "sebastian/cli-parser",

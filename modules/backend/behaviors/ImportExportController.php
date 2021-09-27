@@ -341,7 +341,10 @@ class ImportExportController extends ControllerBehavior
         }
 
         $columnConfig = $this->getConfig('import[list]');
+
         $columns = $this->makeListColumns($columnConfig);
+
+        $columns = $this->importExportExtendImportColumns($columns);
 
         if (empty($columns)) {
             throw new ApplicationException(Lang::get('backend::lang.import_export.empty_import_columns_error'));
@@ -402,7 +405,7 @@ class ImportExportController extends ControllerBehavior
         $widgetConfig->model = $this->importGetModel();
         $widgetConfig->alias = 'importUploadForm';
 
-        $widget = $this->makeWidget('Backend\Widgets\Form', $widgetConfig);
+        $widget = $this->makeWidget(\Backend\Widgets\Form::class, $widgetConfig);
 
         $widget->bindEvent('form.beforeRefresh', function ($holder) {
             $holder->data = [];
@@ -571,7 +574,10 @@ class ImportExportController extends ControllerBehavior
         }
 
         $columnConfig = $this->getConfig('export[list]');
+
         $columns = $this->makeListColumns($columnConfig);
+
+        $columns = $this->importExportExtendExportColumns($columns);
 
         if (empty($columns)) {
             throw new ApplicationException(Lang::get('backend::lang.import_export.empty_export_columns_error'));
@@ -593,7 +599,7 @@ class ImportExportController extends ControllerBehavior
         $widgetConfig->model = $this->exportGetModel();
         $widgetConfig->alias = 'exportUploadForm';
 
-        $widget = $this->makeWidget('Backend\Widgets\Form', $widgetConfig);
+        $widget = $this->makeWidget(\Backend\Widgets\Form::class, $widgetConfig);
 
         $widget->bindEvent('form.beforeRefresh', function ($holder) {
             $holder->data = [];
@@ -800,7 +806,7 @@ class ImportExportController extends ControllerBehavior
             $widgetConfig->alias = $type.'OptionsForm';
             $widgetConfig->arrayName = ucfirst($type).'Options';
 
-            return $this->makeWidget('Backend\Widgets\Form', $widgetConfig);
+            return $this->makeWidget(\Backend\Widgets\Form::class, $widgetConfig);
         }
 
         return null;
@@ -921,5 +927,25 @@ class ImportExportController extends ControllerBehavior
         }
 
         return $options;
+    }
+
+    //
+    // Overrides
+    //
+
+    /**
+     * importExportExtendExportColumns
+     */
+    public function importExportExtendExportColumns($columns)
+    {
+        return $columns;
+    }
+
+    /**
+     * importExportExtendImportColumns
+     */
+    public function importExportExtendImportColumns($columns)
+    {
+        return $columns;
     }
 }

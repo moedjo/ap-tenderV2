@@ -36,7 +36,10 @@
                             <div class="editor-application-splash layout-fill-container flex-layout-column align-center justify-center">
                                 <div>
                                     <div class="splash-content" :class="{'document-not-found': directDocumentNotFound}">
-                                        <div class="october-cms-logo-grey"/>
+                                        <div v-if="!customLogo" class="october-cms-logo-grey"/>
+                                        <div class="editor-custom-logo" v-if="customLogo">
+                                            <img v-bind:src="customLogo">
+                                        </div>
 
                                         <table class="editor-hotkeys" v-if="!isDirectDocumentMode">
                                             <tr>

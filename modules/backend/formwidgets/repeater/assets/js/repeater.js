@@ -88,7 +88,7 @@
     }
 
     Repeater.prototype.clickAddGroupButton = function(ev) {
-        var $self = this,
+        var self = this,
             templateHtml = $('> [data-group-palette-template]', this.$el).html(),
             $target = $(ev.target),
             $form = this.$el.closest('form'),
@@ -111,8 +111,8 @@
                 $loadContainer.loadIndicator()
 
                 $form.one('ajaxComplete', function() {
-                    $loadContainer.loadIndicator('hide')
-                    $self.togglePrompt()
+                    $loadContainer.loadIndicator('hide');
+                    self.togglePrompt();
                 })
             });
 
@@ -126,11 +126,20 @@
 
         this.countItems();
         this.togglePrompt();
+        this.triggerChange();
     }
 
     Repeater.prototype.onAddItemSuccess = function(ev) {
         this.itemCount++;
         this.togglePrompt();
+        this.triggerChange();
+    }
+
+    /*
+     * Trigger change event (Compatibility with october.form.js)
+     */
+    Repeater.prototype.triggerChange = function() {
+        this.$el.closest('[data-field-name]').trigger('change.oc.formwidget');
     }
 
     Repeater.prototype.togglePrompt = function () {
