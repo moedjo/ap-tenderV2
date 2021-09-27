@@ -486,5 +486,19 @@
 
     'tendertenantwinner' => [
         'title'     => 'Penetapan Pemenang'
+    ],
+
+    'tendertenantwinner' => [
+        'title'     => 'Penetapan Pemenang',
+        'field_winner' => 'Pemenang Tender',
+        'field_spk' => 'Upload dokumen SPK',
+        'field_spk_comment' => 'File (*pdf - max 40MB)',
+        'confirm_winner' => 'Apakah anda yakin untuk submit pemenang?',
+        'publish' => 'Publish',
+        'publish_text' => 'Apakah anda yakin untuk publish pemenang?',
+
+        'tab_section1' => 'Penetapan Pemenang',
+        'tab_section2' => 'Upload Dokumen',
+        'tab_section3' => 'Publish Pemenang'
     ]
 ];
