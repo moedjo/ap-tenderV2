@@ -34,14 +34,22 @@ class TenderTenantWinner extends Model
         ],
     ];
 
-    protected $purgeable = ['tender_tenant_winner'];
+    public $rules = [
+        'doc_spk' => 'required'
+    ];
+
+    public $attachOne = [
+        'doc_spk' => ['System\Models\File', 'public' => true],
+    ];
+
+    protected $purgeable = ['tender_tenant_winner', 'tender_winner_publish'];
 
     public function getTenderTenantWinnerOptions()
     {
         $tenantTenders = TenderTenant::where('tender_id', $this->id)->get();
         $result = [];
         foreach ($tenantTenders as $tenantTender) {
-            if ($tenantTender->is_candidate_winner === 1 && $tenantTender->is_winner === 0) {
+            if ($tenantTender->is_candidate_winner === 1) {
                 $result[$tenantTender->id] = [$tenantTender->tenant->name];
             }
         }

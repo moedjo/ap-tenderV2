@@ -5,12 +5,24 @@
 
 <div class="form-buttons">
     <div class="loading-indicator-container">
+        <?php if($is_winner_selected === 1): ?>
         <button type="button btn-default" data-request="onSave" data-hotkey="ctrl+enter, cmd+enter"
             data-load-indicator="<?= e(trans('ap.tender::lang.button.next')) ?>" class="btn btn-primary pull-right"
-            data-request-confirm="<?= e(trans('ap.tender::lang.button.confirm_register')) ?>">
+            data-request-confirm="<?= e(trans('ap.tender::lang.tendertenantwinner.publish_text')) ?>">
+            <?= e(trans('ap.tender::lang.tendertenantwinner.publish')) ?>
+        </button>
+        <?php elseif($is_winner_selected === 2): ?>
+        <a href="<?= Backend::url('ap/tender/tendertenantwinners') ?>" class="btn btn-warning pull-right">
+            Pemenang Sudah Publish
+        </a>
+        <?php else: ?>
+        <button type="button btn-default" data-request="onSave" data-hotkey="ctrl+enter, cmd+enter"
+            data-load-indicator="<?= e(trans('ap.tender::lang.button.next')) ?>" class="btn btn-primary pull-right"
+            data-request-confirm="<?= e(trans('ap.tender::lang.tendertenantwinner.confirm_winner')) ?>">
             <?= e(trans('ap.tender::lang.button.submit')) ?>
         </button>
-        <a href="<?= Backend::url('ap/tender/tenderwinnerselections') ?>" class="btn btn-warning">
+        <?php endif ?>
+        <a href="<?= Backend::url('ap/tender/tendertenantwinners') ?>" class="btn btn-warning">
             <?= e(trans('ap.tender::lang.button.back')) ?>
         </a>
 

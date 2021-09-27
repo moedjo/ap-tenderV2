@@ -4,4 +4,6 @@ form: $/ap/tender/models/tendertenantwinner/fields.yaml
 defaultRedirect: ap/tender/tendertenantwinners
 update:
     redirect: ap/tender/tendertenantwinners
-    redirectClose: ap/tender/tendertenantwinner
+    redirectClose: ap/tender/tendertenantwinners
+preview:
+    title: View Blog Post

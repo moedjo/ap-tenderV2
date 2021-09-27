@@ -34,9 +34,20 @@ fields:
         span: right
         disabled: true
     tender_tenant_winner:
-        label: 'Penetapan Pemenang'
+        label: 'ap.tender::lang.tendertenantwinner.field_winner'
         span: full
-        path: field_tenant_winner
-        type: checkboxlist
-        context: [update]
-        tab: 'Penetapan Pemenang'
+        type: dropdown
+        emptyOption: -- pilih pemenang --
+        required: true
+    doc_spk:
+        label: 'ap.tender::lang.tendertenantwinner.field_spk'
+        type: fileupload
+        mode: file
+        useCaption: true
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 40
+        attachOnUpload: true
+        span: left
+        required: true
+        commentAbove: 'ap.tender::lang.tendertenantwinner.field_spk_comment'
