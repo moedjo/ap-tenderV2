@@ -1,0 +1,69 @@
+url = "/tender-winner"
+layout = "default"
+title = "Tender Winner"
+active = "tenderwinner"
+==
+
+<?php
+use Ap\Tender\Models\TenderTenant;
+function onStart() {
+    $tenderTenant = TenderTenant::where('is_winner', 1)->where('is_winner_publish', 1)->paginate(9);
+    $this['TenderTenant'] = $tenderTenant;
+}
+?>
+==
+
+<section class="page-title-section overlay overlay-tender"
+    data-background="{{ 'assets/images/backgrounds/page-title.jpg'|theme }}">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <ul class="list-inline custom-breadcrumb mb-2">
+                    <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="/">Home</a></li>
+                    <li class="list-inline-item text-white h3 font-secondary nasted">Tender Winner</li>
+                </ul>
+                <p class="text-lighten mb-0">List informasi pemenang tender.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /page title -->
+
+<section class="section">
+    <div class="container">
+        <div class="row">
+            {% for i,winner in TenderTenant %}
+            <div class="col-lg-4 col-sm-6 mb-5">
+                <div class="card p-0 border-primary rounded-0 hover-shadow">
+                    <div class="media-wrapper">
+                        {%for img in winner.tender.pic_flyer %}
+                        <div class="item">
+                            <img class="rounded mx-auto d-block img-thumbnail"
+                                src="{{ img.file_exists ? img.getPath() : asset('/themes/new-themes/assets/images/default-image.png') }}">
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-inline mb-2">
+                            <li class="list-inline-item"><i
+                                    class="ti-calendar mr-1 text-color"></i>{{ winner.tender.created_at|date('d M Y') }}</li>
+                            <li class="list-inline-item"><a class="text-color" href="#">{{ winner.tender.business_field.name }}</a>
+                            </li>
+                        </ul>
+                        <a href="course-single.html">
+                            <h4 class="card-title">{{ winner.tender.name }}</h4>
+                        </a>
+                        <p class="card-text mb-4 description">
+                            {{ winner.tender.description|raw|striptags|length > 60 ? winner.tender.description|raw|striptags|slice(0, 60) ~ ' ...' : winner.tender.description|raw|striptags }}
+                        </p>
+                        <a href="/tender-winner/{{ winner.id }}" class="btn btn-primary btn-sm">Read more</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        {{ TenderTenant.links|raw }}
+    </div>
+</section>
+

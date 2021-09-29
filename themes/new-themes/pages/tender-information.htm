@@ -54,7 +54,7 @@ function onStart()
                     <div class="media-wrapper">
                         {%for img in tender.pic_flyer %}
                         <div class="item">
-                            <img class="rounded mx-auto d-block img-thumbnail" src="{{ img.file_exists ? img.getPath() : asset('/themes/ap-tender-v2/assets/images/default-image.png') }}">
+                            <img class="rounded mx-auto d-block img-thumbnail" src="{{ img.file_exists ? img.getPath() : asset('/themes/new-themes/assets/images/default-image.png') }}">
                         </div>
                         {% endfor %}
                     </div>
@@ -62,16 +62,14 @@ function onStart()
                         <ul class="list-inline mb-2">
                             <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>{{
                                 tender.created_at|date('d M Y') }}</li>
-                            <li class="list-inline-item"><a class="text-color" href="#">Humanities</a></li>
+                            <li class="list-inline-item"><a class="text-color" href="#">{{ tender.business_field.name }}</a></li>
                         </ul>
                         <a href="/tender/{{ tender.id }}">
                             <h4 class="card-title">{{ tender.name }}</h4>
                         </a>
-                        <p class="text-center">
-                            <a class="btn btn-success btn-xs" href="/backend/ap/tender/publictenantshortforms/create">Registrasi Tender</a>
-                        </p>
-                        <p class="card-text mb-4">{{ tender.description|raw }}</p>
-                        <a href="/tender/{{ tender.id }}" class="btn btn-primary btn-sm">Read more</a>
+                        <p class="card-text mb-4 description">{{ tender.description|raw|striptags|length > 60 ? tender.description|raw|striptags|slice(0, 60) ~ ' ...' : tender.description|raw|striptags }}</p>
+                        <a href="/tender/{{ tender.id }}" class="btn btn-primary btn-xs">Read more</a>
+                        <a href="/backend/ap/tender/publictenantshortforms/create" class="btn btn-success btn-xs">Registrasi Tender</a>
                     </div>
                 </div>
             </div>

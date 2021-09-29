@@ -1,0 +1,108 @@
+url = "/tender-winner/:id"
+layout = "default"
+title = "Tender"
+active = "tenderwinner"
+==
+
+<?php
+use Ap\Tender\Models\Tender;
+use System\Models\File;
+use Ap\Tender\Models\TenderTenant;
+use Ap\Tender\Models\TenderTenantWinner;
+
+function onStart() {
+    $id = $this->param('id');
+    $tenderTenant = TenderTenant::find($id);
+
+    foreach ($tenderTenant->tender->pic_flyer as $idx => $row) {
+        if (file_exists($row->getLocalPath())) {
+            $tenderTenant->tender['pic_flyer'][$idx]['file_exists'] = 1;
+        } else {
+            $tenderTenant->tender['pic_flyer'][$idx]['file_exists'] = 0;
+        }
+    }
+    $this['detailTender'] = $tenderTenant;
+
+    $tenantWinner = TenderTenantWinner::find($tenderTenant->tender_id);
+
+    $this['tenantWinner'] = $tenantWinner;
+}
+?>
+==
+
+<!-- page title -->
+<section class="page-title-section overlay overlay-tender"
+    data-background="{{ 'assets/images/backgrounds/page-title.jpg'|theme }}">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <ul class="list-inline custom-breadcrumb">
+                    <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="/tender-winner">Tender
+                            Winner</a></li>
+                    <li class="list-inline-item text-white h3 font-secondary nasted">{{ detailTender.tender.name }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /page title -->
+
+<section class="section-sm">
+    <div class="container">
+        <div class="row align-items-center mb-5 justify-content-between">
+            <div class="col-xl-4 order-1 col-sm-6 mb-4 mb-xl-0">
+                <h3>Vendor Pemenang | {{ detailTender.tender.name }}</h3>
+            </div>
+            <!-- border -->
+            <div class="col-12 mt-4 order-4">
+                <div class="border-bottom border-primary"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 mb-4">
+                <p>Yth. Bapak/Ibu Calon Mitra Usaha,</p>
+
+                <p>
+                    Terima kasih telah berpartisipasi sebagai Calon Mitra Usaha PT Angkasa Pura I (Persero). Selamat kepada Perusahaan
+                    Bapak/Ibu yang telah masuk sebagai Shortlisted Vendor pada Tenant Management System E-Selection.
+                </p>
+
+                <p>
+                    Terlampir informasi pemenang pengadaan dengan detail sebagai berikut:
+                </p>
+            </div>
+            <div class="col-2 tender-winner mb-4">
+                <p>Kategory</p>
+                <p>Nama Perusahaan</p>
+                <p>Status</p>
+                <p>Nama Tender</p>
+                <p>Tanggal Mulai</p>
+                <p>Tanggal Selesai</p>
+            </div>
+            <div class="col-10 tender-winner mb-4">
+                <p>: {{ detailTender.tender.business_field.name }}</p>
+                <p>: {{ detailTender.tenant.name }}</p>
+                <p>: Pemenang</p>
+                <p>: {{ detailTender.tender.name }}</p>
+                <p>: {{ detailTender.tender.schedules[0].date_end|date('d M Y') }}</p>
+                <p>: {{ detailTender.tender.schedules[0].date_end|date('d M Y') }}</p>
+            </div>
+            <div class="col-12 mb-4 text-center">
+                <a type="button" class="btn btn-success btn-sm" target="_blank" href="{{ tenantWinner.doc_spk.getPath() }}">Download SPK Pemenang</a>
+                {% if tenderWinner.doc_support is not empty %}
+                {% for doc_support in tenderWinner.doc_support %}
+                <a type="button" class="btn btn-primary btn-sm" target="_blank" href="{{ doc_support.getPath() }}">Download Doc Pendukung</a>
+                {% endfor %}
+                {% endif %}
+            </div>
+            <div class="col-12 mb-4">
+                <p>
+                    Petunjuk penggunaan dapat dilihat pada Website E-Selection - PT Angkasa Pura I (Persero).<br>
+                    Apabila Anda memiliki pertanyaan, dapat dikirimkan melalui surel/email ke tms@ap1.co.id atau menghubungi Helpdesk Non
+                    Aeronautical Business kami dinomor:<br>
+                    Telp. 021-6541961 ext. 2235
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

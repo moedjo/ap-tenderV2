@@ -1,5 +1,5 @@
 .navbar-header {
-    background: url(https://ap1.co.id/frontend/images/material/bg_logo.png) no-repeat 0 rgba(0,110,187,.7);
+    background: url(https://ap1.co.id/frontend/images/material/bg_logo.png) no-repeat 0 rgba(0,110,187,1);
     background-size: 400px;
 }
 
@@ -25,7 +25,7 @@
 }
 
 .hero-slider .prevArrow, .hero-slider .nextArrow {
-    color: #fff;
+    color: rgba(0,110,187,.5);
 }
 
 .hero-slider .prevArrow:hover, .hero-slider .nextArrow:hover {
@@ -40,16 +40,16 @@
 .btn-primary::before {
     background: #fff;
   }
-  
+
 .btn-primary:active {
     background: rgba(0,110,187,1) !important;
     color:rgba(0,110,187,1);
 }
-  
+
 .btn-primary:active::before {
     height: 80%;
 }
-  
+
 .btn-primary:hover {
     background:rgba(0,110,187,1);
     color: rgba(0,110,187,1);
@@ -64,16 +64,16 @@
     color: rgba(0,110,187,1);
     background: transparent;
 }
-  
+
 .btn-primary-outline::before {
     background: #fff;
 }
-  
+
 .btn-primary-outline:hover {
     background: rgba(0,110,187,1);
     color: rgba(0,110,187,1);
 }
-  
+
 .btn-primary-outline:active {
     background: rgba(0,110,187,1);
     color: #fff;
@@ -135,16 +135,49 @@
 }
 
 .row.img-slider {
-    padding-bottom: 100px;
-    background: rgba(0, 110, 187,.5);
+    padding-bottom: 70px;
     margin-bottom: 20px;
 }
 
 .media-wrapper {
-    height: 300px;
     background-color: #ddd;
 }
-  
+
 .media-wrapper img {
     position: relative;
+}
+
+p.description {
+    height: 60px;
+}
+
+.btn-success {
+    background: #28a745;
+    color: #fff;
+}
+
+.btn-success::before {
+    background: #fff;
+  }
+
+.btn-success:active {
+    background: #28a745 !important;
+    color:#28a745;
+}
+
+.btn-success:active::before {
+    height: 80%;
+}
+
+.btn-success:hover {
+    background:#28a745;
+    color: #28a745;
+}
+
+a.text-primary:hover {
+    color: #fff !important;
+}
+
+.tender-winner p {
+    margin-bottom: 0;
 }
