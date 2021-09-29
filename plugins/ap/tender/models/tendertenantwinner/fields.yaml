@@ -55,7 +55,7 @@ fields:
         span: left
         required: true
         commentAbove: 'ap.tender::lang.tendertenantwinner.field_spk_comment'
-    doc_support:
+    doc_winner_support:
         label: 'ap.tender::lang.tender.doc_support'
         type: fileupload
         mode: file

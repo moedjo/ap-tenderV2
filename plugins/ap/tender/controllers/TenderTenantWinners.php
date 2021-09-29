@@ -38,6 +38,8 @@ class TenderTenantWinners extends Controller
             if ($model->status == 'closed') {
                 $fields['tenant_winner']->disabled = true;
                 $fields['doc_spk']->disabled = true;
+                $fields['doc_winner_support']->disabled = true;
+                
             }
         }
     }
