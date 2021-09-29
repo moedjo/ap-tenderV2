@@ -36,7 +36,6 @@ function onStart() {
                             Information</a></li>
                     <li class="list-inline-item text-white h3 font-secondary nasted">{{ detailTender.name }}</li>
                 </ul>
-                <p class="text-white">{{ detailTender.description|striptags }}</p>
             </div>
         </div>
     </div>
@@ -51,8 +50,8 @@ function onStart() {
                 <div class="hero-slider">
                     {% for img in detailTender.pic_flyer %}
                     <!-- slider item -->
-                    <div class="hero-slider-item text-center" style="max-height: 500px;">
-                        <img class="img-fluid mx-auto d-block img-responsive" style="height: 100%;" src="{{ img.file_exists ? img.getPath() : asset('/themes/ap-tender-v2/assets/images/default-image.png') }}">
+                    <div class="hero-slider-item text-center" >
+                        <img class="img-fluid mx-auto d-block img-responsive" style="height: 100%;" src="{{ img.file_exists ? img.getPath() : asset('/themes/new-themes/assets/images/default-image.png') }}">
                     </div>
                     {% endfor %}
                 </div>
@@ -121,7 +120,7 @@ function onStart() {
             <div class="col-12 mb-4">
                 <h3>Tender Document</h3>
                 <a type="button" class="btn btn-primary" target="_blank" href="{{ detailTender.doc_rfq.getPath() }}">Document RFQ</a>
-    
+
                 {% for doc_support in detailTender.doc_support %}
                 <a type="button" class="btn btn-primary" target="_blank" href="{{ doc_support.getPath() }}">{{ doc_support.file_name }}</a>
                 {% endfor %}

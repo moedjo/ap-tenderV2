@@ -7,6 +7,7 @@ active = "home"
 <?php
 use Ap\Tender\Models\BusinessField;
 use Ap\Tender\Models\Tender;
+use Ap\Tender\Models\TenderTenant;
 use System\Models\File;
 
 function onStart()
@@ -14,6 +15,7 @@ function onStart()
     $this['kategori'] = BusinessField::orderBy('created_at', 'desc')->get();
 
     $tenant = Tender::orderBy('created_at', 'desc')->with('business_field')->take(6)->get();
+
     foreach ($tenant as $idx => $row) {
         foreach ($row->pic_flyer as $_idx => $_row) {
             if (file_exists($_row->getLocalPath())) {
@@ -24,6 +26,10 @@ function onStart()
         }
     }
     $this['ListTenant'] = $tenant;
+
+
+    $tenderTenant = TenderTenant::where('is_winner', 1)->where('is_winner_publish', 1)->get();
+    $this['TenderTenant'] = $tenderTenant;
 
 }
 ?>
@@ -108,20 +114,19 @@ function onStart()
                     <div class="media-wrapper">
                         {%for img in tender.pic_flyer %}
                         <div class="item">
-                            <img class="rounded mx-auto d-block img-thumbnail" src="{{ img.file_exists ? img.getPath() : asset('/themes/ap-tender-v2/assets/images/default-image.png') }}">
+                            <img class="rounded mx-auto d-block img-thumbnail" src="{{ img.file_exists ? img.getPath() : asset('/themes/new-themes/assets/images/default-image.png') }}">
                         </div>
                         {% endfor %}
                     </div>
                     <div class="card-body">
                         <ul class="list-inline mb-2">
-                            <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>{{
-                                tender.created_at|date('d M Y') }}</li>
-                            <li class="list-inline-item"><a class="text-color" href="#">Humanities</a></li>
+                            <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>{{ tender.created_at|date('d M Y') }}</li>
+                            <li class="list-inline-item"><a class="text-color" href="#">{{ tender.business_field.name }}</a></li>
                         </ul>
                         <a href="course-single.html">
                             <h4 class="card-title">{{ tender.name }}</h4>
                         </a>
-                        <p class="card-text mb-4">{{ tender.description|raw }}</p>
+                        <p class="card-text mb-4 description">{{ tender.description|raw|striptags|length > 60 ? tender.description|raw|striptags|slice(0, 60) ~ ' ...' : tender.description|raw|striptags }}</p>
                         <a href="/tender/{{ tender.id }}" class="btn btn-primary btn-sm">Read more</a>
                     </div>
                 </div>
@@ -132,7 +137,61 @@ function onStart()
         <!-- mobile see all button -->
         <div class="row">
             <div class="col-12 text-center">
-                <a href="courses.html" class="btn btn-sm btn-primary-outline d-sm-none d-inline-block">sell all</a>
+                <a href="/tender" class="btn btn-sm btn-primary-outline d-sm-none d-inline-block">sell all</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex align-items-center section-title justify-content-between">
+                    <h2 class="mb-0 text-nowrap mr-3">Tender Winner</h2>
+                    <div class="border-top w-100 border-primary d-none d-sm-block"></div>
+                    <div>
+                        <a href="/tender-winner" class="btn btn-sm btn-primary-outline ml-sm-3 d-none d-sm-block">see
+                            all</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for i,winner in TenderTenant %}
+            <div class="col-lg-4 col-sm-6 mb-5">
+                <div class="card p-0 border-primary rounded-0 hover-shadow">
+                    <div class="media-wrapper">
+                        {%for img in winner.tender.pic_flyer %}
+                        <div class="item">
+                            <img class="rounded mx-auto d-block img-thumbnail"
+                                src="{{ img.file_exists ? img.getPath() : asset('/themes/new-themes/assets/images/default-image.png') }}">
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-inline mb-2">
+                            <li class="list-inline-item"><i
+                                    class="ti-calendar mr-1 text-color"></i>{{ winner.tender.created_at|date('d M Y') }}</li>
+                            <li class="list-inline-item"><a class="text-color" href="#">{{ winner.tender.business_field.name }}</a>
+                            </li>
+                        </ul>
+                        <a href="course-single.html">
+                            <h4 class="card-title">{{ winner.tender.name }}</h4>
+                        </a>
+                        <p class="card-text mb-4 description">
+                            {{ winner.tender.description|raw|striptags|length > 60 ? winner.tender.description|raw|striptags|slice(0, 60) ~ ' ...' : winner.tender.description|raw|striptags }}
+                        </p>
+                        <a href="/tender-winner/{{ winner.id }}" class="btn btn-primary btn-sm">Read more</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- mobile see all button -->
+        <div class="row">
+            <div class="col-12 text-center">
+                <a href="/tender-winner" class="btn btn-sm btn-primary-outline d-sm-none d-inline-block">sell all</a>
             </div>
         </div>
     </div>
