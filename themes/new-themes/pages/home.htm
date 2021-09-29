@@ -28,7 +28,7 @@ function onStart()
     $this['ListTenant'] = $tenant;
 
 
-    $tenderTenant = TenderTenant::where('is_winner', 1)->where('is_winner_publish', 1)->get();
+    $tenderTenant = TenderTenant::where('status', 'winner')->get();
     $this['TenderTenant'] = $tenderTenant;
 
 }
