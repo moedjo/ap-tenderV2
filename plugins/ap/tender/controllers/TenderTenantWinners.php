@@ -66,20 +66,18 @@ class TenderTenantWinners extends Controller
     public function formAfterSave($model)
     {
         $selected_winner = post('TenderTenantWinner[tender_tenant_winner]');
-        foreach ($selected_winner as $winner) {
-            $tenderTenant = TenderTenant::find($winner);
-      
-            if (!empty($selected_winner)) {
-                $tenderTenant = TenderTenant::find($selected_winner);
-                $tenderTenant->status = 'winner';
-                $tenderTenant->is_winner = 1;
-                $tenderTenant->save();
-            } else {
-                $tenderTenant = TenderTenant::where('tender_id', $model->id)->where('is_candidate_winner', 1)->where('is_winner', 1)->first();
-                $tenderTenant->status = 'winner_publish';
-                $tenderTenant->is_winner_publish = 1;
-                $tenderTenant->save();
-            }
+        $tenderTenant = TenderTenant::find($selected_winner);
+
+        if (!empty($selected_winner)) {
+            $tenderTenant = TenderTenant::find($selected_winner);
+            $tenderTenant->status = 'winner';
+            $tenderTenant->is_winner = 1;
+            $tenderTenant->save();
+        } else {
+            $tenderTenant = TenderTenant::where('tender_id', $model->id)->where('is_candidate_winner', 1)->where('is_winner', 1)->first();
+            $tenderTenant->status = 'winner_publish';
+            $tenderTenant->is_winner_publish = 1;
+            $tenderTenant->save();
         }
     }
 }

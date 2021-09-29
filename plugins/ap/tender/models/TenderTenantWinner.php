@@ -42,6 +42,10 @@ class TenderTenantWinner extends Model
         'doc_spk' => ['System\Models\File', 'public' => true],
     ];
 
+    public $attachMany = [
+        'doc_support' => ['System\Models\File', 'public' => true],
+    ];
+
     protected $purgeable = ['tender_tenant_winner', 'tender_winner_publish'];
 
     public function getTenderTenantWinnerOptions()

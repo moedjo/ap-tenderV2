@@ -3,7 +3,7 @@ modelClass: Ap\Tender\Models\TenderTenantWinner
 form: $/ap/tender/models/tendertenantwinner/fields.yaml
 defaultRedirect: ap/tender/tendertenantwinners
 update:
-    redirect: ap/tender/tendertenantwinners
+    redirect: ap/tender/tendertenantwinners/update/:id
     redirectClose: ap/tender/tendertenantwinners
 preview:
     title: View Blog Post

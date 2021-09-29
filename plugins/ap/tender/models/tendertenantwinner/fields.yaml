@@ -51,3 +51,15 @@ fields:
         span: left
         required: true
         commentAbove: 'ap.tender::lang.tendertenantwinner.field_spk_comment'
+    doc_support:
+        label: 'ap.tender::lang.tender.doc_support'
+        type: fileupload
+        mode: file
+        useCaption: true
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 40
+        attachOnUpload: true
+        span: right
+        commentAbove: 'ap.tender::lang.tender.doc_support_comment'
+        commentHtml: true
