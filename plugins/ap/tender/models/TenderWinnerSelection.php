@@ -4,49 +4,59 @@ namespace Ap\Tender\Models;
 
 use Model;
 use Ap\Tender\Models\TenderTenant;
+use Db;
 
-class TenderWinnerSelection extends Model
+class TenderWinnerSelection extends Tender
 {
-    use \October\Rain\Database\Traits\Purgeable;
 
-    public $table = 'ap_tender_tenders';
 
-    public $belongsTo = [
-        'tenant' => [
-            'Ap\Tender\Models\Tenant',
-            'key' => 'tenant_id'
-        ],
-        'business_field' => [
-            'Ap\Tender\Models\BusinessField',
-            'key' => 'business_field_id',
-        ],
-        'airport' => [
-            'Ap\Tender\Models\Airport',
-            'key' => 'airport_id',
-        ],
-    ];
-
-    public $belongsToMany = [
-        'tender_tenants' => [
-            'Ap\Tender\Models\TenderTenant',
-            'table' => 'ap_tender_tenders_tenants',
-            'key'      => 'tender_id',
-        ],
-    ];
-
-    protected $purgeable = ['tender_winner_selection'];
-
-    public function getTenderWinnerSelectionOptions()
+    public function __construct()
     {
-        $tenantTenders = TenderTenant::where('tender_id', $this->id)->get();
+        parent::__construct();
+    }
+
+    public function getTenantWinnersOptions()
+    {
+        $tenantTenders = TenderTenant::where('tender_id', $this->id)
+            ->whereIn('status',['last_negotiation','winner_candidate'])
+            ->orderBy('last_total_price',"ASC")->get();
 
         $result = [];
         foreach ($tenantTenders as $tenantTender) {
-            if ($tenantTender->is_candidate_winner === 0 && $tenantTender->is_winner === 0) {
-                $result[$tenantTender->id] = [$tenantTender->tenant->name];
-            }
+            $result[$tenantTender->tenant->id] = 
+            [
+                $tenantTender->tenant->name,  
+                "Penawaran Akhir -> Rp " . number_format($tenantTender->last_total_price, 0, ",", ".")
+            ];
         }
 
         return $result;
     }
+
+
+    public function afterSave()
+    {
+
+        trace_sql();
+        $ids = $this->tenant_winners->pluck('id');
+
+        TenderTenant::whereHas('tenant', function ($query) use ($ids) {
+            $query->whereIn('id', $ids);
+        })
+        ->where('status','last_negotiation')
+        ->where('tender_id',$this->id)
+        ->update(['status' => 'winner_candidate']);
+
+        TenderTenant::whereHas('tenant', function ($query) use ($ids) {
+            $query->whereNotIn('id', $ids);
+        })
+        ->where('status','winner_candidate')
+        ->where('tender_id',$this->id)
+        ->update(['status' => 'last_negotiation']);
+
+    
+
+
+    }
+
 }

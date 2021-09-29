@@ -33,10 +33,9 @@ fields:
         type: text
         span: right
         disabled: true
-    tender_winner_selection:
+    tenant_winners:
         label: 'Pemilihan Pemenang'
         span: full
-        path: field_winner_selection
         type: checkboxlist
         context: [update]
         tab: 'Pemilihan Pemenang'

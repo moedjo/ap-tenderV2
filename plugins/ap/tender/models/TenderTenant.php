@@ -151,6 +151,11 @@ class TenderTenant extends Model
 
         if ($this->status !== $this->original['status']) {
 
+
+            if($this->status == 'last_negotiation'){
+                return;
+            }
+
             $this->load('tenant');
             $this->load('tender');
 
@@ -163,5 +168,21 @@ class TenderTenant extends Model
 
 
         }
+    }
+
+    public function getNameAttribute(){
+        return $this->tenant->name;
+    }
+
+    public function getDescriptionAttribute(){
+        return "Rp " . number_format( $this->last_total_price, 0, ",", ".");;
+    }
+
+    public function scopeTenantWinner($query, $tender){
+
+        $ids = $tender->tenant_winners->pluck('id');
+        return $query->whereHas('tenant', function ($query) use ($ids) {
+            $query->whereIn('id', $ids);
+        })->where('tender_id', $tender->id);
     }
 }

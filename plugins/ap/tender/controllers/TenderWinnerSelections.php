@@ -26,15 +26,34 @@ class TenderWinnerSelections extends Controller
         BackendMenu::setContext('Ap.Tender', 'tender', 'tender-winnerselection');
     }
 
-    public function formAfterSave($model)
+    public function formExtendFields($host, $fields)
     {
-        $selected_winner = post('TenderWinnerSelection[tender_winner_selection]');
-        foreach ($selected_winner as $winner) {
-            $tenderTenant = TenderTenant::find($winner);
-
-            $tenderTenant->status = 'winner_candidate';
-            $tenderTenant->is_candidate_winner = 1;
-            $tenderTenant->save();
+        $context = $host->getContext();
+        $model = $host->model;
+        if ($context == 'update') {
+            if ($model->status == 'winner_selection') {
+                // $fields['tenant_winners']->disabled = true;
+            }
         }
+    }
+
+    public function extendQuery($query)
+    {
+   
+        return $query->whereIn('status', ['aanwijzing','winner_selection']);
+    }
+
+    public function listExtendQuery($query)
+    {
+        return $this->extendQuery($query);
+    }
+
+    public function formExtendQuery($query)
+    {
+        return $this->extendQuery($query);
+    }
+
+    public function formBeforeSave($model){
+        $model->status = 'winner_selection';
     }
 }

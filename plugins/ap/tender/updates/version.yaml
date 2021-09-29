@@ -28,3 +28,6 @@
 1.0.4:
     - 'Update to v1.0.4'
     - create_ap_tender_schedules.php
+1.0.5:
+    - 'Update to v1.0.5'
+    - create_ap_tender_tenders_tenant_winners.php

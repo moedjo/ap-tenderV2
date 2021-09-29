@@ -33,12 +33,16 @@ fields:
         type: text
         span: right
         disabled: true
-    tender_tenant_winner:
-        label: 'ap.tender::lang.tendertenantwinner.field_winner'
-        span: full
-        type: dropdown
-        emptyOption: -- pilih pemenang --
-        required: true
+    tenant_winner:
+        label: Tenant Pemenang
+        type: recordfinder
+        list: ~/plugins/ap/tender/models/tendertenant/winner_columns.yaml
+        recordsPerPage: 10
+        title: Find Record
+        prompt: Click the Find button to find a user
+        nameFrom: name
+        descriptionFrom: description
+        scope: tenantWinner
     doc_spk:
         label: 'ap.tender::lang.tendertenantwinner.field_spk'
         type: fileupload

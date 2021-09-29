@@ -32,6 +32,7 @@ tabs:
         'Envelope II': icon-user-circle
         'Evaluasi Envelope I': icon-user-circle
         'Evaluasi Envelope II': icon-user-circle
+        'Penawaran Akhir': icon-user-circle
     fields:
         _section2:
             label: 'Upload Dokumen Penawaran Bisnis (Envelope I)'
@@ -142,3 +143,11 @@ tabs:
             commentAbove: 'File (*pdf - max 40MB)'
             disabled: true
             tab: 'Evaluasi Envelope II'
+        last_total_price:
+            label: 'Total Harga Penawaran Akhir (include PPn)'
+            placeholder: 'Total Harga Penawaran Akhir (include PPn)'
+            type: number
+            span: full
+            tab: 'Penawaran Akhir'
+            disabled: true
+            hidden: true

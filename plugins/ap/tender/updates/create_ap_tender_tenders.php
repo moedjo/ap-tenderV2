@@ -42,6 +42,12 @@ class CreateApTenderTenders extends Migration
             $table->timestamp('invite_hour_start')->nullable();
             $table->timestamp('invite_hour_end')->nullable();
 
+
+            $table->integer('tenant_winner_id')
+                    ->unsigned()
+                    ->nullable();
+
+
         });
     }
     

@@ -28,58 +28,42 @@ class TenderTenantWinners extends Controller
     {
         parent::__construct();
         BackendMenu::setContext('Ap.Tender', 'tender', 'tender-tenantwinner');
-
     }
 
     public function formExtendFields($host, $fields)
     {
         $context = $host->getContext();
+        $model = $host->model;
         if ($context == 'update') {
-            $id = $host->model->id;
-            $tenderTenant = TenderTenant::where('tender_id', $id)->where('is_candidate_winner', 1)->where('is_winner', 1)->first();
-            $this->vars['is_winner_selected'] = 0;
-            if ($tenderTenant !== null) {
-                $host->addFields([
-                    'tender_tenant_winner' => [
-                        'label' => 'Pemenang Tender',
-                        'type'  => 'dropdown',
-                        'options' => [
-                            $tenderTenant->id => $tenderTenant->tenant->name
-                        ],
-                        'disabled' => true
-                    ]
-                ]);
-
-                if ($host->model->doc_spk !== null) {
-                    $tenderTenant = TenderTenant::where('tender_id', $id)->where('is_candidate_winner', 1)->where('is_winner', 1)->where('is_winner_publish', 1)->first();
-
-                    if ($tenderTenant !== null) {
-                        $this->vars['is_winner_selected'] = 2;
-                    } else {
-                        $this->vars['is_winner_selected'] = 1;
-                    }
-                }
+            if ($model->status == 'closed') {
+                $fields['tenant_winner']->disabled = true;
+                $fields['doc_spk']->disabled = true;
             }
         }
     }
 
+    public function extendQuery($query)
+    {
+
+        return $query->whereIn('status', ['winner_selection', 'closed']);
+    }
+
+    public function listExtendQuery($query)
+    {
+        return $this->extendQuery($query);
+    }
+
+    public function formExtendQuery($query)
+    {
+        return $this->extendQuery($query);
+    }
+
+    public function formBeforeSave($model)
+    {
+        $model->status = 'closed';
+    }
+
     public function formAfterSave($model)
     {
-        $selected_winner = post('TenderTenantWinner[tender_tenant_winner]');
-        foreach ($selected_winner as $winner) {
-            $tenderTenant = TenderTenant::find($winner);
-      
-            if (!empty($selected_winner)) {
-                $tenderTenant = TenderTenant::find($selected_winner);
-                $tenderTenant->status = 'winner';
-                $tenderTenant->is_winner = 1;
-                $tenderTenant->save();
-            } else {
-                $tenderTenant = TenderTenant::where('tender_id', $model->id)->where('is_candidate_winner', 1)->where('is_winner', 1)->first();
-                $tenderTenant->status = 'winner_publish';
-                $tenderTenant->is_winner_publish = 1;
-                $tenderTenant->save();
-            }
-        }
     }
 }

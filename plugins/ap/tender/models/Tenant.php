@@ -196,16 +196,16 @@ class Tenant extends Model
         return array_pluck($this->business_fields->toArray(),'name');
     }
 
-    public function scopeTenderTenantInvites($query, $tender)
-    {
-        $tender_tenants = $tender->tender_tenants;
+    // public function scopeTenderTenantInvites($query, $tender)
+    // {
+    //     $tender_tenants = $tender->tender_tenants;
         
-        return $query
-            ->where('id', $tender->id)
-            ->whereHas('tender_tenants', function ($query) use ($tender_tenants) {
-                $query
-                        ->where('is_candidate_winner', 0)
-                        ->where('is_winner', 0);
-            });
-    }
+    //     return $query
+    //         ->where('id', $tender->id)
+    //         ->whereHas('tender_tenants', function ($query) use ($tender_tenants) {
+    //             $query
+    //                     ->where('is_candidate_winner', 0)
+    //                     ->where('is_winner', 0);
+    //         });
+    // }
 }

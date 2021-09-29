@@ -27,19 +27,7 @@ class Tender extends Model
      * @var array Validation rules
      */ 
     public $rules = [
-        'name' => 'required',
-        'business_field' => 'required',
-        'airport' => 'required',
-        'pic_full_name' => 'required',
-        'pic_email' => 'required|email',
-        'package' => 'required',
-        'rooms' => 'required',
-        'description' => 'required',
-        'doc_support' => 'required',
-        'pic_flyer' => 'required',
-        'doc_rfq'=> 'required',
-        'doc_rfp'=> 'required',
-
+      
     ];
 
     public $belongsTo = [
@@ -51,6 +39,11 @@ class Tender extends Model
         'airport' => [
             'Ap\Tender\Models\Airport',
             'key' => 'airport_id',
+        ],
+
+        'tenant_winner' => [
+            'Ap\Tender\Models\TenderTenant',
+            'key' => 'winner_tender_tenant_id',
         ],
     ];
 
@@ -77,11 +70,19 @@ class Tender extends Model
             'otherKey' => 'tenant_id',
         ],
 
+        'tenant_winners' => [
+            'Ap\Tender\Models\Tenant',
+            'table' => 'ap_tender_tenders_tenant_winners',
+            'key'      => 'tender_id',
+            'otherKey' => 'tenant_id',
+        ],
+
     ];
 
     public $attachOne = [
         'doc_rfq' => ['System\Models\File', 'public' => true],
         'doc_rfp' => ['System\Models\File', 'public' => false],
+        'doc_spk' => ['System\Models\File', 'public' => true],
 
     ];
 
@@ -106,6 +107,23 @@ class Tender extends Model
                 'invite_date' => 'required|date|after:today',
                 'invite_hour_start' => 'required|date',
                 'invite_hour_end' => 'required|date|after:invite_hour_start',
+             ];
+        } 
+
+        if ($this->status == 'registration') {
+            $this->rules = [
+                'name' => 'required',
+                'business_field' => 'required',
+                'airport' => 'required',
+                'pic_full_name' => 'required',
+                'pic_email' => 'required|email',
+                'package' => 'required',
+                'rooms' => 'required',
+                'description' => 'required',
+                'doc_support' => 'required',
+                'pic_flyer' => 'required',
+                'doc_rfq'=> 'required',
+                'doc_rfp'=> 'required',        
              ];
         } 
     }

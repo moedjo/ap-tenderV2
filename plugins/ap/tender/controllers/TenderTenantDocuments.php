@@ -62,6 +62,12 @@ class TenderTenantDocuments extends Controller
 
                 $fields['doc_offers']->disabled = false;
                 $fields['doc_offers']->config['disabled'] = false;
+            } else if ($model->status == 'negotiation') {
+
+                $fields['last_total_price']->disabled = false;
+                $fields['last_total_price']->config['disabled'] = false;
+
+                $fields['last_total_price']->hidden = false;
             }
         }
     }
@@ -100,6 +106,11 @@ class TenderTenantDocuments extends Controller
             $model->invite_description        = null;
 
             $model->status = 'submit_document';
+        }
+
+        if ($model->status == 'negotiation') {
+
+            $model->status = 'last_negotiation';
         }
     }
 
