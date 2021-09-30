@@ -239,3 +239,31 @@ navigation:
                 permissions:
                     - ap_tender_is_admin_tender
                     - ap_tender_access_tenders
+    reporting:
+        label: Reporting
+        url: ap/tender/reports
+        icon: icon-file
+        permissions:
+            - ap_tender_is_admin_tender
+            - ap_tender_is_finance
+            - ap_tender_is_legal
+            - ap_tender_is_commercial
+        sideMenu:
+            report-qualification:
+                label: Kualifikasi
+                url: ap/tender/reportqualification
+                icon: icon-file
+                permissions:
+                    - ap_tender_is_admin_tender
+                    - ap_tender_is_finance
+                    - ap_tender_is_legal
+                    - ap_tender_is_commercial
+            report-businessoffer:
+                label: Penawaran Bisnis
+                url: ap/tender/reportbusinessoffer
+                icon: icon-file
+                permissions:
+                    - ap_tender_is_admin_tender
+                    - ap_tender_is_finance
+                    - ap_tender_is_legal
+                    - ap_tender_is_commercial

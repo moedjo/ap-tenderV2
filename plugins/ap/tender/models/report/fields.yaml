@@ -1,0 +1,28 @@
+fields:
+    report_description:
+        label: Deskripsi Reporting Kualifikasi
+        type: Backend\FormWidgets\RichEditor
+    business_field:
+        label: 'ap.tender::lang.tender.business_field'
+        type: relation
+        span: left
+        disabled: true
+    name:
+        label: 'ap.tender::lang.tender.name'
+        type: text
+        span: left
+        disabled: true
+    invite_hour_start:
+        label: Tanggal Mulai
+        type: text
+        span: left
+        disabled: true
+    invite_hour_end:
+        label: Tanggal Selesai
+        type: text
+        span: left
+        disabled: true
+    shortlisted:
+        label: PESERTA YANG MASUK SHORTLISTED
+        span: full
+        type: partial

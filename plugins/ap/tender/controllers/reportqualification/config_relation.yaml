@@ -1,0 +1,15 @@
+tenant_invites:
+    label: 'ap.tender::lang.tenant.plural'
+    view:
+        list: $/ap/tender/models/tenant/columns.yaml
+        toolbarButtons: false
+        showCheckboxes: false
+tender_tenants:
+    label: 'Tenant Terdaftar'
+    view:
+        list: $/ap/tender/models/tendertenant/columns.yaml
+        # toolbarButtons: add|remove
+        toolbarButtons: false
+        showCheckboxes: false
+    manage:
+        list: $/ap/tender/models/tendertenant/columns.yaml

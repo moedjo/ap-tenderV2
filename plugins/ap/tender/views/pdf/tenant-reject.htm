@@ -20,40 +20,52 @@ orientation = "portrait"
 
 </table>
 
-<table width="100%">
-  <tr>
-    <td><strong>Dari:</strong> PT Angkasa Pura I (Persero)</td>
-    <td><strong>Kepada:</strong> {{business_entity.name}} {{name}}</td>
-  </tr>
-
-</table>
+{{ description|raw }}
 
 <br />
 
-<table width="100%">
-  <thead style="background-color: lightgray;">
-    <tr>
-      <th>No</th>
-      <th>Kategori</th>
-      <th>Informasi Umum</th>
-      <th>Ya/Tidak</th>
-      <th>Catatan</th>
+<table width="40%" >
+    <tr align="left">
+        <th width="35%">Kategori : </th>
+        <th width="50%">{{ business_field.name }}</th>
     </tr>
-  </thead>
-  <tbody>
-
-    {% for verification in verifications %}
-
-
-    {{ verification.name }} -> Keterangan : {{ verification.pivot.on_note }}
-    <tr>
-      <th scope="row">{{verification.number}}</th>
-      <td>{{verification.name}}</td>
-      <td>{{verification.description}}</td>
-      <td>{{verification.pivot.on_check ? 'Ya' : 'Tidak'}}</td>
-      <td>{{verification.pivot.on_note}}</td>
+    <tr align="left">
+        <th width="35%">Nama Tender : </th>
+        <th width="50%">{{ name }}</th>
     </tr>
-    {% endfor %}
-  </tbody>
+    <tr align="left">
+        <th width="35%">Tanggal Mulai : </th>
+        <th width="50%">{{ invite_hour_start }}</th>
+    </tr>
+    <tr align="left">
+        <th width="35%">Tanggal Selesai : </th>
+        <th width="50%">{{ invite_hour_end }}</th>
+    </tr>
+</table>
 
+<br><br>
+
+<p>Shortlisted Vendor</p>
+
+
+<table width="100%" style="font-size: 14px;">
+    <thead style="background-color: lightgray;">
+        <tr>
+            <th>Kategori</th>
+            <th>Nama Vendor</th>
+            <th>PIC</th>
+            <th>Telp PIC</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% for tenant in tender_tenants %}
+        <tr>
+            <td>{{ tenant.tenant.business_fields[0].name }}</td>
+            <td>{{ tenant.tenant.name }}</td>
+            <td>{{ tenant.tenant.pic_full_name }}</td>
+            <td>{{ tenant.tenant.pic_phone_number }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
 </table>

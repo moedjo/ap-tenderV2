@@ -1,0 +1,60 @@
+title = "Report Kualifikasi"
+layout = "ap.tender::pdf.layouts.default"
+description = "Report Kualifikasi template"
+size = "a4"
+orientation = "portrait"
+==
+
+<table width="100%">
+    <tr>
+        <td valign="top"></td>
+        <td align="right">
+            <h3>PT Angkasa Pura I (Persero)</h3>
+            <pre>
+              Kota Baru Bandar Kemayoran Blok B12 Kav.2
+              Jakarta Pusat, DKI Jakarta - Indonesia
+              Telp.+62-21 6541961
+              Faks. +62-21 6541514
+            </pre>
+        </td>
+    </tr>
+
+</table>
+
+<table width="100%">
+    <tr>
+        <td><strong>Dari:</strong> PT Angkasa Pura I (Persero)</td>
+        <td><strong>Kepada:</strong> {{business_entity.name}} {{name}}</td>
+    </tr>
+
+</table>
+
+<br />
+
+<table width="100%">
+    <thead style="background-color: lightgray;">
+        <tr>
+            <th>No</th>
+            <th>Kategori</th>
+            <th>Informasi Umum</th>
+            <th>Ya/Tidak</th>
+            <th>Catatan</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% for verification in verifications %}
+
+
+        {{ verification.name }} -> Keterangan : {{ verification.pivot.on_note }}
+        <tr>
+            <th scope="row">{{verification.number}}</th>
+            <td>{{verification.name}}</td>
+            <td>{{verification.description}}</td>
+            <td>{{verification.pivot.on_check ? 'Ya' : 'Tidak'}}</td>
+            <td>{{verification.pivot.on_note}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
