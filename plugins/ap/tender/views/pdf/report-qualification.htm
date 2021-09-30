@@ -5,56 +5,58 @@ size = "a4"
 orientation = "portrait"
 ==
 
-<table width="100%">
-    <tr>
-        <td valign="top"></td>
-        <td align="right">
-            <h3>PT Angkasa Pura I (Persero)</h3>
-            <pre>
-              Kota Baru Bandar Kemayoran Blok B12 Kav.2
-              Jakarta Pusat, DKI Jakarta - Indonesia
-              Telp.+62-21 6541961
-              Faks. +62-21 6541514
-            </pre>
-        </td>
-    </tr>
 
-</table>
+<div style="text-align: center; font-size: 20px;">
+    BERITA ACARA<br>
+    HASIL PENILAIAN DOKUMEN KUALIFIKASI<br>
+    SELEKSI MITRA USAHA {{ tender.package }}<br>
+    DI BANDAR UDARA {{ tender.airport.name }}
+</div>
+<br><br>
+<div style="text-align: center; font-size: 18px;">
+    NOMOR: ...../{{ tender.id }}/2021
+</div>
+<br><br>
+<div style="text-align: justify; font-size: 14px;">
+    Pada tanggal {{ 'now'|date('d') }} bulan {{ 'now'|date('F') }} tahun {{ 'now'|date('Y') }} ({{ 'now'|date('d-m-Y')
+    }}) di {{ tender.airport.name }},
+    yang bertanda tangan di bawah ini Assesment Team Dokumen Kualifikasi/Pelaksana Seleksi Mitra Usaha di Bandar Udara {{ tender.airport.name }},
+    menerangkan bahwa berdasarkan:
+</div>
+<div style="text-align: justify; font-size: 14px;">
+    <ol type="a">
+        <li>Keputusan Direksi PT Angkasa Pura I (Persero) Nomor : KEP.DU.76/KB.03/2020 Tentang Pedoman Kegiatan Komersial di PT Angkasa Pura I (Persero);</li>
+        <li>Surat Keputusan Direksi PT Angkasa Pura I (Persero) Nomor: SKEP……/KB.07/2020 tentang Pembentukan Tim Seleksi Mitra Usaha Bandar Udara {{ tender.airport.name }};</li>
+        <li>Request For Qualification (RFQ) Seleksi ………………….;</li>
+        <li>Pengumuman Seleksi Mitra Usaha {{ tender.package }} tanggal {{ tender.created_at|date('d-F-Y') }};</li>
+        <li>Surat Ketua Steering Group - Nomor: ...../{{ tender.id }}/2021 perihal Proses Pelaksanaan Evaluasi Administrasi dan Kualifikasi Dokumen RFQ.</li>
+    </ol>
+</div>
 
-<table width="100%">
-    <tr>
-        <td><strong>Dari:</strong> PT Angkasa Pura I (Persero)</td>
-        <td><strong>Kepada:</strong> {{business_entity.name}} {{name}}</td>
-    </tr>
-
-</table>
-
-<br />
-
-<table width="100%">
-    <thead style="background-color: lightgray;">
-        <tr>
-            <th>No</th>
-            <th>Kategori</th>
-            <th>Informasi Umum</th>
-            <th>Ya/Tidak</th>
-            <th>Catatan</th>
-        </tr>
-    </thead>
-    <tbody>
-
-        {% for verification in verifications %}
-
-
-        {{ verification.name }} -> Keterangan : {{ verification.pivot.on_note }}
-        <tr>
-            <th scope="row">{{verification.number}}</th>
-            <td>{{verification.name}}</td>
-            <td>{{verification.description}}</td>
-            <td>{{verification.pivot.on_check ? 'Ya' : 'Tidak'}}</td>
-            <td>{{verification.pivot.on_note}}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-
-</table>
+<div style="text-align: justify; font-size: 14px;">
+    Assesment Team Dokumen Kualifikasi/Pelaksana telah melakukan evaluasi dan klarifikasi atas Dokumen Kualifikasi Peserta
+    seleksi pada tanggal {{ 'now'|date('d-m-Y') }}, bertempat di {{ tender.airport.name }} sebagai berikut:<br>
+    <ol>
+        <li>Peserta yang menyampaikan konfirmasi minat …..sebanyak ……… Perusahaan, dengan peminatan sebanyak …….. untuk ……. paket seleksi, dengan rincian:</li>
+        <li>Adapun atas evaluasi dan klarifikasi terhadap Dokumen Kualifikasi Peserta Seleksi sebagaimana dimaksud pada angka 1, diperoleh hasil :</li>
+    </ol><br>
+    Sehubungan hal tersebut, hasil akhir evaluasi dan klarifikasi Dokumen Kualifikasi Peserta Seleksi adalah :<br><br>
+    <table width="100%" style="font-size: 14px;" border="1px">
+        <thead style="background-color: lightgray;">
+            <tr>
+                <th>No</th>
+                <th>Nama Perusahaan</th>
+                <th>Waktu Pembukaan Dokumen dan Presentasi</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i, tenant in tender.tender_tenants %}
+            <tr>
+                <td>{{ i+1 }}</td>
+                <td>{{ tenant.tenant.name }}</td>
+                <td></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

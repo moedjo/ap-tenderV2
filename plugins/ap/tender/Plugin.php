@@ -40,7 +40,7 @@ class Plugin extends PluginBase
 
 
             'ap.tender::mail.tender-tenant-clarification',
-            
+
             'ap.tender::mail.tender-tenant-envelope1_approve',
             'ap.tender::mail.tender-tenant-envelope1_reject',
             'ap.tender::mail.tender-tenant-envelope2_approve',
@@ -73,6 +73,9 @@ class Plugin extends PluginBase
     {
         return [
             'ap.tender::pdf.tenant-reject',
+            'ap.tender::pdf.report-qualification',
+            'ap.tender::pdf.report-baenvelopeone',
+            'ap.tender::pdf.report-statement',
         ];
     }
 
@@ -91,7 +94,7 @@ class Plugin extends PluginBase
                 'Ap\Tender\Models\Tenant'
             ];
         });
-    
+
     }
 }
 

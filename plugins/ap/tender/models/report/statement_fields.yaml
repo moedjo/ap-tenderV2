@@ -1,0 +1,6 @@
+fields:
+    name:
+        label:  'ap.tender::lang.tenant.name'
+        placeholder: 'ap.tender::lang.tenant.name'
+        type: text
+        span: left

@@ -7,7 +7,7 @@ use Backend\Classes\Controller;
 use BackendMenu;
 use Renatio\DynamicPDF\Classes\PDF;
 
-class ReportQualification extends Controller
+class ReportStatements extends Controller
 {
     public $implement = [
         'Backend\Behaviors\ListController',
@@ -25,7 +25,7 @@ class ReportQualification extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Ap.Tender', 'reporting', 'report-qualification');
+        BackendMenu::setContext('Ap.Tender', 'reporting', 'report-statements');
     }
 
     public function print($model)
@@ -34,7 +34,7 @@ class ReportQualification extends Controller
 
         $data['tender'] = $tender;
 
-        return PDF::loadTemplate('ap.tender::pdf.report-qualification', $data)
+        return PDF::loadTemplate('ap.tender::pdf.report-statements', $data)
         ->stream();
     }
 }

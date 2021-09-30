@@ -258,9 +258,9 @@ navigation:
                     - ap_tender_is_finance
                     - ap_tender_is_legal
                     - ap_tender_is_commercial
-            report-businessoffer:
-                label: Penawaran Bisnis
-                url: ap/tender/reportbusinessoffer
+            report-baenvelopeone:
+                label: Envelope 1
+                url: ap/tender/reportbaenvelopeone
                 icon: icon-file
                 permissions:
                     - ap_tender_is_admin_tender
