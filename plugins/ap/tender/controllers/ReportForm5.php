@@ -7,7 +7,7 @@ use Backend\Classes\Controller;
 use BackendMenu;
 use Renatio\DynamicPDF\Classes\PDF;
 
-class ReportQualification extends Controller
+class ReportForm5 extends Controller
 {
     public $implement = [
         'Backend\Behaviors\ListController',
@@ -25,7 +25,7 @@ class ReportQualification extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Ap.Tender', 'reporting', 'report-qualification');
+        BackendMenu::setContext('Ap.Tender', 'reporting', 'report-form5');
     }
 
     public function print($model)
@@ -33,8 +33,19 @@ class ReportQualification extends Controller
         $tender = Tender::findOrFail($model);
 
         $data['tender'] = $tender;
+        $day = date('D');
+        $dayList = array(
+            'Sun' => 'Minggu',
+            'Mon' => 'Senin',
+            'Tue' => 'Selasa',
+            'Wed' => 'Rabu',
+            'Thu' => 'Kamis',
+            'Fri' => 'Jumat',
+            'Sat' => 'Sabtu'
+        );
+        $data['hari'] = $dayList[$day];
 
-        return PDF::loadTemplate('ap.tender::pdf.report-qualification', $data)
+        return PDF::loadTemplate('ap.tender::pdf.report-form5', $data)
         ->stream();
     }
 }

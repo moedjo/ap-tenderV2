@@ -79,7 +79,7 @@ class Plugin extends PluginBase
             'ap.tender::pdf.report-form2',
             'ap.tender::pdf.report-form3',
             'ap.tender::pdf.report-form4',
-            'ap.tender::pdf.report-qualification',
+            'ap.tender::pdf.report-form5',
             'ap.tender::pdf.report-baenvelopeone',
             'ap.tender::pdf.report-statement',
         ];

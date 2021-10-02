@@ -1,6 +1,6 @@
 list: $/ap/tender/models/report/columns.yaml
 modelClass: Ap\Tender\Models\Report
-title: Report Kualifikasi
+title: BA Hasil Kualifikasi
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
 showCheckboxes: false
@@ -9,4 +9,4 @@ toolbar:
     buttons: list_toolbar
     search:
         prompt: 'backend::lang.list.search_prompt'
-recordUrl: 'ap/tender/reportqualification/update/:id'
+recordUrl: 'ap/tender/reportform5/update/:id'

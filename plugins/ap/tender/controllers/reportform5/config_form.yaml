@@ -1,0 +1,10 @@
+name: BA Hasil Kualifikasi
+form: $/ap/tender/models/report/fields.yaml
+modelClass: Ap\Tender\Models\Report
+defaultRedirect: ap/tender/reportform5
+create:
+    redirect: 'ap/tender/reportform5/update/:id'
+    redirectClose: ap/tender/reportform5
+update:
+    redirect: ap/tender/reportform5/update/:id
+    redirectClose: ap/tender/reportform5/update/:id
