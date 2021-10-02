@@ -1,0 +1,12 @@
+fields:
+    name:
+        label: 'ap.tender::lang.tender.name'
+        placeholder: 'ap.tender::lang.tender.name'
+        type: text
+        span: left
+        disabled: true
+    business_field:
+        label: 'ap.tender::lang.tender.business_field'
+        type: relation
+        span: right
+        disabled: true

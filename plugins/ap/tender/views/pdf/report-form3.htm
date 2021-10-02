@@ -1,0 +1,163 @@
+title = "Berita Acara Hasil Presentasi Envelope I"
+layout = "ap.tender::pdf.layouts.layout"
+description = "Berita Acara Hasil Presentasi Envelope I"
+size = "a4"
+orientation = "portrait"
+==
+
+<div class="report-title">
+    <p>BERITA ACARA</p>
+    <p>HASIL PRESENTASI KONSEP BISNIS DAN PENILAIAN ENVELOPE I</p>
+    <p>SELEKSI MITRA USAHA</p>
+    <p><u>DI BANDAR UDARA INTERNASIONAL {{ tender.airport.name }}</u></p>
+</div>
+<div class="report-number">
+    NOMOR : BA.........../KB.07/2020/SEL.SUB
+</div>
+<div class="report-content">
+    <p>&nbsp;</p>
+    <p>
+        Pada hari ini {{ hari }}, tanggal {{ 'now'|date('d') }}, bulan {{ 'now'|date('F') }}, tahun {{ 'now'|date('Y') }} ({{ 'now'|date('d-m-Y') }}),
+        di ......................................., yang bertanda tangan di bawah ini Assessment Team – Tim
+        Komersial dan Teknis/Pelaksana Seleksi Mitra Usaha di Bandar Udara Internasional {{ tender.airport.name }}, menerangkan
+        hal-hal sebagai berikut:
+    </p>
+    <p>&nbsp;</p>
+    <p>Berdasarkan:</p>
+    <ol type="1">
+        <li>
+            Surat Keputusan Direksi PT Angkasa Pura I (Persero) nomor: ...................... tentang Pembentukan Tim Seleksi Mitra
+            Usaha Di Bandar Udara {{ tender.airport.name }};
+        </li>
+        <li>
+            <i>Request For Proposal</i> (RFP) Seleksi Mitra Usaha Bandar Udara {{ tender.airport.name }};
+        </li>
+        <li>
+            Berita Acara Briefing Team Kepada Assessment Team – Tim Tim Komersial dan Teknis/Pelaksana nomor :
+            ........................ tanggal ..................;
+        </li>
+        <li>
+            Surat Ketua Steering Team Seleksi Mitra Usaha di Bandar Udara Internasional {{ tender.airport.name }} nomor:
+            ............................. tanggal ...................... perihal Pelaksanaan Penilaian Envelope I Seleksi Mitra
+            Usaha di Bandara {{ tender.airport.name }}
+        </li>
+    </ol>
+    <p>&nbsp;</p>
+    <p>
+        Sehubungan dengan hal tersebut di atas, telah dilaksanakan Presentasi Konsep Bisnis dan Penilaian Envelope I Paket
+        Seleksi {{ tender.name }} Kegiatan Usaha {{ tender.business_field.name }} Kategori Food & Beverage/Retail/Services di Bandar Udara
+        Internasional {{ tender.airport.name }} sebagai berikut:
+    </p>
+    <ol type="1">
+        <li>
+            <p>
+                Rapat dipimpin oleh ................ selaku Koordinator sekaligus Anggota Assessment Team – Tim Komersial dan
+                Teknis/Pelaksana serta dihadiri oleh:
+            </p>
+            <ol type="a">
+                <li>......... Selaku Anggota</li>
+                <li>......... Selaku Anggota</li>
+                <li>......... Selaku Anggota</li>
+            </ol>
+            <p>
+                Daftar hadir terlampir.
+            </p>
+        </li>
+        <li>
+            <p>Jalannya Presentasi Konsep Bisnis dan Penilaian Envelope I sebagai berikut:</p>
+            <ol type="a">
+                <li>
+                    <p>
+                        Peserta yang menghadiri pembukaan Proposal dan melakukan Presentasi Proposal Envelope I dihadapan Assessment Team –
+                        Tim
+                        Komersial dan Teknis/Pelaksana adalah sebanyak {{ tender.tender_tenants|length }} Perusahaan dari {{ tender.tenant_invites|length }} Perusahaan yang
+                        menyampaikan Proposal, yaitu
+                    </p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Nama Perusahaan</th>
+                                <th>Waktu Pembukaan Dokumen dan Presentasi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for id, item in tender.tender_tenants %}
+                            <tr>
+                                <td align="center">{{ id+1 }}</td>
+                                <td>{{ item.name }}</td>
+                                <td>{{ "item" }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </li>
+                <li>
+                    <p>Peserta telah melakukan presentasi, selanjutnya Tim melakukan klarifikasi secara terbuka di hadapan peserta.</p>
+                </li>
+                <li>
+                    <p>Tim melakukan penilaian kepada Peserta Seleksi dengan mengakumulasikan penilaian sebagai berikut :</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Nama Perusahaan</th>
+                                <th>Waktu Pembukaan Dokumen dan Presentasi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for id, item in tender.tender_tenants %}
+                            <tr>
+                                <td align="center">{{ id+1 }}</td>
+                                <td>{{ item.name }}</td>
+                                <td>{{ "item" }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </li>
+                <li>
+                    <p>Tim melakukan pemeringkatan peserta seleksi yang melampaui nilai passing grade adalah sebagai berikut :</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Nama Perusahaan</th>
+                                <th>Waktu Pembukaan Dokumen dan Presentasi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for id, item in tender.tender_tenants %}
+                            <tr>
+                                <td align="center">{{ id+1 }}</td>
+                                <td>{{ item.name }}</td>
+                                <td>{{ "item" }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </li>
+            </ol>
+        </li>
+        <li>
+            Koordinator memberikan informasi kepada peserta bahwa pembukaan Envelope II akan dilakukan oleh Tim Finansial tanpa
+            disaksikan oleh Peserta Seleksi, dan bagi Peserta yang lolos pada tahap selanjutnya, akan dihubungi melalui surat
+            elektronik dan telepon oleh Panitia Seleksi, selanjutnya akan dilakukan negosiasi dan klarifikasi sesuai jadwal yang
+            ditentukan;
+        </li>
+        <li>
+            Koordinator selaku pimpinan rapat menyatakan bahwa penilaian Proposal Tahap Envelope I telah selesai. Selanjutnya akan
+            melaporkan hasil penilaian kepada Steering Team;
+        </li>
+        <li>
+            Acara pembukaan dan presentasi Proposal Tahap Envelope I dinyatakan telah sesuai dengan ketentuan yang berlaku.
+        </li>
+    </ol>
+    <p>&nbsp;</p>
+    <p>Demikian Berita Acara ini dibuat dengan sesungguhnya untuk dipergunakan sebagaimana mestinya.</p>
+    <p>&nbsp;</p><p>&nbsp;</p>
+    <p style="text-align: center;">Jakarta, .................</p>
+    <p style="text-align: center;">ASSEMENT TEAM – TIM KOMERSIAL DAN TEKNIS</p>
+    <p style="text-align: center;">SELEKSI MITRA USAHA</p>
+    <p style="text-align: center;"><u>DI BANDAR UDARA INTERNASIONAL {{ tender.airport.name }}</u></p>
+</div>
