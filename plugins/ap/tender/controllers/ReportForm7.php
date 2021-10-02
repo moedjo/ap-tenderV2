@@ -104,7 +104,7 @@ class ReportForm7 extends Controller
             $message->to('mrezza.ramadhan@gmail.com', 'John Doe');
             $message->cc('mrezza.ramadhan@gmail.com', 'John Doe');
             $message->bcc('mrezza.ramadhan@gmail.com', 'John Doe');
-            $message->subject('Penetapan Pemenang');
+            $message->subject('Berita Acara Hasil Penilaian Envelope II');
             $message->attach(storage_path('app/uploads/') . post('file_name'));
         });
 

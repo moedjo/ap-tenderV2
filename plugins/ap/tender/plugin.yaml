@@ -323,7 +323,7 @@ navigation:
                     - ap_tender_is_commercial
             report-form9:
                 label: Izin Prinsip
-                url: ap/tender/reportform8
+                url: ap/tender/reportform9
                 icon: icon-file
                 permissions:
                     - ap_tender_is_admin_tender

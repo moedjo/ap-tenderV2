@@ -7,7 +7,7 @@ use BackendMenu;
 use Ap\Tender\Models\TenderTenant;
 use Renatio\DynamicPDF\Classes\PDF;
 
-class ReportForm8 extends Controller
+class ReportForm9 extends Controller
 {
     public $implement = [
         'Backend\Behaviors\ListController',
@@ -24,7 +24,7 @@ class ReportForm8 extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Ap.Tender', 'reporting', 'report-form8');
+        BackendMenu::setContext('Ap.Tender', 'reporting', 'report-form9');
     }
 
     public function print($model)
@@ -44,7 +44,7 @@ class ReportForm8 extends Controller
         );
         $data['hari'] = $dayList[$day];
 
-        return PDF::loadTemplate('ap.tender::pdf.report-form8', $data)->stream();
+        return PDF::loadTemplate('ap.tender::pdf.report-form9', $data)->stream();
     }
 
     public function onSendEmailForm()
@@ -84,10 +84,10 @@ class ReportForm8 extends Controller
         $data['hari'] = $dayList[$day];
 
         $storagePath =  storage_path('app/uploads/');
-        $pdf_file_name =  $name = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '_', "BERITA ACARA NEGOSIASI FINAL"))) . '_' . date('H') . '.pdf';
+        $pdf_file_name =  $name = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '_', "IZIN PRINSIP"))) . '_' . date('H') . '.pdf';
         $pdf_file_name_directory =  $storagePath . $pdf_file_name;
 
-        PDF::loadTemplate('ap.tender::pdf.report-form8', $data)->save($pdf_file_name_directory);
+        PDF::loadTemplate('ap.tender::pdf.report-form9', $data)->save($pdf_file_name_directory);
 
         return [
             'pdf_file_name' => $pdf_file_name
@@ -104,7 +104,7 @@ class ReportForm8 extends Controller
             $message->to('mrezza.ramadhan@gmail.com', 'John Doe');
             $message->cc('mrezza.ramadhan@gmail.com', 'John Doe');
             $message->bcc('mrezza.ramadhan@gmail.com', 'John Doe');
-            $message->subject('Berita Acara Negosiasi Final');
+            $message->subject('Izin Prinsip');
             $message->attach(storage_path('app/uploads/') . post('file_name'));
         });
 
