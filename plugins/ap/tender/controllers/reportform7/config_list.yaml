@@ -1,0 +1,12 @@
+list: $/ap/tender/models/report/report_form1_columns.yaml
+modelClass: Ap\Tender\Models\TenderTenant
+title: BA Hasil Penilaian Envelope II
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: false
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'ap/tender/reportform7/update/:id'
