@@ -48,4 +48,68 @@ class ReportForm5 extends Controller
         return PDF::loadTemplate('ap.tender::pdf.report-form5', $data)
         ->stream();
     }
+
+    public function onSendEmailForm()
+    {
+        $this->addCss('/modules/backend/formwidgets/fileupload/assets/css/fileupload.css');
+        $config = $this->makeConfig('$/ap/tender/models/report/send_email_fields.yaml');
+
+        $config->model = new \Ap\Tender\Models\Tender;
+
+        $widget = $this->makeWidget('Backend\Widgets\Form', $config);
+
+        $pdf = $this->savePdf($this->params[0]);
+
+        $this->vars['recordId'] = $this->params[0];
+        $this->vars['widget'] = $widget;
+        $this->vars['file_name'] = $pdf['pdf_file_name'];
+        $this->vars['file'] = url('storage/app/uploads') . '/' . $pdf['pdf_file_name'];
+
+        return $this->makePartial('sendEmail');
+    }
+
+    protected function savePdf($model)
+    {
+        $tender_tenant = Tender::find($model);
+
+        $data['tender_tenant'] = $tender_tenant;
+        $day = date('D');
+        $dayList = array(
+            'Sun' => 'Minggu',
+            'Mon' => 'Senin',
+            'Tue' => 'Selasa',
+            'Wed' => 'Rabu',
+            'Thu' => 'Kamis',
+            'Fri' => 'Jumat',
+            'Sat' => 'Sabtu'
+        );
+        $data['hari'] = $dayList[$day];
+
+        $storagePath =  storage_path('app/uploads/');
+        $pdf_file_name =  $name = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '_', "BERITA ACARA HASIL KUALIFIKASI"))) . '_' . date('H') . '.pdf';
+        $pdf_file_name_directory =  $storagePath . $pdf_file_name;
+
+        PDF::loadTemplate('ap.tender::pdf.report-form5', $data)->save($pdf_file_name_directory);
+
+        return [
+            'pdf_file_name' => $pdf_file_name
+        ];
+    }
+
+    public function onSendEmail()
+    {
+        $this->asExtension('FormController')->update_onSave(post('record_id'));
+
+        $data = post();
+
+        Mail::send('ap.tender::mail.tenant-invite2', $data, function ($message) {
+            $message->to('mrezza.ramadhan@gmail.com', 'John Doe');
+            $message->cc('mrezza.ramadhan@gmail.com', 'John Doe');
+            $message->bcc('mrezza.ramadhan@gmail.com', 'John Doe');
+            $message->subject('Berita Acara Hasil Kualifikasi');
+            $message->attach(storage_path('app/uploads/') . post('file_name'));
+        });
+
+        return $this->listRefresh();
+    }
 }

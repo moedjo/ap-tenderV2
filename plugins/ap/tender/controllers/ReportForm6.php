@@ -7,24 +7,25 @@ use Backend\Classes\Controller;
 use BackendMenu;
 use Renatio\DynamicPDF\Classes\PDF;
 
-class ReportForm3 extends Controller
+class ReportForm6 extends Controller
 {
     public $implement = [
         'Backend\Behaviors\ListController',
         'Backend\Behaviors\FormController',
+        'Backend\Behaviors\RelationController',
     ];
-
     public $listConfig = 'config_list.yaml';
     public $formConfig = 'config_form.yaml';
+    public $relationConfig = 'config_relation.yaml';
 
     public $requiredPermissions = [
-        'ap_tender_access_tenders', 'ap_tender_is_finance', 'ap_tender_is_legal', 'ap_tender_is_commercial'
+        'ap_tender_access_tenders'
     ];
 
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Ap.Tender', 'reporting', 'report-form3');
+        BackendMenu::setContext('Ap.Tender', 'reporting', 'report-form6');
     }
 
     public function print($model)
@@ -44,7 +45,8 @@ class ReportForm3 extends Controller
         );
         $data['hari'] = $dayList[$day];
 
-        return PDF::loadTemplate('ap.tender::pdf.report-form3', $data)->stream();
+        return PDF::loadTemplate('ap.tender::pdf.report-form6', $data)
+        ->stream();
     }
 
     public function onSendEmailForm()
@@ -52,7 +54,7 @@ class ReportForm3 extends Controller
         $this->addCss('/modules/backend/formwidgets/fileupload/assets/css/fileupload.css');
         $config = $this->makeConfig('$/ap/tender/models/report/send_email_fields.yaml');
 
-        $config->model = new \Ap\Tender\Models\TenderTenant;
+        $config->model = new \Ap\Tender\Models\Tender;
 
         $widget = $this->makeWidget('Backend\Widgets\Form', $config);
 
@@ -84,10 +86,10 @@ class ReportForm3 extends Controller
         $data['hari'] = $dayList[$day];
 
         $storagePath =  storage_path('app/uploads/');
-        $pdf_file_name =  $name = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '_', "BERITA ACARA HASIL PRESENTASI ENVELOPE I"))) . '_' . date('H') . '.pdf';
+        $pdf_file_name =  $name = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '_', "BERITA ACARA HASIL PENILAIAN ENVELOPE I"))) . '_' . date('H') . '.pdf';
         $pdf_file_name_directory =  $storagePath . $pdf_file_name;
 
-        PDF::loadTemplate('ap.tender::pdf.report-form3', $data)->save($pdf_file_name_directory);
+        PDF::loadTemplate('ap.tender::pdf.report-form6', $data)->save($pdf_file_name_directory);
 
         return [
             'pdf_file_name' => $pdf_file_name
@@ -104,7 +106,7 @@ class ReportForm3 extends Controller
             $message->to('mrezza.ramadhan@gmail.com', 'John Doe');
             $message->cc('mrezza.ramadhan@gmail.com', 'John Doe');
             $message->bcc('mrezza.ramadhan@gmail.com', 'John Doe');
-            $message->subject('Berita Acara Hasil Presentasi Envelope I');
+            $message->subject('Penetapan Pemenang');
             $message->attach(storage_path('app/uploads/') . post('file_name'));
         });
 
