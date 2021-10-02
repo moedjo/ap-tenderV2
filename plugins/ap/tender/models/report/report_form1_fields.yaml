@@ -1,0 +1,11 @@
+fields:
+    name:
+        label: 'ap.tender::lang.tenant.name'
+        type: text
+        span: left
+        disabled: true
+    tender[name]:
+        label: 'ap.tender::lang.tender.name'
+        type: text
+        span: right
+        disabled: true
