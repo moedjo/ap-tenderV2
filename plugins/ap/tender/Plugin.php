@@ -76,6 +76,7 @@ class Plugin extends PluginBase
 
             // report template
             'ap.tender::pdf.report-form1',
+            'ap.tender::pdf.report-form2',
             'ap.tender::pdf.report-qualification',
             'ap.tender::pdf.report-baenvelopeone',
             'ap.tender::pdf.report-statement',

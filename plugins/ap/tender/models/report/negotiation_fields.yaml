@@ -4,9 +4,8 @@ fields:
         type: text
         span: left
         disabled: true
-    test:
-        label: Test
-        type: richeditor
-        toolbarButtons: bold|italic
-        size: huge
-        hidden: true
+    tender[name]:
+        label: 'ap.tender::lang.tender.name'
+        type: text
+        span: right
+        disabled: true

@@ -2,13 +2,12 @@
 
 namespace Ap\Tender\Controllers;
 
-use Ap\Tender\Models\TenderTenant;
 use Backend\Classes\Controller;
 use BackendMenu;
-use Illuminate\Support\Facades\Mail;
+use Ap\Tender\Models\TenderTenant;
 use Renatio\DynamicPDF\Classes\PDF;
 
-class ReportForm1 extends Controller
+class ReportForm2 extends Controller
 {
     public $implement = [
         'Backend\Behaviors\ListController',
@@ -25,7 +24,7 @@ class ReportForm1 extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Ap.Tender', 'reporting', 'report-form1');
+        BackendMenu::setContext('Ap.Tender', 'reporting', 'report-form2');
     }
 
     public function print($model)
@@ -45,7 +44,7 @@ class ReportForm1 extends Controller
         );
         $data['hari'] = $dayList[$day];
 
-        return PDF::loadTemplate('ap.tender::pdf.report-form1', $data)->stream();
+        return PDF::loadTemplate('ap.tender::pdf.report-form2', $data)->stream();
     }
 
     public function onSendEmailForm()
@@ -85,10 +84,10 @@ class ReportForm1 extends Controller
         $data['hari'] = $dayList[$day];
 
         $storagePath =  storage_path('app/uploads/');
-        $pdf_file_name =  $name = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '_', "BERITA ACARA NEGOSIASI LANGSUNG"))) . '_' . date('H') . '.pdf';
+        $pdf_file_name =  $name = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '_', "PENETAPAN PEMENANG"))) . '_' . date('H') . '.pdf';
         $pdf_file_name_directory =  $storagePath . $pdf_file_name;
 
-        PDF::loadTemplate('ap.tender::pdf.report-form1', $data)->save($pdf_file_name_directory);
+        PDF::loadTemplate('ap.tender::pdf.report-form2', $data)->save($pdf_file_name_directory);
 
         return [
             'pdf_file_name' => $pdf_file_name
@@ -103,9 +102,9 @@ class ReportForm1 extends Controller
 
         Mail::send('ap.tender::mail.tenant-invite2', $data, function ($message) {
             $message->to('mrezza.ramadhan@gmail.com', 'John Doe');
-            $message->cc('jmrezza.ramadhan@gmail.com', 'John Doe');
+            $message->cc('mrezza.ramadhan@gmail.com', 'John Doe');
             $message->bcc('mrezza.ramadhan@gmail.com', 'John Doe');
-            $message->subject('Berita Acara Negosiasi Langsung');
+            $message->subject('Penetapan Pemenang');
             $message->attach(storage_path('app/uploads/') . post('file_name'));
         });
 

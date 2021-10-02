@@ -6,14 +6,14 @@
 
 <div class="form-buttons">
     <div class="loading-indicator-container">
-        <a href="<?= Backend::url('ap/tender/reportform1/print/' . $formModel->id) ?>" target="_blank"
+        <a href="<?= Backend::url('ap/tender/reportform2/print/' . $formModel->id) ?>" target="_blank"
             class="btn btn-primary pull-right">
             Lihat PDF
         </a>
         <a data-control="popup" data-handler="onSendEmailForm" href="javascript:;" class="btn btn-success pull-right">
             Kirim Email
         </a>
-        <a href="<?= Backend::url('ap/tender/reportform1') ?>" class="btn btn-warning">
+        <a href="<?= Backend::url('ap/tender/reportform2') ?>" class="btn btn-warning">
             <?= e(trans('ap.tender::lang.button.back')) ?>
         </a>
 

@@ -1,6 +1,6 @@
-list: $/ap/tender/models/report/negotiation_columns.yaml
+list: $/ap/tender/models/report/report_form1_columns.yaml
 modelClass: Ap\Tender\Models\TenderTenant
-title: BA Negosiasi Langsung
+title: Penetapan Pemenang
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
 showCheckboxes: false
@@ -9,4 +9,4 @@ toolbar:
     buttons: list_toolbar
     search:
         prompt: 'backend::lang.list.search_prompt'
-recordUrl: 'ap/tender/reportform1/update/:id'
+recordUrl: 'ap/tender/reportform2/update/:id'

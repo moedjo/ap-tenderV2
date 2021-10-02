@@ -1,10 +1,10 @@
-name: 'ap.tender::lang.tender.singular'
+name: BA Negosiasi Langsung
 form: $/ap/tender/models/report/negotiation_fields.yaml
 modelClass: Ap\Tender\Models\TenderTenant
-defaultRedirect: ap/tender/reportnegotiations
+defaultRedirect: ap/tender/reportform1
 create:
-    redirect: 'ap/tender/reportnegotiations/update/:id'
-    redirectClose: ap/tender/reportnegotiations
+    redirect: 'ap/tender/reportform1/update/:id'
+    redirectClose: ap/tender/reportform1
 update:
-    redirect: ap/tender/reportnegotiations/update/:id
-    redirectClose: ap/tender/reportnegotiations/update/:id
+    redirect: ap/tender/reportform1/update/:id
+    redirectClose: ap/tender/reportform1/update/:id

@@ -1,0 +1,10 @@
+name: Penetapan Pemenang
+form: $/ap/tender/models/report/negotiation_fields.yaml
+modelClass: Ap\Tender\Models\TenderTenant
+defaultRedirect: ap/tender/reportform2
+create:
+    redirect: 'ap/tender/reportform2/update/:id'
+    redirectClose: ap/tender/reportform2
+update:
+    redirect: ap/tender/reportform2/update/:id
+    redirectClose: ap/tender/reportform2/update/:id
