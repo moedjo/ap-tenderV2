@@ -9,7 +9,7 @@ use BackendMenu;
 use Illuminate\Support\Facades\Mail;
 use Renatio\DynamicPDF\Classes\PDF;
 
-class ReportNegotiations extends Controller
+class ReportForm1 extends Controller
 {
     public $implement = [
         'Backend\Behaviors\ListController',
@@ -26,12 +26,37 @@ class ReportNegotiations extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Ap.Tender', 'reporting', 'report-negotiation');
+        BackendMenu::setContext('Ap.Tender', 'reporting', 'report-form1');
     }
 
     public function onPreview($model)
     {
-        $this->addJs('/modules/backend/formwidgets/richeditor/assets/js/build-plugins-min.js');
+        $pdf = $this->savePdf($model);
+
+        return url('storage/app/uploads') . '/' . $pdf['pdf_file_name'];
+    }
+
+    public function onSendEmailForm()
+    {
+        $this->addCss('/modules/backend/formwidgets/fileupload/assets/css/fileupload.css');
+        $config = $this->makeConfig('$/ap/tender/models/report/send_email_fields.yaml');
+
+        $config->model = new \Ap\Tender\Models\TenderTenant;
+
+        $widget = $this->makeWidget('Backend\Widgets\Form', $config);
+
+        $pdf = $this->savePdf($this->params[0]);
+
+        $this->vars['recordId'] = $this->params[0];
+        $this->vars['widget'] = $widget;
+        $this->vars['file_name'] = $pdf['pdf_file_name'];
+        $this->vars['file'] = url('storage/app/uploads') . '/' . $pdf['pdf_file_name'];
+
+        return $this->makePartial('sendEmail');
+    }
+
+    protected function savePdf($model)
+    {
         $tender_tenant = TenderTenant::find($model);
 
         $data['tender_tenant'] = $tender_tenant;
@@ -48,41 +73,14 @@ class ReportNegotiations extends Controller
         $data['hari'] = $dayList[$day];
 
         $storagePath =  storage_path('app/uploads/');
-        $pdf_file_name =  'ba_negosiasi.pdf';
+        $pdf_file_name =  $name = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '_', "BERITA ACARA NEGOSIASI LANGSUNG"))) . '_' . date('H') . '.pdf';
         $pdf_file_name_directory =  $storagePath . $pdf_file_name;
 
         PDF::loadTemplate('ap.tender::pdf.report-form1', $data)->save($pdf_file_name_directory);
 
-        return $baseUrl = url('storage/app/uploads') . '/' . $pdf_file_name;
-    }
-
-    public function onSendEmailForm()
-    {
-        $this->addCss('/modules/backend/formwidgets/fileupload/assets/css/fileupload.css');
-        $config = $this->makeConfig('$/ap/tender/models/report/send_email_fields.yaml');
-
-        $config->model = new \Ap\Tender\Models\TenderTenant;
-
-        $widget = $this->makeWidget('Backend\Widgets\Form', $config);
-
-        $this->vars['recordId'] = $this->params[0];
-        $this->vars['widget'] = $widget;
-
-        $tender_tenant = TenderTenant::find($this->params[0]);
-        $tender = Tender::findOrFail($tender_tenant->tender_id);
-
-        $data['tender'] = $tender;
-        $storagePath =  storage_path('app/uploads/');
-        $pdf_file_name =  'ba_negosiasi.pdf';
-        $pdf_file_name_directory =  $storagePath . $pdf_file_name;
-        $baseUrl = url('storage/app/uploads') . '/' . $pdf_file_name;
-
-        $this->vars['file_name'] = $pdf_file_name;
-        $this->vars['file'] = $baseUrl;
-
-        PDF::loadTemplate('ap.tender::pdf.report-form1', $data)->save($pdf_file_name_directory);
-
-        return $this->makePartial('sendEmail');
+        return [
+            'pdf_file_name' => $pdf_file_name
+        ];
     }
 
     public function onSendEmail()
