@@ -8,3 +8,5 @@ create:
 update:
     redirect: ap/tender/reportform5/update/:id
     redirectClose: ap/tender/reportform5/update/:id
+customMessages:
+    flashUpdate: Email Berhasil dikirim

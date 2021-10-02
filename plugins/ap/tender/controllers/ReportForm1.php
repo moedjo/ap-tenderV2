@@ -5,6 +5,7 @@ namespace Ap\Tender\Controllers;
 use Ap\Tender\Models\TenderTenant;
 use Backend\Classes\Controller;
 use BackendMenu;
+use Exception;
 use Illuminate\Support\Facades\Mail;
 use Renatio\DynamicPDF\Classes\PDF;
 
@@ -101,13 +102,27 @@ class ReportForm1 extends Controller
 
         $data = post();
 
-        Mail::send('ap.tender::mail.tenant-invite2', $data, function ($message) {
-            $message->to('mrezza.ramadhan@gmail.com', 'John Doe');
-            $message->cc('jmrezza.ramadhan@gmail.com', 'John Doe');
-            $message->bcc('mrezza.ramadhan@gmail.com', 'John Doe');
+        Mail::send('ap.tender::mail.report', $data, function ($message) use ($data) {
+            $email_to = [];
+            $email_cc = [];
+            $email_bcc = [];
+
+            if (!empty($data['email_to']))
+                $email_to = explode(',', $data['email_to']);
+
+            if (!empty($data['email_cc']))
+                $email_cc = explode(',', $data['email_cc']);
+
+            if (!empty($data['email_bcc']))
+                $email_bcc = explode(',', $data['email_bcc']);
+
+            $message->to($email_to);
+            $message->cc($email_cc);
+            $message->bcc($email_bcc);
             $message->subject('Berita Acara Negosiasi Langsung');
             $message->attach(storage_path('app/uploads/') . post('file_name'));
         });
+
 
         return $this->listRefresh();
     }

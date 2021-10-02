@@ -28,6 +28,7 @@ class Plugin extends PluginBase
     public function registerMailTemplates()
     {
         return [
+            'ap.tender::mail.report',
             'ap.tender::mail.tenant-short-form',
             'ap.tender::mail.tenant-pre-register',
             'ap.tender::mail.tenant-register',
