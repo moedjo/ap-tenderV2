@@ -1,0 +1,10 @@
+name: 'ap.tender::lang.tender.singular'
+form: $/ap/tender/models/report/negotiation_fields.yaml
+modelClass: Ap\Tender\Models\TenderTenant
+defaultRedirect: ap/tender/reportnegotiations
+create:
+    redirect: 'ap/tender/reportnegotiations/update/:id'
+    redirectClose: ap/tender/reportnegotiations
+update:
+    redirect: ap/tender/reportnegotiations/update/:id
+    redirectClose: ap/tender/reportnegotiations/update/:id

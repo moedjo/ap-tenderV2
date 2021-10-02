@@ -249,6 +249,15 @@ navigation:
             - ap_tender_is_legal
             - ap_tender_is_commercial
         sideMenu:
+            report-negotiation:
+                label: BA Negosiasi Langsung
+                url: ap/tender/reportnegotiations
+                icon: icon-file
+                permissions:
+                    - ap_tender_is_admin_tender
+                    - ap_tender_is_finance
+                    - ap_tender_is_legal
+                    - ap_tender_is_commercial
             report-qualification:
                 label: Kualifikasi
                 url: ap/tender/reportqualification

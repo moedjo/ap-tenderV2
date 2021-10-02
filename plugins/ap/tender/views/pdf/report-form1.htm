@@ -1,0 +1,150 @@
+title = "Berita Acara Negosiasi Langsung"
+layout = "ap.tender::pdf.layouts.layout"
+description = "Berita Acara Negosiasi Langsung"
+size = "a4"
+orientation = "portrait"
+==
+
+<div class="report-title">
+    <p>BERITA ACARA NEGOSIASI LANGSUNG </p>
+    <p>KEGIATAN USAHA {{ tender_tenant.tender.name }} </p>
+    <p>DI BANDAR UDARA {{ tender_tenant.tender.airport.name }} </p>
+</div>
+<div class="report-number">
+    NOMOR : ………………………………
+</div>
+<div class="report-content">
+    <ol type="I">
+        <li>
+            <p><b>UMUM</b></p>
+            <p>
+                Pada hari ini {{ hari }}, tanggal {{ 'now'|date('d') }}, bulan {{ 'now'|date('F') }}, tahun {{ 'now'|date('Y') }} ({{ 'now'|date('d-m-Y')
+                    }}), telah dilakukan negosiasi langsung untuk
+                kegiatan usaha {{ tender_tenant.tender.name }} di Bandar Udara {{ tender_tenant.tender.airport.name }} kepada PT/CV {{ tender_tenant.tenant.name }} yang dihadiri oleh:
+            </p>
+            <ol type="1">
+                <li>
+                    <p>PT Angkasa Pura I (Persero) diwakili oleh:</p>
+                    <p>Senior Manager/Vice President:</p>
+                </li>
+                <li>
+                    <p>PT/CV {{ tender_tenant.tenant.name }}</p>
+                    <p>Direktur/Pejabat yang diberikan kuasa berdasarkan Surat Kuasa Nomor: .../ tanggal …:</p>
+                </li>
+            </ol>
+        </li>
+
+        <li>
+            <p><b>DASAR</b></p>
+            <ol type="1">
+                <li>Surat Undangan Negosiasi Langsung Nomor: ………………….</li>
+                <li>Surat Peminatan PT/CV {{ tender_tenant.tenant.name }} Nomor: ………………….</li>
+            </ol>
+        </li>
+        <li>
+            <p><b>HASIL NEGOSIASI LANGSUNG</b></p>
+            <p>
+                Pelaksanaan negosiasi langsung dibuka oleh Senior Manager yang membidangi fungsi Komersial dan Pengembangan Usaha Bandar
+                Udara {{ tender_tenant.tender.airport.name }}/Vice President. Selanjutnya telah dilakukan negosiasi langsung dengan hasil sebagai berikut:
+            </p>
+            <ol type="1">
+                <li>
+                    <p>Kegiatan Usaha adalah {{ tender_tenant.tender.name }} dengan rincian sebagai berikut:</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Kode Ruang</th>
+                                <th>Lokasi</th>
+                                <th>Luas (m2)</th>
+                                <th>Sales Right</th>
+                                <th>Brand</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for ruang in tender_tenant.tender.rooms %}
+                            <tr>
+                                <td>{{ ruang.name }}</td>
+                                <td>2222</td>
+                                <td>3333</td>
+                                <td>4444</td>
+                                <td>5555</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </li>
+                <li>Jangka waktu kerja sama adalah selama …. (…………).</li>
+                <li>Telah dilakukan pemeriksaan dokumen administrasi PT/CV …. sebagaimana terlampir dan dokumen dinyatakan lengkap/tidak lengkap.</li>
+                <li>
+                    <p>Telah dilakukan negosiasi langsung atas penawaran finansial Mitra dengan hasil sebagai berikut:</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th colspan="3">Penawaran</th>
+                                <th colspan="3">Hasil Negosiasi</th>
+                            </tr>
+                            <tr>
+                                <th>Tarif Sewa Ruang /m2/bulan</th>
+                                <th>Kontribusi Sewa Ruang</th>
+                                <th>% Revenue Share</th>
+                                <th>Tarif Sewa Ruang /m2/bulan</th>
+                                <th>Kontribusi Sewa Ruang</th>
+                                <th>% Revenue Share</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1111</td>
+                                <td>2222</td>
+                                <td>3333</td>
+                                <td>4444</td>
+                                <td>5555</td>
+                                <td>6666</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="color: #f00;">
+                        <i>*pembahasan negosiasi langsung dapat dilakukan yang berkaitan dengan manfaat non finansial lainnya yang akan diberikan
+                        calon Mitra kepada Perusahaan sebagai bentuk Kompensasi atas kerja sama</i>
+                    </p>
+                </li>
+                <li>Komitmen finansial yang dikenakan kepada PT/CV … belum termasuk PPN 10% dan Mitra wajib membayar Pajak Bumi dan Bangunan (PBB) sesuai dengan ketentuan yang berlaku</li>
+                <li>Mitra akan melakukan pembayaran sewa ruang kepada PT Angkasa Pura I (Persero) sekaligus di muka.</li>
+                <li>Pemakaian Utilitas (listrik,air, telepon dan jaringan fasilitas lainnya) dikenakan biaya sesuai dengan ketentuan yang berlaku di PT Angkasa Pura I (Persero).</li>
+                <li>Biaya pembangunan, perawatan, dan pembongkaran dalam pelaksanaan kegiatan usaha sepenuhnya menjadi beban dan tanggung jawab PT/CV ……………………….. </li>
+                <li>Pihak PT/CV ……………….. tidak diperbolehkan  mengalihkan izin usaha ini kepada pihak lain tanpa persetujuan PT Angkasa Pura I (Persero).</li>
+                <li>PT/CV ……………….. berkomitmen untuk memenuhi segala kewajiban yang telah disepakati dalam Berita Acara ini dan akan tunduk pada peraturan perundang – undangan serta ketentuan yang berlaku di PT Angkasa Pura I (Persero).</li>
+                <li>PT Angkasa Pura I (Persero) dapat melakukan penundaan pelaksanaan kerja sama apabila terdapat indikasi adanya penyimpangan dan/atau kecurangan dalam transaksi bisnis yang menyebabkan kerugian bagi PT Angkasa Pura I (Persero).</li>
+                <li>Dalam melaksanakan kerja sama ini, Pejabat dan Staf PT Angkasa Pura I (Persero) maupun Mitra akan memenuhi prinsip – prinsip Good Corporate Governance (GCG), serta tidak melakukan praktik Korupsi, Kolusi dan Nepotisme (KKN) selama proses maupun pelaksanaan kerja sama</li>
+
+            </ol>
+        </li>
+        <li>
+            <p><b>PENUTUP</b></p>
+            <ol type="1">
+                <li>Berita Acara ini akan disampaikan kepada Pejabat Berwenang untuk selanjutnya diterbitkan Izin Prinsip.</li>
+                <li>Demikian Berita Acara ini dibuat, untuk dipergunakan sebagaimana mestinya.</li>
+            </ol>
+        </li>
+    </ol>
+
+    <p>&nbsp;</p>
+    <p style="text-align: center;">Jakarta, …………………….. 2020</p>
+    <p>&nbsp;</p>
+    <p>PT ANGKASA PURA I (PERSERO)</p>
+    <p>&nbsp;</p><p>&nbsp;</p>
+    <p>(Nama)</p>
+    <p>Senior Manager/Vice President ....</p>
+    <p>Bandar Udara /Kantor Pusat ………………</p>
+
+    <p>&nbsp;</p><p>&nbsp;</p>
+    <p>PT/CV ..............................................</p>
+    <p>&nbsp;</p><p>&nbsp;</p>
+    <p>(Nama)</p>
+    <p>(Jabatan)</p>
+
+
+    <p>&nbsp;</p><p>&nbsp;</p>
+    <p><i>*Formulir dapat menyesuaikan dengan pola kerjasama</i></p>
+</div>

@@ -1,0 +1,16 @@
+columns:
+    tenant[name]:
+        label: Tenant
+        type: text
+    tender[name]:
+        label: Tender
+        type: text
+    invite_name:
+        label: Nama Undangan
+        type: text
+    invite_location:
+        label: Lokasi Undangan
+        type: text
+    invite_date:
+        label: Tanggal Undangan
+        type: text

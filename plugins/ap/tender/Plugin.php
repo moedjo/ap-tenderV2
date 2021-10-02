@@ -73,6 +73,9 @@ class Plugin extends PluginBase
     {
         return [
             'ap.tender::pdf.tenant-reject',
+
+            // report template
+            'ap.tender::pdf.report-form1',
             'ap.tender::pdf.report-qualification',
             'ap.tender::pdf.report-baenvelopeone',
             'ap.tender::pdf.report-statement',
@@ -84,6 +87,7 @@ class Plugin extends PluginBase
     {
         return [
             'ap.tender::pdf.layouts.default',
+            'ap.tender::pdf.layouts.layout',
         ];
     }
 

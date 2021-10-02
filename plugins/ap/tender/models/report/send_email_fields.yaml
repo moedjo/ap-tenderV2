@@ -1,0 +1,15 @@
+fields:
+    email_to:
+        label: To
+        type: text
+    email_cc:
+        label: CC
+        type: text
+    email_bcc:
+        label: BCC
+        type: text
+    email_body:
+        label: Body
+        type: richeditor
+        toolbarButtons: bold|italic
+        size: huge
