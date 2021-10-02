@@ -6,6 +6,7 @@ use Ap\Tender\Models\Tender;
 use Backend\Classes\Controller;
 use BackendMenu;
 use Renatio\DynamicPDF\Classes\PDF;
+use Illuminate\Support\Facades\Mail;
 
 class ReportForm5 extends Controller
 {
@@ -21,6 +22,8 @@ class ReportForm5 extends Controller
     public $requiredPermissions = [
         'ap_tender_access_tenders'
     ];
+
+    public $rules = ['email_to'];
 
     public function __construct()
     {

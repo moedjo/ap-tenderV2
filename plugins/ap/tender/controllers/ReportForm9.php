@@ -6,6 +6,7 @@ use Backend\Classes\Controller;
 use BackendMenu;
 use Ap\Tender\Models\TenderTenant;
 use Renatio\DynamicPDF\Classes\PDF;
+use Illuminate\Support\Facades\Mail;
 
 class ReportForm9 extends Controller
 {
