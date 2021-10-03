@@ -1,0 +1,79 @@
+title = "Pernyataan Top Management"
+layout = "ap.tender::pdf.layouts.layout"
+description = "Pernyataan Top Management"
+size = "a4"
+orientation = "portrait"
+==
+
+<div class="report-title">
+    KOP SURAT
+</div>
+<div class="report-content">
+    <p>&nbsp;</p>
+    <p style="text-align: center;">SURAT PERNYATAAN</p>
+    <p>&nbsp;</p><p>&nbsp;</p>
+    <p>Yang bertanda tangan di bawah ini:</p>
+    <p>
+        <span class="sp-200">Nama Penanggung Jawab</span>
+        <span class="sp-10">:</span>
+        <span>{{ tender.tenant.pic_full_name }}</span>
+    </p>
+    <p>
+        <span class="sp-200">Alamat Penanggung Jawab</span>
+        <span class="sp-10">:</span>
+        <span>{{ tender.tenant.address }}</span>
+    </p>
+    <p>
+        <span class="sp-200">Jabatan dalam Perusahaan</span>
+        <span class="sp-10">:</span>
+        <span>{{ tender.tenant.position.name }}</span>
+    </p>
+    <p>
+        <span class="sp-200">Nama Perusahaan</span>
+        <span class="sp-10">:</span>
+        <span>{{ tender.tenant.name }}</span>
+    </p>
+    <p>
+        <span class="sp-200">Alamat Perusahaan</span>
+        <span class="sp-10">:</span>
+        <span>{{ tender.tenant.address }}</span>
+    </p>
+    <p>&nbsp;</p>
+    <p>
+        Dengan ini menyatakan bahwa sampai dengan surat pernyataan ini dibuat, susunan kepemilikan perusahaan dan pengurus
+        perusahaan khususnya Direktur Utama (top management) PT/CV. {{ tender.tenant.name }} tetap sama dengan pada saat kami mengikuti
+        Seleksi Mitra Usaha di {{ tender.tender.airport.name }}, yaitu sebagai berikut :
+    </p>
+    <p>&nbsp;</p>
+    <ol type="1">
+        <li>
+            <p>Susunan Pemilik Perusahaan adalah sebagai berikut :</p>
+            <ol type="a">
+                {% for com in tender.tenant.commissioners %}
+                <li>{{ com.name }}</li>
+                {% endfor %}
+            </ol>
+        </li>
+        <li>
+            <p>Susunan Pengurus Perusahaan adalah sebagai berikut :</p>
+            <ol type="a">
+                {% for com in tender.tenant.directors %}
+                <li>{{ com.name }}</li>
+                {% endfor %}
+            </ol>
+        </li>
+    </ol>
+    <p>&nbsp;</p>
+    <p>
+        Demikian pernyataan ini kami buat untuk memenuhi persyaratan mengikuti Seleksi Mitra Usaha di Bandar Udara {{ tender.tender.airport.name }}.
+    </p>
+
+    <div style="float: right; width: 250px;">
+        <p>&nbsp;</p><p>&nbsp;</p>
+        <p>{{ tender.tenant.region.name }}, {{ hari }}, {{ 'now'|date('d-M-Y') }}</p>
+        <p>PT/CV {{ tender.tenant.name }}</p>
+        <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+        <p style="text-align: center;"><u>Nama Terang</u></p>
+        <p style="text-align: center;">Jabatan</p>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+name: BA Hasil Presentasi Envelope 1
+form: $/ap/tender/models/report/report_form3_fields.yaml
+modelClass: Ap\Tender\Models\Tender
+defaultRedirect: ap/tender/reportform3
+create:
+    redirect: 'ap/tender/reportform3/update/:id'
+    redirectClose: ap/tender/reportform3
+update:
+    redirect: ap/tender/reportform3/update/:id
+    redirectClose: ap/tender/reportform3/update/:id
+customMessages:
+    flashUpdate: Email Berhasil dikirim

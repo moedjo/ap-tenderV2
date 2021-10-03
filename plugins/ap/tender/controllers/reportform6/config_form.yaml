@@ -1,0 +1,12 @@
+name: BA Hasil Penilaian Envelope I
+form: $/ap/tender/models/report/fields.yaml
+modelClass: Ap\Tender\Models\Report
+defaultRedirect: ap/tender/reportform6
+create:
+    redirect: 'ap/tender/reportform6/update/:id'
+    redirectClose: ap/tender/reportform6
+update:
+    redirect: ap/tender/reportform6/update/:id
+    redirectClose: ap/tender/reportform6/update/:id
+customMessages:
+    flashUpdate: Email Berhasil dikirim

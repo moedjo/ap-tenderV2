@@ -16,6 +16,10 @@ class Report extends Model
         parent::__construct();
     }
 
+    public $rules = [
+        'email_to' => 'required'
+    ];
+
     /**
      * @var string The database table used by the model.
      */

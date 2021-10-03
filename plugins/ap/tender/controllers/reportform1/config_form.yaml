@@ -1,0 +1,12 @@
+name: BA Negosiasi Langsung
+form: $/ap/tender/models/report/report_form1_fields.yaml
+modelClass: Ap\Tender\Models\TenderTenant
+defaultRedirect: ap/tender/reportform1
+create:
+    redirect: 'ap/tender/reportform1/update/:id'
+    redirectClose: ap/tender/reportform1
+update:
+    redirect: ap/tender/reportform1/update/:id
+    redirectClose: ap/tender/reportform1/update/:id
+customMessages:
+    flashUpdate: Email Berhasil dikirim

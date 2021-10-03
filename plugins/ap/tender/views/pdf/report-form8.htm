@@ -1,0 +1,191 @@
+title = "Berita Acara Hasil Penilaian Dokumen Envelope II"
+layout = "ap.tender::pdf.layouts.layout"
+description = "Berita Acara Hasil Penilaian Dokumen Envelope II"
+size = "a4"
+orientation = "portrait"
+==
+
+<div class="report-title">
+    <p>BERITA ACARA</p>
+    <p>HASIL KLARIFIKASI DAN NEGOSIASI SELEKSI MITRA USAHA {{ tender_tenant.tender.name }}</p>
+    <p><u>DI BANDAR UDARA INTERNASIONAL {{ tender_tenant.tender.airport.name }}</u></p>
+</div>
+<div class="report-number">
+    NOMOR : BA.........../KB.07/2020/SEL.SUB
+</div>
+<div class="report-content">
+    <p>&nbsp;</p>
+    <p>
+        Pada hari ini {{ hari }}, tanggal {{ 'now'|date('d') }}, bulan {{ 'now'|date('F') }}, tahun
+        {{ 'now'|date('Y') }} ({{ 'now'|date('d-m-Y') }}), telah dilakukan klarifikasi dan negosiasi oleh Final Negotiation Team Seleksi Mitra Usaha di Bandar Udara
+        Internasional {{ tender_tenant.tender.airport.name }}, kepada Peserta Seleksi PT/CV {{ tender_tenant.tenant.name }} yang dihadiri oleh:
+    </p>
+    <p>&nbsp;</p>
+    <ol type="1">
+        <li>
+            <p>
+                Final Negotiation Team Seleksi Mitra Usaha di Bandar Udara {{ tender_tenant.tender.airport.name }} dari
+                PT Angkasa Pura I (Persero) diwakili oleh:
+            </p>
+            <ol type="a">
+                <li>
+                    <span class="sp-250">Koordinator merangkap anggota</span>
+                    <span class="sp-10">:</span>
+                    <span>...............................</span>
+                </li>
+                <li>
+                    <span class="sp-250">Anggota</span>
+                    <span class="sp-10">:</span>
+                    <span>...............................</span>
+                </li>
+                <li>
+                    <span class="sp-250">Anggota</span>
+                    <span class="sp-10">:</span>
+                    <span>...............................</span>
+                </li>
+                <li>
+                    <span class="sp-250">Anggota</span>
+                    <span class="sp-10">:</span>
+                    <span>...............................</span>
+                </li>
+            </ol>
+        </li>
+        <li>
+            <p>PT/CV {{ tender_tenant.tenant.name }} diwakili oleh:</p>
+            <p>
+                <span class="sp-250">Direktur/Pejabat yang diberikan kuasa</span>
+                <span class="sp-10">:</span>
+                <span>{{ tender_tenant.tenant.pic_full_name }}</span>
+            </p>
+        </li>
+    </ol>
+    <p>
+        Pelaksanaan klarifikasi dan negosiasi dibuka oleh Koordinator Assessment Team – Final Negotiation.
+    </p>
+    <p>
+        Sebelum klarifikasi dan negosiasi dimulai telah disampaikan bahwa yang akan diklarifikasi adalah meliputi hal – hal atau
+        angka yang tidak jelas dan berbeda antara satu dokumen dan dokumen lainnya yang telah diserahkan kepada PT Angkasa Pura
+        I (Persero). Apabila hal tersebut tidak diklarifikasi, maka dapat mengakibatkan hilangnya status perusahaan sebagai
+        calon pemenang. Klarifikasi juga dilakukan sehubungan dengan syarat – syarat kontrak, sales right, service level
+        agreement dan tata cara pembayaran serta pinalti.
+    </p>
+    <p>
+        Sedangkan negosiasi dilakukan terhadap komitmen finansial dan hal – hal yang masih dapat dilakukan berdasarkan
+        kesepakatan para pihak dan dalam rangka mendapatkan hasil kerja sama yang optimal.
+    </p>
+    <ol type="A">
+        <li>
+            <p>Hasil klarifikasi adalah sebagai berikut:</p>
+            <ol type="1">
+                <li>
+                    <p><i>Sales Right</i> sesuai dengan <i>Request for Proposal</i> (RfP) adalah sebagai berikut:</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nama perusahaan</th>
+                                <th>Paket</th>
+                                <th>Luas (m2)</th>
+                                <th>Sales Right</th>
+                                <th>Brand</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{ tender_tenant.tenant.name }}</td>
+                                <td>{{ tender_tenant.tender.package }}</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
+                <li>Jangka waktu kerja sama berdasarkan <i>Request for Proposal</i> (RfP) dan Dokumen Penawaran adalah selama .... tahun;</li>
+                <li>
+                    <p>Komitmen finansial yang disampaikan pada saat klarifikasi:</p>
+                    <ol type="a">
+                        <li>
+                            Tarif sewa ruang sebesar Rp ……………./m2/bulan dengan kenaikan tiap tahun sebesar inflasi + 2% sesuai dengan besaran tarif
+                            yang ditetapkan dalam <i>Request for Proposal</i> (RfP);
+                        </li>
+                        <li>
+                            <p>Persentase Revenue Share dan MGRS/Pax adalah :</p>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2">Tahun Finansial</th>
+                                        <th rowspan="2">Turn Over</th>
+                                        <th colspan="2">Revenue Share</th>
+                                        <th rowspan="2">MGRS Per Pax</th>
+                                    </tr>
+                                    <tr>
+                                        <th>% RS</th>
+                                        <th>Nilai (Rp)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>I</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>II</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </li>
+                        <li>
+                            <p>Kewajiban finansial:</p>
+                            <ol type="a">
+                                <li>Sewa ruang dibayarkan sekaligus 1 (satu) tahun di muka;</li>
+                                <li>
+                                    Revenue Share dibayarkan setiap bulan dengan membandingkan antara Revenue Share berdasarkan Turn Over dengan Minimum
+                                    Guaranteed Revenue Share, mana yang lebih tinggi;
+                                </li>
+                                <li>
+                                    <p>
+                                        Security Deposit dibayar secara tunai sebesar 6 (enam) bulan Minimum Guaranteed Revenue Share, tahap pertama sebesar 20%
+                                        dari total Security Deposit selambat – lambatnya 2 (dua) hari kerja setelah penetapan pemenang, dan tahap kedua sebesar
+                                        80% dari total Security Deposit selambat – lambatnya 14 (empat belas) hari kerja setelah diterbitkannya izin prinsip.
+                                    </p>
+                                    <p>
+                                        Security Deposit dapat digunakan untuk melunasi sebagian atau total kewajiban Mitra Usaha kepada PT Angkasa Pura I
+                                        (Persero) dan Mitra Usaha diwajibkan menyetor kembali Security Deposit yang dicairkan sehingga besarannya tetap sama dan
+                                        tidak berkurang dari nilai yang sudah disepakati tiap tahun dalam kontrak;
+                                    </p>
+                                    <p>
+                                        Dalam hal Mitra Usaha mengajukan permohonan pengakhiran Perjanjian dipercepat sebelum jangka waktu Perjanjian berakhir
+                                        yang bukan disebabkan karena wanprestasi
+                                        PT Angkasa Pura I (Persero), maka Security Deposit milik Mitra Usaha akan dicairkan dengan ketentuan sebagai berikut:
+                                    </p>
+                                    <ol type="1)">
+                                        <li>
+                                            Sebesar 35% (tiga puluh lima persen) dari total nilai Security Deposit, dikembalikan kepada Mitra Usaha setelah dikurangi
+                                            kewajiban pembayaran yang masih dimiliki oleh Mitra Usaha;
+                                        </li>
+                                        <li>
+                                            Sebesar 65% (enam puluh lima persen) dari total nilai Security Deposit, menjadi milik PT Angkasa Pura I (Persero) sebagai
+                                            penalty kepada Mitra Usaha (sebagai ganti kerugian atas potensi kehilangan keuntungan (opportunity loss) yang dialami PT
+                                            Angkasa Pura I (Persero)).
+                                        </li>
+                                    </ol>
+                                </li>
+                                <li>
+                                    Dana pemasaran sebesar 0,5% dari pendapatan kotor (Turn Over) yang dibayarkan setiap bulan bersamaan dengan pembayaran
+                                    Revenue Share (apabila diberlakukan dana pemasaran).
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </li>
+    </ol>
+</div>

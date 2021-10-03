@@ -1,6 +1,6 @@
-list: $/ap/tender/models/report/columns.yaml
-modelClass: Ap\Tender\Models\Report
-title: Report Kualifikasi
+list: $/ap/tender/models/report/report_form3_columns.yaml
+modelClass: Ap\Tender\Models\Tender
+title: BA Hasil Presentasi Envelope 1
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
 showCheckboxes: false
@@ -9,4 +9,4 @@ toolbar:
     buttons: list_toolbar
     search:
         prompt: 'backend::lang.list.search_prompt'
-recordUrl: 'ap/tender/reportqualification/update/:id'
+recordUrl: 'ap/tender/reportform3/update/:id'

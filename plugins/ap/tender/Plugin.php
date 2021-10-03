@@ -28,6 +28,7 @@ class Plugin extends PluginBase
     public function registerMailTemplates()
     {
         return [
+            'ap.tender::mail.report',
             'ap.tender::mail.tenant-short-form',
             'ap.tender::mail.tenant-pre-register',
             'ap.tender::mail.tenant-register',
@@ -40,7 +41,7 @@ class Plugin extends PluginBase
 
 
             'ap.tender::mail.tender-tenant-clarification',
-            
+
             'ap.tender::mail.tender-tenant-envelope1_approve',
             'ap.tender::mail.tender-tenant-envelope1_reject',
             'ap.tender::mail.tender-tenant-envelope2_approve',
@@ -73,6 +74,18 @@ class Plugin extends PluginBase
     {
         return [
             'ap.tender::pdf.tenant-reject',
+
+            // report template
+            'ap.tender::pdf.report-form1',
+            'ap.tender::pdf.report-form2',
+            'ap.tender::pdf.report-form3',
+            'ap.tender::pdf.report-form4',
+            'ap.tender::pdf.report-form5',
+            'ap.tender::pdf.report-form6',
+            'ap.tender::pdf.report-form7',
+            'ap.tender::pdf.report-form8',
+            'ap.tender::pdf.report-form9',
+            'ap.tender::pdf.report-statement',
         ];
     }
 
@@ -81,6 +94,7 @@ class Plugin extends PluginBase
     {
         return [
             'ap.tender::pdf.layouts.default',
+            'ap.tender::pdf.layouts.layout',
         ];
     }
 
@@ -91,7 +105,7 @@ class Plugin extends PluginBase
                 'Ap\Tender\Models\Tenant'
             ];
         });
-    
+
     }
 }
 

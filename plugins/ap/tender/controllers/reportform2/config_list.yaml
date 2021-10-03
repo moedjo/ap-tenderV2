@@ -1,0 +1,12 @@
+list: $/ap/tender/models/report/report_form1_columns.yaml
+modelClass: Ap\Tender\Models\TenderTenant
+title: Penetapan Pemenang
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: false
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'ap/tender/reportform2/update/:id'

@@ -1,0 +1,10 @@
+name: Report Pernyataan Management
+form: $/ap/tender/models/report/statement_fields.yaml
+modelClass: Ap\Tender\Models\TenantLegal
+defaultRedirect: ap/tender/reportstatements
+create:
+    redirect: 'ap/tender/reportstatements/update/:id'
+    redirectClose: ap/tender/reportstatements
+update:
+    redirect: ap/tender/reportstatements/update/:id
+    redirectClose: ap/tender/reportstatements/update/:id
