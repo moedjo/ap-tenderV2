@@ -55,6 +55,8 @@ class TenderTenant extends Model
 
         'doc_envelope1_score' => ['System\Models\File', 'public' => false],
         'doc_envelope2_score' => ['System\Models\File', 'public' => false],
+
+        'doc_negotiation' => ['System\Models\File', 'public' => false],
     ];
 
     public $attachMany = [
@@ -87,7 +89,7 @@ class TenderTenant extends Model
                 'is_envelope1' => 'required',
                 'envelope1_score' => 'required',
                 'doc_envelope1_score' => 'required',
-                'doc_envelope1_others' => 'required',
+                // 'doc_envelope1_others' => 'required',
             ];
         }
 
@@ -98,7 +100,7 @@ class TenderTenant extends Model
                 'is_envelope2' => 'required',
                 'envelope2_score' => 'required',
                 'doc_envelope2_score' => 'required',
-                'doc_envelope2_others' => 'required',
+                // 'doc_envelope2_others' => 'required',
             ];
         }
 
@@ -128,6 +130,14 @@ class TenderTenant extends Model
                 'invite_negotiation_hour_start' => 'required|date',
                 'invite_negotiation_hour_end' => 'required|date|after:invite_hour_start',
                 'invite_negotiation_description' => 'required',
+
+            ];
+        }
+
+        if ($this->status == 'last_negotiation') {
+            $this->rules = [
+                'doc_negotiation' => 'required',
+                'last_total_price' => 'required',
 
             ];
         }

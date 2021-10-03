@@ -226,7 +226,7 @@ navigation:
                 permissions:
                     - ap_tender_is_tenant
             tender-winnerselection:
-                label: 'ap.tender::lang.tenderwinnerselection.title'
+                label: 'Pemilihan Calon Pemenang'
                 url: ap/tender/tenderwinnerselections
                 icon: icon-star-o
                 permissions:
@@ -245,9 +245,6 @@ navigation:
         icon: icon-file
         permissions:
             - ap_tender_is_admin_tender
-            - ap_tender_is_finance
-            - ap_tender_is_legal
-            - ap_tender_is_commercial
         sideMenu:
             report-qualification:
                 label: Kualifikasi
@@ -255,15 +252,9 @@ navigation:
                 icon: icon-file
                 permissions:
                     - ap_tender_is_admin_tender
-                    - ap_tender_is_finance
-                    - ap_tender_is_legal
-                    - ap_tender_is_commercial
             report-businessoffer:
-                label: Penawaran Bisnis
+                label: 'Penawaran Bisnis'
                 url: ap/tender/reportbusinessoffer
                 icon: icon-file
                 permissions:
                     - ap_tender_is_admin_tender
-                    - ap_tender_is_finance
-                    - ap_tender_is_legal
-                    - ap_tender_is_commercial

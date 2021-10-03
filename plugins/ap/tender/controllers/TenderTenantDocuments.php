@@ -47,12 +47,12 @@ class TenderTenantDocuments extends Controller
                 $fields['doc_offers']->disabled = false;
                 $fields['doc_offers']->config['disabled'] = false;
 
-                $fields['envelope1_score']->hidden = true;
-                $fields['doc_envelope1_score']->hidden = true;
-                $fields['doc_envelope1_others']->hidden = true;
-                $fields['envelope2_score']->hidden = true;
-                $fields['doc_envelope2_score']->hidden = true;
-                $fields['doc_envelope2_others']->hidden = true;
+                // $fields['envelope1_score']->hidden = true;
+                // $fields['doc_envelope1_score']->hidden = true;
+                // $fields['doc_envelope1_others']->hidden = true;
+                // $fields['envelope2_score']->hidden = true;
+                // $fields['doc_envelope2_score']->hidden = true;
+                // $fields['doc_envelope2_others']->hidden = true;
             } else if ($model->status == 'envelope1_reject') {
                 $this->vars['disabled_documents'] = false;
             } else if ($model->status == 'envelope2_reject') {
@@ -68,6 +68,10 @@ class TenderTenantDocuments extends Controller
                 $fields['last_total_price']->config['disabled'] = false;
 
                 $fields['last_total_price']->hidden = false;
+
+                $fields['doc_negotiation']->disabled = false;
+                $fields['doc_negotiation']->config['disabled'] = false;
+                $fields['doc_negotiation']->hidden = false;
             }
         }
     }

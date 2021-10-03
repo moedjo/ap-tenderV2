@@ -27,6 +27,7 @@ tabs:
         'Bukti Pembayaran': icon-user-circle
         'Klarifikasi': icon-user-circle
         'Negosiasi': icon-user-circle
+        'Penawaran Akhir': icon-user-circle
     fields:
         _section2:
             label: 'Upload Dokumen Penawaran Bisnis (Envelope I)'
@@ -122,14 +123,14 @@ tabs:
             label: 'Persetujuan Envelope II'
             type: radio
             options:
-                0: Tidak Setuju
-                1: Setuju
+                0: Tidak Lolos
+                1: Lolos
             tab:  'Envelope II'
             permissions: ap_tender_is_admin_envelope2
             disabled: true
         envelope2_score:
-            label: 'Total Score (Penilaian)'
-            placeholder: 'Total Score (Penilaian)'
+            label: 'Total Kontribusi (Penilaian)'
+            placeholder: 'Total Kontribusi (Penilaian)'
             type: number
             span: left
             tab:  'Envelope II'
@@ -182,8 +183,8 @@ tabs:
             type: radio
             tab: 'Bukti Pembayaran'
             options:
-                0: Tidak Setuju
-                1: Setuju
+                0: Tidak Lolos
+                1: Lolos
             permissions: ap_tender_is_finance
             disabled: true
 
@@ -319,4 +320,28 @@ tabs:
             tab: 'Negosiasi'
             permissions: ap_tender_is_admin_tender
             disabled: true
+        last_total_price:
+            label: 'Total Harga Penawaran Akhir (include PPn)'
+            placeholder: 'Total Harga Penawaran Akhir (include PPn)'
+            type: number
+            span: left
+            tab: 'Penawaran Akhir'
+            disabled: true
+            permissions: ap_tender_is_admin_tender
+        doc_negotiation:
+            label: 'Berita Acara Negosiasi'
+            type: fileupload
+            mode: file
+            useCaption: true
+            fileTypes: pdf
+            mimeTypes: pdf
+            maxFilesize: 40
+            attachOnUpload: true
+            span: left
+            required: true
+            commentAbove: 'File (*pdf - max 40MB)'
+            disabled: true
+            tab: 'Penawaran Akhir'
+            disabled: true
+            permissions: ap_tender_is_admin_tender
             
