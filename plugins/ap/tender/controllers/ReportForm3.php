@@ -62,7 +62,7 @@ class ReportForm3 extends Controller
         $this->vars['recordId'] = $this->params[0];
         $this->vars['widget'] = $widget;
         $this->vars['file_name'] = $pdf['pdf_file_name'];
-        $this->vars['file'] = url('storage/app/uploads') . '/' . $pdf['pdf_file_name'];
+        $this->vars['file'] = url('storage/app/uploads/report') . '/' . $pdf['pdf_file_name'];
 
         return $this->makePartial('send_email');
     }
@@ -84,7 +84,7 @@ class ReportForm3 extends Controller
         );
         $data['hari'] = $dayList[$day];
 
-        $storagePath =  storage_path('app/uploads/');
+        $storagePath =  storage_path('app/uploads/report/');
         $pdf_file_name =  $name = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '_', "BERITA ACARA HASIL PRESENTASI ENVELOPE I"))) . '_' . date('H') . '.pdf';
         $pdf_file_name_directory =  $storagePath . $pdf_file_name;
 
@@ -97,8 +97,6 @@ class ReportForm3 extends Controller
 
     public function onSendEmail()
     {
-        $this->asExtension('FormController')->update_onSave(post('record_id'));
-
         $data = post();
 
         Mail::send('ap.tender::mail.report', $data, function ($message) use ($data) {
@@ -107,19 +105,19 @@ class ReportForm3 extends Controller
             $email_bcc = [];
 
             if (!empty($data['email_to']))
-            $email_to = explode(',', $data['email_to']);
+                $email_to = explode(',', preg_replace('/\s+/','',$data['email_to']));
 
             if (!empty($data['email_cc']))
-            $email_cc = explode(',', $data['email_cc']);
+                $email_cc = explode(',', preg_replace('/\s+/', '', $data['email_cc']));
 
             if (!empty($data['email_bcc']))
-            $email_bcc = explode(',', $data['email_bcc']);
+                $email_bcc = explode(',', preg_replace('/\s+/', '', $data['email_bcc']));
 
             $message->to($email_to);
             $message->cc($email_cc);
             $message->bcc($email_bcc);
             $message->subject('Berita Acara Hasil Presentasi Envelope I');
-            $message->attach(storage_path('app/uploads/') . post('file_name'));
+            $message->attach(storage_path('app/uploads/report/') . post('file_name'));
         });
 
         return $this->listRefresh();
