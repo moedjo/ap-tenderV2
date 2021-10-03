@@ -252,81 +252,56 @@ navigation:
                 icon: icon-file
                 permissions:
                     - ap_tender_is_admin_tender
-<<<<<<< HEAD
             report-businessoffer:
                 label: 'Penawaran Bisnis'
                 url: ap/tender/reportbusinessoffer
-=======
-                    - ap_tender_is_finance
-                    - ap_tender_is_legal
-                    - ap_tender_is_commercial
+                permissions:
+                    - ap_tender_is_admin_tender
             report-form2:
                 label: Penetapan Pemenang
                 url: ap/tender/reportform2
                 icon: icon-file
                 permissions:
                     - ap_tender_is_admin_tender
-                    - ap_tender_is_finance
-                    - ap_tender_is_legal
-                    - ap_tender_is_commercial
             report-form3:
                 label: BA Hasil Presentasi Envelope I
                 url: ap/tender/reportform3
                 icon: icon-file
                 permissions:
                     - ap_tender_is_admin_tender
-                    - ap_tender_is_finance
-                    - ap_tender_is_legal
-                    - ap_tender_is_commercial
             report-form4:
                 label: Pernyataan Top Management
                 url: ap/tender/reportform4
                 icon: icon-file
                 permissions:
                     - ap_tender_is_admin_tender
-                    - ap_tender_is_finance
-                    - ap_tender_is_legal
-                    - ap_tender_is_commercial
             report-form5:
                 label: BA Hasil Kualifikasi
                 url: ap/tender/reportform5
                 icon: icon-file
                 permissions:
                     - ap_tender_is_admin_tender
-                    - ap_tender_is_finance
-                    - ap_tender_is_legal
-                    - ap_tender_is_commercial
             report-form6:
                 label: BA Hasil Penilaian Envelope I
                 url: ap/tender/reportform6
                 icon: icon-file
                 permissions:
                     - ap_tender_is_admin_tender
-                    - ap_tender_is_finance
-                    - ap_tender_is_legal
-                    - ap_tender_is_commercial
             report-form7:
                 label: BA Hasil Penilaian Envelope II
                 url: ap/tender/reportform7
                 icon: icon-file
                 permissions:
                     - ap_tender_is_admin_tender
-                    - ap_tender_is_finance
-                    - ap_tender_is_legal
-                    - ap_tender_is_commercial
             report-form8:
                 label: BA Negosiasi Final
                 url: ap/tender/reportform8
                 icon: icon-file
                 permissions:
                     - ap_tender_is_admin_tender
-                    - ap_tender_is_finance
-                    - ap_tender_is_legal
-                    - ap_tender_is_commercial
             report-form9:
                 label: Izin Prinsip
                 url: ap/tender/reportform9
->>>>>>> 2ebd475c1578b0e7f80780e3a78a6d9abe704ed8
                 icon: icon-file
                 permissions:
                     - ap_tender_is_admin_tender
