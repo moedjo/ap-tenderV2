@@ -64,7 +64,7 @@ class ReportForm2 extends Controller
         $this->vars['file_name'] = $pdf['pdf_file_name'];
         $this->vars['file'] = url('storage/app/uploads') . '/' . $pdf['pdf_file_name'];
 
-        return $this->makePartial('sendEmail');
+        return $this->makePartial('sendemail');
     }
 
     protected function savePdf($model)
