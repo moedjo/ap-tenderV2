@@ -1,0 +1,22 @@
+fields:
+    notif_payment_rfp:
+        label: 'Notifikasi Pembayaran RFP'
+        span: full
+        type: text
+        default: false
+        commentAbove: Separasi Koma untuk Email
+    notif_submit_document:
+        label: 'Notifikasi Submit Dokument'
+        span: full
+        type: text
+        commentAbove: Separasi Koma untuk Email
+    notif_last_negotiation:
+        label: 'Notifikasi Negosiasi Akhir'
+        span: full
+        type: text
+        commentAbove: Separasi Koma untuk Email
+    notif_registration:
+        label: 'Notifikasi Registrasi Tenant'
+        span: full
+        type: text
+        commentAbove: Separasi Koma untuk Email

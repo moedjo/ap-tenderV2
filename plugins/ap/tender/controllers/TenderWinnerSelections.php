@@ -54,6 +54,6 @@ class TenderWinnerSelections extends Controller
     }
 
     public function formBeforeSave($model){
-        $model->status = 'winner_selection';
+        $model->status = 'winner_selection'; 
     }
 }

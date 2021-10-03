@@ -11,9 +11,7 @@ class Plugin extends PluginBase
     {
     }
 
-    public function registerSettings()
-    {
-    }
+
 
     public function registerListColumnTypes()
     {
@@ -55,6 +53,9 @@ class Plugin extends PluginBase
             'ap.tender::mail.tender-tenant-winner_candidate',
             'ap.tender::mail.tender-tenant-winner_publish',
             'ap.tender::mail.tender-tenant-winner',
+            'ap.tender::mail.tender-tenant-submit_document',
+            'ap.tender::mail.tender-tenant-last_negotiation',
+          
         ];
     }
 
@@ -106,6 +107,23 @@ class Plugin extends PluginBase
             ];
         });
 
+    }
+
+
+    public function registerSettings()
+    {
+        return [
+            'settings' => [
+                'label'       => 'Notifikasi',
+                'description' => 'Atur Notifikasi',
+                'category'    => 'Angkasa Pura',
+                'icon'        => 'icon-cog',
+                'class'       => 'Ap\Tender\Models\Settings',
+                'order'       => 500,
+                'keywords'    => '',
+                'permissions' => ['ap_tender_access_settings']
+            ]
+        ];
     }
 }
 

@@ -4,6 +4,7 @@ namespace Ap\Tender\Models;
 
 use Illuminate\Support\Facades\Mail;
 use Model;
+use PHPUnit\Framework\Constraint\IsEmpty;
 
 /**
  * Model
@@ -151,9 +152,16 @@ class TenderTenant extends Model
         $tenant = $this->tenant;
         Mail::queue('ap.tender::mail.tender-tenant-registration', $this->toArray(), function ($message) use ($tenant) {
 
-            $message->to($tenant->email, $tenant->name);
-        });
+            $notif = Settings::get('notif_registration');
 
+            trace_log('ini email->'.$notif);
+            if (isset($notif)) {
+                $ccs =  explode(";", $notif);
+                $message->to($tenant->email, $tenant->name)->cc($ccs);
+            } else {
+                $message->to($tenant->email, $tenant->name);
+            }
+        });
     }
 
     public function afterUpdate()
@@ -162,7 +170,7 @@ class TenderTenant extends Model
         if ($this->status !== $this->original['status']) {
 
 
-            if($this->status == 'last_negotiation'){
+            if ($this->status == 'last_negotiation') {
                 return;
             }
 
@@ -171,24 +179,30 @@ class TenderTenant extends Model
 
             $tenant = $this->tenant;
 
-            Mail::queue('ap.tender::mail.tender-tenant-'.$this->status, $this->toArray(), function ($message) use ($tenant) {
-
-                $message->to($tenant->email, $tenant->name);
+            Mail::queue('ap.tender::mail.tender-tenant-' . $this->status, $this->toArray(), function ($message) use ($tenant) {
+                $notif = Settings::get('notif_' . $tenant->status);
+                if (isset($notif)) {
+                    $ccs =  explode(";", $notif);
+                    $message->to($tenant->email, $tenant->name)->cc($ccs);
+                } else {
+                    $message->to($tenant->email, $tenant->name);
+                }
             });
-
-
         }
     }
 
-    public function getNameAttribute(){
+    public function getNameAttribute()
+    {
         return $this->tenant->name;
     }
 
-    public function getDescriptionAttribute(){
-        return "Rp " . number_format( $this->last_total_price, 0, ",", ".");;
+    public function getDescriptionAttribute()
+    {
+        return "Rp " . number_format($this->last_total_price, 0, ",", ".");;
     }
 
-    public function scopeTenantWinner($query, $tender){
+    public function scopeTenantWinner($query, $tender)
+    {
 
         $ids = $tender->tenant_winners->pluck('id');
         return $query->whereHas('tenant', function ($query) use ($ids) {

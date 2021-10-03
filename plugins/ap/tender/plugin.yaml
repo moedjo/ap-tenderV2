@@ -226,7 +226,7 @@ navigation:
                 permissions:
                     - ap_tender_is_tenant
             tender-winnerselection:
-                label: 'Pemilihan Calon Pemenang'
+                label: ' Pemilihan Calon Pemenang'
                 url: ap/tender/tenderwinnerselections
                 icon: icon-star-o
                 permissions:
@@ -250,11 +250,6 @@ navigation:
                 label: BA Negosiasi Langsung
                 url: ap/tender/reportform1
                 icon: icon-file
-                permissions:
-                    - ap_tender_is_admin_tender
-            report-businessoffer:
-                label: 'Penawaran Bisnis'
-                url: ap/tender/reportbusinessoffer
                 permissions:
                     - ap_tender_is_admin_tender
             report-form2:
