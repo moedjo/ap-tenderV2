@@ -1,0 +1,19 @@
+columns:
+    id:
+        label: 'ID Registrasi'
+        type: number
+    tenant[name]:
+        label: 'Nama Tenant'
+        type: text
+    tenant[pic_full_name]:
+        label: 'PIC Tenant'
+        type: text
+    tenant[pic_email]:
+        label: 'PIC Email'
+        type: text
+    pic_phone_number:
+        label: 'ap.tender::lang.tenant.pic_phone_number'
+        type: text
+    status:
+        label: 'Status Tenant'
+        type: text

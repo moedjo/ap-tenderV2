@@ -1,5 +1,5 @@
 columns:
-    tenant[id]:
+    id:
         label: 'ID Registrasi'
         type: text
     tenant[name]:
