@@ -344,7 +344,7 @@ class ImportExportController extends ControllerBehavior
 
         $columns = $this->makeListColumns($columnConfig);
 
-        $columns = $this->importExportExtendImportColumns($columns);
+        $columns = $this->controller->importExportExtendImportColumns($columns);
 
         if (empty($columns)) {
             throw new ApplicationException(Lang::get('backend::lang.import_export.empty_import_columns_error'));
@@ -577,7 +577,7 @@ class ImportExportController extends ControllerBehavior
 
         $columns = $this->makeListColumns($columnConfig);
 
-        $columns = $this->importExportExtendExportColumns($columns);
+        $columns = $this->controller->importExportExtendExportColumns($columns);
 
         if (empty($columns)) {
             throw new ApplicationException(Lang::get('backend::lang.import_export.empty_export_columns_error'));

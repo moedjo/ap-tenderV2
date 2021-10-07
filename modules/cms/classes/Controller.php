@@ -1523,7 +1523,7 @@ class Controller
     }
 
     /**
-     * Searches the layout and page components by a partial file
+     * findComponentByPartial searches the layout and page components by a partial file
      * @param string $partial
      * @return ComponentBase The component object, if found
      */
@@ -1545,9 +1545,7 @@ class Controller
     }
 
     /**
-     * Set the component context manually, used by Components when calling renderPartial.
-     * @param ComponentBase $component
-     * @return void
+     * setComponentContext manually, used by Components when calling renderPartial.
      */
     public function setComponentContext(ComponentBase $component = null)
     {
@@ -1555,13 +1553,17 @@ class Controller
     }
 
     /**
-     * Sets component property values from partial parameters.
+     * setComponentPropertiesFromParams from routers and partial parameters.
      * The property values should be defined as {{ param }}.
      * @param ComponentBase $component The component object.
      * @param array $parameters Specifies the partial parameters.
      */
     protected function setComponentPropertiesFromParams($component, $parameters = [])
     {
+        if ($component instanceof \Cms\Components\ViewBag) {
+            return;
+        }
+
         $properties = $component->getProperties();
         $routerParameters = $this->router->getParameters();
 

@@ -3,6 +3,7 @@
 use Lang;
 use Request;
 use Backend\Behaviors\RelationController;
+use Illuminate\Database\Eloquent\Relations\HasOneOrMany;
 use ApplicationException;
 
 /**
@@ -238,30 +239,19 @@ trait HasManageMode
         $saveData = $this->manageWidget->getSaveData();
         $sessionKey = $this->deferredBinding ? $this->relationGetSessionKey(true) : null;
         $parentModel = $this->relationObject->getParent();
-
-        // In special cases, has one/many will require a foreign key set
-        // to pass any constraints imposed by the database. This emulates
-        // the "create" method on the relation object.
-        $isSavable = $parentModel->exists &&
-            in_array($this->relationType, ['hasOne', 'hasMany', 'morphOne', 'morphMany']);
-
-        // The make() method will assign the necessary foreign attributes
-        $newModel = $isSavable
-            ? $this->relationObject->make()
-            : $this->relationModel;
+        $newModel = $this->relationModel;
 
         $modelsToSave = $this->prepareModelsToSave($newModel, $saveData);
         foreach ($modelsToSave as $modelToSave) {
             $modelToSave->save(null, $this->manageWidget->getSessionKey());
         }
 
-        // No need to add relationships that have already been associated
-        if (!$isSavable) {
+        // No need to add relationships that have a valid assocation via HasOneOrMany::make
+        if (!$this->relationObject instanceof HasOneOrMany || !$parentModel->exists) {
             $this->relationObject->add($newModel, $sessionKey);
         }
 
-        // Belongs to relations won't save when using add() so
-        // it should occur if the conditions are right.
+        // Belongs To won't save when using add() so it should occur if the conditions are right.
         if ($this->relationType === 'belongsTo' && $parentModel->exists && !$this->deferredBinding) {
             $parentModel->save();
         }
@@ -381,11 +371,8 @@ trait HasManageMode
                 $this->relationObject->add($model, $sessionKey);
                 $this->viewWidget->setFormValues($model->attributes);
 
-                /*
-                 * Belongs to relations won't save when using add() so
-                 * it should occur if the conditions are right.
-                 */
-                if (!$this->deferredBinding && $this->relationType === 'belongsTo') {
+                // Belongs To won't save when using add() so it should occur if the conditions are right.
+                if ($this->relationType === 'belongsTo' && !$this->deferredBinding) {
                     $parentModel = $this->relationObject->getParent();
                     if ($parentModel->exists) {
                         $parentModel->save();

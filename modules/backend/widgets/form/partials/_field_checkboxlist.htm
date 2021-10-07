@@ -8,7 +8,7 @@
 <!-- Checkbox List -->
 <?php if ($readOnly && $field->value): ?>
 
-    <div class="field-checkboxlist">
+    <div class="field-checkboxlist control-disabled">
         <?php $index = 0; foreach ($fieldOptions as $value => $option): ?>
             <?php
                 $index++;
@@ -23,7 +23,7 @@
                     name="<?= $field->getName() ?>[]"
                     value="<?= e($value) ?>"
                     disabled="disabled"
-                    checked="checked">
+                    checked="checked" />
 
                 <label class="storm-icon-pseudo" for="<?= $checkboxId ?>">
                     <?= e(trans($option[0])) ?>

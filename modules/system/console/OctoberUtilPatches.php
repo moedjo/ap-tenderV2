@@ -69,7 +69,7 @@ trait OctoberUtilPatches
 
         $failedRows = [];
         Db::table('deferred_bindings')->whereNull('slave_id')->orderBy('id')
-            ->chunk(100, function($bindings) use (&$failedRows) {
+            ->chunkById(100, function($bindings) use (&$failedRows) {
                 foreach ($bindings as $binding) {
                     if (is_null($binding->str_slave_id)) {
                         // Field is already null
@@ -145,7 +145,7 @@ trait OctoberUtilPatches
 
         $failedRows = [];
         Db::table('system_files')->whereNull('attachment_id')->orderBy('id')
-            ->chunk(100, function($files) use (&$failedRows) {
+            ->chunkById(100, function($files) use (&$failedRows) {
                 foreach ($files as $file) {
                     if (is_null($file->str_attachment_id)) {
                         // Field is already null

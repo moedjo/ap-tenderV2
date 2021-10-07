@@ -11,7 +11,7 @@
 .permissioneditor table td p.comment{margin-top:5px;margin-bottom:0}
 .permissioneditor table td p.comment:empty{display:none}
 .permissioneditor table tr:hover td{background:rgba(215,225,234,0.7)}
-.permissioneditor table tr:hover td.permission-name{color:#fff !important}
+.permissioneditor table tr:hover td.permission-name{color:#000 !important}
 .permissioneditor table th:first-child,
 .permissioneditor table td:first-child{padding-left:20px}
 .permissioneditor table th:last-child,

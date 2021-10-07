@@ -222,6 +222,10 @@ class AuthManager extends RainAuthManager
      */
     protected function validateUserModel($user)
     {
+        if ($user->deleted_at !== null) {
+            return false;
+        }
+
         if (!$user instanceof $this->userModel) {
             return false;
         }

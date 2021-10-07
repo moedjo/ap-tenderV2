@@ -5,6 +5,7 @@ use Flash;
 use Request;
 use Form as FormHelper;
 use Backend\Classes\ControllerBehavior;
+use Illuminate\Database\Eloquent\Relations\HasOneOrMany;
 use October\Rain\Database\Model;
 use ApplicationException;
 
@@ -332,7 +333,9 @@ class RelationController extends ControllerBehavior
         $this->relationName = $field;
         $this->relationType = $this->model->getRelationType($field);
         $this->relationObject = $this->model->{$field}();
-        $this->relationModel = $this->relationObject->getRelated();
+        $this->relationModel = $this->relationObject instanceof HasOneOrMany
+            ? $this->relationObject->make()
+            : $this->relationObject->getRelated();
 
         $this->manageId = post('manage_id');
         $this->foreignId = post('foreign_id');
