@@ -10,7 +10,7 @@ toolbar:
     search:
         prompt: 'backend::lang.list.search_prompt'
 recordUrl: 'ap/tender/airports/update/:id'
-recordOnClick: "$.popup({ handler: 'onUpdateForm', extraData: {record_id: ':id' } })"
+# recordOnClick: "$.popup({ handler: 'onUpdateForm', extraData: {record_id: ':id' } })"
 structure:
     showTree: false
     showReorder: true

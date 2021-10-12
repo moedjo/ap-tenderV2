@@ -1,6 +1,14 @@
 <ol>
-<li>Transfer ke nomor rekening <b><?= $model->tender->airport->account_number; ?></b> atas nama 
-    <b><?= $model->tender->airport->account_name; ?></b> di <b><?= $model->tender->airport->bank_name; ?></b> </li>
+<li>Transfer ke nomor rekening  
+    <ul>
+        <?php foreach($model->tender->airport->banks as $bank): ?>
+
+        <li> <b><?= $bank['bank_name'] ?> <?= $bank['account_number'] ?> atas nama <?= $bank['account_name'] ?></b></li>
+
+        <?php endforeach; ?>
+    </ul>
+
+</li>
 <li>Upload bukti pembayaran</li>
 <li>Pembayaran akan diverifikasi oleh Tim Pengadaan Angkasa Pura I</li>
 <li>Calon Mitra Usaha dapat mengunduh file RFP pada halaman ini</li>

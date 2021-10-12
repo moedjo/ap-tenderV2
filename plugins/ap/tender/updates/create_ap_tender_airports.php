@@ -23,6 +23,8 @@ class CreateApTenderAirports extends Migration
 
             $table->string('bank_name')->nullable();
 
+            $table->json('banks')->nullable();
+
             $table->integer('sort_order')->default(0);
         });
     }

@@ -28,6 +28,10 @@ class Airport extends Model
         'description' => 'required'
     ];
 
+    protected $jsonable = [
+        'banks',
+    ];
+
 
     public $morphMany = [
         'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']

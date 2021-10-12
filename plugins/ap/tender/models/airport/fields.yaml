@@ -4,24 +4,30 @@ fields:
         span: full
         placeholder: 'ap.tender::lang.airport.name'
         type: text
-    account_number:
-        label: 'Nomor Akun'
-        span: full
-        placeholder: 'Nomor Akun'
-        type: text
-    account_name:
-        label: 'Nama Akun'
-        span: full
-        placeholder: 'Nama Akun'
-        type: text
-    bank_name:
-        label: 'Nama Bank'
-        span: full
-        placeholder: 'Nama Bank'
-        type: text
     description:
         label: 'ap.tender::lang.airport.description'
         size: small
         span: full
         placeholder: 'ap.tender::lang.airport.description'
         type: textarea
+    banks:
+        label: 'Daftar Bank'
+        span: full
+        type: repeater
+        form:
+            fields:
+                account_number:
+                    label: 'Nomor Akun'
+                    span: full
+                    placeholder: 'Nomor Akun'
+                    type: text
+                account_name:
+                    label: 'Nama Akun'
+                    span: full
+                    placeholder: 'Nama Akun'
+                    type: text
+                bank_name:
+                    label: 'Nama Bank'
+                    span: full
+                    placeholder: 'Nama Bank'
+                    type: text
