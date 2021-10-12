@@ -16,9 +16,14 @@ fields:
         type: repeater
         form:
             fields:
+                bank_name:
+                    label: 'Nama Bank'
+                    span: left
+                    placeholder: 'Nama Bank'
+                    type: text
                 account_number:
                     label: 'Nomor Akun'
-                    span: full
+                    span: right
                     placeholder: 'Nomor Akun'
                     type: text
                 account_name:
@@ -26,8 +31,4 @@ fields:
                     span: full
                     placeholder: 'Nama Akun'
                     type: text
-                bank_name:
-                    label: 'Nama Bank'
-                    span: full
-                    placeholder: 'Nama Bank'
-                    type: text
+                
