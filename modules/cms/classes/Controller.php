@@ -160,11 +160,7 @@ class Controller
         /*
          * Maintenance mode
          */
-        if (
-            MaintenanceSetting::isConfigured() &&
-            MaintenanceSetting::get('is_enabled', false) &&
-            !BackendAuth::getUser()
-        ) {
+        if (MaintenanceSetting::isEnabled()) {
             if (!Request::ajax()) {
                 $this->setStatusCode(503);
             }

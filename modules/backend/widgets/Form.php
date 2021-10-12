@@ -179,6 +179,13 @@ class Form extends WidgetBase
      */
     public function render($options = [])
     {
+        $this->defineFormFields();
+        $this->applyFiltersFromModel();
+        $this->prepareVars();
+
+        /*
+         * Custom options
+         */
         if (isset($options['preview'])) {
             $this->previewMode = $options['preview'];
         }
@@ -215,8 +222,6 @@ class Form extends WidgetBase
             $targetPartial = $section ? 'section-container' : 'form-container';
         }
 
-        $this->prepareVars();
-
         /*
          * Force preview mode on all widgets
          */
@@ -241,6 +246,7 @@ class Form extends WidgetBase
      */
     public function renderField($field, $options = [])
     {
+        $this->defineFormFields();
         $this->prepareVars();
 
         if (is_string($field)) {
@@ -304,8 +310,6 @@ class Form extends WidgetBase
      */
     protected function prepareVars()
     {
-        $this->defineFormFields();
-        $this->applyFiltersFromModel();
         $this->vars['sessionKey'] = $this->getSessionKey();
         $this->vars['outsideTabs'] = $this->allTabs->outside;
         $this->vars['primaryTabs'] = $this->allTabs->primary;
@@ -380,6 +384,7 @@ class Form extends WidgetBase
          * Set the form variables and prepare the widget
          */
         $this->setFormValues($saveData);
+        $this->applyFiltersFromModel();
         $this->prepareVars();
 
         /**
@@ -410,7 +415,6 @@ class Form extends WidgetBase
                     continue;
                 }
 
-                /** @var FormWidgetBase $fieldObject */
                 $fieldObject = $this->allFields[$field];
                 $result['#' . $fieldObject->getId('group')] = $this->makePartial('field', ['field' => $fieldObject]);
             }
@@ -1067,6 +1071,14 @@ class Form extends WidgetBase
     }
 
     /**
+     * hasFieldValue determines if the field value is found in the data.
+     */
+    protected function hasFieldValue($field, $data = null): bool
+    {
+        return $field->getValueFromData($data, FormField::NO_SAVE_DATA) !== FormField::NO_SAVE_DATA;
+    }
+
+    /**
      * Looks up the field value.
      * @param mixed $field
      * @param mixed $data
@@ -1161,7 +1173,9 @@ class Form extends WidgetBase
     {
         $this->defineFormFields();
 
-        $this->applyFiltersFromModel($saveData = $this->getSaveDataInternal());
+        $saveData = $this->getSaveDataInternal();
+
+        $this->applyFiltersFromModel($saveData);
 
         return $this->cleanSaveDataInternal($saveData);
     }
@@ -1192,9 +1206,7 @@ class Form extends WidgetBase
              */
             $parts = HtmlHelper::nameToArray($name);
             if (($value = $this->dataArrayGet($data, $parts)) !== null) {
-                /*
-                 * Number fields should be converted to integers
-                 */
+                // Convert number to float
                 if ($field->type === 'number') {
                     $value = !strlen(trim($value)) ? null : (float) $value;
                 }
@@ -1207,9 +1219,14 @@ class Form extends WidgetBase
          * Give widgets an opportunity to process the data.
          */
         foreach ($this->formWidgets as $field => $widget) {
+            /*
+             * Handle HTML array, eg: item[key][another]
+             */
             $parts = HtmlHelper::nameToArray($field);
-            $widgetValue = $widget->getSaveValue($this->dataArrayGet($result, $parts));
-            $this->dataArraySet($result, $parts, $widgetValue);
+            if (($value = $this->dataArrayGet($data, $parts)) !== null) {
+                $widgetValue = $widget->getSaveValue($value);
+                $this->dataArraySet($result, $parts, $widgetValue);
+            }
         }
 
         return $result;
@@ -1246,7 +1263,9 @@ class Form extends WidgetBase
             }
 
             foreach ($this->allFields as $field) {
-                $field->value = $this->getFieldValue($field, $applyData);
+                if ($this->hasFieldValue($field, $applyData)) {
+                    $field->value = $this->getFieldValue($field, $applyData);
+                }
             }
         }
 
