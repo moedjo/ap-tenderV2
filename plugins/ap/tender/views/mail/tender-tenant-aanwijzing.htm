@@ -1,0 +1,13 @@
+subject = "Undangan Negosiasi Tender"
+layout = "ap.tender::mail.layouts.default"
+description = "Undangan Negosiasi Tender"
+==
+
+
+Yth. Bapak/Ibu  {{tenant.business_entity.name}} {{tenant.name}}
+
+Tanggal	:	{{invite_date|date("m/d/Y")}} {{invite_hour_start|date("H:i")}}  
+PIC     :   {{invite_pic_phone_number}}  
+Tempat	:	{{invite_location}}  
+Detail	:	{{invite_description|md}}  
+-----

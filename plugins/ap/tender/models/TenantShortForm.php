@@ -18,7 +18,7 @@ class TenantShortForm extends Tenant
         'collaborate' => 'required',
         'name' => 'required',
         'address' => 'required',
-        'fax_number' => 'required|digits_between:7,13',
+        'fax_number' => 'digits_between:7,13',
         'contact_full_name' => 'required',
         'email' => 'required|email',
         'npwp' => 'required|digits_between:1,15',

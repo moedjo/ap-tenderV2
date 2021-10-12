@@ -491,7 +491,7 @@
     'tendertenantwinner' => [
         'title'     => 'Penetapan Pemenang',
         'field_winner' => 'Pemenang Tender',
-        'field_spk' => 'Upload dokumen SPK',
+        'field_spk' => 'Upload dokumen Surat Penetapan Pemenang',
         'field_spk_comment' => 'File (*pdf - max 40MB)',
         'confirm_winner' => 'Apakah anda yakin untuk submit pemenang?',
         'publish' => 'Publish',
