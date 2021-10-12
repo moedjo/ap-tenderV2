@@ -212,7 +212,7 @@
 
         'commercial_section1' => 'Pengalaman Perusahaan',
 
-        'finance_section1' => 'Kemampuan Keuangan',
+        'finance_section1' => 'Kemampuan Keuangan 3 Tahun Terakhir',
         'finance_section2' => 'Dokumen Keuangan',
 
         'summary_section1' => 'Kesimpulan',
@@ -238,7 +238,7 @@
         'verification_commercials' => 'Verifikasi Data Commercial',
 
         'name' => 'Nama Perusahaan',
-        'npwp' => 'NPWP Tahun Terakhir',
+        'npwp' => 'NPWP',
         'collaborate' => 'Telah Bekerjasama dengan Angkasa Pura I sebelumnya?',
         'address' => 'Alamat Perusahaan',
         'konsorsium_comment' => 'Perusahaan Konsorsium atau Non Konsorsium ',
@@ -308,7 +308,7 @@
 
 
         'doc_legal_cooperation' => 'Surat Keterangan Bukti Kerja Sama',
-        'doc_legal_akta' => 'Akta Perusahaan',
+        'doc_legal_akta' => 'Akta Pendirian dan Akte Perubahan terakhir',
         'doc_legal_nib' =>'NIB / Surat Izin Usaha',
         'doc_legal_domisili' => 'Surat Keterangan Domisili tahun terakhir',
         'doc_legal_npwp' => 'Nomor Pokok Wajib Pajak (NPWP)',
@@ -332,7 +332,7 @@
 
 
 
-        'doc_finance_sppkp' => ' Surat Pengukuhan Pengusaha Kena Pajak (SPPKP) / Surat Pernyataan Non Pengusaha Kena Pajak (Non PKP) dan Surat pemberitahuan pajak daerah (SPTPD)',
+        'doc_finance_sppkp' => ' Surat Pengukuhan Pengusaha Kena Pajak (SPPKP) / Surat Pernyataan Non Pengusaha Kena Pajak (Non PKP) / Surat pemberitahuan pajak daerah (SPTPD)',
         'doc_finance_spt' => 'SPT Pajak Tahunan',
         'doc_finance_blp' => 'Bukti Lapor Pajak & Bukti Setor pajak (Jika Kurang Bayar)',
         'doc_finance_bsp' => 'Bukti Setoran Pajak',
@@ -374,18 +374,18 @@
         'singular' => 'Pengalaman Perusahaan',
 
         'business_field' => 'Kategori Pengalaman',
-        'name' => 'Nama Pengalaman',
+        'name' => 'Nama Gerai - Lokasi Detail',
         'region_area' => 'Luas Area (m2)',
         'region' => 'Wilayah',
         'region_text' => 'Wilayah Luar Negri',
-        'total_income' => 'Total Pendapatan (Rp.)',
+        'total_income' => 'Total Omzet Tahun Terakhir (Rp.)',
         'cooperation_period' => 'Masa Kerjasama',
         'operational_hour' => 'Jam Operasional',
         'cooperation_period_start' => 'Masa Kerjasama (Awal)',
         'cooperation_period_end' => 'Masa Kerjasama (Akhir)',
         'operational_hour_start' => 'Jam Operasional (Awal)',
         'operational_hour_end' => 'Jam Operasional (Akhir)',
-        'doc_experience' => 'Dokumen Perjanjian',
+        'doc_experience' => 'Dokumen Pendukung',
         'doc_experience_comment' => 'File (*pdf - max 40MB)',
 
         'create' => 'Buat Pengalaman Perusahaan',

@@ -14,7 +14,7 @@ fields:
     npwp:
         label: 'ap.tender::lang.tenant.npwp'
         type: text
-        placeholder: 'ap.tender::lang.tenant.name'
+        placeholder: 'ap.tender::lang.tenant.npwp'
         span: right
     collaborate:
         label: 'ap.tender::lang.tenant.collaborate'
@@ -42,14 +42,6 @@ fields:
     _section2:
         label: 'ap.tender::lang.tenant.short_form_section2'
         type: section
-    verification_office:
-        label: 'ap.tender::lang.tenant.verification_office'
-        type: recordfinder
-        list: ~/plugins/ap/tender/models/office/columns.yaml
-        recordsPerPage: 10
-        nameFrom: name
-        descriptionFrom: description
-        span: left
     address:
         label: 'ap.tender::lang.tenant.address'
         type: textarea
@@ -89,3 +81,14 @@ fields:
         label: 'ap.tender::lang.tenant.contact_phone_number'
         type: text
         span: right
+    _sectionA:
+        label: 'Verifikasi Data'
+        type: section
+    verification_office:
+        label: 'ap.tender::lang.tenant.verification_office'
+        type: recordfinder
+        list: ~/plugins/ap/tender/models/office/columns.yaml
+        recordsPerPage: 10
+        nameFrom: name
+        descriptionFrom: description
+        span: left

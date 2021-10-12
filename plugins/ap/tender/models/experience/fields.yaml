@@ -4,6 +4,7 @@ fields:
         span: left
         type: text
         placeholder: 'ap.tender::lang.experience.name'
+        commentAbove: 'Contoh : Resto ABC - Mall Citra'
     business_field:
         label: 'ap.tender::lang.experience.business_field'
         span: right
@@ -76,4 +77,4 @@ fields:
         maxFilesize: 40
         attachOnUpload: true
         span: left
-        commentAbove: 'ap.tender::lang.experience.doc_experience_comment'
+        commentAbove: 'Kontrak, Surat Pernyataan Kepemilikan Gerai, dll (*pdf - max 40MB)'

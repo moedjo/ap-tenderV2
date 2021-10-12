@@ -5,6 +5,6 @@ fields:
         comment: 'ap.tender::lang.tenant.summary_section1_comment'
     summaries:
         context: [update]
-        label: 'ap.tender::lang.tenant.summary'
+        label: 'Dengan ini saya menyatakan hal-hal sebagai berukut :'
         type: checkboxlist
         required: true

@@ -76,6 +76,7 @@ fields:
         placeholder: 'ap.tender::lang.tenant.website'
         type: text
         span: right
+        commentAbove: 'contoh: https://test.com atau http://test.com'
     directors:
         label: 'ap.tender::lang.tenant.directors'
         disabled: true
@@ -178,19 +179,25 @@ fields:
         mode: relation
         nameFrom: name
         span: full
-    business_activity:
-        label: 'ap.tender::lang.tenant.business_activity'
-        disabled: true
-        placeholder: 'ap.tender::lang.tenant.business_activity'
-        type: text
-        span: left
+        customTags: false
+    # business_activity:
+    #     label: 'ap.tender::lang.tenant.business_activity'
+    #     disabled: true
+    #     placeholder: 'ap.tender::lang.tenant.business_activity'
+    #     type: text
+    #     span: left
     business_kbli:
         label: 'ap.tender::lang.tenant.business_kbli'
-        disabled: true
-        placeholder: 'ap.tender::lang.tenant.business_kbli'
-        type: taglist
-        separator: comma
         span: full
+        type: repeater
+        commentAbove: 'Format : kode KBLI - Nama Kategori. Contoh : 56103 - Kedai Makanan'
+        form:
+            fields:
+                name:
+                    placeholder: '(Format : kode KBLI - Nama Kategori. Contoh : 56103 - Kedai Makanan)'
+                    label: 'ap.tender::lang.tenant.business_kbli'
+                    span: full
+                    type: text
     _section6:
         label: 'ap.tender::lang.tenant.legal_section6'
         type: section      
