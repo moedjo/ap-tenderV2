@@ -230,7 +230,7 @@
         'finances' => 'Kemampuan Keuangan',
         'verification' => 'Verifikasi Tenant',
         'invite' => 'Undangan Tenant',
-        'on_verification' => 'Evaluasi',
+        'on_verification' => 'Evaluasi RFQ',
         'on_last_verification' => 'Evaluasi Tahap Akhir',
         'off_last_verification' => 'Klarifikasi Tahap Akhir',
         'off_verification' => 'Klarifikasi',
