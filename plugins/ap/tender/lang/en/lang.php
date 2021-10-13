@@ -333,7 +333,7 @@
 
 
 
-        'doc_finance_sppkp' => ' Surat Pengukuhan Pengusaha Kena Pajak (SPPKP) / Surat Pernyataan Non Pengusaha Kena Pajak (Non PKP) / Surat pemberitahuan pajak daerah (SPTPD)',
+        'doc_finance_sppkp' => 'SPPKP atau Surat Pernyataan Non Pengusaha Kena Pajak (non PKP) dan Surat Pemberitahuan Pajak Daerah',
         'doc_finance_spt' => 'SPT Pajak Tahunan',
         'doc_finance_blp' => 'Bukti Lapor Pajak & Bukti Setor pajak (Jika Kurang Bayar)',
         'doc_finance_bsp' => 'Bukti Setoran Pajak',
