@@ -1,0 +1,6 @@
+scopes:
+  tender:
+    label: 'Tender'
+    modelClass: Ap\Tender\Models\Tender
+    conditions: tender_id in (:filtered)
+    nameFrom: name

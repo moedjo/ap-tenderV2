@@ -1,0 +1,10 @@
+documents:
+    label: 'Dokumen Pendukung Lainnya'
+    manage:
+        form: $/ap/tender/models/document/fields.yaml
+        list: $/ap/tender/models/document/columns.yaml
+    view:
+        list: $/ap/tender/models/document/columns.yaml
+        toolbarButtons: create|delete
+
+

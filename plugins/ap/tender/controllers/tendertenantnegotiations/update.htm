@@ -8,16 +8,16 @@
 
 <div class="form-buttons">
     <div class="loading-indicator-container">
-       
-        <?php if($formModel->status == 'aanwijzing' || $formModel->status == 'envelope1_reject' || $formModel->status == 'envelope2_reject' || $formModel->status == 'submit_negotiation'): ?>
+
+    
         <button type="button btn-default" data-request="onSave" 
             data-hotkey="ctrl+enter, cmd+enter" data-load-indicator="<?= e(trans('ap.tender::lang.button.next')) ?>"
             class="btn btn-primary pull-right" data-request-confirm="<?= e(trans('ap.tender::lang.button.confirm_send')) ?>">
             <?= e(trans('ap.tender::lang.button.submit')) ?>
         </button>
-        <?php endif ?>
+        
 
-        <a href="<?= Backend::url('ap/tender/tendertenantdocuments') ?>" class="btn btn-warning">
+        <a href="<?= Backend::url('ap/tender/tendertenantnegotiations') ?>" class="btn btn-warning">
             <?= e(trans('ap.tender::lang.button.back')) ?>
         </a>
     </div>
@@ -28,7 +28,7 @@
 <p class="flash-message static error">
     <?= e(trans($this->fatalError)) ?>
 </p>
-<p><a href="<?= Backend::url('ap/tender/tenders') ?>" class="btn btn-default">
+<p><a href="<?= Backend::url('ap/tender/tendertenantnegotiations') ?>" class="btn btn-default">
         <?= e(trans('backend::lang.form.return_to_list')) ?>
     </a></p>
 <?php endif ?>

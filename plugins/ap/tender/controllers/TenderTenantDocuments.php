@@ -5,6 +5,7 @@ namespace Ap\Tender\Controllers;
 use Ap\Tender\Models\Tenant;
 use Backend\Classes\Controller;
 use BackendMenu;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\View;
 
@@ -62,16 +63,19 @@ class TenderTenantDocuments extends Controller
 
                 $fields['doc_offers']->disabled = false;
                 $fields['doc_offers']->config['disabled'] = false;
-            } else if ($model->status == 'negotiation') {
+            } else if ($model->status == 'submit_negotiation') {
 
-                $fields['last_total_price']->disabled = false;
-                $fields['last_total_price']->config['disabled'] = false;
+                if($model->expired_negotiation->setTime(0, 0)->gte(Carbon::now())){
 
-                $fields['last_total_price']->hidden = false;
+                    $fields['last_total_price']->disabled = false;
+                    $fields['last_total_price']->config['disabled'] = false;
 
-                $fields['doc_negotiation']->disabled = false;
-                $fields['doc_negotiation']->config['disabled'] = false;
-                $fields['doc_negotiation']->hidden = false;
+                    $fields['last_total_price']->hidden = false;
+
+                    $fields['doc_negotiation']->disabled = false;
+                    $fields['doc_negotiation']->config['disabled'] = false;
+                    $fields['doc_negotiation']->hidden = false;
+                }
             }
         }
     }
@@ -112,7 +116,7 @@ class TenderTenantDocuments extends Controller
             $model->status = 'submit_document';
         }
 
-        if ($model->status == 'negotiation') {
+        if ($model->status == 'submit_negotiation') {
 
             $model->status = 'last_negotiation';
         }

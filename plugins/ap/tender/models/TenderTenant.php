@@ -69,6 +69,8 @@ class TenderTenant extends Model
 
     protected $jsonable = [];
 
+    protected $dates = ['expired_negotiation'];
+
 
     public function beforeValidate()
     {
@@ -129,8 +131,15 @@ class TenderTenant extends Model
                 'invite_negotiation_pic_phone_number' => 'required|digits_between:10,13',
                 'invite_negotiation_date' => 'required|date|after:today',
                 'invite_negotiation_hour_start' => 'required|date',
-                'invite_negotiation_hour_end' => 'required|date|after:invite_hour_start',
+                'invite_negotiation_hour_end' => 'required|date|after:invite_negotiation_hour_start',
                 'invite_negotiation_description' => 'required',
+
+            ];
+        }
+
+        if ($this->status == 'submit_negotiation') {
+            $this->rules = [
+                'expired_negotiation' => 'required|date|after:today',
 
             ];
         }

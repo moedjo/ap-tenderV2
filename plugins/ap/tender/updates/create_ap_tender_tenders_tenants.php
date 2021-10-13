@@ -53,6 +53,9 @@ class CreateApTenderTendersTenants extends Migration
             $table->timestamp('invite_negotiation_hour_end')->nullable();
 
 
+            $table->timestamp('expired_negotiation')->nullable();
+
+
             $table->unsignedDecimal('envelope1_score',15,2)->nullable();
             $table->unsignedDecimal('envelope2_score',15,2)->nullable();
 
