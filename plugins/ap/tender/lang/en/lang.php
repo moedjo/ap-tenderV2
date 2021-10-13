@@ -398,7 +398,7 @@
 
         'year' => 'Tahun',
         'total_income' => 'Total Penghasilan (Rp.)',
-        'doc_finance' => 'Dokumen Keuangan Audited Wajar',
+        'doc_finance' => 'Laporan Keuangan',
         'doc_finance_comment' => 'File (*pdf - max 40MB)',
     ],
 
