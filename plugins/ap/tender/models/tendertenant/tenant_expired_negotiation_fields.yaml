@@ -1,0 +1,37 @@
+fields:
+    _section1:
+        label: 'ap.tender::lang.tender.section1'
+        type: section
+    tender[name]:
+        label: 'ap.tender::lang.tender.name'
+        placeholder: 'ap.tender::lang.tender.name'
+        type: text
+        span: left
+        disabled: true
+    tender[business_field]:
+        label: 'ap.tender::lang.tender.business_field'
+        type: relation
+        span: right
+        disabled: true
+    tenant[name]:
+        label: 'Nama Tenant'
+        placeholder: 'ap.tender::lang.tender.pic_full_name'
+        type: text
+        span: left
+        disabled: true
+tabs:
+    defaultTab: 'Batas Negosiasi Akhir'
+    icons:
+        'Batas Negosiasi Akhir': icon-user
+    fields:
+        _section2:
+            label: 'Batas Negosiasi Akhir'
+            type: section
+            tab: 'Batas Negosiasi Akhir'
+        expired_negotiation:
+            label: 'Batas Negosiasi Akhir'
+            placeholder: 'Batas Negosiasi Akhir'
+            type: datepicker
+            mode: date
+            span: left
+            tab: 'Batas Negosiasi Akhir'

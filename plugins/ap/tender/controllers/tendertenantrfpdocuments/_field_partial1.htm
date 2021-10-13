@@ -1,11 +1,13 @@
 <ol>
 <li>Transfer ke nomor rekening  
     <ul>
+        <?php if(isset($model->tender->airport->banks)): ?>
         <?php foreach($model->tender->airport->banks as $bank): ?>
 
         <li> <b><?= $bank['bank_name'] ?> <?= $bank['account_number'] ?> atas nama <?= $bank['account_name'] ?></b></li>
 
         <?php endforeach; ?>
+        <?php endif; ?>
     </ul>
 
 </li>

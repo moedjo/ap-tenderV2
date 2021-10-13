@@ -1,0 +1,7 @@
+name: 'ap.tender::lang.tender.singular'
+form: $/ap/tender/models/tendertenant/tenant_expired_negotiation_fields.yaml
+modelClass: Ap\Tender\Models\TenderTenant
+defaultRedirect: ap/tender/tendertenantnegotiations
+update:
+    redirect: ap/tender/tendertenantnegotiations
+    redirectClose: ap/tender/tendertenantnegotiations

@@ -239,6 +239,12 @@ navigation:
                 permissions:
                     - ap_tender_is_admin_tender
                     - ap_tender_access_tenders
+            expired-nego:
+                label: 'Batas Negosiasi Akhir'
+                url: ap/tender/tendertenantnegotiations
+                icon: icon-thumbs-o-up
+                permissions:
+                    - ap_tender_is_admin_tender
     reporting:
         label: Reporting
         url: ap/tender/reports
@@ -247,55 +253,55 @@ navigation:
             - ap_tender_is_admin_tender
         sideMenu:
             report-form1:
-                label: BA Negosiasi Langsung
+                label: 'BA Negosiasi Langsung'
                 url: ap/tender/reportform1
                 icon: icon-file
                 permissions:
                     - ap_tender_is_admin_tender
             report-form2:
-                label: Penetapan Pemenang
+                label: 'Penetapan Pemenang'
                 url: ap/tender/reportform2
                 icon: icon-file
                 permissions:
                     - ap_tender_is_admin_tender
             report-form3:
-                label: BA Hasil Presentasi Envelope I
+                label: 'BA Hasil Presentasi Envelope I'
                 url: ap/tender/reportform3
                 icon: icon-file
                 permissions:
                     - ap_tender_is_admin_tender
             report-form4:
-                label: Pernyataan Top Management
+                label: 'Pernyataan Top Management'
                 url: ap/tender/reportform4
                 icon: icon-file
                 permissions:
                     - ap_tender_is_admin_tender
             report-form5:
-                label: BA Hasil Kualifikasi
+                label: 'BA Hasil Kualifikasi'
                 url: ap/tender/reportform5
                 icon: icon-file
                 permissions:
                     - ap_tender_is_admin_tender
             report-form6:
-                label: BA Hasil Penilaian Envelope I
+                label: 'BA Hasil Penilaian Envelope I'
                 url: ap/tender/reportform6
                 icon: icon-file
                 permissions:
                     - ap_tender_is_admin_tender
             report-form7:
-                label: BA Hasil Penilaian Envelope II
+                label: 'BA Hasil Penilaian Envelope II'
                 url: ap/tender/reportform7
                 icon: icon-file
                 permissions:
                     - ap_tender_is_admin_tender
             report-form8:
-                label: BA Negosiasi Final
+                label: 'BA Negosiasi Final'
                 url: ap/tender/reportform8
                 icon: icon-file
                 permissions:
                     - ap_tender_is_admin_tender
             report-form9:
-                label: Izin Prinsip
+                label: 'Izin Prinsip'
                 url: ap/tender/reportform9
                 icon: icon-file
                 permissions:
