@@ -151,6 +151,7 @@ class Tenant extends Model
         'doc_legal_sk' => ['System\Models\File', 'public' => false],
         'doc_legal_konsorsium' => ['System\Models\File', 'public' => false],
         'doc_legal_cv' => ['System\Models\File', 'public' => false],
+        'doc_legal_other' => ['System\Models\File', 'public' => false],
 
 
         'doc_finance_sppkp' => ['System\Models\File', 'public' => false],
@@ -170,7 +171,6 @@ class Tenant extends Model
         'doc_legal_akta' => ['System\Models\File', 'public' => false],
         'doc_legal_nib' => ['System\Models\File', 'public' => false],
         'doc_legal_domisili' => ['System\Models\File', 'public' => false],
-        'doc_legal_other' => ['System\Models\File', 'public' => false],
     ];
 
     protected $jsonable = [
