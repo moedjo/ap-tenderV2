@@ -2,6 +2,7 @@ columns:
     name:
         label: 'ap.tender::lang.tenant.name'
         type: text
+        searchable: true
     business_fields:
         label: 'ap.tender::lang.tenant.business_fields'
         type: text
@@ -9,9 +10,12 @@ columns:
     pic_full_name:
         label: 'ap.tender::lang.tenant.pic_full_name'
         type: text
+        searchable: true
     pic_phone_number:
         label: 'ap.tender::lang.tenant.pic_phone_number'
         type: text
+        searchable: true
     status:
         label: 'ap.tender::lang.tenant.status'
         type: text
+        searchable: true
