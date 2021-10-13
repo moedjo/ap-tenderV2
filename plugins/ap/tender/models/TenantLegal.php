@@ -38,7 +38,7 @@ class TenantLegal extends Tenant
         'doc_legal_akta' => 'required',
         'doc_legal_nib' => 'required',
         // 'doc_legal_tdp' => 'required',
-        'doc_legal_domisili' => 'required',
+        // 'doc_legal_domisili' => 'required',
         'doc_legal_npwp' => 'required',
         'doc_legal_ktp' => 'required',
         'doc_legal_sk' => '',
