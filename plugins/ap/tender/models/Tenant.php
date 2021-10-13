@@ -149,7 +149,6 @@ class Tenant extends Model
         'doc_legal_npwp' => ['System\Models\File', 'public' => false],
         'doc_legal_ktp' => ['System\Models\File', 'public' => false],
         'doc_legal_sk' => ['System\Models\File', 'public' => false],
-        'doc_legal_other' => ['System\Models\File', 'public' => false],
         'doc_legal_konsorsium' => ['System\Models\File', 'public' => false],
         'doc_legal_cv' => ['System\Models\File', 'public' => false],
 
@@ -157,12 +156,12 @@ class Tenant extends Model
         'doc_finance_sppkp' => ['System\Models\File', 'public' => false],
         'doc_finance_spt' => ['System\Models\File', 'public' => false],
         'doc_finance_blp' => ['System\Models\File', 'public' => false],
-        
+
         'doc_finance_sklp' => ['System\Models\File', 'public' => false],
         'doc_finance_other' => ['System\Models\File', 'public' => false],
         'doc_finance_collaborate' => ['System\Models\File', 'public' => false],
 
-        
+
         'doc_finance_fiskal' => ['System\Models\File', 'public' => false],
         'doc_finance_registered' => ['System\Models\File', 'public' => false],
     ];
@@ -171,6 +170,7 @@ class Tenant extends Model
         'doc_legal_akta' => ['System\Models\File', 'public' => false],
         'doc_legal_nib' => ['System\Models\File', 'public' => false],
         'doc_legal_domisili' => ['System\Models\File', 'public' => false],
+        'doc_legal_other' => ['System\Models\File', 'public' => false],
     ];
 
     protected $jsonable = [
@@ -199,7 +199,7 @@ class Tenant extends Model
     // public function scopeTenderTenantInvites($query, $tender)
     // {
     //     $tender_tenants = $tender->tender_tenants;
-        
+
     //     return $query
     //         ->where('id', $tender->id)
     //         ->whereHas('tender_tenants', function ($query) use ($tender_tenants) {

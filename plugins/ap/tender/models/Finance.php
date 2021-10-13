@@ -8,7 +8,7 @@ use Model;
 class Finance extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    
+
 
     /**
      * @var string The database table used by the model.
@@ -28,4 +28,13 @@ class Finance extends Model
     public $attachOne = [
         'doc_finance' => ['System\Models\File', 'public' => false]
     ];
+
+    public function getYearOptions()
+    {
+        $year = [];
+        for ($x = date('Y'); $x >= date('Y', strtotime('-10YEARS')); $x--) {
+            array_push($year, $x);
+        }
+        return $year;
+    }
 }
