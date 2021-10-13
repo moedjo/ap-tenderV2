@@ -187,7 +187,7 @@ fields:
                     type: text
     _section6:
         label: 'ap.tender::lang.tenant.legal_section6'
-        type: section      
+        type: section
     pic_full_name:
         label: 'ap.tender::lang.tenant.pic_full_name'
         placeholder: 'ap.tender::lang.tenant.pic_full_name'
@@ -262,17 +262,6 @@ fields:
         maxFilesize: 40
         attachOnUpload: true
         span: right
-    doc_legal_domisili:
-        label: 'ap.tender::lang.tenant.doc_legal_domisili'
-        commentAbove: 'ap.tender::lang.tenant.doc_legal_domisili_comment'
-        type: fileupload
-        mode: file
-        useCaption: false
-        fileTypes: pdf
-        mimeTypes: pdf
-        maxFilesize: 40
-        attachOnUpload: true
-        span: left
     doc_legal_npwp:
         label: 'ap.tender::lang.tenant.doc_legal_npwp'
         commentAbove: 'ap.tender::lang.tenant.doc_legal_npwp_comment'

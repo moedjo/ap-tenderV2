@@ -170,7 +170,6 @@ class Tenant extends Model
     public $attachMany = [
         'doc_legal_akta' => ['System\Models\File', 'public' => false],
         'doc_legal_nib' => ['System\Models\File', 'public' => false],
-        'doc_legal_domisili' => ['System\Models\File', 'public' => false],
     ];
 
     protected $jsonable = [
@@ -194,6 +193,20 @@ class Tenant extends Model
     public function getDisplayBusinessFieldsAttribute()
     {
         return array_pluck($this->business_fields->toArray(),'name');
+    }
+
+    public function getStatusLabelAttribute()
+    {
+        switch ($this->status) {
+            case "register":
+                return 'Belum Upload Doc';
+                break;
+            case "short_form":
+                return "Upload Doc Belum Lengkap";
+                break;
+            default:
+                return $this->status;
+        }
     }
 
     // public function scopeTenderTenantInvites($query, $tender)
