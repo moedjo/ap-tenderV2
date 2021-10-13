@@ -2,7 +2,8 @@ fields:
     year:
         label: 'ap.tender::lang.finance.year'
         span: left
-        type: number
+        type: dropdown
+        emptyOption: '--- Pilih Tahun ---'
     doc_finance:
         label: 'ap.tender::lang.finance.doc_finance'
         type: fileupload

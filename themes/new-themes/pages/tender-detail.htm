@@ -131,11 +131,7 @@ function onStart() {
                     <thead class="thead-dark">
                         <tr>
                             <th>Name</th>
-                            <th>Phone Number</th>
-                            <th>Email</th>
-                            <th>PIC</th>
-                            <th>PIC Phone Number</th>
-                            <th>PIC Email</th>
+                            <th>Address</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -150,11 +146,7 @@ function onStart() {
                         {% for tenant in shortlistedTenant %}
                         <tr>
                             <td>{{ tenant.tenant.name }}</td>
-                            <td>{{ tenant.tenant.phone_number }}</td>
-                            <td>{{ tenant.tenant.email }}</td>
-                            <td>{{ tenant.tenant.pic_full_name }}</td>
-                            <td>{{ tenant.tenant.pic_phone_number }}</td>
-                            <td>{{ tenant.tenant.pic_email }}</td>
+                            <td>{{ tenant.tenant.address }}</td>
                         </tr>
                         {% endfor %}
 

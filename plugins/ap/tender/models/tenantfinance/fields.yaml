@@ -2,11 +2,6 @@ fields:
     _section1:
         label: 'ap.tender::lang.tenant.finance_section1'
         type: section
-    npwp:
-        label: 'ap.tender::lang.tenant.npwp'
-        placeholder: 'ap.tender::lang.tenant.npwp'
-        type: text
-        span: left
     finances:
         label: 'ap.tender::lang.tenant.finances'
         span: full
