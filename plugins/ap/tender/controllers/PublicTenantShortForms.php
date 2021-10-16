@@ -55,12 +55,18 @@ class PublicTenantShortForms extends Controller
         $tenant = Tenant::where('token', $token)
                 ->orderBy('updated_at', 'DESC')
                 ->first();
-                
         if (isset($tenant)) {
             if ($tenant->status == 'short_form') {
-                Session::put('tenant_id', $tenant->id);
-                Flash::success(e(trans('ap.tender::lang.tenant.token_activation_success')));
-                return Redirect::to("backend/ap/tender/publictenantlegals/update/$tenant->id");
+                $last_update = strtotime(date('Y-m-d', strtotime($tenant->updated_at)));
+                $exp_date = strtotime("+1days", $last_update);
+
+                if ($exp_date >= strtotime(date('Y-m-d'))) {
+                    Session::put('tenant_id', $tenant->id);
+                    Flash::success(e(trans('ap.tender::lang.tenant.token_activation_success')));
+                    return Redirect::to("backend/ap/tender/publictenantlegals/update/$tenant->id");
+                }  else {
+                    Flash::error(e(trans('ap.tender::lang.global.invalid_token')));
+                }
             } else {
                 Flash::error(e(trans('ap.tender::lang.global.invalid_token')));
             }

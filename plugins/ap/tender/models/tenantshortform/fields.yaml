@@ -84,11 +84,11 @@ fields:
     _sectionA:
         label: 'Verifikasi Data'
         type: section
-    verification_office:
-        label: 'ap.tender::lang.tenant.verification_office'
-        type: recordfinder
-        list: ~/plugins/ap/tender/models/office/columns.yaml
-        recordsPerPage: 10
-        nameFrom: name
-        descriptionFrom: description
-        span: left
+    # verification_office:
+    #     label: 'ap.tender::lang.tenant.verification_office'
+    #     type: recordfinder
+    #     list: ~/plugins/ap/tender/models/office/columns.yaml
+    #     recordsPerPage: 10
+    #     nameFrom: name
+    #     descriptionFrom: description
+    #     span: left

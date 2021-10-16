@@ -3,3 +3,5 @@ form: $/ap/tender/models/tenantcommercial/on_verification_fields.yaml
 modelClass: Ap\Tender\Models\TenantCommercial
 update:
     redirectClose: ap/tender/onverificationtenants
+customMessages:
+    flashUpdate: Anda telah memperbarui status pengecekan terkait Pengalaman Berusaha

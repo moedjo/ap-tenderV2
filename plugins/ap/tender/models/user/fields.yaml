@@ -1,7 +1,7 @@
 fields:
     login:
         span: left
-        label: 'backend::lang.user.login'
+        label: 'Username'
         type: text
     email:
         span: right
@@ -21,8 +21,8 @@ fields:
     password:
         type: password
         span: left
-        label: 'backend::lang.user.password'
+        label: 'Password'
     password_confirmation:
         type: password
         span: right
-        label: 'backend::lang.user.password_confirmation'
+        label: 'Password Confirmation'

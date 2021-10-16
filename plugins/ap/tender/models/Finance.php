@@ -33,7 +33,7 @@ class Finance extends Model
     {
         $year = [];
         for ($x = date('Y'); $x >= date('Y', strtotime('-10YEARS')); $x--) {
-            array_push($year, $x);
+            $year[$x] = $x;
         }
         return $year;
     }

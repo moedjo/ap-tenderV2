@@ -12,7 +12,7 @@ class TenantShortForm extends Tenant
 
     public $rules = [
         'business_entity' => 'required',
-        'verification_office' => 'required',
+        // 'verification_office' => 'required',
         'contact_position' => 'required',
         'region' => 'required',
         'collaborate' => 'required',
