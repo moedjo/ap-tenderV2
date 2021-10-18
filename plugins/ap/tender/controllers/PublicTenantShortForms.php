@@ -58,7 +58,7 @@ class PublicTenantShortForms extends Controller
         if (isset($tenant)) {
             if ($tenant->status == 'short_form') {
                 $last_update = strtotime(date('Y-m-d', strtotime($tenant->updated_at)));
-                $exp_date = strtotime("+1days", $last_update);
+                $exp_date = strtotime("+4days", $last_update);
 
                 if ($exp_date >= strtotime(date('Y-m-d'))) {
                     Session::put('tenant_id', $tenant->id);
