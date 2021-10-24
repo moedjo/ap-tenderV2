@@ -17,7 +17,7 @@ tabs:
         'Aanwijzing': icon-user-circle
     fields:
         tender_tenants:
-            label: 'Tender Terdaftar'
+            label: 'Tenant Terdaftar'
             span: full
             path: field_tender_tenants
             context:
@@ -30,7 +30,7 @@ tabs:
             type: text
             span: left
             tab: 'Aanwijzing'
-  
+
         invite_location:
             label: 'ap.tender::lang.tenant.invite_location'
             placeholder: 'ap.tender::lang.tenant.invite_location'

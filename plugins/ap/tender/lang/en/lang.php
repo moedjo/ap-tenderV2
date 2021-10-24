@@ -449,6 +449,9 @@
         'section2' => 'Jadwal Tender',
         'section3' => 'Dokumen',
         'section4' => 'Undang Tenant',
+        'confirm_create' => 'Apakah anda yakin untuk menambah data Tender?',
+        'confirm_update' => 'Apakah anda yakin untuk mengubah data Tender?',
+        'confirm_delete' => 'Apakah anda yakin untuk menghapus data Tender?'
 
     ],
 

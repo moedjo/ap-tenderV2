@@ -15,7 +15,7 @@ class Tender extends Model
     public function __construct()
     {
         parent::__construct();
-    
+
     }
 
     /**
@@ -25,9 +25,9 @@ class Tender extends Model
 
     /**
      * @var array Validation rules
-     */ 
+     */
     public $rules = [
-      
+
     ];
 
     public $belongsTo = [
@@ -97,7 +97,7 @@ class Tender extends Model
         'rooms',
     ];
 
-    
+
     public function beforeValidate()
     {
         if ($this->status == 'aanwijzing') {
@@ -110,7 +110,7 @@ class Tender extends Model
                 'invite_hour_start' => 'required|date',
                 'invite_hour_end' => 'required|date|after:invite_hour_start',
              ];
-        } 
+        }
 
         if ($this->status == 'registration') {
             $this->rules = [
@@ -122,12 +122,11 @@ class Tender extends Model
                 'package' => 'required',
                 'rooms' => 'required',
                 'description' => 'required',
-                'doc_support' => 'required',
                 'pic_flyer' => 'required',
                 'doc_rfq'=> 'required',
-                'doc_rfp'=> 'required',        
+                'doc_rfp'=> 'required',
              ];
-        } 
+        }
     }
 
     public function afterCreate(){

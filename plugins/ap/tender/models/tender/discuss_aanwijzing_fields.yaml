@@ -17,7 +17,7 @@ tabs:
         'Diskusi': icon-user-circle
     fields:
         tender_tenants:
-            label: 'Tender Terdaftar'
+            label: 'Tenant Terdaftar'
             span: full
             path: field_tender_tenants
             context:
