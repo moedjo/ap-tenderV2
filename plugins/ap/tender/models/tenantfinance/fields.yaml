@@ -2,6 +2,17 @@ fields:
     _section1:
         label: 'ap.tender::lang.tenant.finance_section1'
         type: section
+        trigger:
+            action: show
+            field: is_age_comply
+            condition: value[1]
+    _section2:
+        label: 'Kemampuan Keuangan Tahun Terakhir'
+        type: section
+        trigger:
+            action: show
+            field: is_age_comply
+            condition: value[0]
     is_age_comply:
         label: 'Perusahaan Sudah Berdiri atau Menjalankan Kegiatan usah di atas 3 tahun?'
         span: full
