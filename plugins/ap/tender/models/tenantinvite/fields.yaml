@@ -17,11 +17,21 @@ fields:
         placeholder: 'ap.tender::lang.tenant.invite_location'
         type: text
         span: left
+    invite_pic_name:
+        label:  'Nama PIC'
+        placeholder: 'ap.tender::lang.tenant.invite_pic_phone_number'
+        type: text
+        span: left
     invite_pic_phone_number:
         label:  'ap.tender::lang.tenant.invite_pic_phone_number'
         placeholder: 'ap.tender::lang.tenant.invite_pic_phone_number'
         type: text
         span: right
+    invite_pic_email:
+        label:  'Email PIC'
+        placeholder: 'ap.tender::lang.tenant.invite_pic_phone_number'
+        type: text
+        span: left
     invite_date:
         label: 'ap.tender::lang.tenant.invite_date'
         placeholder: 'ap.tender::lang.tenant.invite_date'

@@ -4,14 +4,26 @@ description = "Undangan Verifikasi"
 ==
 
 
-Yth. Bapak/Ibu  {{business_entity.name}} {{name}}
+Yth. Bapak/Ibu  {{pic_full_name}}
+{{business_entity.name}} {{name}}
 
-Terima kasih telah melakukan pendaftaran sebagai Calon Mitra Usaha di lingkungan PT Angkasa Pura I (Persero). 
-Bersama ini kami mengundang Bapak/Ibu untuk melakukan verifikasi dokumen yang telah diunggah melalui Tenant Management System (TMS) dengan dokumen asli dan atau salinannya yang akan dilaksanakan pada: 
+Terima kasih telah melakukan pendaftaran sebagai calon Mitra Usaha PT Angkasa Pura I (Persero). Bersama ini kami
+mengundang Bapak/Ibu untuk melakukan verifikasi dokumen yang telah diunggah melalui Tenant Management System (TMS) PT
+Angkasa Pura I (Persero) pada:
 
-Tanggal	:	{{invite_date|date("m/d/Y")}} {{invite_hour_start|date("H:i")}}  
-PIC     :   {{invite_pic_phone_number}}  
-Tempat	:	{{invite_location}}  
-Detail	:	{{invite_description|md}}  
+Tanggal :   {{invite_date|date("m/d/Y")}}
+Waktu   :   {{invite_hour_start|date("H:i")}}
+Tempat  :   {{invite_location}}
 
+Mohon dapat membawa seluruh dokumen asli. Untuk pertanyaan/informasi lebih lanjut dapat menghubungi PIC verifikasi
+dokumen sebagai berikut:
+
+Nama          :     {{invite_pic_name}}
+Nomor Telepon :     {{invite_pic_phone_number}}
+Email         :     {{invite_pic_email}}
+
+Atas perhatian dan kehadiran Bapak/Ibu kami ucapkan terima kasih.
+
+
+Tim TMS PT Angkasa Pura I (Persero)
 -----
