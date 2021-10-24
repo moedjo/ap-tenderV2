@@ -26,11 +26,11 @@ class TenantSummary extends Tenant
         return $result;
     }
 
-
     public function beforeValidate()
     {
 
-        $count = Summary::count();    
+        $count = Summary::count();
         $this->rules['summaries'] = "required|size:".$count;
+        $this->rules['verification_office'] = "required";
     }
 }

@@ -1,10 +1,21 @@
 fields:
+    _sectionA:
+        label: 'Verifikasi Data'
+        type: section
+    verification_office:
+        label: 'ap.tender::lang.tenant.verification_office'
+        type: recordfinder
+        list: ~/plugins/ap/tender/models/office/columns.yaml
+        recordsPerPage: 10
+        nameFrom: name
+        descriptionFrom: description
+        span: left
     _section1:
         label: 'ap.tender::lang.tenant.summary_section1'
         type: section
         comment: 'ap.tender::lang.tenant.summary_section1_comment'
     summaries:
         context: [update]
-        label: 'Dengan ini saya menyatakan hal-hal sebagai berukut :'
+        label: 'Sehubungan dengan proses seleksi mitra usaha di PT Angkasa Pura I (Persero), saya bertindak untuk dan atas nama perusahaan ini, menyatakan dengan resmi bahwa:'
         type: checkboxlist
         required: true

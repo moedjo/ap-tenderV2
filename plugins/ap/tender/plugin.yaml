@@ -120,11 +120,16 @@ navigation:
                 permissions:
                     - ap_tender_access_airports
     tenant:
+        label: 'Daftar Tenant'
+        url: ap/tender/tenants
+        icon: icon-th-list
+        permissions:
+            - ap_tender_access_tenants
+    tenantA:
         label: 'ap.tender::lang.tenant.singular'
         url: /
         icon: icon-renren
         permissions:
-            - ap_tender_access_tenants
             - ap_tender_is_tenant
         sideMenu:
             tenants:

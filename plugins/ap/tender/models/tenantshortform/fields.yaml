@@ -81,9 +81,9 @@ fields:
         label: 'ap.tender::lang.tenant.contact_phone_number'
         type: text
         span: right
-    _sectionA:
-        label: 'Verifikasi Data'
-        type: section
+    # _sectionA:
+    #     label: 'Verifikasi Data'
+    #     type: section
     # verification_office:
     #     label: 'ap.tender::lang.tenant.verification_office'
     #     type: recordfinder
