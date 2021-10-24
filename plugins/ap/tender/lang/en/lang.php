@@ -315,7 +315,7 @@
         'doc_legal_npwp' => 'Nomor Pokok Wajib Pajak (NPWP)',
         'doc_legal_ktp' => 'KTP Penanggung Jawab',
         'doc_legal_sk' => 'Surat Kuasa (Apabila Dikuasakan)',
-        'doc_legal_other' => 'Lainnya',
+        'doc_legal_other' => 'Dokumen Pedukung lainya Termasuk Dokumen Mitra Asing yang dikeluarkan dari negara asal',
         'doc_legal_konsorsium' => 'Perjanjian/Nota Kesepahaman Konsorsium',
         'doc_legal_cv' => 'Form Penyataan Upgrade dari CV ke PT',
 

@@ -27,4 +27,7 @@ class User extends \Backend\Models\User
         'role' => UserRole::class
     ];
 
+    protected $purgeable = [
+        'name', 'password_confirmation'
+    ];
 }

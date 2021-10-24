@@ -61,12 +61,13 @@ class PublicUsers extends Controller
 
         $context = $this->formGetContext();
         if ($context == 'create') {
-            $model->email = $tenant->contact_email;
+            $model->email = $tenant->email;
 
             $parts = explode(" ", $tenant->contact_full_name);
             $lastname = array_pop($parts);
             $firstname = implode(" ", $parts);
 
+            $model->name = $tenant->name;
             $model->first_name = $firstname;
             $model->last_name = $lastname;
         }

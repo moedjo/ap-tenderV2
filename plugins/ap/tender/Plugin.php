@@ -51,11 +51,11 @@ class Plugin extends PluginBase
             'ap.tender::mail.tender-tenant-payment_rfp',
             'ap.tender::mail.tender-tenant-registration',
             'ap.tender::mail.tender-tenant-winner_candidate',
-            'ap.tender::mail.tender-tenant-winner_publish',
+            // 'ap.tender::mail.tender-tenant-winner_publish',
             'ap.tender::mail.tender-tenant-winner',
             'ap.tender::mail.tender-tenant-submit_document',
             'ap.tender::mail.tender-tenant-last_negotiation',
-          
+
         ];
     }
 
