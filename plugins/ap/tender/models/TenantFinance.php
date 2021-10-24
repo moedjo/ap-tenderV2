@@ -11,10 +11,7 @@ class TenantFinance extends Tenant
 {
 
     public $rules = [
-        'finances' => 'required|size:3',
-
         'doc_finance_sppkp' => 'required',
-        'doc_finance_spt' => 'required',
         'doc_finance_blp' => 'required',
 
         'doc_finance_sklp' => 'required',
@@ -34,6 +31,14 @@ class TenantFinance extends Tenant
     {
         if ($this->collaborate) {
             $this->rules['doc_finance_collaborate'] = "required";
+        }
+
+        if ($this->is_age_comply) {
+            $this->rules['finances'] = 'required|size:3';
+            $this->rules['doc_finance_spt'] = "required";
+        } else {
+            $this->rules['finances'] = 'required|size:1';
+            $this->rules['doc_finance_spt_monthly'] = "required";
         }
     }
 

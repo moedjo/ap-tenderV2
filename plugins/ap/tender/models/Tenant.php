@@ -170,6 +170,7 @@ class Tenant extends Model
         'doc_legal_nib' => ['System\Models\File', 'public' => false],
         'doc_legal_other' => ['System\Models\File', 'public' => false],
         'doc_finance_other' => ['System\Models\File', 'public' => false],
+        'doc_finance_spt_monthly' => ['System\Models\File', 'public' => false],
     ];
 
     protected $jsonable = [

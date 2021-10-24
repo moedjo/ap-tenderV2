@@ -2,6 +2,25 @@ fields:
     _section1:
         label: 'ap.tender::lang.tenant.finance_section1'
         type: section
+        trigger:
+            action: show
+            field: is_age_comply
+            condition: value[1]
+    _section2:
+        label: 'Kemampuan Keuangan Tahun Terakhir'
+        type: section
+        trigger:
+            action: show
+            field: is_age_comply
+            condition: value[0]
+    is_age_comply:
+        label: 'Perusahaan Sudah Berdiri atau Menjalankan Kegiatan usah di atas 3 tahun?'
+        span: full
+        type: radio
+        default: 0
+        options:
+            0: 'ap.tender::lang.global.no'
+            1: 'ap.tender::lang.global.yes'
     finances:
         label: 'ap.tender::lang.tenant.finances'
         span: full
@@ -34,6 +53,25 @@ fields:
         attachOnUpload: true
         span: right
         commentAbove: 'ap.tender::lang.tenant.doc_finance_spt_comment'
+        trigger:
+            action: show
+            field: is_age_comply
+            condition: value[1]
+    doc_finance_spt_monthly:
+        label: 'ap.tender::lang.tenant.doc_finance_spt_monthly'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 40
+        attachOnUpload: true
+        span: right
+        commentAbove: 'ap.tender::lang.tenant.doc_finance_spt_comment'
+        trigger:
+            action: show
+            field: is_age_comply
+            condition: value[0]
     doc_finance_blp:
         label: 'ap.tender::lang.tenant.doc_finance_blp'
         type: fileupload
@@ -102,7 +140,7 @@ fields:
         commentAbove: 'ap.tender::lang.tenant.doc_finance_collaborate_comment'
         hidden: true
         required: true
-        
+
     verification_finances:
         label: 'ap.tender::lang.tenant.verification_finances'
         span: full
