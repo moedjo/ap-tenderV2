@@ -19,7 +19,7 @@ fields:
         span: left
     invite_pic_name:
         label:  'Nama PIC'
-        placeholder: 'ap.tender::lang.tenant.invite_pic_phone_number'
+        placeholder: 'Nama PIC'
         type: text
         span: left
     invite_pic_phone_number:
@@ -29,7 +29,7 @@ fields:
         span: right
     invite_pic_email:
         label:  'Email PIC'
-        placeholder: 'ap.tender::lang.tenant.invite_pic_phone_number'
+        placeholder: 'Email PIC'
         type: text
         span: left
     invite_date:
