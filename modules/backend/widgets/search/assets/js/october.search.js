@@ -65,7 +65,12 @@
 
     SearchWidget.prototype.linkToListWidget = function(elId) {
         this.$el.on('ajaxSetup', function (evt, data) {
-            data.options.data.allChecked = $('#'+elId+' [data-control="listwidget"]:first').listWidget('getAllChecked');
+            var $widget = $('#'+elId+' > .control-list:first');
+            if (!$widget.data('oc.listwidget')) {
+                return;
+            }
+
+            data.options.data.allChecked = $widget.listWidget('getAllChecked');
         });
     }
 

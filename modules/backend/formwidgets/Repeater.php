@@ -90,9 +90,9 @@ class Repeater extends FormWidgetBase
     protected $groupDefinitions = [];
 
     /**
-     * @var boolean Determines if repeater has been initialised previously
+     * @var boolean isLoaded is true when the request is made via postback
      */
-    protected $loaded = false;
+    protected $isLoaded = false;
 
     /**
      * @inheritDoc
@@ -113,9 +113,8 @@ class Repeater extends FormWidgetBase
             $this->previewMode = true;
         }
 
-        // Check for loaded flag in POST
         if (post($this->alias . '_loaded')) {
-            $this->loaded = true;
+            $this->isLoaded = true;
         }
 
         $this->processGroupMode();
@@ -143,7 +142,7 @@ class Repeater extends FormWidgetBase
         // This logic needs review because it doesn't work fully, filterFields
         // does not appear to modify the repeater on the second pass anyway
         // because the refreshed values come from the postback -sg
-        if (!self::$onAddItemCalled && !$this->loaded) {
+        if (!self::$onAddItemCalled && !$this->isLoaded) {
             $this->processItems();
         }
 
@@ -153,6 +152,7 @@ class Repeater extends FormWidgetBase
             }
         }
 
+        $this->vars['name'] = $this->getFieldName();
         $this->vars['prompt'] = $this->prompt;
         $this->vars['formWidgets'] = $this->formWidgets;
         $this->vars['titleFrom'] = $this->titleFrom;
@@ -178,18 +178,18 @@ class Repeater extends FormWidgetBase
      */
     public function getSaveValue($value)
     {
-        return (array) $this->processSaveValue($value);
+        return $this->processSaveValue($value);
     }
 
     /**
      * processSaveValue splices in some meta data (group and index values) to the dataset
      * @param array $value
-     * @return array
+     * @return array|null
      */
     protected function processSaveValue($value)
     {
         if (!is_array($value) || !$value) {
-            return $value;
+            return null;
         }
 
         if ($this->minItems && count($value) < $this->minItems) {
@@ -230,7 +230,7 @@ class Repeater extends FormWidgetBase
      */
     protected function processItems()
     {
-        $currentValue = $this->loaded === true
+        $currentValue = $this->isLoaded === true
             ? post($this->formField->getName())
             : $this->getLoadValue();
 
@@ -239,7 +239,7 @@ class Repeater extends FormWidgetBase
         // don't reinitialize this repeater's items. We a need better way
         // remove if year >= 2023 -sg
         $handler = $this->controller->getAjaxHandler();
-        if (!$this->loaded && starts_with($handler, $this->alias . 'Form')) {
+        if (!$this->isLoaded && starts_with($handler, $this->alias . 'Form')) {
             $handler = str_after($handler, $this->alias . 'Form');
             preg_match("~^(\d+)~", $handler, $matches);
 
@@ -313,7 +313,7 @@ class Repeater extends FormWidgetBase
      */
     protected function getValueFromIndex($index)
     {
-        $value = $this->loaded === true
+        $value = $this->isLoaded === true
             ? post($this->formField->getName())
             : $this->getLoadValue();
 
@@ -377,11 +377,11 @@ class Repeater extends FormWidgetBase
      */
     protected function getNextIndex(): int
     {
-        if ($this->loaded === true) {
+        if ($this->isLoaded === true) {
             $data = post($this->formField->getName());
 
             if (is_array($data) && count($data)) {
-                return (max(array_keys($data)) + 1);
+                return max(array_keys($data)) + 1;
             }
         }
         else {

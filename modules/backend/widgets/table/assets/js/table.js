@@ -19,55 +19,55 @@
     // ============================
 
     var Table = function(element, options) {
-        this.el = element
-        this.$el = $(element)
+        this.el = element;
+        this.$el = $(element);
 
-        this.options = options
-        this.disposed = false
+        this.options = options;
+        this.disposed = false;
 
         //
         // State properties
         //
 
         // The data source object
-        this.dataSource = null
+        this.dataSource = null;
 
         // The cell processors list
-        this.cellProcessors = {}
+        this.cellProcessors = {};
 
         // A reference to the currently active cell processor
-        this.activeCellProcessor = null
+        this.activeCellProcessor = null;
 
         // A reference to the currently active table cell
-        this.activeCell = null
+        this.activeCell = null;
 
         // A reference to the tables container
-        this.tableContainer = null
+        this.tableContainer = null;
 
         // A reference to the data table container
-        this.dataTableContainer = null
+        this.dataTableContainer = null;
 
         // The key of the row which is being edited at the moment.
         // This key corresponds the data source row key which
         // uniquely identifies the row in the data set. When the
         // table grid notices that a cell in another row is edited it commits
         // the previously edited record to the data source.
-        this.editedRowKey = null
+        this.editedRowKey = null;
 
         // A reference to the data table
-        this.dataTable = null
+        this.dataTable = null;
 
         // A reference to the header table
-        this.headerTable = null
+        this.headerTable = null;
 
         // A reference to the toolbar
-        this.toolbar = null
+        this.toolbar = null;
 
         // Event handlers
-        this.clickHandler = this.onClick.bind(this)
-        this.keydownHandler = this.onKeydown.bind(this)
-        this.documentClickHandler = this.onDocumentClick.bind(this)
-        this.toolbarClickHandler = this.onToolbarClick.bind(this)
+        this.clickHandler = this.onClick.bind(this);
+        this.keydownHandler = this.onKeydown.bind(this);
+        this.documentClickHandler = this.onDocumentClick.bind(this);
+        this.toolbarClickHandler = this.onToolbarClick.bind(this);
 
         if (this.options.postback && this.options.clientDataSourceClass == 'client') {
             if (!this.options.postbackHandlerName) {
@@ -78,24 +78,24 @@
         }
 
         // Navigation helper
-        this.navigation = null
+        this.navigation = null;
 
         // Search helper
-        this.search = null
+        this.search = null;
 
         // Number of records added or deleted during the session
-        this.recordsAddedOrDeleted = 0
+        this.recordsAddedOrDeleted = 0;
 
         // Bound reference to dispose() - ideally the class should use the October foundation library base class
-        this.disposeBound = this.dispose.bind(this)
+        this.disposeBound = this.dispose.bind(this);
 
         //
         // Initialization
         //
 
-        this.init()
+        this.init();
 
-        $.oc.foundation.controlUtils.markDisposable(element)
+        $.oc.foundation.controlUtils.markDisposable(element);
     }
 
     // INTERNAL METHODS
@@ -805,26 +805,29 @@
         }
     }
 
+    // Validate table contents and manipulate request directly
     Table.prototype.onFormSubmit = function(ev, data) {
-        if (data.handler == this.options.postbackHandlerName) {
-            this.unfocusTable()
+        var wildCardPostback = this.options.postbackHandlerName === '*';
 
-            if (!this.validate()) {
-                ev.preventDefault()
-                return
+        if (data.handler === this.options.postbackHandlerName || wildCardPostback) {
+            this.unfocusTable();
+
+            if (!wildCardPostback && !this.validate()) {
+                ev.preventDefault();
+                return;
             }
 
             var fieldName = this.options.fieldName.indexOf('[') > -1
                 ? this.options.fieldName + '[TableData]'
-                : this.options.fieldName + 'TableData'
+                : this.options.fieldName + 'TableData';
 
-            data.options.data[fieldName] = this.dataSource.getAllData()
+            data.options.data[fieldName] = JSON.stringify(this.dataSource.getAllData());
         }
     }
 
     Table.prototype.onToolbarClick = function(ev) {
         var target = this.getEventTarget(ev, 'BUTTON'),
-            cmd = target.getAttribute('data-cmd')
+            cmd = target && target.getAttribute('data-cmd');
 
         if (!cmd) {
             return
@@ -1111,7 +1114,7 @@
                     this.getCellColumnName(cellElement),
                     value,
                     this.getCellRowIndex(cellElement)
-                ])
+                ]);
             }
         }
     }

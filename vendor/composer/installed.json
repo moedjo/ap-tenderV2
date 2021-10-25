@@ -477,17 +477,17 @@
         },
         {
             "name": "composer/semver",
-            "version": "3.2.5",
-            "version_normalized": "3.2.5.0",
+            "version": "3.2.6",
+            "version_normalized": "3.2.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/semver.git",
-                "reference": "31f3ea725711245195f62e54ffa402d8ef2fdba9"
+                "reference": "83e511e247de329283478496f7a1e114c9517506"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/semver/zipball/31f3ea725711245195f62e54ffa402d8ef2fdba9",
-                "reference": "31f3ea725711245195f62e54ffa402d8ef2fdba9",
+                "url": "https://api.github.com/repos/composer/semver/zipball/83e511e247de329283478496f7a1e114c9517506",
+                "reference": "83e511e247de329283478496f7a1e114c9517506",
                 "shasum": ""
             },
             "require": {
@@ -497,7 +497,7 @@
                 "phpstan/phpstan": "^0.12.54",
                 "symfony/phpunit-bridge": "^4.2 || ^5"
             },
-            "time": "2021-05-24T12:41:47+00:00",
+            "time": "2021-10-25T11:34:17+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -541,7 +541,7 @@
             "support": {
                 "irc": "irc://irc.freenode.org/composer",
                 "issues": "https://github.com/composer/semver/issues",
-                "source": "https://github.com/composer/semver/tree/3.2.5"
+                "source": "https://github.com/composer/semver/tree/3.2.6"
             },
             "funding": [
                 {
@@ -1107,36 +1107,32 @@
         },
         {
             "name": "doctrine/inflector",
-            "version": "2.0.3",
-            "version_normalized": "2.0.3.0",
+            "version": "2.0.4",
+            "version_normalized": "2.0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/inflector.git",
-                "reference": "9cf661f4eb38f7c881cac67c75ea9b00bf97b210"
+                "reference": "8b7ff3e4b7de6b2c84da85637b59fd2880ecaa89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/9cf661f4eb38f7c881cac67c75ea9b00bf97b210",
-                "reference": "9cf661f4eb38f7c881cac67c75ea9b00bf97b210",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/8b7ff3e4b7de6b2c84da85637b59fd2880ecaa89",
+                "reference": "8b7ff3e4b7de6b2c84da85637b59fd2880ecaa89",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2 || ^8.0"
             },
             "require-dev": {
-                "doctrine/coding-standard": "^7.0",
-                "phpstan/phpstan": "^0.11",
-                "phpstan/phpstan-phpunit": "^0.11",
-                "phpstan/phpstan-strict-rules": "^0.11",
-                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0"
+                "doctrine/coding-standard": "^8.2",
+                "phpstan/phpstan": "^0.12",
+                "phpstan/phpstan-phpunit": "^0.12",
+                "phpstan/phpstan-strict-rules": "^0.12",
+                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
+                "vimeo/psalm": "^4.10"
             },
-            "time": "2020-05-29T15:13:26+00:00",
+            "time": "2021-10-22T20:16:43+00:00",
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
             "installation-source": "dist",
             "autoload": {
                 "psr-4": {
@@ -1185,7 +1181,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/inflector/issues",
-                "source": "https://github.com/doctrine/inflector/tree/2.0.x"
+                "source": "https://github.com/doctrine/inflector/tree/2.0.4"
             },
             "funding": [
                 {
@@ -1857,17 +1853,17 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v6.20.35",
-            "version_normalized": "6.20.35.0",
+            "version": "v6.20.36",
+            "version_normalized": "6.20.36.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "5e55aa4063b9f7cf3249bfebcc37a6fbad4f159a"
+                "reference": "10f6bfaec9efb68aa88d7196b8b1b162d83040ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/5e55aa4063b9f7cf3249bfebcc37a6fbad4f159a",
-                "reference": "5e55aa4063b9f7cf3249bfebcc37a6fbad4f159a",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/10f6bfaec9efb68aa88d7196b8b1b162d83040ae",
+                "reference": "10f6bfaec9efb68aa88d7196b8b1b162d83040ae",
                 "shasum": ""
             },
             "require": {
@@ -1972,7 +1968,7 @@
                 "symfony/psr-http-message-bridge": "Required to use PSR-7 bridging features (^1.2).",
                 "wildbit/swiftmailer-postmark": "Required to use Postmark mail driver (^3.0)."
             },
-            "time": "2021-10-05T14:05:19+00:00",
+            "time": "2021-10-19T13:59:55+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2919,18 +2915,18 @@
         },
         {
             "name": "october/backend",
-            "version": "v2.1.15",
-            "version_normalized": "2.1.15.0",
+            "version": "v2.1.17",
+            "version_normalized": "2.1.17.0",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/backend/october-backend-v2.1.15-ded718.zip",
-                "reference": "1f4d0efb26f54049117f582f72de525f2d267df2",
-                "shasum": "d9bca7c31377cc8ac18699cc524a475dd6ae1435"
+                "url": "https://gateway.octobercms.com/composer/dist/october/backend/october-backend-v2.1.17-647dc6.zip",
+                "reference": "24fd1ede8ea9a08e93e14a7edf5eba926e0c2ccf",
+                "shasum": "dad9ff9b9afa3667c0b0b6c16f493bdd1c9bd090"
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "time": "2021-10-11T08:00:42+00:00",
+            "time": "2021-10-21T21:04:05+00:00",
             "type": "october-module",
             "installation-source": "dist",
             "authors": [
@@ -2954,18 +2950,18 @@
         },
         {
             "name": "october/cms",
-            "version": "v2.1.15",
-            "version_normalized": "2.1.15.0",
+            "version": "v2.1.17",
+            "version_normalized": "2.1.17.0",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/cms/october-cms-v2.1.15-e4ae1d.zip",
-                "reference": "97f97a8954a3934d3dbe0377c44eb75378015764",
-                "shasum": "0abcd01933bb84d073041ca2a8ffb2db6106d2f0"
+                "url": "https://gateway.octobercms.com/composer/dist/october/cms/october-cms-v2.1.17-e774e1.zip",
+                "reference": "9ef9bb87ddff0371c589016a549d94143f3d62fb",
+                "shasum": "991dea94659a56099395582d7c0719f387746b0d"
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "time": "2021-10-09T01:42:17+00:00",
+            "time": "2021-10-21T21:04:05+00:00",
             "type": "october-module",
             "installation-source": "dist",
             "authors": [
@@ -2989,13 +2985,13 @@
         },
         {
             "name": "october/editor",
-            "version": "v2.1.15",
-            "version_normalized": "2.1.15.0",
+            "version": "v2.1.17",
+            "version_normalized": "2.1.17.0",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/editor/october-editor-v2.1.15-24f07c.zip",
+                "url": "https://gateway.octobercms.com/composer/dist/october/editor/october-editor-v2.1.17-24f07c.zip",
                 "reference": "ff7663f87ede8a3679e75c33a4a41eeb1d1cff9e",
-                "shasum": "bc6a396901598ff18667d6b640e0a4953f2b1d62"
+                "shasum": "3cc61f0e26ac9fa17932c71d345c74ed7be58f20"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -3024,13 +3020,13 @@
         },
         {
             "name": "october/media",
-            "version": "v2.1.15",
-            "version_normalized": "2.1.15.0",
+            "version": "v2.1.17",
+            "version_normalized": "2.1.17.0",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/media/october-media-v2.1.15-9bb28e.zip",
+                "url": "https://gateway.octobercms.com/composer/dist/october/media/october-media-v2.1.17-9bb28e.zip",
                 "reference": "56303c862284c7014e45dbd47986eec4f866baaf",
-                "shasum": "0b543e606edc02a458735c7eb698c59555393bd9"
+                "shasum": "d97a9c267f482eeaa938c8d40c0578dc0bbe1f96"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -3133,18 +3129,18 @@
         },
         {
             "name": "october/system",
-            "version": "v2.1.15",
-            "version_normalized": "2.1.15.0",
+            "version": "v2.1.17",
+            "version_normalized": "2.1.17.0",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/system/october-system-v2.1.15-0a7fe8.zip",
-                "reference": "e2fef8e2265770a91df93395073902e94e4f4e3d",
-                "shasum": "f5e4881a15353244d557af4ae918365b0498e97d"
+                "url": "https://gateway.octobercms.com/composer/dist/october/system/october-system-v2.1.17-8cd690.zip",
+                "reference": "2b3c9c27f3ee1aab23bf0c19d7bdbd13c4560d50",
+                "shasum": "cc92e675df13612984fd920c35d12e7733bc42ca"
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "time": "2021-10-09T01:14:12+00:00",
+            "time": "2021-10-21T20:14:20+00:00",
             "type": "october-module",
             "installation-source": "dist",
             "authors": [
@@ -3450,26 +3446,27 @@
         },
         {
             "name": "phenx/php-svg-lib",
-            "version": "v0.3.3",
-            "version_normalized": "0.3.3.0",
+            "version": "0.3.4",
+            "version_normalized": "0.3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PhenX/php-svg-lib.git",
-                "reference": "5fa61b65e612ce1ae15f69b3d223cb14ecc60e32"
+                "reference": "f627771eb854aa7f45f80add0f23c6c4d67ea0f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PhenX/php-svg-lib/zipball/5fa61b65e612ce1ae15f69b3d223cb14ecc60e32",
-                "reference": "5fa61b65e612ce1ae15f69b3d223cb14ecc60e32",
+                "url": "https://api.github.com/repos/PhenX/php-svg-lib/zipball/f627771eb854aa7f45f80add0f23c6c4d67ea0f2",
+                "reference": "f627771eb854aa7f45f80add0f23c6c4d67ea0f2",
                 "shasum": ""
             },
             "require": {
+                "php": "^7.4 || ^8.0",
                 "sabberworm/php-css-parser": "^8.3"
             },
             "require-dev": {
-                "phpunit/phpunit": "^5.5|^6.5"
+                "phpunit/phpunit": "^9.5"
             },
-            "time": "2019-09-11T20:02:13+00:00",
+            "time": "2021-10-18T02:13:32+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -3491,7 +3488,7 @@
             "homepage": "https://github.com/PhenX/php-svg-lib",
             "support": {
                 "issues": "https://github.com/PhenX/php-svg-lib/issues",
-                "source": "https://github.com/PhenX/php-svg-lib/tree/master"
+                "source": "https://github.com/PhenX/php-svg-lib/tree/0.3.4"
             },
             "install-path": "../phenx/php-svg-lib"
         },
@@ -3553,17 +3550,17 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "5.2.2",
-            "version_normalized": "5.2.2.0",
+            "version": "5.3.0",
+            "version_normalized": "5.3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "069a785b2141f5bcf49f3e353548dc1cce6df556"
+                "reference": "622548b623e81ca6d78b721c5e029f4ce664f170"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/069a785b2141f5bcf49f3e353548dc1cce6df556",
-                "reference": "069a785b2141f5bcf49f3e353548dc1cce6df556",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/622548b623e81ca6d78b721c5e029f4ce664f170",
+                "reference": "622548b623e81ca6d78b721c5e029f4ce664f170",
                 "shasum": ""
             },
             "require": {
@@ -3574,9 +3571,10 @@
                 "webmozart/assert": "^1.9.1"
             },
             "require-dev": {
-                "mockery/mockery": "~1.3.2"
+                "mockery/mockery": "~1.3.2",
+                "psalm/phar": "^4.8"
             },
-            "time": "2020-09-03T19:13:55+00:00",
+            "time": "2021-10-19T17:43:47+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -3606,7 +3604,7 @@
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
             "support": {
                 "issues": "https://github.com/phpDocumentor/ReflectionDocBlock/issues",
-                "source": "https://github.com/phpDocumentor/ReflectionDocBlock/tree/master"
+                "source": "https://github.com/phpDocumentor/ReflectionDocBlock/tree/5.3.0"
             },
             "install-path": "../phpdocumentor/reflection-docblock"
         },
@@ -5995,17 +5993,17 @@
         },
         {
             "name": "swiftmailer/swiftmailer",
-            "version": "v6.2.7",
-            "version_normalized": "6.2.7.0",
+            "version": "v6.3.0",
+            "version_normalized": "6.3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/swiftmailer/swiftmailer.git",
-                "reference": "15f7faf8508e04471f666633addacf54c0ab5933"
+                "reference": "8a5d5072dca8f48460fce2f4131fcc495eec654c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/15f7faf8508e04471f666633addacf54c0ab5933",
-                "reference": "15f7faf8508e04471f666633addacf54c0ab5933",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/8a5d5072dca8f48460fce2f4131fcc495eec654c",
+                "reference": "8a5d5072dca8f48460fce2f4131fcc495eec654c",
                 "shasum": ""
             },
             "require": {
@@ -6017,12 +6015,12 @@
             },
             "require-dev": {
                 "mockery/mockery": "^1.0",
-                "symfony/phpunit-bridge": "^4.4|^5.0"
+                "symfony/phpunit-bridge": "^4.4|^5.4"
             },
             "suggest": {
                 "ext-intl": "Needed to support internationalized email addresses"
             },
-            "time": "2021-03-09T12:30:35+00:00",
+            "time": "2021-10-18T15:26:12+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -6057,7 +6055,7 @@
             ],
             "support": {
                 "issues": "https://github.com/swiftmailer/swiftmailer/issues",
-                "source": "https://github.com/swiftmailer/swiftmailer/tree/v6.2.7"
+                "source": "https://github.com/swiftmailer/swiftmailer/tree/v6.3.0"
             },
             "funding": [
                 {

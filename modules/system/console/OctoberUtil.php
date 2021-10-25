@@ -3,6 +3,7 @@
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
+use ApplicationException;
 
 /**
  * OctoberUtil is a console command for other utility commands
@@ -65,7 +66,7 @@ class OctoberUtil extends Command
             }
 
             $message .= implode("\n    ", $list);
-            throw new \InvalidArgumentException($message);
+            throw new ApplicationException($message);
         }
 
         if (!method_exists($this, $method)) {

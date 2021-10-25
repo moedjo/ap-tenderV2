@@ -27,6 +27,10 @@ class CreateApTenderTenants extends Migration
             $table->boolean('collaborate')->default(false);
             $table->boolean('has_experience')->default(false);
 
+            $table->boolean('is_age_comply')->default(false);
+            
+
+
             $table->string('contact_full_name')->nullable();
             $table->string('contact_phone_number')->nullable();
             $table->string('contact_email')->nullable();

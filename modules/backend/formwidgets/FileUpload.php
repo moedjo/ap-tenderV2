@@ -292,7 +292,7 @@ class FileUpload extends FormWidgetBase
             $types = implode(',', FileDefinitions::get($definitionCode));
         }
 
-        if (!$types || $types == '*') {
+        if (!$types || $types === '*') {
             return null;
         }
 

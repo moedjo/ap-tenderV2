@@ -474,7 +474,7 @@
         this.el.off('.dragScroll');
 
         this.el.removeData('oc.dragScroll');
-        window.removeEventListener('touchmove', self.onTouchMove, {passive: false})
+        window.removeEventListener('touchmove', this.onTouchMove, {passive: false})
 
         this.el = null;
         BaseProto.dispose.call(this);

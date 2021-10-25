@@ -1,5 +1,6 @@
 <?php namespace Cms\Classes;
 
+use Db;
 use Yaml;
 use File;
 use System;
@@ -280,6 +281,42 @@ class ThemeManager
         File::put($childYaml, Yaml::render($yaml));
 
         return true;
+    }
+
+    /**
+     * importDatabaseTemplates
+     */
+    public function importDatabaseTemplates(string $dirName, string $srcDirName = null)
+    {
+        if (!$srcDirName) {
+            $srcDirName = $dirName;
+        }
+
+        $theme = CmsTheme::load($dirName);
+        $themePath = $theme->getPath();
+        if (!$themePath) {
+            return;
+        }
+
+        $templates = Db::table('cms_theme_templates')->where('source', $srcDirName)->get();
+
+        foreach ($templates as $template) {
+            $filePath = $themePath . '/' . $template->path;
+            if ($template->deleted_at) {
+                File::delete($filePath);
+            }
+            else {
+                File::put($filePath, $template->content);
+            }
+        }
+    }
+
+    /**
+     * purgeDatabaseTemplates
+     */
+    public function purgeDatabaseTemplates(string $dirName)
+    {
+        Db::table('cms_theme_templates')->where('source', $dirName)->delete();
     }
 
     /**

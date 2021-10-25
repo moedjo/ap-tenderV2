@@ -17,10 +17,11 @@
         <?php
             $isActive = $tabs->isPaneActive($index, $name);
             $isLazy = !$isActive && $tabs->isLazy($name);
+            $tName = trans($name);
         ?>
             <li class="<?= $isActive ? 'active' : '' ?> <?= $isLazy ? 'tab-lazy' : '' ?>">
                 <a
-                    href="#<?= $type . 'tab-' . ($tabs->linkable ? str_slug($name) : $index) ?>"
+                    href="#<?= $type . 'tab-' . ($tabs->linkable ? str_slug($tName) : $index) ?>"
                     <?php if ($isLazy): ?>
                         data-tab-name="<?= e($name) ?>"
                         data-tab-section="<?= $type ?>"
@@ -32,7 +33,7 @@
                             <?php if ($tabs->getIcon($name)): ?>
                                 <span class="<?= $tabs->getIcon($name) ?>"></span>
                             <?php endif ?>
-                            <?= e(trans($name)) ?>
+                            <?= e($tName) ?>
                         </span>
                     </span>
                 </a>

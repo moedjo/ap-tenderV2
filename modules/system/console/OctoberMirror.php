@@ -218,7 +218,12 @@ class OctoberMirror extends Command
      */
     protected function makeSymlink(string $src, string $dest)
     {
-        $finalSrc = $this->option('relative') ? $src : base_path($src);
+        if ($this->option('relative')) {
+            $finalSrc = $this->makeRelativePath($dest, $src);
+        }
+        else {
+            $finalSrc = base_path($src);
+        }
 
         try {
             symlink($finalSrc, $dest);
@@ -241,8 +246,6 @@ class OctoberMirror extends Command
             str_replace('/', DIRECTORY_SEPARATOR, $dest)
         );
 
-        echo $cmd;
-
         $result = $code = null;
         exec($cmd . ' 2>&1', $result, $code);
 
@@ -251,6 +254,32 @@ class OctoberMirror extends Command
             $this->output->error("Could not mirror directory at ${dest}: ${msg}");
             exit(1);
         }
+    }
+
+    /**
+     * makeRelativePath will count the number of to reach the base using a relative path.
+     * For example: from:public/index.php, to:index.php = ../index.php
+     */
+    protected function makeRelativePath($from, $to)
+    {
+        $from = str_replace(DIRECTORY_SEPARATOR, '/', $from);
+        $to = str_replace(DIRECTORY_SEPARATOR, '/', $to);
+
+        $dir = explode('/', is_file($from) ? dirname($from) : rtrim($from, '/'));
+        $file = explode('/', $to);
+
+        while ($dir && $file && ($dir[0] === $file[0])) {
+            array_shift($dir);
+            array_shift($file);
+        }
+
+        $out = str_repeat('../', count($dir)) . implode('/', $file);
+
+        if (strpos($out, '../') === 0) {
+            $out = rtrim(substr($out, 3), '/');
+        }
+
+        return $out;
     }
 
     /**

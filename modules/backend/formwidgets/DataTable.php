@@ -81,6 +81,7 @@ class DataTable extends FormWidgetBase
     public function prepareVars()
     {
         $this->populateTableWidget();
+        $this->vars['name'] = $this->getFieldName();
         $this->vars['table'] = $this->table;
         $this->vars['size'] = $this->size;
         $this->vars['rowSorting'] = $this->rowSorting;
@@ -93,8 +94,7 @@ class DataTable extends FormWidgetBase
     {
         $value = (array) parent::getLoadValue();
 
-        // Sync the array keys as the ID to make the
-        // table widget happy!
+        // Sync the array keys as the ID to make the table widget happy.
         foreach ($value as $key => $_value) {
             $value[$key] = ['id' => $key] + (array) $_value;
         }
@@ -149,12 +149,11 @@ class DataTable extends FormWidgetBase
      */
     protected function makeTableWidget()
     {
+        $fieldName = $this->getFieldName();
+
         $config = $this->makeConfig((array) $this->config);
+        $config->postbackHandlerName = '*';
         $config->dataSource = 'client';
-
-        $arrayName = $this->getParentForm()->arrayName ?? null;
-        $fieldName = $arrayName ? $arrayName . '[' . $this->fieldName . ']' : $this->fieldName;
-
         $config->alias = studly_case(HtmlHelper::nameToId($fieldName)) . 'datatable';
         $config->fieldName = $fieldName;
 

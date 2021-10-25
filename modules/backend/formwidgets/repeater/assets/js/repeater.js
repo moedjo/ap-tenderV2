@@ -152,6 +152,8 @@
             var $btn = this.$el.find('> .field-repeater-add-item');
             $btn.toggle(this.itemCount < this.options.maxItems);
         }
+
+        $('> [data-repeater-pointer-input]:first', this.$el).attr('disabled', !!this.itemCount);
     }
 
     Repeater.prototype.toggleCollapse = function(ev) {
@@ -194,7 +196,8 @@
     }
 
     Repeater.prototype.collapse = function($item) {
-        $item.addClass('collapsed')
+        $item.addClass('collapsed');
+
         $('.repeater-item-collapsed-title', $item).text(this.getCollapseTitle($item));
     }
 
@@ -202,6 +205,7 @@
         if (this.getStyle() === 'accordion') {
             this.collapseAll();
         }
+
         $item.removeClass('collapsed');
     }
 

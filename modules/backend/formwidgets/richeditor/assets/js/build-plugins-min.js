@@ -18,25 +18,27 @@ imagesInserted++
 if(imagesInserted==1){$currentImage=null}}
 if(imagesInserted!==0){this.hide()
 editor.undo.saveStep()}}})}
-function onInsertVideo(){new $.oc.mediaManager.popup({alias:'ocmediamanager',cropAndInsertButton:false,onInsert:function(items){if(!items.length){$.oc.alert($.oc.lang.get('mediamanager.invalid_video_empty_insert'))
+function onInsertVideo(callback){new $.oc.mediaManager.popup({alias:'ocmediamanager',cropAndInsertButton:false,onInsert:function(items){if(!items.length){$.oc.alert($.oc.lang.get('mediamanager.invalid_video_empty_insert'))
 return}
 if(items.length>1){$.oc.alert($.oc.lang.get('mediamanager.invalid_file_single_insert'))
 return}
 var item=items[0]
 if(item.documentType!=='video'){$.oc.alert($.oc.lang.get('mediamanager.invalid_video_invalid_insert','The file "'+item.title+'" is not a video.'))
 return}
-var $richEditorNode=editor.$el.closest('[data-control="richeditor"]')
-$richEditorNode.richEditor('insertVideo',item.publicUrl,item.title)
+if(!callback){var $richEditorNode=editor.$el.closest('[data-control="richeditor"]')
+$richEditorNode.richEditor('insertVideo',item.publicUrl,item.title)}
+else{callback(item.publicUrl,item.title)}
 this.hide()}})}
-function onInsertAudio(){new $.oc.mediaManager.popup({alias:'ocmediamanager',cropAndInsertButton:false,onInsert:function(items){if(!items.length){$.oc.alert($.oc.lang.get('mediamanager.invalid_audio_empty_insert'))
+function onInsertAudio(callback){new $.oc.mediaManager.popup({alias:'ocmediamanager',cropAndInsertButton:false,onInsert:function(items){if(!items.length){$.oc.alert($.oc.lang.get('mediamanager.invalid_audio_empty_insert'))
 return}
 if(items.length>1){$.oc.alert($.oc.lang.get('mediamanager.invalid_file_single_insert'))
 return}
 var item=items[0]
 if(item.documentType!=='audio'){$.oc.alert($.oc.lang.get('mediamanager.invalid_audio_invalid_insert','The file "'+item.title+'" is not an audio file.'))
 return}
-var $richEditorNode=editor.$el.closest('[data-control="richeditor"]')
-$richEditorNode.richEditor('insertAudio',item.publicUrl,item.title)
+if(!callback){var $richEditorNode=editor.$el.closest('[data-control="richeditor"]')
+$richEditorNode.richEditor('insertAudio',item.publicUrl,item.title)}
+else{callback(item.publicUrl,item.title)}
 this.hide()}})}
 function _insertVideoFallback(link){var $richEditorNode=editor.$el.closest('[data-control="richeditor"]')
 var title=link.substring(link.lastIndexOf('/')+1)
