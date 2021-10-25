@@ -29,6 +29,15 @@ function onStart()
 
 
     $tenderTenant = TenderTenant::where('status', 'winner')->get();
+    foreach ($tenderTenant as $idx => $row) {
+        foreach ($row->tender->pic_flyer as $_idx => $_row) {
+            if (file_exists($_row->getLocalPath())) {
+                $tenderTenant[$idx]->tender->pic_flyer[$_idx]['file_exists'] = 1;
+            } else {
+                $tenderTenant[$idx]->tender->pic_flyer[$_idx]['file_exists'] = 0;
+            }
+        }
+    }
     $this['TenderTenant'] = $tenderTenant;
 
 }
