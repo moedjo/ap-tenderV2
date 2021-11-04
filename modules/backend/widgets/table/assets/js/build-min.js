@@ -236,8 +236,8 @@ for(var i=0,len=this.options.columns.length;i<len;i++){var column=this.options.c
 if(this.cellProcessors[column].onKeyDown(ev)===false){return}}
 if(this.navigation.onKeydown(ev)===false){return}
 if(this.search.onKeydown(ev)===false){return}}
-Table.prototype.onFormSubmit=function(ev,data){var wildCardPostback=this.options.postbackHandlerName==='*';if(data.handler===this.options.postbackHandlerName||wildCardPostback){this.unfocusTable();if(!wildCardPostback&&!this.validate()){ev.preventDefault();return;}
-var fieldName=this.options.fieldName.indexOf('[')>-1?this.options.fieldName+'[TableData]':this.options.fieldName+'TableData';data.options.data[fieldName]=JSON.stringify(this.dataSource.getAllData());}}
+Table.prototype.onFormSubmit=function(ev,data){var isSubmitHandler=data.handler===this.options.postbackHandlerName;if(isSubmitHandler){this.unfocusTable();if(!this.validate()){ev.preventDefault();return;}}
+console.log(this.options.postbackHandlerWild);console.log(this.options.postbackHandlerWild?'yes':'no');if(isSubmitHandler||this.options.postbackHandlerWild){var fieldName=this.options.fieldName.indexOf('[')>-1?this.options.fieldName+'[TableData]':this.options.fieldName+'TableData';data.options.data[fieldName]=JSON.stringify(this.dataSource.getAllData());}}
 Table.prototype.onToolbarClick=function(ev){var target=this.getEventTarget(ev,'BUTTON'),cmd=target&&target.getAttribute('data-cmd');if(!cmd){return}
 switch(cmd){case'record-add':case'record-add-below':this.addRecord('below')
 break
@@ -335,7 +335,7 @@ if(dataContainer.value!=value){dataContainer.value=value
 this.markCellRowDirty(cellElement)
 this.notifyRowProcessorsOnChange(cellElement)
 if(suppressEvents===undefined||!suppressEvents){this.$el.trigger('oc.tableCellChanged',[this.getCellColumnName(cellElement),value,this.getCellRowIndex(cellElement)]);}}}
-Table.DEFAULTS={clientDataSourceClass:'client',keyColumn:'id',recordsPerPage:false,data:null,postback:true,postbackHandlerName:null,adding:true,deleting:true,toolbar:true,searching:false,rowSorting:false,height:false,dynamicHeight:false}
+Table.DEFAULTS={clientDataSourceClass:'client',keyColumn:'id',recordsPerPage:false,data:null,postback:true,postbackHandlerName:null,postbackHandlerWild:false,adding:true,deleting:true,toolbar:true,searching:false,rowSorting:false,height:false,dynamicHeight:false}
 var old=$.fn.table
 $.fn.table=function(option){var args=Array.prototype.slice.call(arguments,1),result=undefined
 this.each(function(){var $this=$(this)

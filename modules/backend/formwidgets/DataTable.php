@@ -152,7 +152,7 @@ class DataTable extends FormWidgetBase
         $fieldName = $this->getFieldName();
 
         $config = $this->makeConfig((array) $this->config);
-        $config->postbackHandlerName = '*';
+        $config->postbackHandlerWild = true;
         $config->dataSource = 'client';
         $config->alias = studly_case(HtmlHelper::nameToId($fieldName)) . 'datatable';
         $config->fieldName = $fieldName;

@@ -746,7 +746,7 @@ class RelationController extends ControllerBehavior
             $results = $results->whereIn($foreignKeyName, $checkIds);
         }
 
-        return $results->lists($foreignKeyName);
+        return $results->pluck($foreignKeyName)->all();
     }
 
     /**

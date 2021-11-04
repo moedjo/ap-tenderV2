@@ -58,6 +58,20 @@ class User extends UserBase
     ];
 
     /**
+     * @var array fillable fields
+     * the guarded attribute is @deprecated and should swap to fillable
+     */
+    // protected $fillable = [
+    //     'first_name',
+    //     'last_name',
+    //     'login',
+    //     'email',
+    //     'password',
+    //     'password_confirmation',
+    //     'send_invite',
+    // ];
+
+    /**
      * @var array purgeable list of attribute names which should not be saved to the database
      */
     protected $purgeable = ['password_confirmation', 'send_invite'];

@@ -129,6 +129,7 @@ class Table extends WidgetBase
 
         $this->vars['recordsPerPage'] = $this->getConfig('recordsPerPage', false) ?: 'false';
         $this->vars['postbackHandlerName'] = $this->getConfig('postbackHandlerName');
+        $this->vars['postbackHandlerWild'] = $this->getConfig('postbackHandlerWild', false) ?: 'false';
         $this->vars['searching'] = $this->getConfig('searching', false);
         $this->vars['adding'] = $this->getConfig('adding', true);
         $this->vars['deleting'] = $this->getConfig('deleting', true);

@@ -113,12 +113,12 @@ class Repeater extends FormWidgetBase
             $this->previewMode = true;
         }
 
-        if (post($this->alias . '_loaded')) {
-            $this->isLoaded = true;
-        }
-
         $this->processGroupMode();
 
+        $this->processLoadedState();
+
+        // First pass will contain postback, then raw attributes
+        // This occurs to bind widgets to the controller early
         if (!self::$onAddItemCalled) {
             $this->processItems();
         }
@@ -138,11 +138,9 @@ class Repeater extends FormWidgetBase
      */
     public function prepareVars()
     {
-        // Refresh the loaded data to support being modified by filterFields.
-        // This logic needs review because it doesn't work fully, filterFields
-        // does not appear to modify the repeater on the second pass anyway
-        // because the refreshed values come from the postback -sg
-        if (!self::$onAddItemCalled && !$this->isLoaded) {
+        // Second pass will contain filtered attributes, then postback
+        // This occurs to apply filtered values to the widget data
+        if (!self::$onAddItemCalled) {
             $this->processItems();
         }
 
@@ -179,6 +177,21 @@ class Repeater extends FormWidgetBase
     public function getSaveValue($value)
     {
         return $this->processSaveValue($value);
+    }
+
+    /**
+     * processLoadedState is special logic that occurs during a postback,
+     * the form field value is set directly from the postback data, this occurs
+     * during initialization so that nested form widgets can be bound to the controller.
+     */
+    protected function processLoadedState()
+    {
+        if (!post($this->alias . '_loaded')) {
+            return;
+        }
+
+        $this->formField->value = post($this->formField->getName());
+        $this->isLoaded = true;
     }
 
     /**
@@ -226,13 +239,11 @@ class Repeater extends FormWidgetBase
     }
 
     /**
-     * processItems processes form data and applies it to the form widgets
+     * processItems processes data and applies it to the form widgets
      */
     protected function processItems()
     {
-        $currentValue = $this->isLoaded === true
-            ? post($this->formField->getName())
-            : $this->getLoadValue();
+        $currentValue = $this->getLoadValue();
 
         // This lets record finder work inside a repeater with some hacks
         // since record finder spawns outside the form and its AJAX calls
@@ -296,7 +307,7 @@ class Repeater extends FormWidgetBase
             $config->enableDefaults = true;
         }
 
-        $widget = $this->makeWidget('Backend\Widgets\Form', $config);
+        $widget = $this->makeWidget(\Backend\Widgets\Form::class, $config);
         $widget->previewMode = $this->previewMode;
         $widget->bindToController();
 
@@ -313,9 +324,7 @@ class Repeater extends FormWidgetBase
      */
     protected function getValueFromIndex($index)
     {
-        $value = $this->isLoaded === true
-            ? post($this->formField->getName())
-            : $this->getLoadValue();
+        $value = $this->getLoadValue();
 
         if (!is_array($value)) {
             $value = [];
@@ -377,19 +386,10 @@ class Repeater extends FormWidgetBase
      */
     protected function getNextIndex(): int
     {
-        if ($this->isLoaded === true) {
-            $data = post($this->formField->getName());
+        $data = $this->getLoadValue();
 
-            if (is_array($data) && count($data)) {
-                return max(array_keys($data)) + 1;
-            }
-        }
-        else {
-            $data = $this->getLoadValue();
-
-            if (is_array($data)) {
-                return count($data);
-            }
+        if (is_array($data) && count($data)) {
+            return max(array_keys($data)) + 1;
         }
 
         return 0;

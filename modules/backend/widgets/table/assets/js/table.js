@@ -807,16 +807,18 @@
 
     // Validate table contents and manipulate request directly
     Table.prototype.onFormSubmit = function(ev, data) {
-        var wildCardPostback = this.options.postbackHandlerName === '*';
+        var isSubmitHandler = data.handler === this.options.postbackHandlerName;
 
-        if (data.handler === this.options.postbackHandlerName || wildCardPostback) {
+        if (isSubmitHandler) {
             this.unfocusTable();
 
-            if (!wildCardPostback && !this.validate()) {
+            if (!this.validate()) {
                 ev.preventDefault();
                 return;
             }
+        }
 
+        if (isSubmitHandler || this.options.postbackHandlerWild) {
             var fieldName = this.options.fieldName.indexOf('[') > -1
                 ? this.options.fieldName + '[TableData]'
                 : this.options.fieldName + 'TableData';
@@ -1126,6 +1128,7 @@
         data: null,
         postback: true,
         postbackHandlerName: null,
+        postbackHandlerWild: false,
         adding: true,
         deleting: true,
         toolbar: true,

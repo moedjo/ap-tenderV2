@@ -445,7 +445,7 @@ trait HasManageMode
     protected function evalManageTitle(): string
     {
         if ($customTitle = $this->getConfig('manage[title]')) {
-            return $customTitle;
+            return Lang::get($customTitle);
         }
 
         switch ($this->manageMode) {
