@@ -14,7 +14,7 @@ class TenantFinance extends Tenant
         'doc_finance_sppkp' => 'required',
         'doc_finance_blp' => 'required',
 
-        'doc_finance_sklp' => 'required',
+        'doc_finance_sklp' => '',
         'doc_finance_other' => '',
 
         'doc_finance_fiskal' => '',
@@ -29,6 +29,10 @@ class TenantFinance extends Tenant
 
     public function beforeValidate()
     {
+        if ($this->has_experience) {
+            $this->rules['doc_finance_sklp'] = "required";
+        }
+
         if ($this->collaborate) {
             $this->rules['doc_finance_collaborate'] = "required";
         }

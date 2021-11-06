@@ -9,19 +9,19 @@ use Response;
 
 class PublicTenantFinances extends Controller
 {
-    public $implement = [        
+    public $implement = [
         'Backend\Behaviors\FormController',
         'Backend\Behaviors\RelationController',
     ];
 
     public $formConfig = 'config_form.yaml';
     public $relationConfig = 'config_relation.yaml';
-    
+
     public $requiredPermissions = [
     ];
 
     public $publicActions = [
-        'update' 
+        'update'
     ];
 
     public function __construct()
@@ -31,7 +31,7 @@ class PublicTenantFinances extends Controller
         $this->addCss('/plugins/ap/tender/assets/css/custom.css', 'Ap.Tender');
     }
 
-    
+
     public function index_onDelete()
     {
         return Response::make(View::make('backend::access_denied'), 403);
@@ -69,6 +69,9 @@ class PublicTenantFinances extends Controller
         $model = $host->model;
 
         if ($context == 'update') {
+            if ($model->has_experience) {
+                $fields['doc_finance_sklp']->required = true;
+            }
             // if($model->collaborate){
             //     $fields['doc_finance_collaborate']->hidden = false;
             // }
