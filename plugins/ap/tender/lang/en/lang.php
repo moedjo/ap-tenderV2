@@ -338,7 +338,7 @@
         'doc_finance_spt_monthly' => 'SPT Pajak Bulanan',
         'doc_finance_blp' => 'Bukti Lapor Pajak & Bukti Setor pajak (Jika Kurang Bayar)',
         'doc_finance_bsp' => 'Bukti Setoran Pajak',
-        'doc_finance_sklp' => 'Surat Keterangan Kelancaran Pembayaran',
+        'doc_finance_sklp' => 'Surat keterangan kelancaran pembayaran / Surat Kepatuhan Terhadap Kontrak',
         'doc_finance_other' => 'Lainnya',
         'doc_finance_collaborate' => 'Bukti Dokumen Kerjasama',
 
