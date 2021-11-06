@@ -378,7 +378,7 @@
         'name' => 'Nama Gerai - Lokasi Detail',
         'region_area' => 'Luas Area (m2)',
         'region' => 'Wilayah',
-        'region_text' => 'Wilayah Luar Negri',
+        'region_text' => 'Wilayah Luar Negeri',
         'total_income' => 'Total Omzet Tahun Terakhir (Rp.)',
         'cooperation_period' => 'Masa Kerjasama',
         'operational_hour' => 'Jam Operasional',
