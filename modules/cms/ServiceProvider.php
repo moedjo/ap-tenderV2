@@ -8,6 +8,7 @@ use Cms\Models\ThemeLog;
 use Cms\Models\ThemeData;
 use Cms\Classes\CmsObject;
 use Cms\Classes\Page as CmsPage;
+use Cms\Classes\ThemeManager;
 use Cms\Classes\CmsObjectCache;
 use Cms\Classes\ComponentManager;
 use Backend\Models\UserRole;
@@ -59,7 +60,7 @@ class ServiceProvider extends ModuleServiceProvider
         $this->bootRichEditorEvents();
 
         if (App::runningInBackend()) {
-            $this->bootBackendLocalization();
+            $this->bootThemesForBackend();
         }
     }
 
@@ -273,17 +274,11 @@ class ServiceProvider extends ModuleServiceProvider
     }
 
     /**
-     * bootBackendLocalization localization from an active theme for backend items.
+     * bootThemesForBackend localization from an active theme for backend items.
      */
-    protected function bootBackendLocalization()
+    protected function bootThemesForBackend()
     {
-        if ($theme = \Cms\Classes\Theme::getActiveTheme()) {
-            $langPath = $theme->getPath() . '/lang';
-
-            if (\File::isDirectory($langPath)) {
-                \Lang::addNamespace("theme.{$theme->getId()}", $langPath);
-            }
-        }
+        ThemeManager::instance()->bootAllBackend();
     }
 
     /**

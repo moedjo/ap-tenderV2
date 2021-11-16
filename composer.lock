@@ -150,16 +150,16 @@
         },
         {
             "name": "composer/composer",
-            "version": "2.1.11",
+            "version": "2.1.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "ddc81bb4718747cc93330ccf832e6be8a6c1d015"
+                "reference": "6e3c2b122e0ec41a7e885fcaf19fa15e2e0819a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/ddc81bb4718747cc93330ccf832e6be8a6c1d015",
-                "reference": "ddc81bb4718747cc93330ccf832e6be8a6c1d015",
+                "url": "https://api.github.com/repos/composer/composer/zipball/6e3c2b122e0ec41a7e885fcaf19fa15e2e0819a0",
+                "reference": "6e3c2b122e0ec41a7e885fcaf19fa15e2e0819a0",
                 "shasum": ""
             },
             "require": {
@@ -228,7 +228,7 @@
             "support": {
                 "irc": "ircs://irc.libera.chat:6697/composer",
                 "issues": "https://github.com/composer/composer/issues",
-                "source": "https://github.com/composer/composer/tree/2.1.11"
+                "source": "https://github.com/composer/composer/tree/2.1.12"
             },
             "funding": [
                 {
@@ -244,7 +244,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-11-02T11:10:26+00:00"
+            "time": "2021-11-09T15:02:04+00:00"
         },
         {
             "name": "composer/installers",
@@ -828,16 +828,16 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "2.13.4",
+            "version": "2.13.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "2411a55a2a628e6d8dd598388ab13474802c7b6e"
+                "reference": "d92ddb260547c2a7b650ff140f744eb6f395d8fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/2411a55a2a628e6d8dd598388ab13474802c7b6e",
-                "reference": "2411a55a2a628e6d8dd598388ab13474802c7b6e",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/d92ddb260547c2a7b650ff140f744eb6f395d8fc",
+                "reference": "d92ddb260547c2a7b650ff140f744eb6f395d8fc",
                 "shasum": ""
             },
             "require": {
@@ -850,13 +850,13 @@
             "require-dev": {
                 "doctrine/coding-standard": "9.0.0",
                 "jetbrains/phpstorm-stubs": "2021.1",
-                "phpstan/phpstan": "0.12.99",
+                "phpstan/phpstan": "1.1.1",
                 "phpunit/phpunit": "^7.5.20|^8.5|9.5.10",
                 "psalm/plugin-phpunit": "0.16.1",
-                "squizlabs/php_codesniffer": "3.6.0",
+                "squizlabs/php_codesniffer": "3.6.1",
                 "symfony/cache": "^4.4",
                 "symfony/console": "^2.0.5|^3.0|^4.0|^5.0",
-                "vimeo/psalm": "4.10.0"
+                "vimeo/psalm": "4.12.0"
             },
             "suggest": {
                 "symfony/console": "For helpful console commands such as SQL execution and import of files."
@@ -917,7 +917,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/dbal/issues",
-                "source": "https://github.com/doctrine/dbal/tree/2.13.4"
+                "source": "https://github.com/doctrine/dbal/tree/2.13.5"
             },
             "funding": [
                 {
@@ -933,7 +933,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-10-02T15:59:26+00:00"
+            "time": "2021-11-11T16:27:36+00:00"
         },
         {
             "name": "doctrine/deprecations",
@@ -1718,16 +1718,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v6.20.37",
+            "version": "v6.20.38",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "fee136de3db6d2fdbfacbe2d2b55511857e71d80"
+                "reference": "1b301ac996e65d1319bc0d28716521ef6d1cd5c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/fee136de3db6d2fdbfacbe2d2b55511857e71d80",
-                "reference": "fee136de3db6d2fdbfacbe2d2b55511857e71d80",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/1b301ac996e65d1319bc0d28716521ef6d1cd5c5",
+                "reference": "1b301ac996e65d1319bc0d28716521ef6d1cd5c5",
                 "shasum": ""
             },
             "require": {
@@ -1867,7 +1867,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-11-02T13:52:40+00:00"
+            "time": "2021-11-09T15:35:52+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -2630,12 +2630,12 @@
         },
         {
             "name": "october/backend",
-            "version": "v2.1.18",
+            "version": "v2.1.20",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/backend/october-backend-v2.1.18-a9eab7.zip",
-                "reference": "a8138bbcc81ef747450785e1885538384df3d793",
-                "shasum": "e877b024ffd30babc8c4e02386439cc2813ca9db"
+                "url": "https://gateway.octobercms.com/composer/dist/october/backend/october-backend-v2.1.20-675f28.zip",
+                "reference": "825e137cf141c22e1b8c22b3ebf874221cf914d5",
+                "shasum": "ba7d3d0637e52579ea4d41906b54fc78a8b3084a"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -2658,16 +2658,16 @@
                 "october",
                 "october cms"
             ],
-            "time": "2021-11-01T00:43:18+00:00"
+            "time": "2021-11-16T00:20:46+00:00"
         },
         {
             "name": "october/cms",
-            "version": "v2.1.18",
+            "version": "v2.1.20",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/cms/october-cms-v2.1.18-65a3ec.zip",
-                "reference": "7fa8fc2600e2b34b91a139f5f5991868d2a07795",
-                "shasum": "1a45423f81ea3f0e5d5d3691315d51e8cafcd6a0"
+                "url": "https://gateway.octobercms.com/composer/dist/october/cms/october-cms-v2.1.20-0854df.zip",
+                "reference": "a879375af229315ad4338b277d581f036fc00883",
+                "shasum": "56473f4760a4d4468df15a84f663ae9724e424ef"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -2690,16 +2690,16 @@
                 "october",
                 "october cms"
             ],
-            "time": "2021-11-01T08:27:45+00:00"
+            "time": "2021-11-01T22:39:39+00:00"
         },
         {
             "name": "october/editor",
-            "version": "v2.1.18",
+            "version": "v2.1.20",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/editor/october-editor-v2.1.18-068b52.zip",
+                "url": "https://gateway.octobercms.com/composer/dist/october/editor/october-editor-v2.1.20-068b52.zip",
                 "reference": "15d3c0535f50db99d2e4be65398ca1b9ec604fd8",
-                "shasum": "1b60b095cfbf9f9847d216e804edeb4e3a70b20f"
+                "shasum": "ff7d89ff0960fa933f84421b6ae75cac444c0279"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -2726,12 +2726,12 @@
         },
         {
             "name": "october/media",
-            "version": "v2.1.18",
+            "version": "v2.1.20",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/media/october-media-v2.1.18-9bb28e.zip",
+                "url": "https://gateway.octobercms.com/composer/dist/october/media/october-media-v2.1.20-9bb28e.zip",
                 "reference": "56303c862284c7014e45dbd47986eec4f866baaf",
-                "shasum": "21e1d5fea22d4edbb14c21030da6a42669f9759d"
+                "shasum": "a191f9c74664c7ece2c2b57469729e4f81541ba5"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -2758,16 +2758,16 @@
         },
         {
             "name": "october/rain",
-            "version": "v2.1.12",
+            "version": "v2.1.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/octobercms/library.git",
-                "reference": "3ad1eb378e66fffc24b5ef0c8f1836f4d28ab222"
+                "reference": "99bba4fa31d3073b20004d36335a324434dea2f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/octobercms/library/zipball/3ad1eb378e66fffc24b5ef0c8f1836f4d28ab222",
-                "reference": "3ad1eb378e66fffc24b5ef0c8f1836f4d28ab222",
+                "url": "https://api.github.com/repos/octobercms/library/zipball/99bba4fa31d3073b20004d36335a324434dea2f0",
+                "reference": "99bba4fa31d3073b20004d36335a324434dea2f0",
                 "shasum": ""
             },
             "require": {
@@ -2823,18 +2823,18 @@
                 "rain"
             ],
             "support": {
-                "source": "https://github.com/octobercms/library/tree/v2.1.12"
+                "source": "https://github.com/octobercms/library/tree/v2.1.20"
             },
-            "time": "2021-10-05T02:42:03+00:00"
+            "time": "2021-11-15T23:28:40+00:00"
         },
         {
             "name": "october/system",
-            "version": "v2.1.18",
+            "version": "v2.1.20",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/system/october-system-v2.1.18-e9daae.zip",
-                "reference": "2ca3431b8dc5ae9cd1df991f6e4dba77c8d6183a",
-                "shasum": "d6e1cc2146c9dea3848c6625eeffe4d40dab881c"
+                "url": "https://gateway.octobercms.com/composer/dist/october/system/october-system-v2.1.20-3c1b1d.zip",
+                "reference": "61f19e286bf809f9716591fd30d951eb0368eeb4",
+                "shasum": "8aba3f2e4086c08c0122ef16d20c88232d8f2d4e"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -2857,7 +2857,7 @@
                 "october cms",
                 "system"
             ],
-            "time": "2021-10-31T07:01:15+00:00"
+            "time": "2021-11-16T00:20:46+00:00"
         },
         {
             "name": "opis/closure",
@@ -3131,20 +3131,20 @@
         },
         {
             "name": "psr/container",
-            "version": "1.1.1",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/container.git",
-                "reference": "8622567409010282b7aeebe4bb841fe98b58dcaf"
+                "reference": "513e0666f7216c7459170d56df27dfcefe1689ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/container/zipball/8622567409010282b7aeebe4bb841fe98b58dcaf",
-                "reference": "8622567409010282b7aeebe4bb841fe98b58dcaf",
+                "url": "https://api.github.com/repos/php-fig/container/zipball/513e0666f7216c7459170d56df27dfcefe1689ea",
+                "reference": "513e0666f7216c7459170d56df27dfcefe1689ea",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2.0"
+                "php": ">=7.4.0"
             },
             "type": "library",
             "autoload": {
@@ -3173,9 +3173,9 @@
             ],
             "support": {
                 "issues": "https://github.com/php-fig/container/issues",
-                "source": "https://github.com/php-fig/container/tree/1.1.1"
+                "source": "https://github.com/php-fig/container/tree/1.1.2"
             },
-            "time": "2021-03-05T17:36:06+00:00"
+            "time": "2021-11-05T16:50:12+00:00"
         },
         {
             "name": "psr/log",
@@ -7741,16 +7741,16 @@
         },
         {
             "name": "sebastian/exporter",
-            "version": "4.0.3",
+            "version": "4.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/exporter.git",
-                "reference": "d89cc98761b8cb5a1a235a6b703ae50d34080e65"
+                "reference": "65e8b7db476c5dd267e65eea9cab77584d3cfff9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/d89cc98761b8cb5a1a235a6b703ae50d34080e65",
-                "reference": "d89cc98761b8cb5a1a235a6b703ae50d34080e65",
+                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/65e8b7db476c5dd267e65eea9cab77584d3cfff9",
+                "reference": "65e8b7db476c5dd267e65eea9cab77584d3cfff9",
                 "shasum": ""
             },
             "require": {
@@ -7799,14 +7799,14 @@
                 }
             ],
             "description": "Provides the functionality to export PHP variables for visualization",
-            "homepage": "http://www.github.com/sebastianbergmann/exporter",
+            "homepage": "https://www.github.com/sebastianbergmann/exporter",
             "keywords": [
                 "export",
                 "exporter"
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/exporter/issues",
-                "source": "https://github.com/sebastianbergmann/exporter/tree/4.0.3"
+                "source": "https://github.com/sebastianbergmann/exporter/tree/4.0.4"
             },
             "funding": [
                 {
@@ -7814,7 +7814,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-09-28T05:24:23+00:00"
+            "time": "2021-11-11T14:18:36+00:00"
         },
         {
             "name": "sebastian/global-state",

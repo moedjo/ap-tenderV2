@@ -163,7 +163,7 @@ Vue.component('backend-component-modal', {
             var result = this.modalCssClass;
 
             if (this.in) {
-                result += 'in ';
+                result += ' in ';
             }
 
             if (!this.isModal) {

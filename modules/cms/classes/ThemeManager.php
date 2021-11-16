@@ -1,6 +1,7 @@
 <?php namespace Cms\Classes;
 
 use Db;
+use Lang;
 use Yaml;
 use File;
 use System;
@@ -30,6 +31,29 @@ class ThemeManager
      * @var array themes is for storing installed themes cache
      */
     protected $themeDirs;
+
+    /**
+     * bootAllBackend will boot language messages for the active theme as `theme.acme::lang.*`
+     */
+    public function bootAllBackend()
+    {
+        $theme = CmsTheme::getActiveTheme();
+        if (!$theme) {
+            return;
+        }
+
+        $langPath = $theme->getPath() . '/lang';
+        if (File::isDirectory($langPath)) {
+            Lang::addNamespace("theme.{$theme->getId()}", $langPath);
+        }
+
+        if ($parent = $theme->getParentTheme()) {
+            $langPath = $parent->getPath() . '/lang';
+            if (File::isDirectory($langPath)) {
+                Lang::addNamespace("theme.{$parent->getId()}", $langPath);
+            }
+        }
+    }
 
     /**
      * getInstalled returns a collection of themes installed

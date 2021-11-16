@@ -494,11 +494,19 @@ class UpdateManager
     {
         $version = SystemHelper::VERSION;
 
-        if ($build = Parameter::get('system::core.build')) {
+        if ($build = $this->getCurrentBuildNumber()) {
             $version .= '.' . $build;
         }
 
         return $version;
+    }
+
+    /**
+     * getCurrentBuildNumber return the current build number
+     */
+    public function getCurrentBuildNumber(): ?string
+    {
+        return Parameter::get('system::core.build');
     }
 
     /**

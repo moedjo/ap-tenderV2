@@ -112,7 +112,9 @@
 
                 $form.one('ajaxComplete', function() {
                     $loadContainer.loadIndicator('hide');
+                    self.itemCount++;
                     self.togglePrompt();
+                    self.triggerChange();
                 })
             });
 

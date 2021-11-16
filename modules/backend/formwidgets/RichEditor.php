@@ -67,7 +67,9 @@ class RichEditor extends FormWidgetBase
             'legacyMode'
         ]);
 
-        $this->controller->registerVueComponent(\Backend\VueComponents\RichEditorDocumentConnector::class);
+        if (!$this->legacyMode) {
+            $this->controller->registerVueComponent(\Backend\VueComponents\RichEditorDocumentConnector::class);
+        }
     }
 
     /**
