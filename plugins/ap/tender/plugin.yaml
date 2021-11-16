@@ -56,6 +56,9 @@ permissions:
     ap_tender_is_admin_envelope2:
         tab: 'ap.tender::lang.permission.tab.master'
         label: 'ap.tender::lang.permission.is_admin_envelope2'
+    ap_tender_audit_logs:
+        tab: 'ap.tender::lang.permission.tab.master'
+        label: 'Audit Logs'
 navigation:
     master-data:
         label: 'ap.tender::lang.permission.tab.master'
@@ -311,3 +314,9 @@ navigation:
                 icon: icon-file
                 permissions:
                     - ap_tender_is_admin_tender
+    audit-log:
+        label: 'Audit Log'
+        url: ap/tender/revisions
+        icon: icon-life-ring
+        permissions:
+            - ap_tender_audit_logs

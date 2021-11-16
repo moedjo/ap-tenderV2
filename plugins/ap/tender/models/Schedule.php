@@ -2,6 +2,7 @@
 
 namespace Ap\Tender\Models;
 
+use Backend\Facades\BackendAuth;
 use Model;
 
 /**
@@ -10,6 +11,7 @@ use Model;
 class Schedule extends Model
 {
     use \October\Rain\Database\Traits\Validation;
+    use \October\Rain\Database\Traits\Revisionable;
 
 
     /**
@@ -36,5 +38,16 @@ class Schedule extends Model
 
     public $morphTo = [
         'schedulable' => []
+    ];
+
+    protected $revisionable = ['name','date_start','date_end', 'schedulable_id'];
+    public $revisionableLimit = 500;
+    public function getRevisionableUser()
+    {
+        return BackendAuth::getUser();
+    }
+
+    public $morphMany = [
+        'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']
     ];
 }

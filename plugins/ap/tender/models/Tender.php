@@ -2,6 +2,7 @@
 
 namespace Ap\Tender\Models;
 
+use Backend\Facades\BackendAuth;
 use Model;
 
 /**
@@ -10,12 +11,13 @@ use Model;
 class Tender extends Model
 {
     use \October\Rain\Database\Traits\Validation;
+    use \October\Rain\Database\Traits\Revisionable;
+
 
 
     public function __construct()
     {
         parent::__construct();
-
     }
 
     /**
@@ -26,9 +28,7 @@ class Tender extends Model
     /**
      * @var array Validation rules
      */
-    public $rules = [
-
-    ];
+    public $rules = [];
 
     public $belongsTo = [
         'business_field' => [
@@ -59,7 +59,8 @@ class Tender extends Model
         'schedules' => [
             'Ap\Tender\Models\Schedule',
             'name' => 'schedulable'
-        ]
+        ],
+        'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']
     ];
 
     public $belongsToMany = [
@@ -98,6 +99,20 @@ class Tender extends Model
     ];
 
 
+
+    protected $revisionable = [
+        'status', 'name', 'package', 'description', 'business_field_id', 'airport_id', 'rooms',
+        'pic_full_name', 'pic_phone_number', 'pic_email', 'invite_name', 'invite_description', 'invite_location', 'invite_pic_phone_number',
+        'invite_date', 'invite_hour_start', 'invite_hour_end', 'tenant_winner_id'
+    ];
+
+    public $revisionableLimit = 500;
+    public function getRevisionableUser()
+    {
+        return BackendAuth::getUser();
+    }
+
+
     public function beforeValidate()
     {
         if ($this->status == 'aanwijzing') {
@@ -109,7 +124,7 @@ class Tender extends Model
                 'invite_date' => 'required|date|after:today',
                 'invite_hour_start' => 'required|date',
                 'invite_hour_end' => 'required|date|after:invite_hour_start',
-             ];
+            ];
         }
 
         if ($this->status == 'registration') {
@@ -123,16 +138,17 @@ class Tender extends Model
                 'rooms' => 'required',
                 'description' => 'required',
                 'pic_flyer' => 'required',
-                'doc_rfq'=> 'required',
-                'doc_rfp'=> 'required',
-             ];
+                'doc_rfq' => 'required',
+                'doc_rfp' => 'required',
+            ];
         }
     }
 
-    public function afterCreate(){
+    public function afterCreate()
+    {
 
-    //    $test =  $this->tenant_invites()->withDeferred(post('_session_key'))->get();
+        //    $test =  $this->tenant_invites()->withDeferred(post('_session_key'))->get();
 
-    //    trace_log($test);
+        //    trace_log($test);
     }
 }

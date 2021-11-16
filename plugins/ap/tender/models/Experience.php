@@ -2,6 +2,7 @@
 
 namespace Ap\Tender\Models;
 
+use Backend\Facades\BackendAuth;
 use Model;
 
 /**
@@ -10,6 +11,7 @@ use Model;
 class Experience extends Model
 {
     use \October\Rain\Database\Traits\Validation;
+    use \October\Rain\Database\Traits\Revisionable;
 
 
     /**
@@ -17,7 +19,7 @@ class Experience extends Model
      */
     public $table = 'ap_tender_tenant_experiences';
 
-    
+
     // protected $purgeable = ['is_region_text'];
 
     public $dates = [
@@ -65,6 +67,21 @@ class Experience extends Model
     public $attachOne = [
         'doc_experience' => ['System\Models\File', 'public' => false]
     ];
+
+    public $morphMany = [ 
+        'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']
+    ];
+
+    protected $revisionable = [
+        'name', 'operational_hour_start', 'operational_hour_end', 'cooperation_period_start', 'cooperation_period_end', 'total_income', 'region_id',
+        'region_area', 'is_region_text', 'region_text', 'tenant_id', 'business_field_id'
+    ];
+
+    public $revisionableLimit = 500;
+    public function getRevisionableUser()
+    {
+        return BackendAuth::getUser();
+    }
 
     public function beforeValidate()
     {

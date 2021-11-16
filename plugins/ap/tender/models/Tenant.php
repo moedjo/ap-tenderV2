@@ -2,6 +2,7 @@
 
 namespace Ap\Tender\Models;
 
+use Backend\Facades\BackendAuth;
 use Model;
 
 /**
@@ -10,6 +11,8 @@ use Model;
 class Tenant extends Model
 {
     use \October\Rain\Database\Traits\Validation;
+    use \October\Rain\Database\Traits\Revisionable;
+
 
 
     /**
@@ -179,6 +182,26 @@ class Tenant extends Model
         'business_kbli',
         'konsorsium_companies',
     ];
+
+    public $morphMany = [ 
+        'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']
+    ];
+
+    protected $revisionable = [
+        'name', 'npwp', 'address', 'postal_code', 'phone_number', 'fax_number', 'email',
+        'website', 'collaborate', 'has_experience', 'is_age_comply', 'contact_full_name',
+        'contact_phone_number','contact_email','contact_position_id','pic_full_name','pic_phone_number','pic_email','pic_ktp',
+        'pic_position_id','business_kbli','business_activity','commissioners','directors','konsorsium','konsorsium_role','konsorsium_total',
+        'konsorsium_name','konsorsium_function','konsorsium_companies','status','token','token_url','on_legal_status','on_finance_status',
+        'on_commercial_status','off_legal_status','off_finance_status','off_commercial_status','invite_name','invite_description','invite_location',
+        'invite_pic_phone_number','invite_date','invite_hour_start','invite_hour_end','business_entity_id','verification_office_id','region_id','user_id'
+    ];
+
+    public $revisionableLimit = 1000;
+    public function getRevisionableUser()
+    {
+        return BackendAuth::getUser();
+    }
 
 
     public function scopeTenantActive($query, $tender)

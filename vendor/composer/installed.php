@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '36d30f3c9267ff8d5cd1df7f510ce75ab2bf48d1',
+        'reference' => '834d7d619722d884362ef6a37002cf53a3c9067c',
         'name' => 'october/october',
         'dev' => true,
     ),
@@ -556,7 +556,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '36d30f3c9267ff8d5cd1df7f510ce75ab2bf48d1',
+            'reference' => '834d7d619722d884362ef6a37002cf53a3c9067c',
             'dev_requirement' => false,
         ),
         'october/rain' => array(

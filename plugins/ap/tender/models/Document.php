@@ -12,7 +12,7 @@ class Document extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     // use \October\Rain\Database\Traits\Sortable;
-    // use \October\Rain\Database\Traits\Revisionable;
+    use \October\Rain\Database\Traits\Revisionable;
 
 
     /**
@@ -39,16 +39,19 @@ class Document extends Model
     ];
 
 
-    // protected $revisionable = ['name', 'description'];
-    // public $revisionableLimit = 500;
-    // public function getRevisionableUser()
-    // {
-    //     return BackendAuth::getUser();
-    // }
+    protected $revisionable = ['name'];
+    public $revisionableLimit = 500;
+    public function getRevisionableUser()
+    {
+        return BackendAuth::getUser();
+    }
+    public $morphMany = [
+        'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']
+    ];
 
     public $attachOne = [
         'doc_pdf' => ['System\Models\File', 'public' => false],
 
-    ];
+    ]; 
 
 }

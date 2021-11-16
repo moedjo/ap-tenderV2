@@ -2,6 +2,7 @@
 
 namespace Ap\Tender\Models;
 
+use Backend\Facades\BackendAuth;
 use Illuminate\Support\Facades\Mail;
 use Model;
 use PHPUnit\Framework\Constraint\IsEmpty;
@@ -12,6 +13,7 @@ use PHPUnit\Framework\Constraint\IsEmpty;
 class TenderTenant extends Model
 {
     use \October\Rain\Database\Traits\Validation;
+    use \October\Rain\Database\Traits\Revisionable;
 
 
     /**
@@ -48,7 +50,8 @@ class TenderTenant extends Model
         'documents' => [
             'Ap\Tender\Models\Document',
             'name' => 'documentable'
-        ]
+        ],
+        'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']
     ];
 
     public $attachOne = [
@@ -70,6 +73,21 @@ class TenderTenant extends Model
     protected $jsonable = [];
 
     protected $dates = ['expired_negotiation'];
+
+
+
+    protected $revisionable = [
+        'tender_id', 'tenant_id', 'status', 'is_envelope1', 'is_envelope2', 'is_payment_rfp', 'total_price',
+        'last_total_price', 'invite_name', 'invite_description', 'invite_location', 'invite_pic_phone_number',
+        'invite_date','invite_hour_start','invite_hour_end','invite_negotiation_name','invite_negotiation_description','invite_negotiation_location','invite_negotiation_pic_phone_number',
+        'invite_negotiation_date','invite_negotiation_hour_start','invite_negotiation_hour_end','expired_negotiation','envelope1_score','envelope2_score'
+    ];
+
+    public $revisionableLimit = 1000;
+    public function getRevisionableUser()
+    {
+        return BackendAuth::getUser();
+    }
 
 
     public function beforeValidate()

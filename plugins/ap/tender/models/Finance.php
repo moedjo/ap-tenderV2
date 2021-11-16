@@ -1,5 +1,6 @@
 <?php namespace Ap\Tender\Models;
 
+use Backend\Facades\BackendAuth;
 use Model;
 
 /**
@@ -8,6 +9,7 @@ use Model;
 class Finance extends Model
 {
     use \October\Rain\Database\Traits\Validation;
+    use \October\Rain\Database\Traits\Revisionable;
 
 
     /**
@@ -28,6 +30,21 @@ class Finance extends Model
     public $attachOne = [
         'doc_finance' => ['System\Models\File', 'public' => false]
     ];
+
+    public $morphMany = [
+        'revision_history' => ['System\Models\Revision', 'name' => 'revisionable']
+    ];
+
+    protected $revisionable = [
+        'year', 'total_income', 'tenant_id',
+    ];
+
+    public $revisionableLimit = 500;
+    public function getRevisionableUser()
+    {
+        return BackendAuth::getUser();
+    }
+
 
     public function getYearOptions()
     {

@@ -1,0 +1,35 @@
+scopes:
+    user:
+        label: User
+        modelClass: Backend\Models\User
+        conditions: user_id in (:filtered)
+        nameFrom: login
+    revisionable_type:
+        label: 'Revisionable Type'
+        type: group
+        conditions: revisionable_type in (:filtered)
+        options: 
+            Ap\Tender\Models\Airport: Airport
+            Ap\Tender\Models\Schedule: Schedule
+            Ap\Tender\Models\BusinessEntity: BusinessEntity
+            Ap\Tender\Models\BusinessField: BusinessField
+            Ap\Tender\Models\Document: Document
+            Ap\Tender\Models\Experience: Experience
+            Ap\Tender\Models\Finance: Finance
+            Ap\Tender\Models\Office: Office
+            Ap\Tender\Models\Position: Position
+            Ap\Tender\Models\Region: Region
+            Ap\Tender\Models\Schedule: Schedule
+            Ap\Tender\Models\Summary: Summary
+            Ap\Tender\Models\Tenant: Tenant
+            Ap\Tender\Models\Tender: Tender
+            Ap\Tender\Models\TenderTenant: TenderTenant
+            Ap\Tender\Models\Verification: Verification
+    revisionable_id:
+        label: 'Revisionable Id'
+        type: text
+        conditions: revisionable_id = :value
+    field:
+        label: 'Field'
+        type: text
+        conditions: field = :value

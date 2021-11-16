@@ -1,0 +1,52 @@
+columns:
+    id:
+        label: 'Id'
+        type: number
+    login:
+        label: User
+        type: text
+        searchable: true
+        relation: user
+        valueFrom: login
+    field:
+        label: Field
+        type: text
+    cast:
+        label: Cast
+        type: text
+    old_value:
+        label: 'Old Value'
+        type: text
+    new_value:
+        label: 'New Value'
+        type: text
+    revisionable_type:
+        label: 'Revisionable Type'
+        type: selectable
+        options:
+            Ap\Tender\Models\Airport: Airport
+            Ap\Tender\Models\Schedule: Schedule
+            Ap\Tender\Models\BusinessEntity: BusinessEntity
+            Ap\Tender\Models\BusinessField: BusinessField
+            Ap\Tender\Models\Document: Document
+            Ap\Tender\Models\Experience: Experience
+            Ap\Tender\Models\Finance: Finance
+            Ap\Tender\Models\Office: Office
+            Ap\Tender\Models\Position: Position
+            Ap\Tender\Models\Region: Region
+            Ap\Tender\Models\Schedule: Schedule
+            Ap\Tender\Models\Summary: Summary
+            Ap\Tender\Models\Tenant: Tenant
+            Ap\Tender\Models\Tender: Tender
+            Ap\Tender\Models\TenderTenant: TenderTenant
+            Ap\Tender\Models\Verification: Verification
+    revisionable_id:
+        label: 'Revisionable Id'
+        type: text
+    created_at:
+        label: 'ap.tender::lang.global.created_at'
+        type: datetime
+    updated_at:
+        label: 'ap.tender::lang.global.updated_at'
+        type: datetime
+        invisible: true
