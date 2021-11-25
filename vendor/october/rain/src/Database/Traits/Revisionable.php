@@ -52,6 +52,10 @@ trait Revisionable
             $model->bindEvent('model.afterDelete', function () use ($model) {
                 $model->revisionableAfterDelete();
             });
+
+            $model->bindEvent('model.afterCreate', function () use ($model) {
+                $model->revisionableAfterCreate();
+            });
         });
     }
 
@@ -100,18 +104,6 @@ trait Revisionable
             return;
         }
 
-        $softDeletes = in_array(
-            'October\Rain\Database\Traits\SoftDelete',
-            class_uses_recursive(get_class($this))
-        );
-
-        if (!$softDeletes) {
-            return;
-        }
-
-        if (!in_array('deleted_at', $this->revisionable)) {
-            return;
-        }
 
         $relation = $this->getRevisionHistoryName();
         $relationObject = $this->{$relation}();
@@ -120,17 +112,46 @@ trait Revisionable
         $toSave = [
             'field' => 'deleted_at',
             'old_value' => null,
-            'new_value' => $this->deleted_at,
+            'new_value' => new DateTime,
             'revisionable_type' => $relationObject->getMorphClass(),
             'revisionable_id' => $this->getKey(),
             'user_id' => $this->revisionableGetUser(),
             'created_at' => new DateTime,
-            'updated_at' => new DateTime
+            'updated_at' => new DateTime,
+            'cast' => 'date',
         ];
 
         Db::table($revisionModel->getTable())->insert($toSave);
         $this->revisionableCleanUp();
     }
+
+    public function revisionableAfterCreate()
+    {
+        if (!$this->revisionsEnabled) {
+            return;
+        }
+
+
+        $relation = $this->getRevisionHistoryName();
+        $relationObject = $this->{$relation}();
+        $revisionModel = $relationObject->getRelated();
+
+        $toSave = [
+            'field' => 'created_at',
+            'old_value' => null,
+            'new_value' => $this->created_at,
+            'revisionable_type' => $relationObject->getMorphClass(),
+            'revisionable_id' => $this->getKey(),
+            'user_id' => $this->revisionableGetUser(),
+            'created_at' => new DateTime,
+            'updated_at' => new DateTime,
+            'cast' => 'date',
+        ];
+
+        Db::table($revisionModel->getTable())->insert($toSave);
+        $this->revisionableCleanUp();
+    }
+
 
     /*
      * Deletes revision records exceeding the limit.
