@@ -16,6 +16,6 @@ class Revisions extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Ap.Tender', 'audit-log');
+        BackendMenu::setContext('Ap.Tender', 'audit-log','audit-log2');
     }
 }

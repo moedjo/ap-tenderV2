@@ -320,3 +320,17 @@ navigation:
         icon: icon-life-ring
         permissions:
             - ap_tender_audit_logs
+            - access_logs
+        sideMenu:
+            audit-log2:
+                label: 'Audit Log'
+                url: ap/tender/revisions
+                icon: icon-book
+                permissions:
+                    - ap_tender_audit_logs
+            side-menu-item2:
+                label: 'Access Log'
+                url: backend/accesslogs
+                icon: icon-user
+                permissions:
+                    - access_logs
