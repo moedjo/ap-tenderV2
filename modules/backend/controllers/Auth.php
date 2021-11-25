@@ -120,6 +120,11 @@ class Auth extends Controller
      */
     public function signout()
     {
+
+
+        $user = BackendAuth::getUser();
+        AccessLog::addLogout($user);
+
         BackendAuth::logout();
 
         // Add HTTP Header 'Clear Site Data' to purge all sensitive data upon signout

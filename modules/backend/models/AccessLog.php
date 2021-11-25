@@ -33,6 +33,23 @@ class AccessLog extends Model
         $record = new static;
         $record->user = $user;
         $record->ip_address = Request::getClientIp();
+        $record->type = 'Login';
+        $record->save();
+
+        return $record;
+    }
+
+        /**
+     * Creates a log record
+     * @param Backend\Models\User $user Admin user
+     * @return self
+     */
+    public static function addLogout($user)
+    {
+        $record = new static;
+        $record->user = $user;
+        $record->ip_address = Request::getClientIp();
+        $record->type = 'Logout';
         $record->save();
 
         return $record;

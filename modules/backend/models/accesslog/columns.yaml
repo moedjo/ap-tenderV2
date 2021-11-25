@@ -18,7 +18,7 @@ columns:
 
     type:
         label: backend::lang.access_log.type
-        invisible: true
+        invisible: false
 
     ip_address:
         label: backend::lang.access_log.ip_address
