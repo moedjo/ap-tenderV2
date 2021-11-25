@@ -50,7 +50,7 @@ class Templates extends Controller
 
     public function previewPdf($id)
     {
-        $this->pageTitle = trans('renatio.dynamicpdf::lang.templates.preview_pdf');
+        $this->pageTitle = e(trans('renatio.dynamicpdf::lang.templates.preview_pdf'));
 
         try {
             $model = $this->formFindModelObject($id);
@@ -61,6 +61,8 @@ class Templates extends Controller
         return PDF::loadTemplate($model->code)
             ->setLogOutputFile(storage_path('temp/log.htm'))
             ->setIsRemoteEnabled(true)
+            ->setDpi(300)
+            ->setIsPhpEnabled(true)
             ->stream();
     }
 
@@ -76,6 +78,7 @@ class Templates extends Controller
         $model = $this->formFindModelObject($recordId);
 
         $model->fillFromCode();
+        $model->is_custom = 0;
         $model->save();
 
         Flash::success(e(trans('backend::lang.form.reset_success')));

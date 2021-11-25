@@ -151,14 +151,22 @@ trait OctoberUtilCommands
                 ['{{locale}}', '{{messages}}'],
                 [$locale, json_encode($messages)],
                 File::get($stub)
-            );
+            ).PHP_EOL;
 
             /*
              * Include the moment localization data
              */
             $momentPath = base_path() . '/modules/system/assets/ui/vendor/moment/locale/'.$locale.'.js';
             if (File::exists($momentPath)) {
-                $contents .= PHP_EOL.PHP_EOL.File::get($momentPath).PHP_EOL;
+                $contents .= PHP_EOL.File::get($momentPath).PHP_EOL;
+            }
+
+            /*
+             * Include the select localization data
+             */
+            $selectPath = base_path() . '/modules/system/assets/ui/vendor/select2/js/i18n/'.$locale.'.js';
+            if (File::exists($selectPath)) {
+                $contents .= PHP_EOL.File::get($selectPath).PHP_EOL;
             }
 
             File::put($destPath, $contents);

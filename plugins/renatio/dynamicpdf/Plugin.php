@@ -4,11 +4,12 @@ namespace Renatio\DynamicPDF;
 
 use Backend\Facades\Backend;
 use Barryvdh\DomPDF\ServiceProvider;
-use Config;
 use Renatio\DynamicPDF\Classes\PDFWrapper;
 use Renatio\DynamicPDF\Classes\SyncTemplates;
+use Renatio\DynamicPDF\Console\Demo;
 use System\Classes\PluginBase;
 use System\Classes\PluginManager;
+use System\Models\Parameter;
 
 class Plugin extends PluginBase
 {
@@ -31,9 +32,12 @@ class Plugin extends PluginBase
             return new PDFWrapper($app['dompdf'], $app['config'], $app['files'], $app['view']);
         });
 
-        Config::set('dompdf', Config::get('renatio.dynamicpdf::dompdf'));
-
         (new SyncTemplates)->handle();
+    }
+
+    public function register()
+    {
+        $this->registerConsoleCommand('dynamicpdf:demo', Demo::class);
     }
 
     public function registerPermissions()
@@ -75,6 +79,30 @@ class Plugin extends PluginBase
                 'description' => 'renatio.dynamicpdf::lang.menu.description',
                 'permissions' => ['renatio.dynamicpdf.manage_templates'],
             ],
+        ];
+    }
+
+    public function registerPDFTemplates()
+    {
+        if (! Parameter::get('renatio::dynamicpdf.demo')) {
+            return [];
+        }
+
+        return [
+            'renatio.dynamicpdf::pdf.invoice',
+            'renatio.dynamicpdf::pdf.header_and_footer',
+        ];
+    }
+
+    public function registerPDFLayouts()
+    {
+        if (! Parameter::get('renatio::dynamicpdf.demo')) {
+            return [];
+        }
+
+        return [
+            'renatio.dynamicpdf::pdf.layouts.default',
+            'renatio.dynamicpdf::pdf.layouts.header_and_footer',
         ];
     }
 }

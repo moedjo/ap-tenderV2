@@ -47,17 +47,17 @@ class UpdateManager
     protected $tempDirectory;
 
     /**
-     * @var System\Classes\PluginManager
+     * @var PluginManager
      */
     protected $pluginManager;
 
     /**
-     * @var Cms\Classes\ThemeManager
+     * @var ThemeManager
      */
     protected $themeManager;
 
     /**
-     * @var System\Classes\VersionManager
+     * @var VersionManager
      */
     protected $versionManager;
 
@@ -72,12 +72,12 @@ class UpdateManager
     protected $secret;
 
     /**
-     * @var Illuminate\Database\Migrations\Migrator
+     * @var \Illuminate\Database\Migrations\Migrator
      */
     protected $migrator;
 
     /**
-     * @var Illuminate\Database\Migrations\DatabaseMigrationRepository
+     * @var \Illuminate\Database\Migrations\DatabaseMigrationRepository
      */
     protected $repository;
 
