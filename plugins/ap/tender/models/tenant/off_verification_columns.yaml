@@ -16,4 +16,16 @@ columns:
         label: 'ap.tender::lang.tenant.commercial_status'
     status:
         label: 'ap.tender::lang.tenant.status'
-        type: text
+        type: selectable
+        options:
+            short_form: Short Form
+            pre_register: Pre Register
+            register: Register
+            short_listed: Short Listed
+            registration: Registration
+            pre_clarificated: Pre Clarificated
+            evaluated: Evaluated
+            pre_evaluated: Pre Evaluated
+            request_update_approved: Request Update Approved
+            request_update: Request Update
+        searchable: true
