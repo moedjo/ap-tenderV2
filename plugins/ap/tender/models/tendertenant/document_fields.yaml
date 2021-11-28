@@ -53,8 +53,8 @@ tabs:
             type: section
             tab: 'Envelope II'
         total_price:
-            label: 'Total Harga Penawaran (include PPn)'
-            placeholder: 'Total Harga Penawaran (include PPn)'
+            label: 'Total kontribusi finacial'
+            placeholder: 'Total kontribusi finacial'
             type: number
             span: left
             tab: 'Envelope II'
@@ -144,15 +144,15 @@ tabs:
         #     disabled: true
         #     tab: 'Evaluasi Envelope II'
         last_total_price:
-            label: 'Total Harga Penawaran Akhir (include PPn)'
-            placeholder: 'Total Harga Penawaran Akhir (include PPn)'
+            label: 'Total kontribusi finacial'
+            placeholder: 'Total kontribusi finacial'
             type: number
             span: left
             tab: 'Penawaran Akhir'
             disabled: true
             hidden: true
         doc_negotiation:
-            label: 'Berita Acara Negosiasi'
+            label: 'Upload dokumen penawaran akhir'
             type: fileupload
             mode: file
             useCaption: true

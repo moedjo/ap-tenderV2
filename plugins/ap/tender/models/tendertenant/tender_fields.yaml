@@ -97,8 +97,8 @@ tabs:
             tab: 'Envelope II'
             permissions: ap_tender_is_admin_envelope2
         total_price:
-            label: 'Total Harga Penawaran (include PPn)'
-            placeholder: 'Total Harga Penawaran (include PPn)'
+            label: 'Total kontribusi finacial'
+            placeholder: 'Total kontribusi finacial'
             type: number
             span: left
             tab: 'Envelope II'
@@ -253,7 +253,7 @@ tabs:
             tab: 'Klarifikasi'
             permissions: ap_tender_is_admin_tender
             disabled: true
-    
+
 
         _section_nego:
             label: 'Undangan Negosiasi'
@@ -321,15 +321,15 @@ tabs:
             permissions: ap_tender_is_admin_tender
             disabled: true
         last_total_price:
-            label: 'Total Harga Penawaran Akhir (include PPn)'
-            placeholder: 'Total Harga Penawaran Akhir (include PPn)'
+            label: 'Total kontribusi finacial'
+            placeholder: 'Total kontribusi finacial'
             type: number
             span: left
             tab: 'Penawaran Akhir'
             disabled: true
             permissions: ap_tender_is_admin_tender
         doc_negotiation:
-            label: 'Berita Acara Negosiasi'
+            label: 'Upload dokumen penawaran akhir'
             type: fileupload
             mode: file
             useCaption: true
@@ -344,4 +344,3 @@ tabs:
             tab: 'Penawaran Akhir'
             disabled: true
             permissions: ap_tender_is_admin_tender
-            
