@@ -51,7 +51,7 @@ class PublicTenantShortForms extends Controller
 
     public function onValidate()
     {
-        $token = input('token');
+        $token = trim(input('token'));
         $tenant = Tenant::where('token', $token)
                 ->orderBy('updated_at', 'DESC')
                 ->first();
