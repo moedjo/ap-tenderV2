@@ -76,6 +76,7 @@ navigation:
             - ap_tender_access_verifications
             - ap_tender_access_positions
             - ap_tender_access_regions
+            - ap_tender_access_users
         sideMenu:
             offices:
                 label: 'ap.tender::lang.office.plural'
