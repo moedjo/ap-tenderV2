@@ -31,4 +31,19 @@ class User extends \Backend\Models\User
     protected $purgeable = [
         'name', 'password_confirmation'
     ];
+
+
+    public function getRoleOptions()
+    {
+        $result = [];
+
+
+        $userroles = UserRole::whereNotIn('code', ['tenant'])->get();
+
+        foreach ($userroles as $role) {
+            $result[$role->id] = [$role->name, $role->description];
+        }
+
+        return $result;
+    }
 }

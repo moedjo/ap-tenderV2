@@ -49,7 +49,7 @@
                         </span>
                         <?php if (isset($isVerticalMenu)): ?>
                             <span class="nav-label">
-                                <?= e($this->user->full_name) ?>
+                                <?= e($this->user->login) ?> - <?= e($this->user->full_name) ?>
                             </span>
                         <?php endif ?>
                     </a>
@@ -81,7 +81,7 @@
 
     <ul class="mainmenu-items mainmenu-submenu-dropdown hover-effects" data-submenu-index="account">
         <li class="mainmenu-item section-title">
-            <span class="nav-label"><?= e($this->user->full_name) ?></span>
+            <span class="nav-label">             <?= e($this->user->login) ?> - <?= e($this->user->full_name) ?></span>
         </li>
 
         <?= $this->makeLayoutPartial('my_settings_menu_items', ['context' => $context]) ?>

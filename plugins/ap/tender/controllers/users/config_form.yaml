@@ -1,0 +1,12 @@
+name: 'Pengguna'
+form: $/ap/tender/models/user/fieldsx.yaml
+modelClass: Ap\Tender\Models\User
+defaultRedirect: ap/tender/users
+create:
+    title: 'Pengguna Baru'
+    redirect: 'ap/tender/users/update/:id'
+    redirectClose: ap/tender/users
+update:
+    title: 'Ubah Pengguna'
+    redirect: ap/tender/users
+    redirectClose: ap/tender/users

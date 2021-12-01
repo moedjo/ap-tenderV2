@@ -59,6 +59,9 @@ permissions:
     ap_tender_audit_logs:
         tab: 'ap.tender::lang.permission.tab.master'
         label: 'Audit Logs'
+    ap_tender_access_users:
+        tab: 'ap.tender::lang.permission.tab.master'
+        label: 'Akses Pengguna'
 navigation:
     master-data:
         label: 'ap.tender::lang.permission.tab.master'
@@ -122,6 +125,12 @@ navigation:
                 icon: icon-plane
                 permissions:
                     - ap_tender_access_airports
+            users:
+                label: 'Daftar Pengguna'
+                url: ap/tender/users
+                icon: icon-users
+                permissions:
+                    - ap_tender_access_users
     tenant:
         label: 'Daftar Tenant'
         url: ap/tender/tenants
