@@ -1,4 +1,7 @@
 <?php return [
+    'form' => [
+        'cancel' => 'Batal'
+    ],
     'plugin' => [
         'name' => 'Angkasa Pura',
         'description' => ''
