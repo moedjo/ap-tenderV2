@@ -24,6 +24,9 @@ columns:
         label: 'Harga Penawaran'
         type: currency_idr
         sortable: true
+        permissions:
+            - ap_tender_is_finance
+            - ap_tender_is_admin_envelope2
     is_envelope1:
         label: 'Envelope I'
         type: selectable

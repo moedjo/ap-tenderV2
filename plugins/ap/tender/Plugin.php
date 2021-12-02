@@ -18,6 +18,9 @@ class Plugin extends PluginBase
         return [
             'currency_idr' => function ($value) {
                 return "Rp " . number_format($value, 0, ",", ".");
+            },
+            'thousand_separator' => function ($value) {
+                return number_format($value, 0, ",", ".") . ' m2';
             }
         ];
     }

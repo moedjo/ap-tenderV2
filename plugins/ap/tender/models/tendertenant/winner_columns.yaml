@@ -2,8 +2,8 @@ columns:
     id:
         label: 'ID Registrasi'
         type: number
-    tender[name]:
-        label: 'ap.tender::lang.tender.name'
+    tenant[name]:
+        label: 'ap.tender::lang.tenant.name'
         type: text
     tender[package]:
         label: 'ap.tender::lang.tender.package'

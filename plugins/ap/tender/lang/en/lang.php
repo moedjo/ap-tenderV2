@@ -336,7 +336,7 @@
 
 
 
-        'doc_finance_sppkp' => 'SPPKP atau Surat Pernyataan Non Pengusaha Kena Pajak (non PKP) dan Surat Pemberitahuan Pajak Daerah',
+        'doc_finance_sppkp' => 'SPPKP atau Surat Pernyataan Non Pengusaha Kena Pajak (non PKP) / Surat Pemberitahuan Pajak Daerah',
         'doc_finance_spt' => 'SPT Pajak Tahunan',
         'doc_finance_spt_monthly' => 'SPT Pajak Bulanan',
         'doc_finance_blp' => 'Bukti Lapor Pajak & Bukti Setor pajak (Jika Kurang Bayar)',

@@ -27,6 +27,7 @@ class PublicTenantLegals extends Controller
         parent::__construct();
         $this->layout = 'public/default';
         $this->addCss('/plugins/ap/tender/assets/css/custom.css', 'Ap.Tender');
+        $this->addJs('/plugins/ap/tender/assets/js/tenantlegal.js', 'Ap.Tender');
     }
 
 

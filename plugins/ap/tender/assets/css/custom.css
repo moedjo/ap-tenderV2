@@ -52,3 +52,15 @@
     font: 20px Arial, sans-serif;
     float: right;
 }
+
+.kbli-info {
+    position: absolute;
+    left: 140px;
+    font-size: 1.2em;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.kbli-info:hover {
+    opacity: .8;
+}

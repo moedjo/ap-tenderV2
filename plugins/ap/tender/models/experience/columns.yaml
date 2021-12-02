@@ -14,7 +14,7 @@ columns:
         valueFrom: display_region
     region_area:
         label: 'ap.tender::lang.experience.region_area'
-        type: number
+        type: thousand_separator
     total_income:
         label: 'ap.tender::lang.experience.total_income'
         type: currency_idr
