@@ -86,7 +86,7 @@ tabs:
             maxFilesize: 40
             attachOnUpload: true
             span: right
-            required: true
+            # required: true
             commentAbove: 'File (*pdf - max 40MB)'
             disabled: true
             tab: 'Envelope I'
@@ -161,7 +161,7 @@ tabs:
             maxFilesize: 40
             attachOnUpload: true
             span: right
-            required: true
+            # required: true
             commentAbove: 'File (*pdf - max 40MB)'
             disabled: true
             tab:  'Envelope II'
