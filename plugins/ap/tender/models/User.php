@@ -29,7 +29,7 @@ class User extends \Backend\Models\User
         'role' => UserRole::class
     ];
 
-    protected $purgeable = ['password_confirmation', 'send_invite'];
+    protected $purgeable = ['password_confirmation', 'send_invite','name'];
 
 
     public function getRoleOptions()
