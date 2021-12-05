@@ -260,6 +260,15 @@
         'business_fields' => 'Kategori Bisnis',
         'business_activity' => 'Kegiatan Usaha Pokok',
         'business_kbli' => 'Bidang Usaha (KBLI)',
+        'business_kbli_comment' => 'Format : kode KBLI - Nama Kategori. Contoh : 56103 - Kedai Makanan 
+    <a
+        href="javascript:;"
+        data-toggle="tooltip"
+        data-placement="right"
+        data-delay="500"
+        title="Lorem ipsum dolor sit amet">
+        <i class="icon-info"></i>
+    </a>',
         'contact_email' => 'Email',
 
 

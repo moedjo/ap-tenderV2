@@ -178,7 +178,8 @@ fields:
         spanClass: kbli-label
         span: full
         type: repeater
-        commentAbove: 'Format : kode KBLI - Nama Kategori. Contoh : 56103 - Kedai Makanan'
+        commentAbove: 'ap.tender::lang.tenant.business_kbli_comment'
+        commentHtml: true
         form:
             fields:
                 name:
