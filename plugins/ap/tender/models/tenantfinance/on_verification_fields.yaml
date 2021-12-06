@@ -14,7 +14,7 @@ fields:
             field: is_age_comply
             condition: value[0]
     is_age_comply:
-        label: 'Perusahaan Sudah Berdiri atau Menjalankan Kegiatan usah di atas 3 tahun?'
+        label: 'Perusahaan Sudah Berdiri atau Menjalankan Kegiatan usaha di atas 3 tahun?'
         span: full
         disabled: true
         type: radio
