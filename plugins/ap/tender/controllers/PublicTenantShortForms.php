@@ -56,7 +56,7 @@ class PublicTenantShortForms extends Controller
                 ->orderBy('updated_at', 'DESC')
                 ->first();
         if (isset($tenant)) {
-            if ($tenant->status == 'short_form') {
+            if ($tenant->status == 'short_form' || $tenant->status == 'long_form') {
                 $last_update = strtotime(date('Y-m-d', strtotime($tenant->updated_at)));
                 $exp_date = strtotime("+4days", $last_update);
 

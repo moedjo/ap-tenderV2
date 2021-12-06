@@ -73,4 +73,10 @@ class PublicTenantLegals extends Controller
             // }
         }
     }
+
+
+    public function formBeforeSave($model)
+    {
+        $model->status = 'long_form';
+    }
 }
