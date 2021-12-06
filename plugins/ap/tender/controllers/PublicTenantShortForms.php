@@ -56,12 +56,15 @@ class PublicTenantShortForms extends Controller
                 ->orderBy('updated_at', 'DESC')
                 ->first();
         if (isset($tenant)) {
-            if ($tenant->status == 'short_form' || $tenant->status == 'long_form') {
+            if ($tenant->status == 'short_form' || $tenant->status == 'long_form' ) {
                 $last_update = strtotime(date('Y-m-d', strtotime($tenant->updated_at)));
                 $exp_date = strtotime("+4days", $last_update);
 
                 if ($exp_date >= strtotime(date('Y-m-d'))) {
                     Session::put('tenant_id', $tenant->id);
+                    $tenant->status = 'long_form';
+                    $tenant->save();
+
                     Flash::success(e(trans('ap.tender::lang.tenant.token_activation_success')));
                     return Redirect::to("backend/ap/tender/publictenantlegals/update/$tenant->id");
                 }  else {

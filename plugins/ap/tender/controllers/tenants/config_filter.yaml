@@ -10,6 +10,7 @@ scopes:
           evaluated: 'ap.tender::lang.status.evaluated'
           register: 'ap.tender::lang.status.register'
           short_form: 'ap.tender::lang.status.short_form'
+          long_form: Long Form
           pre_register: 'ap.tender::lang.status.pre_register'
           reject: 'ap.tender::lang.status.reject'
           request_update: 'ap.tender::lang.status.request_update'

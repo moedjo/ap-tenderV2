@@ -19,6 +19,7 @@ columns:
         type: selectable
         options:
             short_form: Short Form
+            long_form: Long Form
             pre_register: Pre Register
             register: Register
             short_listed: Short Listed
