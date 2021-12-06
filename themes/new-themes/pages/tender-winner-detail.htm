@@ -89,7 +89,7 @@ function onStart() {
                 <p>: {{ detailTender.tender.schedules[0].date_end|date('d M Y') }}</p>
             </div>
             <div class="col-12 mb-4 text-center">
-                <a type="button" class="btn btn-success btn-sm" target="_blank" href="{{ tenantWinner.doc_spk.getPath() }}">Download SPK Pemenang</a>
+               
                 {% for doc_support in tenantWinner.doc_support %}
                 <a type="button" class="btn btn-primary btn-sm" target="_blank" href="{{ doc_support.getPath() }}">Download Doc Pendukung</a>
                 {% endfor %}
