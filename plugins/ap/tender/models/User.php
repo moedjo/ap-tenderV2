@@ -53,10 +53,16 @@ class User extends \Backend\Models\User
     {
 
 
-        $this->password = sha1(rand());
+        if(empty($this->password )){
+            $this->password = sha1(rand());
+        }
 
         if ($this->validationForced) {
             return;
+        }
+
+        if ($password = $this->getOriginalHashValue('password')) {
+            $this->validatePasswordPolicy($password);
         }
 
     }
