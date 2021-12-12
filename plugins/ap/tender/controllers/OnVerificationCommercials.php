@@ -45,7 +45,7 @@ class OnVerificationCommercials extends Controller
     public function extendQuery($query)
     {
         $user = $this->user;
-        return $query->where('status','register');
+        return $query->where('status', 'register');
     }
 
     public function formExtendQuery($query)
@@ -81,18 +81,19 @@ class OnVerificationCommercials extends Controller
 
             $model->status = 'pre_evaluated';
         }
-
-     
     }
 
-    public function formAfterSave($model){
-        if (
-            $model->on_legal_status == 'reject' &&
-            $model->on_commercial_status == 'reject' &&
-            $model->on_finance_status == 'reject'
-        ) {
-            Event::fire('tenant.reject', [$model]);
+    public function formAfterSave($model)
+    {
+        if (!empty($model->on_legal_status) && !empty($model->on_commercial_status) && !empty($model->on_finance_status)) {
+
+            if (
+                $model->on_legal_status == 'reject' ||
+                $model->on_commercial_status == 'reject' ||
+                $model->on_finance_status == 'reject'
+            ) {
+                Event::fire('tenant.reject', [$model]);
+            }
         }
     }
-
 }
